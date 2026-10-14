@@ -270,7 +270,7 @@
     }
     function renderRail() {
       dateRail.innerHTML = reports.map((report, index) => {
-        const total = allGames(report).length;
+        const total = new Set(allGames(report).map(game => game.id)).size;
         return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${report.label}</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
       }).join('');
       dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
@@ -283,13 +283,13 @@
         resultMeta.textContent = '等待日报';
         return;
       }
-      let total = 0;
+      const visibleIds = new Set();
       sections.innerHTML = (report.collection?.state === 'partial' ? `<div class="empty">这天的日报部分完成：已保存成功条目，${report.collection.pendingIds?.length || 0} 个项目等待重试${report.collection.scanComplete ? '。' : '；搜索尚未完整覆盖，将继续补查。'}</div>` : '') + (report.recovery ? `<div class="empty">${report.recovery.note}${report.recovery.recoveredAt ? ' 补采时间：' + new Date(report.recovery.recoveredAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : ''}</div>` : '') + report.sections.map(section => {
         const games = visibleGames(section.games);
-        total += games.length;
+        games.forEach(game => visibleIds.add(game.id));
         return `<section><div class="section-heading"><div class="section-title"><span class="section-dot ${section.tone === 'blue' ? 'blue' : section.tone === 'mint' ? 'mint' : ''}"></span><h2>${section.title}</h2><span class="section-count">${games.length} 款</span></div><span class="section-rule"></span></div>${games.length ? `<div class="game-grid">${games.map(gameCard).join('')}</div>` : `<div class="empty">${report.recovery ? '缺失历史或尚未补采到可核实条目' : '暂无符合条件的条目'}</div>`}</section>`;
       }).join('');
-      resultMeta.textContent = `当前日报 ${total} 款`;
+      resultMeta.textContent = `当前日报 ${visibleIds.size} 款`;
     }
     searchInput.addEventListener('input', event => { state.query = event.target.value.trim(); render(); });
     tagSelect.addEventListener('change', event => { state.tag = event.target.value; render(); });
@@ -310,7 +310,8 @@
           reports = payload.reports.map(report => ({ ...report, label: report.label || '日报' }));
           const failed = status.state === 'error';
           const partial = status.state === 'partial';
-          document.querySelector('#dataStatus').innerHTML = `<strong>${cloud ? '云端日报' : '本地日报'}</strong> · ${partial ? '部分完成，将自动重试' : failed ? '采集仍有缺漏，已保留保存结果' : '真实 Steam 数据'}`;
+          const latestComplete = reports.find(report => report.date === status.reportDate)?.collection?.state === 'complete';
+          document.querySelector('#dataStatus').innerHTML = `<strong>${cloud ? '云端日报' : '本地日报'}</strong> · ${partial ? '部分完成，将自动重试' : failed ? latestComplete ? '最新日报完成，历史待补采' : '采集仍有缺漏，已保留保存结果' : '真实 Steam 数据'}`;
           document.querySelector('#dataStatus').classList.toggle('demo', failed);
           document.querySelector('#syncStatus').textContent = `最后同步：${payload.generatedAt ? new Date(payload.generatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : '未知'} · Steam 公共接口`;
           refreshTags(); render();
