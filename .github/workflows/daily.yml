@@ -1,0 +1,63 @@
+name: Steam Daily Cloud
+
+on:
+  schedule:
+    # UTC 20:00 = Asia/Shanghai 04:00 the following day.
+    - cron: '0 20 * * *'
+    # Retry throughout the day; run.mjs skips before 04:00 and complete days.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['data/**', 'outputs/README.md', 'CLOUD-SETUP.md']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: steam-daily-cloud
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Restore durable reports and successful detail requests
+        run: node cloud/state-branch.mjs load
+      - name: Collect or resume pending records
+        id: collect
+        continue-on-error: true
+        run: node cloud/run.mjs
+      - name: Save progress even if Steam is unavailable
+        if: ${{ !cancelled() }}
+        run: node cloud/state-branch.mjs save
+      - name: Build website from actual saved reports
+        if: ${{ !cancelled() }}
+        run: node cloud/build.mjs
+      - name: Configure Pages
+        if: ${{ !cancelled() }}
+        uses: actions/configure-pages@v5
+      - name: Upload website
+        if: ${{ !cancelled() }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Publish website
+        if: ${{ !cancelled() }}
+        id: deploy
+        uses: actions/deploy-pages@v4
+      - name: Keep incomplete collection visible in Actions
+        if: ${{ steps.collect.outcome == 'failure' }}
+        run: exit 1
