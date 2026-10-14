@@ -188,16 +188,17 @@ async function main() {
     for (const [id, entry] of Object.entries(detailCache)) if (Date.now() - Date.parse(entry.savedAt) > 48 * 3600 * 1000) delete detailCache[id];
     await writeJson(statusFile, { state: 'running', startedAt, message: '正在采集 Steam 公开数据' });
     const requested = process.argv.find(arg => arg.startsWith('--backfill='));
+    const latestOnly = process.argv.includes('--latest-only');
     const cnHour = Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Shanghai', hour: '2-digit', hourCycle: 'h23' }).format(new Date()));
     const yesterday = dateOffset(today, cnHour < 4 ? -2 : -1);
     // Prioritize the latest daily report before slower historical recovery.
     if (!requested) {
       await collectDaily(state, yesterday, startedAt);
-      for (const report of [...state.reports]) {
+      for (const report of latestOnly ? [] : [...state.reports]) {
         if (report.date !== yesterday && report.collection?.state === 'partial') await collectDaily(state, report.date, startedAt);
       }
     }
-    const dates = requested ? requested.slice(11).split(',') : missingDates(state.reports || [], yesterday);
+    const dates = requested ? requested.slice(11).split(',') : latestOnly ? [] : missingDates(state.reports || [], yesterday);
     if (dates.some(date => !/^\d{4}-\d{2}-\d{2}$/.test(date) || date >= today || !Number.isFinite(Date.parse(date)))) throw new Error('补采日期必须为已过去的 YYYY-MM-DD');
     if (dates.length) {
       for (const date of dates) {
