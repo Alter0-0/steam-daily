@@ -10,6 +10,8 @@ export async function buildSite(destination = site, dataRoot = path.join(root, '
   if (demoStart < 0 || demoEnd < 0) throw new Error('网页结构变化，无法移除演示数据');
   html = html.slice(0, demoStart) + '    let reports = [];\n\n' + html.slice(demoEnd);
   html = html.replace('</head>', '<script>window.STEAM_DAILY_STATIC = true;</script></head>');
+  html = html.replace('<strong>演示数据</strong> · 等待本地采集器', '<strong>云端日报</strong> · 正在载入已保存日报');
+  html = html.replace('当前显示内置演示日报 · <strong>V1</strong>', '正在连接云端日报');
   await fs.mkdir(path.join(destination, 'data'), { recursive: true });
   for (const name of ['index.html', 'steam-daily.html']) await fs.writeFile(path.join(destination, name), html);
   let saved = { reports: [], generatedAt: null };
