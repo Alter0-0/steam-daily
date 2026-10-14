@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steam 今日情报</title>
+  <style>
+    :root {
+      --bg: #f2f4f6;
+      --panel: #ffffff;
+      --ink: #14212b;
+      --muted: #66737e;
+      --line: #dfe5e9;
+      --navy: #17324a;
+      --navy-2: #254e6e;
+      --orange: #e77e45;
+      --orange-soft: #fff0e8;
+      --mint: #2c8f78;
+      --mint-soft: #e8f6f1;
+      --blue-soft: #e9f1f7;
+      --shadow: 0 14px 38px rgba(28, 48, 64, .08);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .app-shell { min-height: 100vh; }
+    .topbar { background: var(--navy); color: #fff; }
+    .topbar-inner { max-width: 1440px; margin: 0 auto; padding: 24px 34px 22px; display: flex; justify-content: space-between; gap: 28px; align-items: flex-start; }
+    .brand-kicker { color: #a7c2d3; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 5px 0 7px; font-size: clamp(27px, 3vw, 40px); line-height: 1.08; letter-spacing: 0; }
+    .subtitle { color: #c2d0d9; margin: 0; font-size: 14px; }
+    .topbar-meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .status-chip { padding: 9px 12px; border-radius: 5px; border: 1px solid rgba(255,255,255,.18); color: #d8e5ec; font-size: 12px; white-space: nowrap; }
+    .status-chip strong { color: #fff; font-weight: 650; }
+    .status-chip.demo { border-color: rgba(255,180,130,.45); color: #ffd0b5; }
+    main { max-width: 1440px; margin: 0 auto; padding: 22px 34px 52px; }
+    .date-rail { display: grid; grid-template-columns: repeat(6, minmax(112px, 1fr)); gap: 10px; margin-bottom: 18px; }
+    .date-card { appearance: none; border: 1px solid var(--line); background: #fff; text-align: left; padding: 13px 14px; min-height: 80px; border-radius: 7px; color: var(--ink); transition: border-color .18s, transform .18s, box-shadow .18s; }
+    .date-card:hover { transform: translateY(-2px); border-color: #a7b9c7; box-shadow: 0 7px 18px rgba(26, 53, 70, .08); }
+    .date-card.active { border: 2px solid var(--orange); padding: 12px 13px; box-shadow: 0 8px 20px rgba(231, 126, 69, .14); }
+    .date-label { display: block; color: var(--muted); font-size: 12px; margin-bottom: 7px; }
+    .date-card.active .date-label { color: var(--orange); font-weight: 700; }
+    .date-number { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .date-number strong { font-size: 18px; letter-spacing: .02em; }
+    .date-count { color: var(--muted); font-size: 12px; }
+    .toolbar { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; padding: 13px 14px; display: flex; gap: 11px; align-items: center; flex-wrap: wrap; margin-bottom: 22px; box-shadow: 0 5px 15px rgba(30, 52, 64, .04); }
+    .search-wrap { position: relative; flex: 1 1 230px; }
+    .search-wrap input { width: 100%; border: 1px solid var(--line); border-radius: 5px; padding: 10px 12px 10px 37px; color: var(--ink); outline: none; }
+    .search-wrap input:focus { border-color: var(--navy-2); box-shadow: 0 0 0 3px rgba(37,78,110,.12); }
+    .search-mark { position: absolute; left: 13px; top: 8px; color: #7e8b95; font-size: 19px; line-height: 1; }
+    select, .toggle { border: 1px solid var(--line); border-radius: 5px; background: #fff; color: var(--ink); min-height: 40px; padding: 9px 12px; }
+    select { min-width: 165px; }
+    .toggle { display: inline-flex; align-items: center; gap: 8px; user-select: none; }
+    .toggle input { accent-color: var(--orange); width: 16px; height: 16px; }
+    .result-meta { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .sections { display: grid; gap: 26px; }
+    .section-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+    .section-title { display: flex; gap: 10px; align-items: center; }
+    .section-title h2 { margin: 0; font-size: 19px; letter-spacing: 0; }
+    .section-count { color: var(--muted); font-size: 13px; }
+    .section-rule { height: 1px; background: var(--line); flex: 1; margin-left: 13px; }
+    .section-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+    .section-dot.blue { background: #5582a2; }
+    .section-dot.mint { background: var(--mint); }
+    .game-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+    .game-card { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; overflow: hidden; display: grid; grid-template-columns: 150px 1fr; min-height: 164px; transition: transform .18s, box-shadow .18s, border-color .18s; }
+    .game-card:hover { transform: translateY(-2px); border-color: #b3c0c8; box-shadow: var(--shadow); }
+    .cover { width: 150px; height: 164px; object-fit: cover; background: #dbe5ea; }
+    .card-body { padding: 14px 14px 12px; min-width: 0; display: flex; flex-direction: column; }
+    .card-topline { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+    .game-name { margin: 0; font-size: 16px; line-height: 1.28; font-weight: 720; }
+    .game-name-en { color: var(--muted); font-size: 11px; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rating { color: var(--mint); font-weight: 750; white-space: nowrap; font-size: 14px; }
+    .rating.low { color: #c17b3d; }
+    .rating small { display: block; color: var(--muted); font-size: 10px; font-weight: 500; text-align: right; margin-top: 2px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .tag { display: inline-block; background: var(--blue-soft); color: #3a617c; padding: 4px 7px; border-radius: 4px; font-size: 11px; }
+    .tag.status { background: var(--orange-soft); color: #a95529; }
+    .tag.demo { background: var(--mint-soft); color: #247561; }
+    .card-info { margin-top: auto; display: grid; gap: 4px; color: var(--muted); font-size: 11px; }
+    .info-line { display: flex; gap: 6px; min-width: 0; }
+    .info-label { color: #8b969e; flex: 0 0 auto; }
+    .info-value { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .card-footer { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+    .price { font-size: 14px; font-weight: 760; color: var(--ink); }
+    .price.free { color: var(--mint); }
+    .price-note { color: var(--muted); font-size: 11px; }
+    .store-link { margin-left: auto; text-decoration: none; color: #2d6388; font-size: 12px; font-weight: 650; }
+    .store-link:hover { text-decoration: underline; }
+    .empty { background: var(--panel); border: 1px dashed #cbd5da; border-radius: 7px; padding: 30px 20px; text-align: center; color: var(--muted); font-size: 14px; }
+    .footnote { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 17px; color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footnote strong { color: var(--ink); }
+    @media (max-width: 1120px) { .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      .topbar-inner, main { padding-left: 17px; padding-right: 17px; }
+      .topbar-inner { display: block; }
+      .topbar-meta { justify-content: flex-start; margin-top: 18px; }
+      .date-rail { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .game-grid { grid-template-columns: 1fr; }
+      .game-card { grid-template-columns: 128px 1fr; }
+      .cover { width: 128px; }
+      .result-meta { width: 100%; margin-left: 0; }
+    }
+    @media (max-width: 430px) {
+      .date-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .game-card { grid-template-columns: 110px 1fr; }
+      .cover { width: 110px; height: 154px; }
+      .game-card { min-height: 154px; }
+      .card-body { padding: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div>
+          <div class="brand-kicker">Steam / Daily Brief</div>
+          <h1>Steam 今日情报</h1>
+          <p class="subtitle">把一天里值得看的新游戏，整理成一页安静的日报。</p>
+        </div>
+        <div class="topbar-meta">
+          <div class="status-chip"><strong>中国大陆时间</strong> · 每日 04:00</div>
+          <div class="status-chip demo" id="dataStatus"><strong>演示数据</strong> · 等待本地采集器</div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <nav class="date-rail" id="dateRail" aria-label="历史日报"></nav>
+      <section class="toolbar" aria-label="筛选工具">
+        <label class="search-wrap">
+          <span class="search-mark" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="搜索游戏名称" autocomplete="off" />
+        </label>
+        <select id="tagSelect" aria-label="按标签筛选"><option value="all">全部标签</option></select>
+        <select id="sortSelect" aria-label="排序方式">
+          <option value="rating">按好评率排序</option>
+          <option value="time">按发售时间排序</option>
+          <option value="price">按价格排序</option>
+        </select>
+        <label class="toggle"><input id="demoOnly" type="checkbox" /> 只看 Demo</label>
+        <span class="result-meta" id="resultMeta"></span>
+      </section>
+      <div class="sections" id="sections"></div>
+      <div class="footnote">
+        <span><strong>数据说明</strong>　日报按中国大陆时间统计；新商品页从首次运行后建立基线。</span>
+        <span id="syncStatus">当前显示内置演示日报 · <strong>V1</strong></span>
+      </div>
+    </main>
+  </div>
+  <script>
+    const cover = id => `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${id}/header.jpg`;
+    let reports = [
+      {
+        date: '2026-09-30', label: '今天', sections: [
+          { key: 'release', title: '今日发售', tone: 'orange', games: [
+            { id: 1245620, name: '艾尔登法环', en: 'ELDEN RING', cover: cover(1245620), price: '¥298', priceValue: 298, rating: 86, reviews: '12,408', time: '2026-09-30 08:00', status: ['正式版上线'], tags: ['动作', 'RPG', '开放世界'], studio: 'FromSoftware', publisher: 'Bandai Namco Entertainment' },
+            { id: 2358720, name: '黑神话：悟空', en: 'Black Myth: Wukong', cover: cover(2358720), price: '¥268', priceValue: 268, rating: 91, reviews: '3,216', time: '2026-09-30 10:00', status: ['正式版上线'], tags: ['动作', 'RPG', '剧情'], studio: 'Game Science', publisher: 'Game Science' }
+          ]},
+          { key: 'new-page', title: '新发现商品页', tone: 'blue', games: [
+            { id: 2379780, name: '巴拉特洛', en: 'Balatro', cover: cover(2379780), price: '¥88', priceValue: 88, rating: 78, reviews: '214', time: '页面首次发现 · 02:14', status: ['新商品页'], tags: ['独立', '卡牌', 'Roguelike'], studio: 'LocalThunk', publisher: 'Playstack' },
+            { id: 367520, name: '空洞骑士', en: 'Hollow Knight', cover: cover(367520), price: '¥58', priceValue: 58, rating: 96, reviews: '341,009', time: '页面首次发现 · 03:01', status: ['新商品页'], tags: ['动作', '探索', '独立'], studio: 'Team Cherry', publisher: 'Team Cherry' }
+          ]},
+          { key: 'demo', title: '新出现 Demo', tone: 'mint', games: [
+            { id: 1145360, name: '哈迪斯', en: 'Hades', cover: cover(1145360), price: '免费', priceValue: 0, rating: 95, reviews: '45,813', time: 'Demo 发布 · 01:40', status: ['Demo'], tags: ['动作', 'Roguelike', '独立'], studio: 'Supergiant Games', publisher: 'Supergiant Games', demo: true }
+          ]}
+        ]
+      },
+      {
+        date: '2026-09-29', label: '昨天', sections: [
+          { key: 'release', title: '今日发售', tone: 'orange', games: [
+            { id: 1091500, name: '赛博朋克 2077', en: 'Cyberpunk 2077', cover: cover(1091500), price: '¥298', priceValue: 298, rating: 87, reviews: '682,401', time: '2026-09-29 09:00', status: ['正式版上线'], tags: ['RPG', '开放世界', '科幻'], studio: 'CD PROJEKT RED', publisher: 'CD PROJEKT RED' }
+          ]},
+          { key: 'new-page', title: '新发现商品页', tone: 'blue', games: [
+            { id: 413150, name: '星露谷物语', en: 'Stardew Valley', cover: cover(413150), price: '¥48', priceValue: 48, rating: 98, reviews: '615,332', time: '页面首次发现 · 03:26', status: ['新商品页'], tags: ['模拟', '农场', '独立'], studio: 'ConcernedApe', publisher: 'ConcernedApe' }
+          ]},
+          { key: 'demo', title: '新出现 Demo', tone: 'mint', games: [
+            { id: 632360, name: '雨中冒险 2 Demo', en: 'Risk of Rain 2 Demo', cover: cover(632360), price: '免费', priceValue: 0, rating: 93, reviews: '183,209', time: 'Demo 发布 · 02:08', status: ['Demo'], tags: ['动作', 'Roguelike', '合作'], studio: 'Hopoo Games', publisher: 'Gearbox Publishing', demo: true }
+          ]}
+        ]
+      },
+      {
+        date: '2026-09-28', label: '周一', sections: [
+          { key: 'release', title: '今日发售', tone: 'orange', games: [
+            { id: 730, name: '反恐精英 2', en: 'Counter-Strike 2', cover: cover(730), price: '免费', priceValue: 0, rating: 87, reviews: '8,124,510', time: '正式版更新 · 06:00', status: ['正式版上线'], tags: ['FPS', '竞技', '多人'], studio: 'Valve', publisher: 'Valve' }
+          ]},
+          { key: 'new-page', title: '新发现商品页', tone: 'blue', games: [] },
+          { key: 'demo', title: '新出现 Demo', tone: 'mint', games: [
+            { id: 252490, name: '荒野星球 Demo', en: 'Planet Nomads: Frontier Demo', cover: cover(252490), price: '免费', priceValue: 0, rating: 74, reviews: '96', time: 'Demo 发布 · 00:55', status: ['Demo'], tags: ['生存', '建造', '科幻'], studio: 'Craneballs', publisher: 'Craneballs', demo: true }
+          ]}
+        ]
+      },
+      {
+        date: '2026-09-27', label: '周日', sections: [
+          { key: 'release', title: '今日发售', tone: 'orange', games: [
+            { id: 1174180, name: '荒野大镖客：救赎 2', en: 'Red Dead Redemption 2', cover: cover(1174180), price: '¥279', priceValue: 279, rating: 91, reviews: '442,804', time: '正式版更新 · 09:00', status: ['正式版上线'], tags: ['动作', '开放世界', '剧情'], studio: 'Rockstar Games', publisher: 'Rockstar Games' }
+          ]},
+          { key: 'new-page', title: '新发现商品页', tone: 'blue', games: [
+            { id: 570, name: 'Dota 2：新赛季', en: 'Dota 2', cover: cover(570), price: '免费', priceValue: 0, rating: 89, reviews: '2,110,022', time: '页面首次发现 · 01:11', status: ['新商品页'], tags: ['竞技', '多人', '策略'], studio: 'Valve', publisher: 'Valve' }
+          ]},
+          { key: 'demo', title: '新出现 Demo', tone: 'mint', games: [] }
+        ]
+      },
+      {
+        date: '2026-09-26', label: '周六', sections: [
+          { key: 'release', title: '今日发售', tone: 'orange', games: [] },
+          { key: 'new-page', title: '新发现商品页', tone: 'blue', games: [
+            { id: 292030, name: '巫师 3：狂猎', en: 'The Witcher 3: Wild Hunt', cover: cover(292030), price: '¥127', priceValue: 127, rating: 97, reviews: '741,206', time: '页面首次发现 · 02:42', status: ['新商品页'], tags: ['RPG', '开放世界', '剧情'], studio: 'CD PROJEKT RED', publisher: 'CD PROJEKT RED' }
+          ]},
+          { key: 'demo', title: '新出现 Demo', tone: 'mint', games: [] }
+        ]
+      },
+      {
+        date: '2026-09-25', label: '周五', sections: [
+          { key: 'release', title: '今日发售', tone: 'orange', games: [
+            { id: 440, name: '军团要塞 2', en: 'Team Fortress 2', cover: cover(440), price: '免费', priceValue: 0, rating: 93, reviews: '1,030,409', time: '抢先体验更新 · 07:00', status: ['抢先体验'], tags: ['FPS', '竞技', '多人'], studio: 'Valve', publisher: 'Valve' }
+          ]},
+          { key: 'new-page', title: '新发现商品页', tone: 'blue', games: [] },
+          { key: 'demo', title: '新出现 Demo', tone: 'mint', games: [
+            { id: 814380, name: '只狼：影逝二度 Demo', en: 'SEKIRO: SHADOWS DIE TWICE Demo', cover: cover(814380), price: '免费', priceValue: 0, rating: 94, reviews: '211,450', time: 'Demo 发布 · 03:17', status: ['Demo'], tags: ['动作', '硬核', '单人'], studio: 'FromSoftware', publisher: 'Activision', demo: true }
+          ]}
+        ]
+      }
+    ];
+
+    const state = { reportIndex: 0, query: '', tag: 'all', sort: 'rating', demoOnly: false };
+    const allGames = report => report.sections.flatMap(section => section.games);
+    let tags = [];
+    const tagSelect = document.querySelector('#tagSelect');
+    function refreshTags() {
+      const previous = state.tag;
+      tags = [...new Set(reports.flatMap(report => allGames(report).flatMap(game => game.tags || [])))].sort((a,b) => a.localeCompare(b, 'zh'));
+      tagSelect.innerHTML = '<option value="all">全部标签</option>';
+      tags.forEach(tag => { const option = document.createElement('option'); option.value = tag; option.textContent = tag; tagSelect.appendChild(option); });
+      state.tag = tags.includes(previous) ? previous : 'all'; tagSelect.value = state.tag;
+    }
+    const dateRail = document.querySelector('#dateRail');
+    const sections = document.querySelector('#sections');
+    const resultMeta = document.querySelector('#resultMeta');
+    const searchInput = document.querySelector('#searchInput');
+    const sortSelect = document.querySelector('#sortSelect');
+    const demoOnly = document.querySelector('#demoOnly');
+
+    function formatDate(date) { const [, month, day] = date.split('-'); return `${month}月${day}日`; }
+    function visibleGames(games) {
+      return games.filter(game => {
+        const haystack = `${game.name} ${game.en} ${game.studio} ${game.publisher}`.toLowerCase();
+        return (!state.query || haystack.includes(state.query.toLowerCase())) && (state.tag === 'all' || game.tags.includes(state.tag)) && (!state.demoOnly || game.demo);
+      }).sort((a, b) => {
+        if (state.sort === 'time') return a.time.localeCompare(b.time);
+        if (state.sort === 'price') return a.priceValue - b.priceValue;
+        return b.rating - a.rating;
+      });
+    }
+    function gameCard(game) {
+      const ratingClass = game.rating < 80 ? 'low' : '';
+      return `<article class="game-card">
+        <img class="cover" src="${game.cover}" alt="${game.name} 封面" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('cover-missing')" />
+        <div class="card-body">
+          <div class="card-topline"><div><h3 class="game-name">${game.name}</h3><div class="game-name-en">${game.en}</div></div><div class="rating ${ratingClass}">${game.rating == null ? '暂无' : `${game.rating}%`}<small>${game.reviews || '0'} 条测评</small></div></div>
+          <div class="tags">${game.status.map(status => `<span class="tag ${status === 'Demo' ? 'demo' : 'status'}">${status}</span>`).join('')}${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+          <div class="card-info"><div class="info-line"><span class="info-label">时间</span><span class="info-value">${game.time}</span></div><div class="info-line"><span class="info-label">开发</span><span class="info-value">${game.studio}</span></div><div class="info-line"><span class="info-label">发行</span><span class="info-value">${game.publisher}</span></div></div>
+          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${game.price}</span><span class="price-note">${game.recoveredAt ? '补采时价格/测评' : '日报快照'}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
+        </div>
+      </article>`;
+    }
+    function renderRail() {
+      dateRail.innerHTML = reports.map((report, index) => {
+        const total = allGames(report).length;
+        return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${report.label}</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
+      }).join('');
+      dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
+    }
+    function render() {
+      const report = reports[state.reportIndex];
+      renderRail();
+      if (!report) {
+        sections.innerHTML = '<div class="empty">暂无已保存的日报，请等待首次云端采集。</div>';
+        resultMeta.textContent = '等待日报';
+        return;
+      }
+      let total = 0;
+      sections.innerHTML = (report.collection?.state === 'partial' ? `<div class="empty">这天的日报部分完成：已保存成功条目，${report.collection.pendingIds?.length || 0} 个项目等待重试${report.collection.scanComplete ? '。' : '；搜索尚未完整覆盖，将继续补查。'}</div>` : '') + (report.recovery ? `<div class="empty">${report.recovery.note}${report.recovery.recoveredAt ? ' 补采时间：' + new Date(report.recovery.recoveredAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : ''}</div>` : '') + report.sections.map(section => {
+        const games = visibleGames(section.games);
+        total += games.length;
+        return `<section><div class="section-heading"><div class="section-title"><span class="section-dot ${section.tone === 'blue' ? 'blue' : section.tone === 'mint' ? 'mint' : ''}"></span><h2>${section.title}</h2><span class="section-count">${games.length} 款</span></div><span class="section-rule"></span></div>${games.length ? `<div class="game-grid">${games.map(gameCard).join('')}</div>` : `<div class="empty">${report.recovery ? '缺失历史或尚未补采到可核实条目' : '暂无符合条件的条目'}</div>`}</section>`;
+      }).join('');
+      resultMeta.textContent = `当前日报 ${total} 款`;
+    }
+    searchInput.addEventListener('input', event => { state.query = event.target.value.trim(); render(); });
+    tagSelect.addEventListener('change', event => { state.tag = event.target.value; render(); });
+    sortSelect.addEventListener('change', event => { state.sort = event.target.value; render(); });
+    demoOnly.addEventListener('change', event => { state.demoOnly = event.target.checked; render(); });
+    async function loadLiveReports() {
+      if (location.protocol === 'file:') return;
+      const cloud = window.STEAM_DAILY_STATIC === true;
+      try {
+        const [response, statusResponse] = await Promise.all([
+          fetch(cloud ? './data/state.json' : '/api/reports?days=30', { cache: 'no-store' }),
+          fetch(cloud ? './data/status.json' : '/api/status', { cache: 'no-store' })
+        ]);
+        if (!response.ok || !statusResponse.ok) throw new Error('日报服务暂不可用');
+        const payload = await response.json();
+        const status = await statusResponse.json();
+        if (Array.isArray(payload.reports) && payload.reports.length) {
+          reports = payload.reports.map(report => ({ ...report, label: report.label || '日报' }));
+          const failed = status.state === 'error';
+          const partial = status.state === 'partial';
+          document.querySelector('#dataStatus').innerHTML = `<strong>${cloud ? '云端日报' : '本地日报'}</strong> · ${partial ? '部分完成，将自动重试' : failed ? '采集仍有缺漏，已保留保存结果' : '真实 Steam 数据'}`;
+          document.querySelector('#dataStatus').classList.toggle('demo', failed);
+          document.querySelector('#syncStatus').textContent = `最后同步：${payload.generatedAt ? new Date(payload.generatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : '未知'} · Steam 公共接口`;
+          refreshTags(); render();
+        } else if (cloud) {
+          document.querySelector('#dataStatus').textContent = '云端日报 · 等待首次采集';
+        }
+      } catch (error) {
+        document.querySelector('#dataStatus').textContent = cloud ? '云端日报暂时无法读取，请稍后刷新' : '演示数据 · 本地服务未返回日报';
+      }
+    }
+    refreshTags(); render(); loadLiveReports();
+  </script>
+</body>
+</html>
