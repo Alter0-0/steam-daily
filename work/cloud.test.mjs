@@ -85,3 +85,55 @@ test('durable data branch saves and restores state in a fresh checkout', async t
   assert.deepEqual(JSON.parse(await fs.readFile(path.join(checkout,'data/state.json'),'utf8')),expected);
   assert.match(run('save'), /无需保存/);
 });
+
+test('an interrupted collector saves a partial report and resumes without false discoveries', async t => {
+  const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'steam-checkpoint-'));
+  t.after(() => fs.rm(fixture, {recursive:true,force:true}));
+  for (const name of ['collector.mjs','history.mjs','scan.mjs','steam-network.mjs']) {
+    await fs.copyFile(new URL(`../${name}`,import.meta.url),path.join(fixture,name));
+  }
+  const date = new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  const hour = Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
+  const target = new Date(`${date}T12:00:00Z`);
+  target.setUTCDate(target.getUTCDate() - (hour < 4 ? 2 : 1));
+  const reportDate = target.toISOString().slice(0,10);
+  const releasedText = `${target.getUTCDate()} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][target.getUTCMonth()]}, ${target.getUTCFullYear()}`;
+  const preload = `
+    const realTimeout = globalThis.setTimeout;
+    globalThis.setTimeout = (fn, ms, ...args) => realTimeout(fn, Math.min(ms, 1), ...args);
+    globalThis.fetch = async value => {
+      const url = new URL(value);
+      let payload;
+      if (url.pathname === '/search/results/') {
+        const demo = url.searchParams.get('category1') === '10';
+        const rows = Array.from({length:51}, (_, i) => '<a data-ds-appid="'+(i+1)+'"><span class="title">Game '+(i+1)+'</span><div class="search_released">${releasedText}</div></a>').join('');
+        payload = {success:1,total_count:demo?0:51,results_html:demo?'':rows};
+      } else if (url.pathname === '/api/appdetails') {
+        const id = url.searchParams.get('appids');
+        if (id === '26' && process.env.INTERRUPT_FIXTURE === 'true') process.exit(42);
+        payload = {[id]:{success:true,data:{type:'game',name:'Game '+id,is_free:true,genres:[{description:'独立'}],release_date:{date:'${releasedText}'}}}};
+      } else if (url.pathname.startsWith('/appreviews/')) {
+        payload = {query_summary:{total_reviews:10,total_positive:8}};
+      } else throw new Error('Unexpected fixture URL: '+value);
+      return {ok:true,json:async()=>payload};
+    };
+  `;
+  await fs.writeFile(path.join(fixture,'preload.mjs'),preload);
+  function collect(interrupt) {
+    return spawnSync(process.execPath,['--import','./preload.mjs','collector.mjs','--latest-only'],{
+      cwd:fixture,encoding:'utf8',timeout:10000,env:{...process.env,INTERRUPT_FIXTURE:String(interrupt)}
+    });
+  }
+  assert.equal(collect(true).status,42);
+  const partial = JSON.parse(await fs.readFile(path.join(fixture,'data/state.json'),'utf8'));
+  assert.equal(partial.reports[0].date,reportDate);
+  assert.equal(partial.reports[0].collection.state,'partial');
+  assert.equal(partial.reports[0].sections[0].games.length,25);
+  assert.equal(partial.reports[0].collection.pendingIds.length,26);
+  const resumed = collect(false);
+  assert.equal(resumed.status,0,resumed.stderr);
+  const complete = JSON.parse(await fs.readFile(path.join(fixture,'data/state.json'),'utf8'));
+  assert.equal(complete.reports[0].collection.state,'complete');
+  assert.equal(complete.reports[0].sections[0].games.length,51);
+  assert.equal(complete.reports[0].sections[1].games.length,0);
+});
