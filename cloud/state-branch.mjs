@@ -8,8 +8,8 @@ if (process.env.GITHUB_ACTIONS !== 'true') throw new Error('此脚本仅供 GitH
 const mode = process.argv[2];
 if (!['load', 'save'].includes(mode)) throw new Error('mode must be load or save');
 function git(args, input) {
-  const result = spawnSync('git', args, { cwd: root, input, encoding: 'utf8' });
-  if (result.status !== 0) throw new Error(`git ${args[0]} failed: ${result.stderr}`);
+  const result = spawnSync('git', args, { cwd: root, input, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  if (result.status !== 0) throw new Error(`git ${args[0]} failed: ${result.error?.message || result.stderr}`);
   return result.stdout.trim();
 }
 const files = ['state.json', 'status.json', 'detail-cache.json'];
