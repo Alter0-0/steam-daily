@@ -1,0 +1,11 @@
+{
+  "name": "steam-daily-brief",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "collect": "node collector.mjs",
+    "collect:serve": "node collector.mjs && node server.mjs"
+  }
+}
