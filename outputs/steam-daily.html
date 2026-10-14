@@ -139,6 +139,7 @@
         <select id="tagSelect" aria-label="按标签筛选"><option value="all">全部标签</option></select>
         <select id="sortSelect" aria-label="排序方式">
           <option value="rating">按好评率排序</option>
+          <option value="reviews">按评论量排序（最多优先）</option>
           <option value="time">按发售时间排序</option>
           <option value="price">按价格排序</option>
         </select>
@@ -251,6 +252,10 @@
         const haystack = `${game.name} ${game.en} ${game.studio} ${game.publisher}`.toLowerCase();
         return (!state.query || haystack.includes(state.query.toLowerCase())) && (state.tag === 'all' || game.tags.includes(state.tag)) && (!state.demoOnly || game.demo);
       }).sort((a, b) => {
+        if (state.sort === 'reviews') {
+          const count = game => Number(String(game.reviews ?? 0).replace(/[,，\s]/g, '')) || 0;
+          return count(b) - count(a) || (b.rating ?? -1) - (a.rating ?? -1);
+        }
         if (state.sort === 'time') return a.time.localeCompare(b.time);
         if (state.sort === 'price') return a.priceValue - b.priceValue;
         return b.rating - a.rating;
