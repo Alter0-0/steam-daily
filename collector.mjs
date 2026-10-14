@@ -133,11 +133,28 @@ async function collectDaily(state, reportDate, startedAt) {
     } catch (error) { errors.push(error.message); }
   }
   const games = []; const pendingItems = []; const baseline = previous?.collection?.baseline ?? !state.initialized;
+  async function saveProgress(remaining) {
+    const report = mergeDailyReport(previous, reportDate, games, {
+      generatedAt: startedAt, scanComplete: errors.length === 0,
+      pendingIds: remaining.map(item => item.appid), scanError: errors.join('；') || null
+    });
+    report.collection.pendingItems = remaining;
+    report.collection.baseline = baseline;
+    state.reports = [report, ...state.reports.filter(r => r.date !== reportDate)].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
+    if (games.length) state.initialized = true;
+    state.generatedAt = startedAt;
+    state.source = 'Steam public store API';
+    await writeJson(stateFile, state);
+  }
+  const queue = [...candidates.values()];
   // Serial requests plus shared spacing avoid bursts that trigger 429s.
-  for (const item of candidates.values()) {
+  for (const [index, item] of queue.entries()) {
     try {
       const result = await detailFor(item);
-      if (!result) continue;
+      if (!result) {
+        if ((index + 1) % 25 === 0) await saveProgress([...pendingItems, ...queue.slice(index + 1)]);
+        continue;
+      }
       const id = String(item.appid);
       const existing = state.firstSeen[id];
       const firstSeen = existing || reportDate;
@@ -150,18 +167,12 @@ async function collectDaily(state, reportDate, startedAt) {
       pendingItems.push(item);
       console.warn(`pending app ${item.appid}: ${error.message}`);
     }
+    if ((index + 1) % 25 === 0) {
+      await saveProgress([...pendingItems, ...queue.slice(index + 1)]);
+      console.log(`${reportDate}: checkpoint ${index + 1}/${queue.length}; ${games.length} successful records saved`);
+    }
   }
-  const report = mergeDailyReport(previous, reportDate, games, {
-    generatedAt: startedAt, scanComplete: errors.length === 0,
-    pendingIds: pendingItems.map(item => item.appid), scanError: errors.join('；') || null
-  });
-  report.collection.pendingItems = pendingItems;
-  report.collection.baseline = baseline;
-  state.reports = [report, ...state.reports.filter(r => r.date !== reportDate)].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
-  if (games.length) state.initialized = true;
-  state.generatedAt = startedAt;
-  state.source = 'Steam public store API';
-  await writeJson(stateFile, state);
+  await saveProgress(pendingItems);
   console.log(`${reportDate}: saved ${games.length} games; ${pendingItems.length} pending; scanComplete=${!errors.length}`);
 }
 async function main() {
