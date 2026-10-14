@@ -21,7 +21,10 @@ if (hour < 4) {
     console.log(`${target} 日报已完成，不重复访问 Steam`);
   } else {
     const startedAt = now.toISOString();
-    const result = spawnSync(process.execPath, ['collector.mjs'], { cwd: root, stdio: 'inherit', timeout: 35 * 60 * 1000, killSignal: 'SIGTERM' });
+    // Publish a new daily report before spending a separate run on old gaps.
+    const latestNeedsCollection = !latest || latest.recovery || latest.collection?.state === 'partial';
+    const args = ['collector.mjs', ...(latestNeedsCollection ? ['--latest-only'] : [])];
+    const result = spawnSync(process.execPath, args, { cwd: root, stdio: 'inherit', timeout: 35 * 60 * 1000, killSignal: 'SIGTERM' });
     if (result.error || result.signal) {
       await fs.mkdir(path.join(root, 'data'), { recursive: true });
       await fs.writeFile(path.join(root, 'data/status.json'), JSON.stringify({ state: 'error', startedAt, finishedAt: new Date().toISOString(), reportDate: target, message: '本轮达到运行时限或中断，已成功的请求已保存；下轮继续' }, null, 2));
