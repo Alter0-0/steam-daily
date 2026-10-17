@@ -3,7 +3,7 @@
     {
       "date": "2026-10-17",
       "label": "部分完成",
-      "generatedAt": "2026-10-17T21:56:22.695Z",
+      "generatedAt": "2026-10-17T22:22:53.999Z",
       "collection": {
         "state": "partial",
         "scanComplete": true,
@@ -3781,6 +3781,59 @@
               "isNew": true,
               "source": "demo",
               "storeUrl": "https://store.steampowered.com/app/5087010/"
+            },
+            {
+              "id": 5288950,
+              "name": "CaddiShack Demo",
+              "en": "CaddiShack Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5288950/3dccdd36895056fcb7b4abb2465b340266958451/header.jpg?t=1790181222",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略",
+                "免费开玩"
+              ],
+              "studio": "Splashy Inc.",
+              "publisher": "Splashy Inc.",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5288950/"
+            },
+            {
+              "id": 5378900,
+              "name": "Witchkeeping Demo",
+              "en": "Witchkeeping Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5378900/a75ac827f39d743cb712e85e1e06e6ceaec37409/header.jpg?t=1792063715",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "即将推出",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟"
+              ],
+              "studio": "Longtail Worlds",
+              "publisher": "Longtail Worlds",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5378900/"
             }
           ]
         }
@@ -80066,6 +80119,7 @@
     "5288610": "2026-10-16",
     "5288660": "2026-10-01",
     "5288860": "2026-09-30",
+    "5288950": "2026-10-17",
     "5289080": "2026-10-05",
     "5289400": "2026-10-05",
     "5289490": "2026-10-15",
@@ -80627,6 +80681,7 @@
     "5378490": "2026-10-15",
     "5378560": "2026-10-14",
     "5378700": "2026-10-17",
+    "5378900": "2026-10-17",
     "5379400": "2026-10-16",
     "5379420": "2026-10-14",
     "5380020": "2026-10-13",
@@ -80777,6 +80832,6 @@
     "5420240": "2026-10-17"
   },
   "initialized": true,
-  "generatedAt": "2026-10-17T21:56:22.695Z",
+  "generatedAt": "2026-10-17T22:22:53.999Z",
   "source": "Steam public store API"
 }
