@@ -1,6 +1,3792 @@
 {
   "reports": [
     {
+      "date": "2026-10-17",
+      "label": "部分完成",
+      "generatedAt": "2026-10-17T21:56:22.695Z",
+      "collection": {
+        "state": "partial",
+        "scanComplete": true,
+        "pendingIds": [
+          5175110
+        ],
+        "scanError": null,
+        "pendingItems": [
+          {
+            "appid": 5175110,
+            "searchName": "Dirty Deal Demo",
+            "releasedText": "17 Oct, 2026",
+            "releaseDate": "2026-10-17",
+            "sources": [
+              "demo"
+            ]
+          }
+        ],
+        "baseline": false
+      },
+      "sections": [
+        {
+          "key": "release",
+          "title": "今日发售",
+          "tone": "orange",
+          "games": [
+            {
+              "id": 5285370,
+              "name": "RetroHub",
+              "en": "RetroHub",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5285370/1b9ab17e6d2be889d795c66cc8f38aa84b73080d/header.jpg?t=1792269697",
+              "price": "¥ 54.00",
+              "priceValue": 54,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "Réseau Inter-Système inc.",
+              "publisher": "Réseau Inter-Système inc.",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5285370/"
+            },
+            {
+              "id": 4201350,
+              "name": "Xolotl's Escape",
+              "en": "Xolotl's Escape",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4201350/e4f6e5e59b032b2dfc32973fdeb0920dec863f9b/header.jpg?t=1792269427",
+              "price": "¥ 42.00",
+              "priceValue": 42,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立",
+                "抢先体验"
+              ],
+              "studio": "For No Raisin",
+              "publisher": "For No Raisin",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/4201350/"
+            },
+            {
+              "id": 4570070,
+              "name": "First Principles: A Calculus Platformer",
+              "en": "First Principles: A Calculus Platformer",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570070/a8470432c68feec1a2034b508973b8a24ea865cc/header.jpg?t=1792267393",
+              "price": "¥ 18.70",
+              "priceValue": 18.7,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "John Wonmo Seong, GameGenesis",
+              "publisher": "Orchestr Aerospace Inc.",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/4570070/"
+            },
+            {
+              "id": 5322010,
+              "name": "Flockway",
+              "en": "Flockway",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5322010/d01964e87109651de49e9a4af266cf505258a117/header.jpg?t=1792266784",
+              "price": "¥ 182.00",
+              "priceValue": 182,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲"
+              ],
+              "studio": "Flockway Studio",
+              "publisher": "Flockway Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5322010/"
+            },
+            {
+              "id": 3441620,
+              "name": "Retro Racers",
+              "en": "Retro Racers",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3441620/header.jpg?t=1792261583",
+              "price": "¥ 16.20",
+              "priceValue": 16.2,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "竞速",
+                "体育"
+              ],
+              "studio": "Kavari Studio",
+              "publisher": "Revolt Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3441620/"
+            },
+            {
+              "id": 5247230,
+              "name": "Odyssey Wars",
+              "en": "Odyssey Wars",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247230/1f60c4b7f2e14396ea1d5297fffd9b666ae8e2f5/header.jpg?t=1792259537",
+              "price": "¥ 57.00",
+              "priceValue": 57,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "独立",
+                "模拟",
+                "策略",
+                "抢先体验"
+              ],
+              "studio": "Doidge Interactive",
+              "publisher": "Doidge Interactive",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5247230/"
+            },
+            {
+              "id": 5251110,
+              "name": "touhou AICHATRPG",
+              "en": "touhou AICHATRPG",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5251110/d33a02159d9839b105813fd92406ee891b52bdd6/header.jpg?t=1792259326",
+              "price": "¥ 21.71",
+              "priceValue": 21.71,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "角色扮演"
+              ],
+              "studio": "1.5次創作",
+              "publisher": "1.5次創作",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5251110/"
+            },
+            {
+              "id": 4597500,
+              "name": "Cook with Card",
+              "en": "Cook with Card",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4597500/cec01e53ce6d49a84a52f9669ddac9d7e84a8487/header.jpg?t=1792254568",
+              "price": "¥ 19.80",
+              "priceValue": 19.8,
+              "rating": 100,
+              "reviews": "4",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Genco Interactive",
+              "publisher": "Genco Interactive",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/4597500/"
+            },
+            {
+              "id": 2204760,
+              "name": "Cat Life",
+              "en": "Cat Life",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2204760/f0bb6053f7c9ab4a196d42390138952983f8e2b5/header.jpg?t=1792254244",
+              "price": "¥ 28.80",
+              "priceValue": 28.8,
+              "rating": 73,
+              "reviews": "15",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "休闲",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "RedMoon Studio",
+              "publisher": "RedMoon Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/2204760/"
+            },
+            {
+              "id": 5260570,
+              "name": "Headbutt Dino",
+              "en": "Headbutt Dino",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5260570/767bd46bc3f0d3d217dcc136d770beeaef1d0f35/header.jpg?t=1792253174",
+              "price": "¥ 22.00",
+              "priceValue": 22,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立"
+              ],
+              "studio": "paranh",
+              "publisher": "paranh",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5260570/"
+            },
+            {
+              "id": 5266650,
+              "name": "Winter Creatures 2",
+              "en": "Winter Creatures 2",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5266650/bbf88b9e9dbcc50462bbf8d60a3811a425c690d7/header.jpg?t=1792251847",
+              "price": "¥ 19.20",
+              "priceValue": 19.2,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "Bell Studio",
+              "publisher": "Bell Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5266650/"
+            },
+            {
+              "id": 5323960,
+              "name": "Hero Football Manager",
+              "en": "Hero Football Manager",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5323960/871f74f243d3f63a17724a239ef3ca52b1cda736/header.jpg?t=1792251559",
+              "price": "¥ 33.00",
+              "priceValue": 33,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟",
+                "体育",
+                "策略"
+              ],
+              "studio": "Joseph Vu",
+              "publisher": "Joseph Vu",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5323960/"
+            },
+            {
+              "id": 3587820,
+              "name": "Double Envelopment",
+              "en": "Double Envelopment",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3587820/f119da8b9ad2e594b23cb85be52c3d4dc6077075/header.jpg?t=1792249708",
+              "price": "¥ 31.50",
+              "priceValue": 31.5,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "独立",
+                "模拟",
+                "策略",
+                "抢先体验"
+              ],
+              "studio": "quinntheceo ",
+              "publisher": "quinntheceo",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3587820/"
+            },
+            {
+              "id": 3576670,
+              "name": "PATIENT ZERO",
+              "en": "PATIENT ZERO",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3576670/67e6a02a07979445c4f9cee28037389a080ab4b5/header.jpg?t=1792245197",
+              "price": "¥ 17.60",
+              "priceValue": 17.6,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立",
+                "策略"
+              ],
+              "studio": "CHOKECLOUD",
+              "publisher": "CHOKECLOUD",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3576670/"
+            },
+            {
+              "id": 5280170,
+              "name": "AWAITING YOUR HORDERS",
+              "en": "AWAITING YOUR HORDERS",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5280170/2eb09890ef423da737338e6427440746dbac92c4/header.jpg?t=1792244587",
+              "price": "¥ 25.20",
+              "priceValue": 25.2,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "独立",
+                "策略"
+              ],
+              "studio": "VOXELMANA",
+              "publisher": "VOXELMANA",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5280170/"
+            },
+            {
+              "id": 3703550,
+              "name": "Astrowar",
+              "en": "Astrowar",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3703550/24f37f775f5a52068b1aa353a04b25b4b0dbd0da/header.jpg?t=1792242885",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "动作",
+                "独立",
+                "免费开玩",
+                "抢先体验"
+              ],
+              "studio": "Riptide Studio",
+              "publisher": "Riptide Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3703550/"
+            },
+            {
+              "id": 5026810,
+              "name": "Fresh Stacker",
+              "en": "Fresh Stacker",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026810/59b03086abb68551790a36dd7cb3384d3e68a869/header.jpg?t=1792241310",
+              "price": "¥ 21.71",
+              "priceValue": 21.71,
+              "rating": 50,
+              "reviews": "2",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "Kenechukwu Ozoemene",
+              "publisher": "Kc Tech Studios",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5026810/"
+            },
+            {
+              "id": 1979510,
+              "name": "Madcar Multiplayer",
+              "en": "Madcar Multiplayer",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1979510/77f9d220c1d8b7f32999c52710ba1ccc8565fe87/header.jpg?t=1792239954",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立",
+                "大型多人在线",
+                "竞速",
+                "模拟",
+                "体育",
+                "免费开玩"
+              ],
+              "studio": "forplayers.studio",
+              "publisher": "forplayers.studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/1979510/"
+            },
+            {
+              "id": 5114130,
+              "name": "Beta Earth: Sovereignty Next",
+              "en": "Beta Earth: Sovereignty Next",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114130/b85ada6bbf54c5c0bc3c598f96be6df3d83345b7/header.jpg?t=1792237035",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "冒险",
+                "独立",
+                "角色扮演",
+                "免费开玩"
+              ],
+              "studio": "Gateway Information Group LLC",
+              "publisher": "Gateway Information Group LLC",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5114130/"
+            },
+            {
+              "id": 5267570,
+              "name": "Needle Hunt",
+              "en": "Needle Hunt",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5267570/9d72b8f28e2786f1546976727d1e47c13e2586e3/header.jpg?t=1792233206",
+              "price": "¥ 4.80",
+              "priceValue": 4.8,
+              "rating": 100,
+              "reviews": "4",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "抢先体验"
+              ],
+              "studio": "Rantey",
+              "publisher": "Rantey, Pakumi",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5267570/"
+            },
+            {
+              "id": 3145070,
+              "name": "Gangster Clicker",
+              "en": "Gangster Clicker",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3145070/5103e060f9c49fe53a8a26a6d874dba48f0f06e0/header.jpg?t=1792257181",
+              "price": "¥ 12.60",
+              "priceValue": 12.6,
+              "rating": 0,
+              "reviews": "3",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "PolyLS",
+              "publisher": "PolyLS",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3145070/"
+            },
+            {
+              "id": 3894800,
+              "name": "Leafman",
+              "en": "Leafman",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3894800/5ed242929f758df42ab15ee5a0e0c4fdf703c469/header.jpg?t=1792227656",
+              "price": "¥ 33.00",
+              "priceValue": 33,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立",
+                "抢先体验"
+              ],
+              "studio": "Wha Games",
+              "publisher": "Wha Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3894800/"
+            },
+            {
+              "id": 5262700,
+              "name": "仙道奇谭",
+              "en": "仙道奇谭",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262700/aff51a26c14f0a60a4e30235a0bbee4ca441fef6/header_schinese.jpg?t=1792225902",
+              "price": "¥ 10.80",
+              "priceValue": 10.8,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "独立",
+                "策略"
+              ],
+              "studio": "Lumina Studio ",
+              "publisher": "Lumina Studio ",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5262700/"
+            },
+            {
+              "id": 5319460,
+              "name": "佩恩罗格",
+              "en": "佩恩罗格",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5319460/eec24b46e59b25624ef6ef9f5e6a2f5920982808/header.jpg?t=1792225882",
+              "price": "¥ 19.80",
+              "priceValue": 19.8,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "角色扮演",
+                "策略"
+              ],
+              "studio": "Magnos Games",
+              "publisher": "Magnos Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5319460/"
+            },
+            {
+              "id": 5282110,
+              "name": "中国式高考ChineseGaokao‌",
+              "en": "中国式高考ChineseGaokao‌",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5282110/94b7e9ca879a5ee4f11f72a18a94a70b7d549897/header.jpg?t=1792223761",
+              "price": "¥ 7.53",
+              "priceValue": 7.53,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "角色扮演",
+                "模拟"
+              ],
+              "studio": "泽宇众达, YangShuai",
+              "publisher": "YangShuai, 泽宇众达",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5282110/"
+            },
+            {
+              "id": 5178830,
+              "name": "Tower Survivor - Paper Invasion",
+              "en": "Tower Survivor - Paper Invasion",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5178830/e03eeada328e032a2f89d2d5fdf7a931360bfc3f/header.jpg?t=1792225796",
+              "price": "¥ 18.00",
+              "priceValue": 18,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "策略"
+              ],
+              "studio": "JE Games",
+              "publisher": "JE Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5178830/"
+            },
+            {
+              "id": 5308120,
+              "name": "Bathyscaphe",
+              "en": "Bathyscaphe",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5308120/c39ee17e4f28622edcb854286a368145ad055e87/header.jpg?t=1792222686",
+              "price": "¥ 203.40",
+              "priceValue": 203.4,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "冒险",
+                "休闲",
+                "独立"
+              ],
+              "studio": "WaterGamers",
+              "publisher": "WaterGamers",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5308120/"
+            },
+            {
+              "id": 5341750,
+              "name": "Looks Like It Fits",
+              "en": "Looks Like It Fits",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5341750/67ef1bc51b032ce82499fbecc556d35855db82cb/header_schinese.jpg?t=1792222235",
+              "price": "¥ 11.00",
+              "priceValue": 11,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "chernobrovin",
+              "publisher": "chernobrovin",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5341750/"
+            },
+            {
+              "id": 5080810,
+              "name": "Yatai 8",
+              "en": "Yatai 8",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080810/9fcdb6d86f755a5495ddd4557c8102f37cdee593/header.jpg?t=1792220524",
+              "price": "¥ 18.00",
+              "priceValue": 18,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "独立",
+                "模拟"
+              ],
+              "studio": "Tamago Games",
+              "publisher": "Tamago Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5080810/"
+            }
+          ]
+        },
+        {
+          "key": "new-page",
+          "title": "新发现商品页",
+          "tone": "blue",
+          "games": [
+            {
+              "id": 5285370,
+              "name": "RetroHub",
+              "en": "RetroHub",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5285370/1b9ab17e6d2be889d795c66cc8f38aa84b73080d/header.jpg?t=1792269697",
+              "price": "¥ 54.00",
+              "priceValue": 54,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "Réseau Inter-Système inc.",
+              "publisher": "Réseau Inter-Système inc.",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5285370/"
+            },
+            {
+              "id": 4201350,
+              "name": "Xolotl's Escape",
+              "en": "Xolotl's Escape",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4201350/e4f6e5e59b032b2dfc32973fdeb0920dec863f9b/header.jpg?t=1792269427",
+              "price": "¥ 42.00",
+              "priceValue": 42,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立",
+                "抢先体验"
+              ],
+              "studio": "For No Raisin",
+              "publisher": "For No Raisin",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/4201350/"
+            },
+            {
+              "id": 4570070,
+              "name": "First Principles: A Calculus Platformer",
+              "en": "First Principles: A Calculus Platformer",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4570070/a8470432c68feec1a2034b508973b8a24ea865cc/header.jpg?t=1792267393",
+              "price": "¥ 18.70",
+              "priceValue": 18.7,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "John Wonmo Seong, GameGenesis",
+              "publisher": "Orchestr Aerospace Inc.",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/4570070/"
+            },
+            {
+              "id": 5322010,
+              "name": "Flockway",
+              "en": "Flockway",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5322010/d01964e87109651de49e9a4af266cf505258a117/header.jpg?t=1792266784",
+              "price": "¥ 182.00",
+              "priceValue": 182,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲"
+              ],
+              "studio": "Flockway Studio",
+              "publisher": "Flockway Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5322010/"
+            },
+            {
+              "id": 3441620,
+              "name": "Retro Racers",
+              "en": "Retro Racers",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3441620/header.jpg?t=1792261583",
+              "price": "¥ 16.20",
+              "priceValue": 16.2,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "竞速",
+                "体育"
+              ],
+              "studio": "Kavari Studio",
+              "publisher": "Revolt Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3441620/"
+            },
+            {
+              "id": 5247230,
+              "name": "Odyssey Wars",
+              "en": "Odyssey Wars",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5247230/1f60c4b7f2e14396ea1d5297fffd9b666ae8e2f5/header.jpg?t=1792259537",
+              "price": "¥ 57.00",
+              "priceValue": 57,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "独立",
+                "模拟",
+                "策略",
+                "抢先体验"
+              ],
+              "studio": "Doidge Interactive",
+              "publisher": "Doidge Interactive",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5247230/"
+            },
+            {
+              "id": 5251110,
+              "name": "touhou AICHATRPG",
+              "en": "touhou AICHATRPG",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5251110/d33a02159d9839b105813fd92406ee891b52bdd6/header.jpg?t=1792259326",
+              "price": "¥ 21.71",
+              "priceValue": 21.71,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "角色扮演"
+              ],
+              "studio": "1.5次創作",
+              "publisher": "1.5次創作",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5251110/"
+            },
+            {
+              "id": 4597500,
+              "name": "Cook with Card",
+              "en": "Cook with Card",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4597500/cec01e53ce6d49a84a52f9669ddac9d7e84a8487/header.jpg?t=1792254568",
+              "price": "¥ 19.80",
+              "priceValue": 19.8,
+              "rating": 100,
+              "reviews": "4",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Genco Interactive",
+              "publisher": "Genco Interactive",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/4597500/"
+            },
+            {
+              "id": 2204760,
+              "name": "Cat Life",
+              "en": "Cat Life",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2204760/f0bb6053f7c9ab4a196d42390138952983f8e2b5/header.jpg?t=1792254244",
+              "price": "¥ 28.80",
+              "priceValue": 28.8,
+              "rating": 73,
+              "reviews": "15",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "休闲",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "RedMoon Studio",
+              "publisher": "RedMoon Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/2204760/"
+            },
+            {
+              "id": 5260570,
+              "name": "Headbutt Dino",
+              "en": "Headbutt Dino",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5260570/767bd46bc3f0d3d217dcc136d770beeaef1d0f35/header.jpg?t=1792253174",
+              "price": "¥ 22.00",
+              "priceValue": 22,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立"
+              ],
+              "studio": "paranh",
+              "publisher": "paranh",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5260570/"
+            },
+            {
+              "id": 5266650,
+              "name": "Winter Creatures 2",
+              "en": "Winter Creatures 2",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5266650/bbf88b9e9dbcc50462bbf8d60a3811a425c690d7/header.jpg?t=1792251847",
+              "price": "¥ 19.20",
+              "priceValue": 19.2,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "Bell Studio",
+              "publisher": "Bell Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5266650/"
+            },
+            {
+              "id": 5323960,
+              "name": "Hero Football Manager",
+              "en": "Hero Football Manager",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5323960/871f74f243d3f63a17724a239ef3ca52b1cda736/header.jpg?t=1792251559",
+              "price": "¥ 33.00",
+              "priceValue": 33,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟",
+                "体育",
+                "策略"
+              ],
+              "studio": "Joseph Vu",
+              "publisher": "Joseph Vu",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5323960/"
+            },
+            {
+              "id": 3587820,
+              "name": "Double Envelopment",
+              "en": "Double Envelopment",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3587820/f119da8b9ad2e594b23cb85be52c3d4dc6077075/header.jpg?t=1792249708",
+              "price": "¥ 31.50",
+              "priceValue": 31.5,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "独立",
+                "模拟",
+                "策略",
+                "抢先体验"
+              ],
+              "studio": "quinntheceo ",
+              "publisher": "quinntheceo",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3587820/"
+            },
+            {
+              "id": 3576670,
+              "name": "PATIENT ZERO",
+              "en": "PATIENT ZERO",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3576670/67e6a02a07979445c4f9cee28037389a080ab4b5/header.jpg?t=1792245197",
+              "price": "¥ 17.60",
+              "priceValue": 17.6,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立",
+                "策略"
+              ],
+              "studio": "CHOKECLOUD",
+              "publisher": "CHOKECLOUD",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3576670/"
+            },
+            {
+              "id": 5280170,
+              "name": "AWAITING YOUR HORDERS",
+              "en": "AWAITING YOUR HORDERS",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5280170/2eb09890ef423da737338e6427440746dbac92c4/header.jpg?t=1792244587",
+              "price": "¥ 25.20",
+              "priceValue": 25.2,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "独立",
+                "策略"
+              ],
+              "studio": "VOXELMANA",
+              "publisher": "VOXELMANA",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5280170/"
+            },
+            {
+              "id": 3703550,
+              "name": "Astrowar",
+              "en": "Astrowar",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3703550/24f37f775f5a52068b1aa353a04b25b4b0dbd0da/header.jpg?t=1792242885",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "动作",
+                "独立",
+                "免费开玩",
+                "抢先体验"
+              ],
+              "studio": "Riptide Studio",
+              "publisher": "Riptide Studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3703550/"
+            },
+            {
+              "id": 5026810,
+              "name": "Fresh Stacker",
+              "en": "Fresh Stacker",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5026810/59b03086abb68551790a36dd7cb3384d3e68a869/header.jpg?t=1792241310",
+              "price": "¥ 21.71",
+              "priceValue": 21.71,
+              "rating": 50,
+              "reviews": "2",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "Kenechukwu Ozoemene",
+              "publisher": "Kc Tech Studios",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5026810/"
+            },
+            {
+              "id": 1979510,
+              "name": "Madcar Multiplayer",
+              "en": "Madcar Multiplayer",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1979510/77f9d220c1d8b7f32999c52710ba1ccc8565fe87/header.jpg?t=1792239954",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立",
+                "大型多人在线",
+                "竞速",
+                "模拟",
+                "体育",
+                "免费开玩"
+              ],
+              "studio": "forplayers.studio",
+              "publisher": "forplayers.studio",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/1979510/"
+            },
+            {
+              "id": 5114130,
+              "name": "Beta Earth: Sovereignty Next",
+              "en": "Beta Earth: Sovereignty Next",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5114130/b85ada6bbf54c5c0bc3c598f96be6df3d83345b7/header.jpg?t=1792237035",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "冒险",
+                "独立",
+                "角色扮演",
+                "免费开玩"
+              ],
+              "studio": "Gateway Information Group LLC",
+              "publisher": "Gateway Information Group LLC",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5114130/"
+            },
+            {
+              "id": 5267570,
+              "name": "Needle Hunt",
+              "en": "Needle Hunt",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5267570/9d72b8f28e2786f1546976727d1e47c13e2586e3/header.jpg?t=1792233206",
+              "price": "¥ 4.80",
+              "priceValue": 4.8,
+              "rating": 100,
+              "reviews": "4",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "抢先体验"
+              ],
+              "studio": "Rantey",
+              "publisher": "Rantey, Pakumi",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5267570/"
+            },
+            {
+              "id": 3145070,
+              "name": "Gangster Clicker",
+              "en": "Gangster Clicker",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3145070/5103e060f9c49fe53a8a26a6d874dba48f0f06e0/header.jpg?t=1792257181",
+              "price": "¥ 12.60",
+              "priceValue": 12.6,
+              "rating": 0,
+              "reviews": "3",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "PolyLS",
+              "publisher": "PolyLS",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3145070/"
+            },
+            {
+              "id": 3894800,
+              "name": "Leafman",
+              "en": "Leafman",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3894800/5ed242929f758df42ab15ee5a0e0c4fdf703c469/header.jpg?t=1792227656",
+              "price": "¥ 33.00",
+              "priceValue": 33,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "抢先体验"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立",
+                "抢先体验"
+              ],
+              "studio": "Wha Games",
+              "publisher": "Wha Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/3894800/"
+            },
+            {
+              "id": 5262700,
+              "name": "仙道奇谭",
+              "en": "仙道奇谭",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262700/aff51a26c14f0a60a4e30235a0bbee4ca441fef6/header_schinese.jpg?t=1792225902",
+              "price": "¥ 10.80",
+              "priceValue": 10.8,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "独立",
+                "策略"
+              ],
+              "studio": "Lumina Studio ",
+              "publisher": "Lumina Studio ",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5262700/"
+            },
+            {
+              "id": 5319460,
+              "name": "佩恩罗格",
+              "en": "佩恩罗格",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5319460/eec24b46e59b25624ef6ef9f5e6a2f5920982808/header.jpg?t=1792225882",
+              "price": "¥ 19.80",
+              "priceValue": 19.8,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "角色扮演",
+                "策略"
+              ],
+              "studio": "Magnos Games",
+              "publisher": "Magnos Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5319460/"
+            },
+            {
+              "id": 5282110,
+              "name": "中国式高考ChineseGaokao‌",
+              "en": "中国式高考ChineseGaokao‌",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5282110/94b7e9ca879a5ee4f11f72a18a94a70b7d549897/header.jpg?t=1792223761",
+              "price": "¥ 7.53",
+              "priceValue": 7.53,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "角色扮演",
+                "模拟"
+              ],
+              "studio": "泽宇众达, YangShuai",
+              "publisher": "YangShuai, 泽宇众达",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5282110/"
+            },
+            {
+              "id": 5178830,
+              "name": "Tower Survivor - Paper Invasion",
+              "en": "Tower Survivor - Paper Invasion",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5178830/e03eeada328e032a2f89d2d5fdf7a931360bfc3f/header.jpg?t=1792225796",
+              "price": "¥ 18.00",
+              "priceValue": 18,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "策略"
+              ],
+              "studio": "JE Games",
+              "publisher": "JE Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5178830/"
+            },
+            {
+              "id": 5308120,
+              "name": "Bathyscaphe",
+              "en": "Bathyscaphe",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5308120/c39ee17e4f28622edcb854286a368145ad055e87/header.jpg?t=1792222686",
+              "price": "¥ 203.40",
+              "priceValue": 203.4,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "冒险",
+                "休闲",
+                "独立"
+              ],
+              "studio": "WaterGamers",
+              "publisher": "WaterGamers",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5308120/"
+            },
+            {
+              "id": 5341750,
+              "name": "Looks Like It Fits",
+              "en": "Looks Like It Fits",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5341750/67ef1bc51b032ce82499fbecc556d35855db82cb/header_schinese.jpg?t=1792222235",
+              "price": "¥ 11.00",
+              "priceValue": 11,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "chernobrovin",
+              "publisher": "chernobrovin",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5341750/"
+            },
+            {
+              "id": 5080810,
+              "name": "Yatai 8",
+              "en": "Yatai 8",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5080810/9fcdb6d86f755a5495ddd4557c8102f37cdee593/header.jpg?t=1792220524",
+              "price": "¥ 18.00",
+              "priceValue": 18,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "正式版上线"
+              ],
+              "tags": [
+                "独立",
+                "模拟"
+              ],
+              "studio": "Tamago Games",
+              "publisher": "Tamago Games",
+              "demo": false,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "games",
+              "storeUrl": "https://store.steampowered.com/app/5080810/"
+            }
+          ]
+        },
+        {
+          "key": "demo",
+          "title": "新出现 Demo",
+          "tone": "mint",
+          "games": [
+            {
+              "id": 5233300,
+              "name": "All the Promised Burn - An Yssaia Game Demo",
+              "en": "All the Promised Burn - An Yssaia Game Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5233300/93b61b8689a163fb021e40d20b49d1a2cf2d78ba/header.jpg?t=1792272766",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "Amaiguri",
+              "publisher": "Amaiguri",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5233300/"
+            },
+            {
+              "id": 5297180,
+              "name": "Equilibrium Co Demo",
+              "en": "Equilibrium Co Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5297180/84a421097d9a6675b4353fe7ff183268ceb5a4fd/header.jpg?t=1792272300",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟",
+                "策略"
+              ],
+              "studio": "Andrija Lazarevic",
+              "publisher": "Andrija Lazarevic",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5297180/"
+            },
+            {
+              "id": 5378700,
+              "name": "SuperStore Simulator Demo",
+              "en": "SuperStore Simulator Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5378700/357bfc026df2b4173008caf77e1ded1112120a01/header.jpg?t=1792076556",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "即将推出",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟"
+              ],
+              "studio": "Berleus Studio",
+              "publisher": "Berleus Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5378700/"
+            },
+            {
+              "id": 5358220,
+              "name": "FEED MACHINE Demo",
+              "en": "FEED MACHINE Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5358220/e292ee9aded869a73e892e3e255feb9c06a903af/header.jpg?t=1792269929",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Mushknuckles",
+              "publisher": "Antonym Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5358220/"
+            },
+            {
+              "id": 5304730,
+              "name": "Swap Bots Demo",
+              "en": "Swap Bots Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5304730/28be0939f42fb3eb7b80129f69b4d88098ebaded/header.jpg?t=1792269022",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "策略"
+              ],
+              "studio": "Hurricane Games",
+              "publisher": "Hurricane Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5304730/"
+            },
+            {
+              "id": 5350780,
+              "name": "I hate progress bars Demo",
+              "en": "I hate progress bars Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5350780/8cfa89509cf59f80f9f3f77256142ac6f71502b2/header.jpg?t=1792266801",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "模拟"
+              ],
+              "studio": "Sonce Games",
+              "publisher": "Sonce Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5350780/"
+            },
+            {
+              "id": 5402700,
+              "name": "CARNOR CITY Demo",
+              "en": "CARNOR CITY Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5402700/7cfe1416d2faadb9f30c7c2e26bd32bd65b44bfc/header.jpg?t=1792266485",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "模拟"
+              ],
+              "studio": "mkValentine",
+              "publisher": "mkValentine",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5402700/"
+            },
+            {
+              "id": 5371370,
+              "name": "Batelus Demo",
+              "en": "Batelus Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5371370/0c116a36fe586a7068657e17b708c4436f5dceca/header.jpg?t=1792266254",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立",
+                "策略"
+              ],
+              "studio": "Botan",
+              "publisher": "Botan",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5371370/"
+            },
+            {
+              "id": 5420240,
+              "name": "Lumenfall Demo",
+              "en": "Lumenfall Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5420240/df06a5af6393c5428ee550674151f1ae2cd5f739/header.jpg?t=1792265554",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "休闲",
+                "独立",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Prisma Studio",
+              "publisher": "Prisma Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5420240/"
+            },
+            {
+              "id": 5414490,
+              "name": "Hunt The Ducks Demo",
+              "en": "Hunt The Ducks Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5414490/c8b3a8349ca93135127314b093bfa9dfb8702d08/header.jpg?t=1792264821",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "Hypnos Games",
+              "publisher": "Hypnos Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5414490/"
+            },
+            {
+              "id": 5368740,
+              "name": "DUE TONIGHT Demo",
+              "en": "DUE TONIGHT Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5368740/b69097c03a3ffb46a1fae28f4a488e6c68f985a6/header.jpg?t=1792270902",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "独立",
+                "角色扮演",
+                "策略"
+              ],
+              "studio": "MONADRA",
+              "publisher": "MONADRA",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5368740/"
+            },
+            {
+              "id": 5073520,
+              "name": "Brothers Demo",
+              "en": "Brothers Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5073520/024403724078211b5b3c94aac97fbe8eb0db0d14/header.jpg?t=1792263356",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "Dalton Brady",
+              "publisher": "Dalton Brady",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5073520/"
+            },
+            {
+              "id": 5096620,
+              "name": "Technologia Demo",
+              "en": "Technologia Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096620/a0b13f72b18a8293335650b90fef326b80a85407/header.jpg?t=1792262443",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Ihor Zevako",
+              "publisher": "Ihor Zevako",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5096620/"
+            },
+            {
+              "id": 5386320,
+              "name": "Dollastro 52 Demo",
+              "en": "Dollastro 52 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5386320/a82c651321a3405f5cab65199282b9c1fee832a0/header.jpg?t=1792262695",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立",
+                "策略"
+              ],
+              "studio": "Small Slice Studio",
+              "publisher": "Small Slice Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5386320/"
+            },
+            {
+              "id": 5329640,
+              "name": "Steel Company Demo",
+              "en": "Steel Company Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5329640/9ecdb1d88ebf7ecf2e502ebd7002b43d6383366e/header.jpg?t=1792260319",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "策略"
+              ],
+              "studio": "Gyr Software",
+              "publisher": "Gyr Software",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5329640/"
+            },
+            {
+              "id": 5387780,
+              "name": "La Muraille 1806 Demo",
+              "en": "La Muraille 1806 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5387780/e5f9dc631de3fbc4e8fa78e9813273755b61f886/header.jpg?t=1792259736",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "Tea & Cake Games",
+              "publisher": "Tea & Cake Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5387780/"
+            },
+            {
+              "id": 5382370,
+              "name": "Finding Fossils Demo",
+              "en": "Finding Fossils Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5382370/5b1293cb54adab86b449381628d6ef1106a09ffb/header.jpg?t=1792259448",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "休闲",
+                "模拟"
+              ],
+              "studio": "Rens de Waard",
+              "publisher": "TheRensGames",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5382370/"
+            },
+            {
+              "id": 5198410,
+              "name": "Chaos Cinema Demo",
+              "en": "Chaos Cinema Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5198410/e2cd788282bc647cda1c231076428ba1099cb413/header.jpg?t=1792257773",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟"
+              ],
+              "studio": "Dexsolutions ",
+              "publisher": "Dexsolutions ",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5198410/"
+            },
+            {
+              "id": 5408050,
+              "name": "Defend The Nest Demo",
+              "en": "Defend The Nest Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5408050/253f57a484cc7b649341e79ab29108578b0544fb/header.jpg?t=1792257316",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "策略"
+              ],
+              "studio": "Voidville Studios",
+              "publisher": "Voidville Studios",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5408050/"
+            },
+            {
+              "id": 5403520,
+              "name": "Arcade & Motel Simulator Together Demo",
+              "en": "Arcade & Motel Simulator Together Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5403520/c29ad3bca1753b075127c83e9c0ee836ff6b38e4/header.jpg?t=1792257223",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Nons Games",
+              "publisher": "Nons Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5403520/"
+            },
+            {
+              "id": 5413090,
+              "name": "Cute Kitty WAR Demo",
+              "en": "Cute Kitty WAR Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5413090/c03174578d4519b838781a36092aabe0b16450ab/header.jpg?t=1792256545",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "Sambean",
+              "publisher": "Sambean",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5413090/"
+            },
+            {
+              "id": 5077240,
+              "name": "NyanDrop Demo",
+              "en": "NyanDrop Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5077240/9010d7a954bb3b8abffb16e6ebf48c6942ea97bd/header.jpg?t=1792256313",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "SQOOL",
+              "publisher": "SQOOL",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5077240/"
+            },
+            {
+              "id": 5258380,
+              "name": "EXAM WATCH! Demo",
+              "en": "EXAM WATCH! Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5258380/09a3d803bcb8d552efe2e2e2b60a78e63b61748e/header.jpg?t=1792255515",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立",
+                "模拟",
+                "策略"
+              ],
+              "studio": "PRC Games",
+              "publisher": "PRC Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5258380/"
+            },
+            {
+              "id": 5394840,
+              "name": "Rock Paper Viking Demo",
+              "en": "Rock Paper Viking Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5394840/a21e7ff76b8795dc886d9e6d607336d1332f5cd3/header.jpg?t=1792267314",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "休闲"
+              ],
+              "studio": "Gunnar Krieger",
+              "publisher": "Gunnar Krieger",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5394840/"
+            },
+            {
+              "id": 5377100,
+              "name": "Still Waters Demo",
+              "en": "Still Waters Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5377100/07c12c43fa04e017e709819c27017a63167d6510/header.jpg?t=1792255354",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Pocket Leviathan",
+              "publisher": "Pocket Leviathan",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5377100/"
+            },
+            {
+              "id": 5355130,
+              "name": "Croissant Simulator Demo",
+              "en": "Croissant Simulator Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5355130/264ddb7995382aa54555daeeed77a03ccf0fd26e/header.jpg?t=1792254942",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "C51 Games",
+              "publisher": "C51 Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5355130/"
+            },
+            {
+              "id": 4807590,
+              "name": "少牌麻将 体验版",
+              "en": "少牌麻将 体验版",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4807590/18e6f05129daf203110325aa7e7e43f6d7592347/header_schinese.jpg?t=1792254194",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "策略"
+              ],
+              "studio": "NineGates.Inc",
+              "publisher": "NineGates.Inc",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/4807590/"
+            },
+            {
+              "id": 5027060,
+              "name": "降雪的日子 demo",
+              "en": "降雪的日子 demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5027060/367e678894734c5fe4a3b1774fefa3cddf0d8ae5/header.jpg?t=1792253857",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "独立"
+              ],
+              "studio": "亚细亚鳕鱼",
+              "publisher": "亚细亚鳕鱼",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5027060/"
+            },
+            {
+              "id": 5262100,
+              "name": "唐宫夜梦 Demo",
+              "en": "唐宫夜梦 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262100/8e3a93a5b1cf5cefae0db760636633f2aaa7b56b/header_schinese.jpg?t=1792253608",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立"
+              ],
+              "studio": "Moonlight Studio",
+              "publisher": "Moonlight Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5262100/"
+            },
+            {
+              "id": 5408680,
+              "name": "When Chests Rain Tons of Loot Demo",
+              "en": "When Chests Rain Tons of Loot Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5408680/b5d39447154225bb636567d630130f43ab161c7c/header.jpg?t=1792254367",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "5",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "LeenGameDev",
+              "publisher": "LeenGameDev",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5408680/"
+            },
+            {
+              "id": 5387770,
+              "name": "Wizard Jars: Tidy Up Together Demo",
+              "en": "Wizard Jars: Tidy Up Together Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5387770/1ad9c16126d38ca6976a0a15ecaa80a333dc6957/header.jpg?t=1792253181",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Kelecik",
+              "publisher": "Kelecik",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5387770/"
+            },
+            {
+              "id": 5139080,
+              "name": "一起来开电玩城 Demo",
+              "en": "一起来开电玩城 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5139080/c4a3084f8913184d714b7e186fec15380dca1019/header_schinese.jpg?t=1792253047",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟",
+                "体育"
+              ],
+              "studio": " NovaraGames",
+              "publisher": " NovaraGames",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5139080/"
+            },
+            {
+              "id": 5362790,
+              "name": "The Dungeon's Guardian: Rise of the monsters Demo",
+              "en": "The Dungeon's Guardian: Rise of the monsters Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5362790/a2c6797bf8851a59a06df9dc3f33c90bb1e01073/header.jpg?t=1792252748",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "策略"
+              ],
+              "studio": "Meoshimo",
+              "publisher": "Meoshimo",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5362790/"
+            },
+            {
+              "id": 5100810,
+              "name": "足球卡牌店模拟器 Demo",
+              "en": "足球卡牌店模拟器 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5100810/60d96c5ee814e62e36977e6d42e70c7f5f79c7ea/header_schinese.jpg?t=1792252465",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟"
+              ],
+              "studio": " NovaraGames",
+              "publisher": " NovaraGames",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5100810/"
+            },
+            {
+              "id": 5336300,
+              "name": "NEBULA BREAK Demo",
+              "en": "NEBULA BREAK Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5336300/e37e4d77efb7df4ec034a50a7dc33932c958d171/header.jpg?t=1792250804",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "独立"
+              ],
+              "studio": "AMANOGAWA GAMES",
+              "publisher": "AMANOGAWA GAMES",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5336300/"
+            },
+            {
+              "id": 5258250,
+              "name": "Necrotel: No Checkout Demo",
+              "en": "Necrotel: No Checkout Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5258250/f7f2b52817048c307c0d0e701c200622d9ec8234/header.jpg?t=1792250800",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "独立",
+                "模拟"
+              ],
+              "studio": "CGI LAB GAMES",
+              "publisher": "CGI LAB GAMES",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5258250/"
+            },
+            {
+              "id": 5359520,
+              "name": "Recycle Rivals Demo",
+              "en": "Recycle Rivals Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5359520/60b2ed905488e12a252ef023fb9d419103ff7241/header.jpg?t=1792250645",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟"
+              ],
+              "studio": "Creedon Games",
+              "publisher": "Creedon Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5359520/"
+            },
+            {
+              "id": 5338390,
+              "name": "Waifu Curator Demo",
+              "en": "Waifu Curator Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5338390/2c345a10984503f0db98a1116a15d2c3faa43f98/header.jpg?t=1792249388",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Don Pachi",
+              "publisher": "Don Pachi",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5338390/"
+            },
+            {
+              "id": 5221630,
+              "name": "Wild Wheels Demo",
+              "en": "Wild Wheels Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5221630/48b36d567d1a1054fa5ec958a57e5d02aa87a633/header.jpg?t=1792249160",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "竞速"
+              ],
+              "studio": "Pinedrift Interactive",
+              "publisher": "Pinedrift Interactive",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5221630/"
+            },
+            {
+              "id": 5265980,
+              "name": "DeepRise Demo",
+              "en": "DeepRise Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5265980/8ecb6eaf4782200f6eb982801d968b1490b49d92/header.jpg?t=1792248897",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "休闲",
+                "独立",
+                "角色扮演",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Max Karnaukh",
+              "publisher": "Max Karnaukh",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5265980/"
+            },
+            {
+              "id": 5309440,
+              "name": "Farm & Drive Demo",
+              "en": "Farm & Drive Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5309440/a54ef83b623cff75ad3742eb07233733bd2e3d4c/header.jpg?t=1792248503",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "竞速"
+              ],
+              "studio": "Creedon Games",
+              "publisher": "Creedon Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5309440/"
+            },
+            {
+              "id": 5198030,
+              "name": "Red Soil Demo",
+              "en": "Red Soil Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5198030/aa2feb7a291ab03a7f4fa0fb3f22bef060b5e67a/header.jpg?t=1792246351",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "角色扮演"
+              ],
+              "studio": "Benton Gaming",
+              "publisher": "Benton Gaming",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5198030/"
+            },
+            {
+              "id": 5361930,
+              "name": "Deck Drop Demo",
+              "en": "Deck Drop Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5361930/6d12e5a29bfecc77e610f4e1d63a79763fe830d2/header.jpg?t=1792246089",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立",
+                "策略"
+              ],
+              "studio": "Phoenix Card Games",
+              "publisher": "Phoenix Card Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5361930/"
+            },
+            {
+              "id": 5367080,
+              "name": "番茄谷 试玩版",
+              "en": "番茄谷 试玩版",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5367080/c95d2ebc3bcdc403c560c831a30b1d9b9d2785aa/header_schinese.jpg?t=1792244315",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Four Games",
+              "publisher": "Four Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5367080/"
+            },
+            {
+              "id": 5375030,
+              "name": "Fiducia: Own The World Demo",
+              "en": "Fiducia: Own The World Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5375030/b423575b106b82600228cc544516c25021fb08c1/header.jpg?t=1792244112",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟",
+                "策略"
+              ],
+              "studio": "Anlak",
+              "publisher": "Anlak",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5375030/"
+            },
+            {
+              "id": 5392260,
+              "name": "Echoes of Another Sky Demo",
+              "en": "Echoes of Another Sky Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5392260/92e3ade95050d32cbeb83e6b961f1e592b4d36f1/header.jpg?t=1792243770",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "角色扮演"
+              ],
+              "studio": "ISEKAI Games",
+              "publisher": "ISEKAI Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5392260/"
+            },
+            {
+              "id": 5084120,
+              "name": "Planet Doctor Demo",
+              "en": "Planet Doctor Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5084120/875b3f28d01c17fe3d6582eddae914387385226f/header.jpg?t=1792243224",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": " NE159 Games",
+              "publisher": " NE159 Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5084120/"
+            },
+            {
+              "id": 5275270,
+              "name": "LAMINA BRUISE Demo",
+              "en": "LAMINA BRUISE Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5275270/2e26804029dd4e3c0d6b8037ccae1dd86eed8da9/header.jpg?t=1792243114",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "独立"
+              ],
+              "studio": "Nicola Acler",
+              "publisher": "Nicola Acler, Turbida",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5275270/"
+            },
+            {
+              "id": 4075750,
+              "name": "方寸三国 Demo",
+              "en": "方寸三国 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4075750/0d871ffb0ea3d303df46856490ebadcf91139233/header.jpg?t=1792243019",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立",
+                "策略"
+              ],
+              "studio": " Studio Libeccio",
+              "publisher": " Studio Libeccio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/4075750/"
+            },
+            {
+              "id": 5045350,
+              "name": "面条条：野兽版 Demo",
+              "en": "面条条：野兽版 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5045350/b3b2a49c8eb313119a957187db0ecff406d8d460/header.jpg?t=1792242574",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立"
+              ],
+              "studio": "RoRoKaii Works",
+              "publisher": "RoRoKaii Works",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5045350/"
+            },
+            {
+              "id": 4967990,
+              "name": "Cup Or Die Demo",
+              "en": "Cup Or Die Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4967990/355c93d83523d98dd1cc313e020c1e3ba76a538a/header.jpg?t=1792241243",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "独立"
+              ],
+              "studio": "EVLL Games",
+              "publisher": "Lyra V",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/4967990/"
+            },
+            {
+              "id": 5354410,
+              "name": "Undying Knights Demo",
+              "en": "Undying Knights Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5354410/68e0c9fb47353e296476a55fabb2877225445f98/header.jpg?t=1792240509",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立"
+              ],
+              "studio": "Cold Plunge Games",
+              "publisher": "Cold Plunge Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5354410/"
+            },
+            {
+              "id": 4848060,
+              "name": "Corrupted Dice Demo",
+              "en": "Corrupted Dice Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4848060/b1403adf21786115fb625ecdf246915e9648452e/header.jpg?t=1792238935",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "单人",
+                "游戏试用版"
+              ],
+              "studio": "For Tomorrow Studio",
+              "publisher": "For Tomorrow Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/4848060/"
+            },
+            {
+              "id": 5300930,
+              "name": "Ascend and Fall Demo",
+              "en": "Ascend and Fall Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5300930/ebef9682f46ce55b08ad3a85efbe738959d6d9aa/header.jpg?t=1792238667",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "独立",
+                "策略",
+                "免费开玩"
+              ],
+              "studio": "CRITSURGE",
+              "publisher": "CRITSURGE",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5300930/"
+            },
+            {
+              "id": 5360390,
+              "name": "Dyneria Demo",
+              "en": "Dyneria Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5360390/5515075cc33fcdfe776db214e50ba1f3f4d5989d/header.jpg?t=1792237117",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟"
+              ],
+              "studio": "Spark of Chaos",
+              "publisher": "Spark of Chaos",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5360390/"
+            },
+            {
+              "id": 5124100,
+              "name": "1秒钟英雄 Demo",
+              "en": "1秒钟英雄 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5124100/c3bb97b68a5b2049ea7241e8ba015ede1a8aba5a/header_schinese.jpg?t=1792236959",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "2",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "YaYa Game",
+              "publisher": "YaYa Game",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5124100/"
+            },
+            {
+              "id": 5342410,
+              "name": "Cargo Tempo Demo",
+              "en": "Cargo Tempo Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5342410/c76349be43ef4a43001e832d56bf28e0c879f155/header.jpg?t=1792236499",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟",
+                "策略"
+              ],
+              "studio": "koppwerk",
+              "publisher": "koppwerk",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5342410/"
+            },
+            {
+              "id": 5352760,
+              "name": "Gacha Chaos Tidy Up Together Demo",
+              "en": "Gacha Chaos Tidy Up Together Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5352760/a325211e30eaa427c9d3153297fe77d738be878c/header.jpg?t=1792235764",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Smobu",
+              "publisher": "Smobu",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5352760/"
+            },
+            {
+              "id": 5352710,
+              "name": "VPet Sort Together: Cozy Tidy Up Demo",
+              "en": "VPet Sort Together: Cozy Tidy Up Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5352710/b7753444a6781056a47e8f551ba9004c19851bea/header.jpg?t=1792236547",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "SmoBu",
+              "publisher": "SmoBu",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5352710/"
+            },
+            {
+              "id": 5399890,
+              "name": "Librarian Together: Manga Tidy Up Demo",
+              "en": "Librarian Together: Manga Tidy Up Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5399890/b9af08b384353f867dbc77702909427d0fba2662/header.jpg?t=1792236762",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 0,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟"
+              ],
+              "studio": "Smobu",
+              "publisher": "Smobu",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5399890/"
+            },
+            {
+              "id": 5342340,
+              "name": "700MB Demo",
+              "en": "700MB Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5342340/ab8e5e74faa3ac02d6553a9e572169320a20a5e5/header.jpg?t=1792234516",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "独立"
+              ],
+              "studio": "Brewery Games",
+              "publisher": "Brewery Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5342340/"
+            },
+            {
+              "id": 5333650,
+              "name": "Salt and Soil: A Frontier Family Sim Demo",
+              "en": "Salt and Soil: A Frontier Family Sim Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5333650/3b58cd76016ef1a4527c3f028bcdab11a519a4c3/header.jpg?t=1792233649",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "角色扮演",
+                "模拟",
+                "策略"
+              ],
+              "studio": "DelosX",
+              "publisher": "DelosX",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5333650/"
+            },
+            {
+              "id": 5374270,
+              "name": "Wobble Demo",
+              "en": "Wobble Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5374270/46bb16cac17e1f38bed29bf8f2a68d40233e9a67/header.jpg?t=1792248081",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "独立"
+              ],
+              "studio": "ThreePlate",
+              "publisher": "ThreePlate",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5374270/"
+            },
+            {
+              "id": 5257960,
+              "name": "Kingfall Demo",
+              "en": "Kingfall Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5257960/4f1ffcd5018a95c6294da56cd7ba0c8c95cd55ab/header.jpg?t=1792235034",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "策略"
+              ],
+              "studio": "Legendary Pixels",
+              "publisher": "Legendary Pixels",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5257960/"
+            },
+            {
+              "id": 4102440,
+              "name": "Sombie Demo",
+              "en": "Sombie Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4102440/971456e9b5e8d60a7d54d0e51844b31724f76bf2/header.jpg?t=1792231680",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "多人",
+                "大型多人在线",
+                "玩家对战",
+                "线上玩家对战",
+                "游戏试用版",
+                "视角舒适度",
+                "自定义音量控制",
+                "无需应对快速反应事件"
+              ],
+              "studio": "Tenzhu, Sugartitty, SoulStep",
+              "publisher": "Makapar Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/4102440/"
+            },
+            {
+              "id": 5352960,
+              "name": "Meowxia: Idle Wuxia Demo (喵在江湖 Demo)",
+              "en": "Meowxia: Idle Wuxia Demo (喵在江湖 Demo)",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5352960/98e0faf1467f1721c7c559c8f9aec7b81b01e588/header_schinese.jpg?t=1792231209",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "2",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险",
+                "休闲",
+                "独立",
+                "角色扮演",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Zephinity Studio",
+              "publisher": "Zephinity Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5352960/"
+            },
+            {
+              "id": 5200710,
+              "name": "Ball and Stick Demo",
+              "en": "Ball and Stick Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5200710/906da31c4985d7315c4160b6230f115557d244e4/header_schinese.jpg?t=1792230370",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "休闲",
+                "独立"
+              ],
+              "studio": "Fowler Forge Games",
+              "publisher": "Sonja Fowler",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5200710/"
+            },
+            {
+              "id": 5262340,
+              "name": "Sparkle Mouse Demo",
+              "en": "Sparkle Mouse Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5262340/aae56314357380a44c4b531888ffd27e2b744478/header.jpg?t=1792228000",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "设计和插画",
+                "实用工具",
+                "网络出版"
+              ],
+              "studio": "Max van Leeuwen",
+              "publisher": "Max van Leeuwen",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5262340/"
+            },
+            {
+              "id": 5413220,
+              "name": "Self-Replication /// Destruction Demo",
+              "en": "Self-Replication /// Destruction Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5413220/ed353d0e2ad38ffe0aa22c811b94b79019ce3f8b/header.jpg?t=1792227828",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "IcosaCore",
+              "publisher": "IcosaCore",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5413220/"
+            },
+            {
+              "id": 5392760,
+              "name": "Moloch Kombinat Demo",
+              "en": "Moloch Kombinat Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5392760/01b88129ddec0597b9fd1824f93f6581ed1c60e2/header.jpg?t=1792226706",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立"
+              ],
+              "studio": "Prisma Studios",
+              "publisher": "Prisma Studios",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5392760/"
+            },
+            {
+              "id": 5368000,
+              "name": "Vasya Run Demo",
+              "en": "Vasya Run Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5368000/b585c0b8f594db750667264d68f52f6a0d64005f/header.jpg?t=1792226328",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立"
+              ],
+              "studio": "vasya",
+              "publisher": "Garden of Dreams",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5368000/"
+            },
+            {
+              "id": 5388490,
+              "name": "Buildmaxxing Demo",
+              "en": "Buildmaxxing Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5388490/fe1cbf91494c9f5830fdc4c488cc33eabac45179/header.jpg?t=1792226286",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "冒险"
+              ],
+              "studio": "Zephfa",
+              "publisher": "Zephfa",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5388490/"
+            },
+            {
+              "id": 5361110,
+              "name": "PALE WHISPERS Demo",
+              "en": "PALE WHISPERS Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5361110/070eaee8174fbbfbe809b847bbc7dccbab177cfd/header.jpg?t=1792224636",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立"
+              ],
+              "studio": "Ranoor Studio",
+              "publisher": "Ranoor Studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5361110/"
+            },
+            {
+              "id": 5339810,
+              "name": "掘金鼹鼠试玩版",
+              "en": "掘金鼹鼠试玩版",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5339810/66907fe818d4240941995d98545afb28c625a7b1/header_schinese.jpg?t=1792223302",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "模拟",
+                "策略"
+              ],
+              "studio": "Sand Games",
+              "publisher": "Sand Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5339810/"
+            },
+            {
+              "id": 5402160,
+              "name": "Build the Hole Demo",
+              "en": "Build the Hole Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5402160/ac207c08575d6c2723985d48f3d6d8ccb27a13bf/header.jpg?t=1792223259",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "体育"
+              ],
+              "studio": "Forge Digital Games LTD",
+              "publisher": "Forge Digital Games LTD",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5402160/"
+            },
+            {
+              "id": 5403970,
+              "name": "Boardroom Wars: Fight for Kashistan Demo",
+              "en": "Boardroom Wars: Fight for Kashistan Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5403970/02424ffd953fdf79f1df114af925111859617729/header.jpg?t=1792222895",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟",
+                "策略"
+              ],
+              "studio": "Ian Minderman",
+              "publisher": "Voice Chameleons LLC",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5403970/"
+            },
+            {
+              "id": 5227080,
+              "name": "Lost Camp Demo",
+              "en": "Lost Camp Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227080/c3129b09d423620321c1d3e0bf7f650cfbfa9bca/header.jpg?t=1792257119",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": 100,
+              "reviews": "1",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "冒险",
+                "独立"
+              ],
+              "studio": "ARANJA GAMES",
+              "publisher": "ARANJA GAMES",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5227080/"
+            },
+            {
+              "id": 5359790,
+              "name": "Minty Spherez Demo",
+              "en": "Minty Spherez Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5359790/8c43994c719702e6550e87070c8ad8c5a66f12e8/header.jpg?t=1792221517",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作"
+              ],
+              "studio": "89o",
+              "publisher": "89o",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5359790/"
+            },
+            {
+              "id": 5162650,
+              "name": "LifeStock Demo",
+              "en": "LifeStock Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5162650/3051579860de0f4d1ca86172ac70b00b3e7abc7a/header.jpg?t=1792221452",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "模拟",
+                "策略"
+              ],
+              "studio": "LifeStock Games",
+              "publisher": "LifeStock Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5162650/"
+            },
+            {
+              "id": 5413520,
+              "name": "AURORA REQUIEM Demo",
+              "en": "AURORA REQUIEM Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5413520/2234bafd698f66053da4eec20023234d1546af9b/header.jpg?t=1792221439",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "动作",
+                "独立",
+                "角色扮演"
+              ],
+              "studio": "ISEKAI Games",
+              "publisher": "ISEKAI Games",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5413520/"
+            },
+            {
+              "id": 5087010,
+              "name": " 界玄牌 Demo",
+              "en": " 界玄牌 Demo",
+              "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087010/f82bdba2c95fa94cb0e5274a782d537d6ef7d874/header.jpg?t=1792225671",
+              "price": "免费",
+              "priceValue": 0,
+              "rating": null,
+              "reviews": "0",
+              "time": "2026 年 10 月 17 日",
+              "releaseDate": "2026-10-17",
+              "status": [
+                "Demo"
+              ],
+              "tags": [
+                "休闲",
+                "独立",
+                "策略"
+              ],
+              "studio": "manwuyun studio",
+              "publisher": "manwuyun studio",
+              "demo": true,
+              "firstSeen": "2026-10-17",
+              "isNew": true,
+              "source": "demo",
+              "storeUrl": "https://store.steampowered.com/app/5087010/"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-16",
       "label": "日报",
       "generatedAt": "2026-10-16T21:13:57.998Z",
@@ -75091,12 +78877,14 @@
     "1854500": "2026-10-11",
     "1950820": "2026-10-13",
     "1965430": "2026-10-10",
+    "1979510": "2026-10-17",
     "2069070": "2026-10-16",
     "2085660": "2026-10-16",
     "2101640": "2026-10-05",
     "2111810": "2026-10-16",
     "2121510": "2026-10-16",
     "2148120": "2026-10-13",
+    "2204760": "2026-10-17",
     "2216510": "2026-10-04",
     "2236000": "2026-10-02",
     "2243290": "2026-10-03",
@@ -75151,6 +78939,7 @@
     "3080070": "2026-10-16",
     "3115160": "2026-10-14",
     "3129150": "2026-10-01",
+    "3145070": "2026-10-17",
     "3151070": "2026-09-30",
     "3153450": "2026-10-14",
     "3167710": "2026-10-04",
@@ -75175,6 +78964,7 @@
     "3412490": "2026-10-02",
     "3419140": "2026-10-05",
     "3435410": "2026-10-03",
+    "3441620": "2026-10-17",
     "3450850": "2026-10-13",
     "3451820": "2026-10-06",
     "3453010": "2026-10-03",
@@ -75189,8 +78979,10 @@
     "3525940": "2026-10-15",
     "3568250": "2026-10-10",
     "3569420": "2026-10-15",
+    "3576670": "2026-10-17",
     "3580070": "2026-10-11",
     "3583470": "2026-10-06",
+    "3587820": "2026-10-17",
     "3592020": "2026-10-16",
     "3593840": "2026-10-13",
     "3611760": "2026-10-15",
@@ -75201,6 +78993,7 @@
     "3679100": "2026-10-03",
     "3695930": "2026-10-16",
     "3701210": "2026-10-14",
+    "3703550": "2026-10-17",
     "3720040": "2026-10-16",
     "3720580": "2026-10-16",
     "3734610": "2026-10-16",
@@ -75224,6 +79017,7 @@
     "3878090": "2026-10-13",
     "3878440": "2026-10-05",
     "3892280": "2026-10-05",
+    "3894800": "2026-10-17",
     "3897080": "2026-10-16",
     "3911840": "2026-10-11",
     "3912720": "2026-10-13",
@@ -75258,12 +79052,14 @@
     "4064810": "2026-10-16",
     "4067950": "2026-10-10",
     "4071650": "2026-10-16",
+    "4075750": "2026-10-17",
     "4081230": "2026-10-15",
     "4083040": "2026-10-14",
     "4088850": "2026-10-16",
     "4094380": "2026-10-16",
     "4098030": "2026-10-14",
     "4101750": "2026-10-14",
+    "4102440": "2026-10-17",
     "4103280": "2026-10-16",
     "4110610": "2026-10-15",
     "4118330": "2026-10-16",
@@ -75272,6 +79068,7 @@
     "4153730": "2026-10-15",
     "4162170": "2026-10-16",
     "4169060": "2026-10-13",
+    "4201350": "2026-10-17",
     "4201960": "2026-10-15",
     "4218230": "2026-10-02",
     "4218620": "2026-10-13",
@@ -75369,11 +79166,13 @@
     "4565100": "2026-10-01",
     "4565950": "2026-10-16",
     "4568220": "2026-10-15",
+    "4570070": "2026-10-17",
     "4572630": "2026-10-09",
     "4581880": "2026-10-16",
     "4582210": "2026-10-13",
     "4589340": "2026-10-15",
     "4596990": "2026-10-15",
+    "4597500": "2026-10-17",
     "4599870": "2026-10-05",
     "4600990": "2026-10-02",
     "4602740": "2026-10-11",
@@ -75455,6 +79254,7 @@
     "4805420": "2026-10-16",
     "4806780": "2026-10-13",
     "4806840": "2026-10-14",
+    "4807590": "2026-10-17",
     "4807840": "2026-10-02",
     "4807880": "2026-10-16",
     "4809830": "2026-10-16",
@@ -75476,6 +79276,7 @@
     "4843860": "2026-10-06",
     "4846620": "2026-10-16",
     "4847040": "2026-10-10",
+    "4848060": "2026-10-17",
     "4848250": "2026-10-16",
     "4848460": "2026-10-01",
     "4848910": "2026-10-16",
@@ -75546,6 +79347,7 @@
     "4966130": "2026-10-13",
     "4966520": "2026-10-02",
     "4967480": "2026-10-16",
+    "4967990": "2026-10-17",
     "4970010": "2026-09-30",
     "4971130": "2026-10-15",
     "4971770": "2026-10-15",
@@ -75598,6 +79400,8 @@
     "5024540": "2026-10-15",
     "5025380": "2026-10-10",
     "5026630": "2026-10-01",
+    "5026810": "2026-10-17",
+    "5027060": "2026-10-17",
     "5027320": "2026-10-09",
     "5027360": "2026-10-06",
     "5027810": "2026-09-30",
@@ -75616,6 +79420,7 @@
     "5043520": "2026-10-01",
     "5044480": "2026-10-14",
     "5045340": "2026-10-11",
+    "5045350": "2026-10-17",
     "5045860": "2026-10-15",
     "5045940": "2026-10-11",
     "5047780": "2026-10-01",
@@ -75646,6 +79451,7 @@
     "5070690": "2026-10-16",
     "5072170": "2026-10-04",
     "5072920": "2026-10-09",
+    "5073520": "2026-10-17",
     "5073560": "2026-10-15",
     "5073640": "2026-09-30",
     "5074190": "2026-10-02",
@@ -75654,17 +79460,21 @@
     "5076290": "2026-10-16",
     "5076810": "2026-10-05",
     "5077160": "2026-10-13",
+    "5077240": "2026-10-17",
     "5077250": "2026-10-16",
     "5077690": "2026-10-10",
     "5078700": "2026-10-06",
     "5078710": "2026-10-06",
     "5079260": "2026-10-09",
+    "5080810": "2026-10-17",
     "5082510": "2026-10-16",
     "5082790": "2026-10-15",
     "5082880": "2026-10-01",
     "5083090": "2026-10-02",
     "5083920": "2026-10-06",
+    "5084120": "2026-10-17",
     "5085220": "2026-10-16",
+    "5087010": "2026-10-17",
     "5087210": "2026-10-04",
     "5088640": "2026-10-13",
     "5088930": "2026-10-15",
@@ -75678,11 +79488,13 @@
     "5094650": "2026-10-16",
     "5095130": "2026-10-16",
     "5096130": "2026-10-14",
+    "5096620": "2026-10-17",
     "5096820": "2026-10-13",
     "5099290": "2026-10-13",
     "5100120": "2026-10-13",
     "5100340": "2026-10-15",
     "5100440": "2026-10-14",
+    "5100810": "2026-10-17",
     "5103160": "2026-10-13",
     "5103430": "2026-10-02",
     "5104030": "2026-10-05",
@@ -75702,6 +79514,7 @@
     "5113440": "2026-10-09",
     "5113460": "2026-10-09",
     "5113860": "2026-10-13",
+    "5114130": "2026-10-17",
     "5114140": "2026-10-13",
     "5114480": "2026-10-10",
     "5114500": "2026-10-16",
@@ -75720,6 +79533,7 @@
     "5123390": "2026-10-16",
     "5123480": "2026-10-14",
     "5123950": "2026-10-15",
+    "5124100": "2026-10-17",
     "5124350": "2026-10-13",
     "5125640": "2026-10-16",
     "5126020": "2026-10-16",
@@ -75748,6 +79562,7 @@
     "5137890": "2026-10-16",
     "5138050": "2026-10-06",
     "5138180": "2026-10-11",
+    "5139080": "2026-10-17",
     "5139160": "2026-10-03",
     "5139800": "2026-10-01",
     "5139820": "2026-10-04",
@@ -75785,6 +79600,7 @@
     "5160600": "2026-10-03",
     "5162210": "2026-10-16",
     "5162260": "2026-10-14",
+    "5162650": "2026-10-17",
     "5163030": "2026-10-11",
     "5164010": "2026-10-06",
     "5164100": "2026-10-13",
@@ -75813,6 +79629,7 @@
     "5177010": "2026-10-02",
     "5177360": "2026-10-05",
     "5177370": "2026-10-01",
+    "5178830": "2026-10-17",
     "5179130": "2026-10-02",
     "5179290": "2026-10-09",
     "5179800": "2026-10-13",
@@ -75867,13 +79684,16 @@
     "5197640": "2026-10-09",
     "5197730": "2026-10-11",
     "5197800": "2026-10-06",
+    "5198030": "2026-10-17",
     "5198230": "2026-10-14",
     "5198370": "2026-10-01",
+    "5198410": "2026-10-17",
     "5198720": "2026-10-01",
     "5199230": "2026-10-14",
     "5199270": "2026-10-04",
     "5199830": "2026-10-16",
     "5200350": "2026-10-15",
+    "5200710": "2026-10-17",
     "5200970": "2026-09-30",
     "5200980": "2026-09-30",
     "5201080": "2026-10-13",
@@ -75935,6 +79755,7 @@
     "5220890": "2026-10-16",
     "5221510": "2026-10-02",
     "5221600": "2026-10-16",
+    "5221630": "2026-10-17",
     "5221700": "2026-10-16",
     "5222030": "2026-10-01",
     "5222090": "2026-10-14",
@@ -75956,6 +79777,7 @@
     "5226810": "2026-10-09",
     "5226840": "2026-10-09",
     "5226990": "2026-10-09",
+    "5227080": "2026-10-17",
     "5228220": "2026-10-09",
     "5228280": "2026-10-13",
     "5228330": "2026-10-09",
@@ -75980,6 +79802,7 @@
     "5232090": "2026-10-15",
     "5232890": "2026-10-03",
     "5232960": "2026-10-16",
+    "5233300": "2026-10-17",
     "5233330": "2026-10-09",
     "5233540": "2026-10-03",
     "5233550": "2026-10-13",
@@ -76042,6 +79865,7 @@
     "5246440": "2026-10-13",
     "5246800": "2026-10-02",
     "5247050": "2026-10-01",
+    "5247230": "2026-10-17",
     "5247360": "2026-10-16",
     "5247370": "2026-10-04",
     "5247490": "2026-10-16",
@@ -76055,6 +79879,7 @@
     "5249970": "2026-10-13",
     "5250500": "2026-10-16",
     "5250510": "2026-10-01",
+    "5251110": "2026-10-17",
     "5251330": "2026-09-30",
     "5251830": "2026-10-13",
     "5252000": "2026-10-06",
@@ -76083,7 +79908,10 @@
     "5257560": "2026-10-02",
     "5257920": "2026-10-16",
     "5257930": "2026-10-15",
+    "5257960": "2026-10-17",
+    "5258250": "2026-10-17",
     "5258340": "2026-10-13",
+    "5258380": "2026-10-17",
     "5259030": "2026-10-04",
     "5259430": "2026-10-16",
     "5259610": "2026-10-05",
@@ -76092,14 +79920,18 @@
     "5260310": "2026-10-16",
     "5260340": "2026-10-02",
     "5260360": "2026-10-15",
+    "5260570": "2026-10-17",
     "5260830": "2026-10-10",
     "5261190": "2026-10-16",
     "5261350": "2026-10-03",
     "5261520": "2026-10-04",
     "5261940": "2026-10-13",
     "5262000": "2026-10-03",
+    "5262100": "2026-10-17",
+    "5262340": "2026-10-17",
     "5262490": "2026-10-14",
     "5262650": "2026-10-16",
+    "5262700": "2026-10-17",
     "5262830": "2026-10-04",
     "5262940": "2026-10-03",
     "5262950": "2026-10-13",
@@ -76111,14 +79943,17 @@
     "5264170": "2026-10-02",
     "5264430": "2026-10-15",
     "5265710": "2026-10-14",
+    "5265980": "2026-10-17",
     "5266100": "2026-10-16",
     "5266370": "2026-10-01",
     "5266600": "2026-10-15",
+    "5266650": "2026-10-17",
     "5266680": "2026-10-13",
     "5266780": "2026-10-06",
     "5266790": "2026-10-16",
     "5267160": "2026-10-10",
     "5267420": "2026-10-16",
+    "5267570": "2026-10-17",
     "5267660": "2026-10-16",
     "5268010": "2026-10-13",
     "5268080": "2026-10-04",
@@ -76161,6 +79996,7 @@
     "5275020": "2026-10-11",
     "5275050": "2026-10-16",
     "5275110": "2026-10-03",
+    "5275270": "2026-10-17",
     "5275550": "2026-10-09",
     "5275630": "2026-10-06",
     "5277080": "2026-10-13",
@@ -76185,6 +80021,7 @@
     "5279930": "2026-10-06",
     "5279990": "2026-10-01",
     "5280040": "2026-10-10",
+    "5280170": "2026-10-17",
     "5280190": "2026-10-02",
     "5280360": "2026-10-01",
     "5280380": "2026-10-01",
@@ -76194,6 +80031,7 @@
     "5280730": "2026-10-03",
     "5280910": "2026-10-15",
     "5281090": "2026-10-13",
+    "5282110": "2026-10-17",
     "5282350": "2026-10-14",
     "5282770": "2026-10-11",
     "5283170": "2026-10-16",
@@ -76211,6 +80049,7 @@
     "5285180": "2026-10-15",
     "5285320": "2026-10-01",
     "5285330": "2026-10-01",
+    "5285370": "2026-10-17",
     "5285450": "2026-10-03",
     "5285660": "2026-10-06",
     "5285720": "2026-10-15",
@@ -76256,6 +80095,7 @@
     "5296070": "2026-10-16",
     "5296230": "2026-10-15",
     "5296270": "2026-10-01",
+    "5297180": "2026-10-17",
     "5297290": "2026-10-04",
     "5297450": "2026-10-04",
     "5297690": "2026-10-06",
@@ -76280,6 +80120,7 @@
     "5300140": "2026-10-13",
     "5300160": "2026-10-13",
     "5300800": "2026-10-15",
+    "5300930": "2026-10-17",
     "5301210": "2026-10-15",
     "5301250": "2026-10-15",
     "5301280": "2026-10-10",
@@ -76309,6 +80150,7 @@
     "5304190": "2026-10-02",
     "5304270": "2026-10-13",
     "5304640": "2026-10-02",
+    "5304730": "2026-10-17",
     "5304740": "2026-10-05",
     "5304770": "2026-10-13",
     "5304940": "2026-10-16",
@@ -76331,6 +80173,7 @@
     "5307950": "2026-10-04",
     "5307980": "2026-10-14",
     "5308010": "2026-10-16",
+    "5308120": "2026-10-17",
     "5308270": "2026-10-04",
     "5308320": "2026-10-09",
     "5308670": "2026-10-01",
@@ -76339,6 +80182,7 @@
     "5308890": "2026-10-10",
     "5308900": "2026-10-01",
     "5309260": "2026-10-02",
+    "5309440": "2026-10-17",
     "5309680": "2026-10-09",
     "5309710": "2026-09-30",
     "5309910": "2026-10-04",
@@ -76412,6 +80256,7 @@
     "5318880": "2026-10-03",
     "5319230": "2026-10-01",
     "5319420": "2026-10-01",
+    "5319460": "2026-10-17",
     "5319620": "2026-10-10",
     "5319650": "2026-10-11",
     "5319690": "2026-10-16",
@@ -76434,6 +80279,7 @@
     "5321500": "2026-10-10",
     "5321630": "2026-10-16",
     "5321960": "2026-10-15",
+    "5322010": "2026-10-17",
     "5322030": "2026-10-15",
     "5322420": "2026-10-05",
     "5322630": "2026-10-01",
@@ -76449,6 +80295,7 @@
     "5323640": "2026-10-15",
     "5323690": "2026-10-14",
     "5323760": "2026-10-16",
+    "5323960": "2026-10-17",
     "5324480": "2026-10-14",
     "5324500": "2026-10-13",
     "5324710": "2026-10-14",
@@ -76492,6 +80339,7 @@
     "5329340": "2026-10-01",
     "5329380": "2026-10-03",
     "5329470": "2026-10-14",
+    "5329640": "2026-10-17",
     "5329670": "2026-10-05",
     "5329830": "2026-10-04",
     "5330080": "2026-10-04",
@@ -76518,6 +80366,7 @@
     "5333500": "2026-10-11",
     "5333550": "2026-10-03",
     "5333640": "2026-10-10",
+    "5333650": "2026-10-17",
     "5333890": "2026-10-01",
     "5334090": "2026-10-01",
     "5334290": "2026-10-01",
@@ -76530,6 +80379,7 @@
     "5335660": "2026-10-16",
     "5336020": "2026-10-09",
     "5336280": "2026-10-16",
+    "5336300": "2026-10-17",
     "5336680": "2026-10-06",
     "5336990": "2026-10-16",
     "5337260": "2026-10-15",
@@ -76542,6 +80392,7 @@
     "5338280": "2026-10-14",
     "5338290": "2026-10-16",
     "5338320": "2026-10-14",
+    "5338390": "2026-10-17",
     "5338470": "2026-10-13",
     "5338580": "2026-10-06",
     "5338780": "2026-10-01",
@@ -76556,6 +80407,7 @@
     "5339520": "2026-10-10",
     "5339640": "2026-10-16",
     "5339750": "2026-10-16",
+    "5339810": "2026-10-17",
     "5339960": "2026-10-16",
     "5340280": "2026-10-16",
     "5340420": "2026-10-15",
@@ -76566,7 +80418,10 @@
     "5341620": "2026-10-05",
     "5341680": "2026-10-11",
     "5341690": "2026-10-03",
+    "5341750": "2026-10-17",
     "5342120": "2026-10-03",
+    "5342340": "2026-10-17",
+    "5342410": "2026-10-17",
     "5342420": "2026-10-06",
     "5342460": "2026-10-10",
     "5342550": "2026-10-15",
@@ -76626,6 +80481,7 @@
     "5350300": "2026-10-01",
     "5350630": "2026-10-02",
     "5350750": "2026-10-03",
+    "5350780": "2026-10-17",
     "5350960": "2026-10-16",
     "5351220": "2026-10-03",
     "5351550": "2026-10-04",
@@ -76634,15 +80490,20 @@
     "5352340": "2026-10-10",
     "5352520": "2026-10-16",
     "5352550": "2026-10-02",
+    "5352710": "2026-10-17",
     "5352740": "2026-10-16",
     "5352750": "2026-10-16",
+    "5352760": "2026-10-17",
     "5352910": "2026-10-09",
+    "5352960": "2026-10-17",
     "5353420": "2026-10-16",
     "5353770": "2026-10-02",
     "5353820": "2026-10-02",
     "5354260": "2026-10-05",
     "5354340": "2026-10-03",
     "5354380": "2026-10-03",
+    "5354410": "2026-10-17",
+    "5355130": "2026-10-17",
     "5355210": "2026-10-11",
     "5355350": "2026-10-02",
     "5355630": "2026-10-05",
@@ -76658,6 +80519,7 @@
     "5358110": "2026-10-06",
     "5358150": "2026-10-16",
     "5358160": "2026-10-09",
+    "5358220": "2026-10-17",
     "5358340": "2026-10-14",
     "5358410": "2026-10-10",
     "5358600": "2026-10-15",
@@ -76665,19 +80527,25 @@
     "5359190": "2026-10-13",
     "5359380": "2026-10-14",
     "5359440": "2026-10-06",
+    "5359520": "2026-10-17",
     "5359650": "2026-10-09",
+    "5359790": "2026-10-17",
     "5359910": "2026-10-16",
+    "5360390": "2026-10-17",
     "5360570": "2026-10-06",
     "5360660": "2026-10-06",
     "5360760": "2026-10-14",
     "5360800": "2026-10-09",
     "5360910": "2026-10-13",
+    "5361110": "2026-10-17",
+    "5361930": "2026-10-17",
     "5361950": "2026-10-13",
     "5361980": "2026-10-15",
     "5362070": "2026-10-14",
     "5362080": "2026-10-13",
     "5362460": "2026-10-06",
     "5362610": "2026-10-13",
+    "5362790": "2026-10-17",
     "5362860": "2026-10-16",
     "5363350": "2026-10-14",
     "5363830": "2026-10-09",
@@ -76689,10 +80557,13 @@
     "5365590": "2026-10-06",
     "5365640": "2026-10-15",
     "5365690": "2026-10-06",
+    "5367080": "2026-10-17",
     "5367250": "2026-10-14",
     "5367340": "2026-10-14",
+    "5368000": "2026-10-17",
     "5368350": "2026-10-15",
     "5368620": "2026-10-16",
+    "5368740": "2026-10-17",
     "5369040": "2026-10-14",
     "5369360": "2026-10-16",
     "5370250": "2026-10-15",
@@ -76704,6 +80575,7 @@
     "5371320": "2026-10-14",
     "5371330": "2026-10-06",
     "5371360": "2026-10-10",
+    "5371370": "2026-10-17",
     "5371570": "2026-10-06",
     "5371780": "2026-10-14",
     "5371790": "2026-10-15",
@@ -76720,10 +80592,12 @@
     "5373750": "2026-10-13",
     "5374010": "2026-10-06",
     "5374130": "2026-10-10",
+    "5374270": "2026-10-17",
     "5374290": "2026-10-14",
     "5374320": "2026-10-16",
     "5374470": "2026-10-13",
     "5374740": "2026-10-15",
+    "5375030": "2026-10-17",
     "5375160": "2026-10-15",
     "5375200": "2026-10-14",
     "5375710": "2026-10-11",
@@ -76742,6 +80616,7 @@
     "5376760": "2026-10-13",
     "5376870": "2026-10-15",
     "5377030": "2026-10-11",
+    "5377100": "2026-10-17",
     "5377420": "2026-10-16",
     "5377430": "2026-10-13",
     "5377470": "2026-10-11",
@@ -76751,6 +80626,7 @@
     "5377900": "2026-10-15",
     "5378490": "2026-10-15",
     "5378560": "2026-10-14",
+    "5378700": "2026-10-17",
     "5379400": "2026-10-16",
     "5379420": "2026-10-14",
     "5380020": "2026-10-13",
@@ -76761,6 +80637,7 @@
     "5381410": "2026-10-13",
     "5381480": "2026-10-09",
     "5382260": "2026-10-14",
+    "5382370": "2026-10-17",
     "5382590": "2026-10-16",
     "5382870": "2026-10-15",
     "5383580": "2026-10-14",
@@ -76773,6 +80650,7 @@
     "5385810": "2026-10-14",
     "5385900": "2026-10-13",
     "5386230": "2026-10-16",
+    "5386320": "2026-10-17",
     "5386680": "2026-10-14",
     "5386850": "2026-10-09",
     "5386920": "2026-10-15",
@@ -76783,9 +80661,12 @@
     "5387580": "2026-10-15",
     "5387600": "2026-10-16",
     "5387750": "2026-10-09",
+    "5387770": "2026-10-17",
+    "5387780": "2026-10-17",
     "5387810": "2026-10-15",
     "5387850": "2026-10-13",
     "5388300": "2026-10-14",
+    "5388490": "2026-10-17",
     "5388730": "2026-10-13",
     "5388870": "2026-10-16",
     "5388930": "2026-10-15",
@@ -76809,7 +80690,9 @@
     "5391900": "2026-10-15",
     "5392160": "2026-10-15",
     "5392190": "2026-10-15",
+    "5392260": "2026-10-17",
     "5392370": "2026-10-16",
+    "5392760": "2026-10-17",
     "5393070": "2026-10-11",
     "5393360": "2026-10-14",
     "5393380": "2026-10-15",
@@ -76820,6 +80703,7 @@
     "5394330": "2026-10-13",
     "5394400": "2026-10-14",
     "5394500": "2026-10-14",
+    "5394840": "2026-10-17",
     "5394950": "2026-10-15",
     "5396010": "2026-10-14",
     "5396110": "2026-10-14",
@@ -76837,6 +80721,7 @@
     "5398590": "2026-10-14",
     "5399280": "2026-10-16",
     "5399800": "2026-10-13",
+    "5399890": "2026-10-17",
     "5399930": "2026-10-14",
     "5399960": "2026-10-16",
     "5399990": "2026-10-16",
@@ -76852,11 +80737,15 @@
     "5401560": "2026-10-16",
     "5401660": "2026-10-16",
     "5402010": "2026-10-15",
+    "5402160": "2026-10-17",
     "5402280": "2026-10-16",
     "5402300": "2026-10-13",
+    "5402700": "2026-10-17",
     "5402940": "2026-10-15",
     "5403120": "2026-10-15",
+    "5403520": "2026-10-17",
     "5403660": "2026-10-15",
+    "5403970": "2026-10-17",
     "5404410": "2026-10-16",
     "5404850": "2026-10-15",
     "5405180": "2026-10-16",
@@ -76872,15 +80761,22 @@
     "5407670": "2026-10-16",
     "5407830": "2026-10-14",
     "5408000": "2026-10-15",
+    "5408050": "2026-10-17",
+    "5408680": "2026-10-17",
     "5408720": "2026-10-14",
     "5408850": "2026-10-16",
     "5409270": "2026-10-16",
     "5409900": "2026-10-16",
     "5410440": "2026-10-16",
     "5411700": "2026-10-16",
-    "5411910": "2026-10-16"
+    "5411910": "2026-10-16",
+    "5413090": "2026-10-17",
+    "5413220": "2026-10-17",
+    "5413520": "2026-10-17",
+    "5414490": "2026-10-17",
+    "5420240": "2026-10-17"
   },
   "initialized": true,
-  "generatedAt": "2026-10-16T21:13:57.998Z",
+  "generatedAt": "2026-10-17T21:56:22.695Z",
   "source": "Steam public store API"
 }
