@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { missingDates, shiftDate } from '../history.mjs';
+import { shiftDate } from '../history.mjs';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const now = new Date();
@@ -16,14 +16,13 @@ if (hour < 4) {
   try { state = JSON.parse(await fs.readFile(path.join(root, 'data/state.json'), 'utf8')); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
   const latest = state.reports.find(report => report.date === target);
-  const pending = missingDates(state.reports, target);
-  if (latest && !latest.recovery && latest.collection?.state !== 'partial' && !pending.length && !state.reports.some(r => r.collection?.state === 'partial')) {
-    console.log(`${target} 日报已完成，不重复访问 Steam`);
+  const lastRunAt = state.phase1?.lastRunAt;
+  if (lastRunAt && Date.now() - Date.parse(lastRunAt) < 45 * 60 * 1000 && latest && !process.argv.includes('--review-30')) {
+    console.log('距离上次复查不足45分钟，等待下一轮；已发布日报仍会持续复查');
   } else {
     const startedAt = now.toISOString();
-    // Publish a new daily report before spending a separate run on old gaps.
-    const latestNeedsCollection = !latest || latest.recovery || latest.collection?.state === 'partial';
-    const args = ['collector.mjs', ...(latestNeedsCollection ? ['--latest-only'] : [])];
+    // Each run resumes durable candidates and revisits recently published days.
+    const args = ['phase1-collector.mjs', ...process.argv.slice(2)];
     const result = spawnSync(process.execPath, args, { cwd: root, stdio: 'inherit', timeout: 35 * 60 * 1000, killSignal: 'SIGTERM' });
     if (result.error || result.signal) {
       await fs.mkdir(path.join(root, 'data'), { recursive: true });

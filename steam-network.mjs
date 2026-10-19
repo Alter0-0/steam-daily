@@ -3,7 +3,7 @@ export function createSteamClient({ fetchImpl = fetch, sleep = ms => new Promise
   let tail = Promise.resolve();
   let nextRequest = 0;
   let blockedUntil = 0;
-  return function getJson(url) {
+  return function getJson(url, { format = 'json' } = {}) {
     const operation = tail.then(async () => {
       if (now() < blockedUntil) throw new Error('Steam 暂时限制请求，已暂停；下次任务将继续未完成项目');
       let lastError;
@@ -23,7 +23,7 @@ export function createSteamClient({ fetchImpl = fetch, sleep = ms => new Promise
             if (retryAfter > 0) retryDelay = Math.min(60000, retryAfter * 1000);
             throw new Error(`Steam 返回 HTTP ${response.status}`);
           }
-          return await response.json();
+          return await response[format === 'text' ? 'text' : 'json']();
         } catch (error) {
           lastError = error;
           if (blockedUntil > now()) throw error;

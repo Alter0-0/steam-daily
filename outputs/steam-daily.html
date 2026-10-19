@@ -67,9 +67,10 @@
     .section-dot.blue { background: #5582a2; }
     .section-dot.mint { background: var(--mint); }
     .game-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
-    .game-card { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; overflow: hidden; display: grid; grid-template-columns: 150px 1fr; min-height: 164px; transition: transform .18s, box-shadow .18s, border-color .18s; }
+    .game-card { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; overflow: hidden; display: grid; grid-template-columns: 120px minmax(0, 1fr); min-height: 164px; transition: transform .18s, box-shadow .18s, border-color .18s; }
+    .game-card.cover-missing { grid-template-columns: minmax(0, 1fr); }
     .game-card:hover { transform: translateY(-2px); border-color: #b3c0c8; box-shadow: var(--shadow); }
-    .cover { width: 150px; height: 164px; object-fit: cover; background: #dbe5ea; }
+    .cover { width: 120px; height: 100%; min-height: 164px; object-fit: cover; background: #dbe5ea; }
     .card-body { padding: 14px 14px 12px; min-width: 0; display: flex; flex-direction: column; }
     .card-topline { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
     .game-name { margin: 0; font-size: 16px; line-height: 1.28; font-weight: 720; }
@@ -85,10 +86,11 @@
     .info-line { display: flex; gap: 6px; min-width: 0; }
     .info-label { color: #8b969e; flex: 0 0 auto; }
     .info-value { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .card-footer { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+    .info-line.release-time .info-value { white-space: normal; overflow-wrap: anywhere; }
+    .card-footer { display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
     .price { font-size: 14px; font-weight: 760; color: var(--ink); }
     .price.free { color: var(--mint); }
-    .price-note { color: var(--muted); font-size: 11px; }
+    .price-note { color: var(--muted); font-size: 11px; order: 3; flex-basis: 100%; line-height: 1.5; }
     .store-link { margin-left: auto; text-decoration: none; color: #2d6388; font-size: 12px; font-weight: 650; }
     .store-link:hover { text-decoration: underline; }
     .empty { background: var(--panel); border: 1px dashed #cbd5da; border-radius: 7px; padding: 30px 20px; text-align: center; color: var(--muted); font-size: 14px; }
@@ -263,20 +265,25 @@
     }
     function gameCard(game) {
       const ratingClass = game.rating < 80 ? 'low' : '';
+      const escapeText = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+      const stamp = value => value ? new Date(value).toLocaleString('zh-CN', { timeZone:'Asia/Shanghai',hour12:false }) : '原始日报';
+      const reviewText = game.metadataPending?.includes('reviews') ? '测评待核实' : `${game.reviews || '0'} 条测评`;
+      const dateNote = game.storeReleaseText ? `<div class="info-line"><span class="info-label">商店原文</span><span class="info-value" title="${escapeText(game.storeReleaseText)}">${escapeText(game.storeReleaseText)}</span></div>` : '';
+      const snapshotNote = game.provisional ? '已发现，详情待补充' : `${game.recoveredAt ? '补录 ' + stamp(game.recoveredAt) + ' · ' : ''}价格快照：${stamp(game.priceSnapshotAt || game.snapshotAt || game.recoveredAt)} · 测评快照：${stamp(game.reviewSnapshotAt || game.snapshotAt || game.recoveredAt)}`;
       return `<article class="game-card">
         <img class="cover" src="${game.cover}" alt="${game.name} 封面" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('cover-missing')" />
         <div class="card-body">
-          <div class="card-topline"><div><h3 class="game-name">${game.name}</h3><div class="game-name-en">${game.en}</div></div><div class="rating ${ratingClass}">${game.rating == null ? '暂无' : `${game.rating}%`}<small>${game.reviews || '0'} 条测评</small></div></div>
-          <div class="tags">${game.status.map(status => `<span class="tag ${status === 'Demo' ? 'demo' : 'status'}">${status}</span>`).join('')}${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-          <div class="card-info"><div class="info-line"><span class="info-label">时间</span><span class="info-value">${game.time}</span></div><div class="info-line"><span class="info-label">开发</span><span class="info-value">${game.studio}</span></div><div class="info-line"><span class="info-label">发行</span><span class="info-value">${game.publisher}</span></div></div>
-          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${game.price}</span><span class="price-note">${game.recoveredAt ? '补采时价格/测评' : '日报快照'}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
+          <div class="card-topline"><div><h3 class="game-name">${escapeText(game.name)}</h3><div class="game-name-en">${escapeText(game.en)}</div></div><div class="rating ${ratingClass}">${game.rating == null ? '暂无' : `${game.rating}%`}<small>${reviewText}</small></div></div>
+          <div class="tags">${game.status.map(status => `<span class="tag ${status === 'Demo' ? 'demo' : 'status'}">${escapeText(status)}</span>`).join('')}${game.tags.map(tag => `<span class="tag">${escapeText(tag)}</span>`).join('')}</div>
+          <div class="card-info"><div class="info-line release-time"><span class="info-label">时间</span><span class="info-value" title="${escapeText(game.time)}">${escapeText(game.time)}</span></div>${dateNote}<div class="info-line"><span class="info-label">开发</span><span class="info-value">${escapeText(game.studio)}</span></div><div class="info-line"><span class="info-label">发行</span><span class="info-value">${escapeText(game.publisher)}</span></div></div>
+          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${game.price}</span><span class="price-note" title="${escapeText(snapshotNote)}">${snapshotNote}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
         </div>
       </article>`;
     }
     function renderRail() {
       dateRail.innerHTML = reports.map((report, index) => {
         const total = new Set(allGames(report).map(game => game.id)).size;
-        return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${report.label}</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
+        return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${report.collection?.coverage ? (report.collection.state === 'partial' ? '持续补查' : '已复查，仍会补充') : report.label}</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
       }).join('');
       dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
     }
@@ -289,7 +296,7 @@
         return;
       }
       const visibleIds = new Set();
-      sections.innerHTML = (report.collection?.state === 'partial' ? `<div class="empty">这天的日报部分完成：已保存成功条目，${report.collection.pendingIds?.length || 0} 个项目等待重试${report.collection.scanComplete ? '。' : '；搜索尚未完整覆盖，将继续补查。'}</div>` : '') + (report.recovery ? `<div class="empty">${report.recovery.note}${report.recovery.recoveredAt ? ' 补采时间：' + new Date(report.recovery.recoveredAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : ''}</div>` : '') + report.sections.map(section => {
+      sections.innerHTML = (report.collection?.coverage ? `<div class="empty">日报发布后持续复查，发现迟到游戏会补录。当前 ${report.collection.pendingIds?.length || 0} 个条目待核实；搜索复查不代表 Steam 全量覆盖。${report.collection.lastCheckedAt ? ' 最近复查：' + new Date(report.collection.lastCheckedAt).toLocaleString('zh-CN', { timeZone:'Asia/Shanghai',hour12:false }) : ''}</div>` : report.collection?.state === 'partial' ? `<div class="empty">这天的日报部分完成：已保存成功条目，${report.collection.pendingIds?.length || 0} 个项目等待重试${report.collection.scanComplete ? '。' : '；搜索尚未完整覆盖，将继续补查。'}</div>` : '') + (report.recovery && !report.collection?.coverage ? `<div class="empty">${report.recovery.note}${report.recovery.recoveredAt ? ' 补采时间：' + new Date(report.recovery.recoveredAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : ''}</div>` : '') + report.sections.map(section => {
         const games = visibleGames(section.games);
         games.forEach(game => visibleIds.add(game.id));
         return `<section><div class="section-heading"><div class="section-title"><span class="section-dot ${section.tone === 'blue' ? 'blue' : section.tone === 'mint' ? 'mint' : ''}"></span><h2>${section.title}</h2><span class="section-count">${games.length} 款</span></div><span class="section-rule"></span></div>${games.length ? `<div class="game-grid">${games.map(gameCard).join('')}</div>` : `<div class="empty">${report.recovery ? '缺失历史或尚未补采到可核实条目' : '暂无符合条件的条目'}</div>`}</section>`;
