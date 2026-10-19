@@ -87,6 +87,6 @@ try {
   console.log(JSON.stringify(summary));
   if(summary.stopReason==='steam-limit'||Object.keys(summary.scanErrors||{}).length||summary.failed)process.exitCode=1;
 } catch(e) {
-  if(acquired)await write('status.json',{...await read('status.json',{}),state:'error',startedAt,finishedAt:new Date().toISOString(),stopReason:'error',reportDate:latest,message:e.message});
+  if(acquired){const prior=await read('status.json',{});await write('status.json',{...(prior.startedAt===startedAt?prior:{}),state:'error',startedAt,finishedAt:new Date().toISOString(),stopReason:'error',reportDate:latest,message:e.message});}
   console.error(e);process.exitCode=1;
 } finally {if(acquired)await fs.unlink(lock).catch(()=>{});}

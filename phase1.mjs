@@ -272,5 +272,5 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
   }
   await save();
   const scanErrors=Object.fromEntries(Object.entries(state.phase1.scans).filter(([key,scan])=>key.startsWith(plan.oldest)&&scan.error).map(([key,scan])=>[key,scan.error]));
-  return {state:pending.length||!scansComplete?'partial':'success',reportDate:latest,...state.phase1.lastSummary,scanErrors,message:'初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖'};
+  return {state:pending.length||!scansComplete||failed||processed<queue.length?'partial':'success',reportDate:latest,...state.phase1.lastSummary,scanErrors,message:'初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖'};
 }

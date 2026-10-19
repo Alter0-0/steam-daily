@@ -76,6 +76,25 @@ test('a long search leaves a reserved detail window and does not claim search co
   const summary=await runSweep(state,{now,latest,getPage:()=>{throw new Error('must not request');},scanDeadline:()=>true,getDetail:response});
   assert.equal(summary.processed,1);assert.equal(summary.completedDetails,1);assert.equal(summary.scansComplete,false);assert.equal(summary.stopReason,'search-incomplete');
 });
+test('unfinished routine refreshes cannot be labeled fully complete',async()=>{
+  const state=fixture();add(state,1,'refresh');add(state,2,'refresh');
+  const result=await runSweep(state,{now,latest,getPage:emptyPage,getDetail:response,maxDetails:1});
+  assert.equal(result.missingDetails,0);assert.equal(result.state,'partial');assert.equal(result.stopReason,'batch-limit');
+});
+test('parent timeout preserves checkpoint counters and provides a visible interruption reason',async t=>{
+  const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-progress-timeout-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
+  await fs.mkdir(path.join(dir,'cloud'));await fs.mkdir(path.join(dir,'data'));
+  await fs.copyFile(new URL('../cloud/run.mjs',import.meta.url),path.join(dir,'cloud/run.mjs'));
+  await fs.copyFile(new URL('../history.mjs',import.meta.url),path.join(dir,'history.mjs'));
+  await fs.writeFile(path.join(dir,'data/status.json'),JSON.stringify({processed:7,completedDetails:5,missingDetails:20}));
+  await fs.writeFile(path.join(dir,'preload.mjs'),`
+    import cp from 'node:child_process';import {syncBuiltinESMExports} from 'node:module';
+    cp.spawnSync=()=>({error:new Error('ETIMEDOUT'),status:null,signal:'SIGTERM'});syncBuiltinESMExports();
+    const OriginalDate=Date;globalThis.Date=class extends OriginalDate{constructor(...a){super(...(a.length?a:['2026-10-19T05:00:00Z']));}static now(){return OriginalDate.parse('2026-10-19T05:00:00Z');}};
+  `);
+  const r=spawnSync(process.execPath,['--import','./preload.mjs','cloud/run.mjs'],{cwd:dir,encoding:'utf8',timeout:10000});assert.equal(r.status,1,r.stderr);
+  const status=JSON.parse(await fs.readFile(path.join(dir,'data/status.json')));assert.equal(status.processed,7);assert.equal(status.completedDetails,5);assert.equal(status.missingDetails,20);assert.equal(status.state,'error');assert.equal(status.stopReason,'interrupted');
+});
 test('old status publication derives backlog without inventing historical completed counts',async t=>{
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-progress-build-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
   const state=fixture();add(state,1);add(state,2,'verify');add(state,3,'refresh');
