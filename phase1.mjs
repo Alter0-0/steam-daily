@@ -78,7 +78,7 @@ export function preserveSnapshot(old, fresh) {
   return {...old,...fresh,price:old.price,priceValue:old.priceValue,rating:pending.includes('reviews')?fresh.rating:old.rating,reviews:pending.includes('reviews')?fresh.reviews:old.reviews,
     snapshotAt:old.snapshotAt??null,firstObservedAt:old.firstObservedAt||fresh.firstObservedAt,
     priceSnapshotAt:old.priceSnapshotAt||old.snapshotAt||null,reviewSnapshotAt:pending.includes('reviews')?fresh.reviewSnapshotAt:old.reviewSnapshotAt||old.snapshotAt||null,
-    metadataUpdatedAt:fresh.snapshotAt,metadataPending:fresh.metadataPending,provisional:false};
+    metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:fresh.metadataPending,provisional:false};
 }
 function ensureReport(state,date,now) {
   let report=state.reports.find(r=>r.date===date);
