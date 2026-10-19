@@ -77,6 +77,21 @@ test('corrected dates move only release entries; discovery history and price sna
   assert.equal(state.reports.find(r=>r.date==='2026-10-17').sections[0].games.length,1);
 });
 
+test('release snapshot retains its own price when an earlier discovery had another price',()=>{
+  const discovery={id:1,name:'Game',releaseDate:'2026-10-16',price:'¥28.80',rating:60,reviews:'5',demo:false,snapshotAt:'2026-10-14T00:00:00Z'};
+  const release={...discovery,price:'¥36.00',rating:80,reviews:'10',snapshotAt:'2026-10-16T00:00:00Z'};
+  const state={reports:[{date:'2026-10-14',generatedAt:'2026-10-14T00:00:00Z',sections:[{key:'new-page',games:[discovery]}]},{date:'2026-10-16',generatedAt:'2026-10-16T00:00:00Z',sections:[{key:'release',games:[release]}]}]};
+  initialize(state,now);const record=state.phase1.catalog[1];
+  const fresh=normalizeRecord(record,detail(1),response(1).review,html(1792115973),now);
+  applyRecord(state,record,fresh,now,latest);
+  let saved=state.reports.find(r=>r.date==='2026-10-16').sections[0].games[0];
+  assert.equal(saved.price,'¥36.00');assert.equal(saved.rating,80);assert.equal(saved.reviews,'10');assert.equal(saved.snapshotAt,release.snapshotAt);
+  applyRecord(state,record,{...fresh,releaseDate:'2026-10-17'},now,latest);
+  saved=state.reports.find(r=>r.date==='2026-10-17').sections[0].games[0];
+  assert.equal(saved.price,'¥36.00');assert.equal(saved.rating,80);assert.equal(saved.reviews,'10');assert.equal(saved.snapshotAt,release.snapshotAt);
+  assert.equal(state.reports.find(r=>r.date==='2026-10-14').sections[0].games[0].price,'¥28.80');
+});
+
 test('details failure still publishes discovered identity; later retry fills it without a false zero review',async()=>{
   const state={reports:[]};
   await runSweep(state,{now,latest,getPage:async filter=>({items:filter==='games'?[row(2)]:[],total:filter==='games'?1:0}),getDetail:async()=>{throw new Error('timeout');}});

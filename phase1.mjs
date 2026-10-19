@@ -99,6 +99,7 @@ export function applyRecord(state, record, fresh, now, latest) {
   const oldest=shiftDate(latest,-29);
   // A correction can move the release section, while historical discoveries stay.
   if(!merged.comingSoon && date && date>=oldest && date<=latest) {
+    const priorRelease=state.reports.flatMap(r=>(r.sections||[]).filter(s=>s.key==='release'||s.key==='demo').flatMap(s=>s.games)).find(g=>g.id===merged.id);
     for(const report of state.reports)for(const section of report.sections||[]) {
       if(section.key==='release'||section.key==='demo')section.games=section.games.filter(g=>g.id!==merged.id||report.date===date);
     }
@@ -107,7 +108,7 @@ export function applyRecord(state, record, fresh, now, latest) {
     const previous=section.games.find(g=>g.id===merged.id);
     const correction=old?.releaseDate&&old.releaseDate!==date?{previousReleaseDate:old.releaseDate,dateCorrectedAt:now}:{};
     const late=!previous && report.generatedAt && report.generatedAt!==now ? {recoveredAt:now} : {};
-    const entry={...merged,...correction,...late};
+    const entry={...preserveSnapshot(previous||priorRelease,merged),...correction,...late};
     section.games=[...section.games.filter(g=>g.id!==merged.id),entry];
     record.snapshot=entry;
   }
