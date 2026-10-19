@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createSteamClient } from './steam-network.mjs';
 import { runSweep, parseSearchPage } from './phase1.mjs';
-import { cnDate } from './release-time.mjs';
+import { cnDate, pageEvidence } from './release-time.mjs';
 import { shiftDate } from './history.mjs';
 
 const root=path.dirname(fileURLToPath(import.meta.url));
@@ -23,14 +23,27 @@ try {
   const cache=await read('detail-cache.json',{});
   // Cloud egress hit Steam's search limit with the former 1.4-second spacing.
   const client=createSteamClient({interval:5000});
+  const maxDetails=Number(process.env.MAX_DETAILS||0);
+  if(!Number.isInteger(maxDetails)||maxDetails<0||maxDetails>1000)throw new Error('每轮条数必须为0至1000的整数');
+  const priorityInput=process.env.PRIORITY_APP_IDS?.trim()||'';
+  if(priorityInput&&!/^\d+(?:[\s,]+\d+)*$/.test(priorityInput))throw new Error('优先核验列表只能包含以逗号或空格分隔的 Steam AppID');
+  const priorityIds=[...new Set(priorityInput.split(/[\s,]+/).filter(Boolean).map(Number))];
+  if(priorityIds.length>20||priorityIds.some(id=>!Number.isSafeInteger(id)||id<=0))throw new Error('每轮最多优先核验20个有效 AppID');
+  let priorityRequests=[];
+  try {priorityRequests=JSON.parse(await fs.readFile(path.join(root,'priority-games.json'),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
   const budget=Date.now()+30*60*1000;
+  const searchBudget=Date.now()+8*60*1000;
   let requestHalted=false;
   const request=async(url,options)=>{try{return await client(url,options);}catch(e){if(/403|429|限制请求|已暂停/.test(e.message))requestHalted=true;throw e;}};
   await write('status.json',{state:'running',startedAt,message:'正在复查近期发售并校正北京时间；已发布日报仍会补充'});
   const summary=await runSweep(state,{
     now:startedAt,latest,force30:process.argv.includes('--review-30'),
+    maxDetails:maxDetails||Infinity,priorityIds,priorityRequests,
     deadline:()=>Date.now()>budget||requestHalted,
+    scanDeadline:()=>Date.now()>searchBudget,
+    stopReason:()=>requestHalted?'steam-limit':Date.now()>budget?'time-budget':null,
     save:()=>write('state.json',state),
+    onProgress:progress=>write('status.json',{state:'running',...progress,message:'本轮采集中；网页显示最近已发布的进度快照'}),
     getPage:async(filter,start)=>{
       const params=new URLSearchParams({query:'',start:String(start),count:'100',sort_by:'Released_DESC',infinite:'1',cc:'cn',l:'english',category1:filter==='demo'?'10':'998'});
       const p=await request('https://store.steampowered.com/search/results/?'+params);
@@ -43,7 +56,7 @@ try {
     getDetail:async record=>{
       const id=record.item.appid;
       const cached=cache[id];
-      let result;
+      let result,reviewAttempted=false;
       if(cached?.result?.detail && Date.now()-Date.parse(cached.savedAt)<48*3600000)result=cached.result;
       else {
         const p=await request(`https://store.steampowered.com/api/appdetails?appids=${id}&cc=cn&l=schinese`);
@@ -51,24 +64,29 @@ try {
         if(!detail?.success)throw new Error(`详情 ${id} 暂不可用，已保留搜索记录`);
         if(!['game','demo'].includes(detail.data.type))return null;
         const review=await request(`https://store.steampowered.com/appreviews/${id}?json=1&language=all&purchase_type=all`).catch(()=>null);
+        reviewAttempted=true;
         const d=detail.data;
         result={detail:{success:true,data:Object.fromEntries(['type','name','is_free','price_overview','header_image','genres','developers','publishers','release_date'].map(k=>[k,d[k]]))},review:review?{query_summary:review.query_summary}:null};
         cache[id]={savedAt:new Date().toISOString(),result};
         await write('detail-cache.json',cache);
       }
       // Retry missing reviews without forcing another appdetails request.
-      if(!result.review?.query_summary&&!requestHalted) {
+      if(!result.review?.query_summary&&!requestHalted&&!reviewAttempted) {
         const review=await request(`https://store.steampowered.com/appreviews/${id}?json=1&language=all&purchase_type=all`).catch(()=>null);
         if(review?.query_summary){result.review={query_summary:review.query_summary};cache[id]={savedAt:new Date().toISOString(),result};await write('detail-cache.json',cache);}
       }
-      const html=await request(`https://store.steampowered.com/app/${id}/?cc=cn&l=schinese`,{format:'text'}).catch(()=>null);
-      return {...result,html};
+      let evidence=cached?.evidence&&Date.now()-Date.parse(cached.evidenceAt)<24*3600000?cached.evidence:null;
+      if(!evidence&&!requestHalted) {
+        const html=await request(`https://store.steampowered.com/app/${id}/?cc=cn&l=schinese`,{format:'text'}).catch(()=>null);
+        if(html){evidence=pageEvidence(html);cache[id]={...cache[id],evidence,evidenceAt:new Date().toISOString()};await write('detail-cache.json',cache);}
+      }
+      return {...result,evidence};
     }
   });
   await write('status.json',{...summary,startedAt,finishedAt:new Date().toISOString()});
   console.log(JSON.stringify(summary));
-  if(summary.state==='partial')process.exitCode=1;
+  if(summary.stopReason==='steam-limit'||Object.keys(summary.scanErrors||{}).length||summary.failed)process.exitCode=1;
 } catch(e) {
-  if(acquired)await write('status.json',{state:'error',startedAt,finishedAt:new Date().toISOString(),reportDate:latest,message:e.message});
+  if(acquired)await write('status.json',{...await read('status.json',{}),state:'error',startedAt,finishedAt:new Date().toISOString(),stopReason:'error',reportDate:latest,message:e.message});
   console.error(e);process.exitCode=1;
 } finally {if(acquired)await fs.unlink(lock).catch(()=>{});}

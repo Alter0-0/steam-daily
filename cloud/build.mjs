@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {backlog} from '../phase1.mjs';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const site = path.join(root, 'site');
 export async function buildSite(destination = site, dataRoot = path.join(root, 'data')) {
@@ -18,6 +19,13 @@ export async function buildSite(destination = site, dataRoot = path.join(root, '
   let status = { state: 'never-run', message: '等待首次云端采集' };
   try { saved = JSON.parse(await fs.readFile(path.join(dataRoot, 'state.json'), 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
   try { status = JSON.parse(await fs.readFile(path.join(dataRoot, 'status.json'), 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  // Older runs have no split counters. Derive only the current backlog, never
+  // invent historical completed counts or present an old checkpoint as live.
+  if(saved.phase1?.catalog) {
+    const latest=status.reportDate||saved.reports?.[0]?.date;
+    const split=backlog(saved,{latest},new Date().toISOString());
+    status={...status,...split};
+  }
   // Publish report fields only. Detail cache and operational metadata stay out.
   await fs.writeFile(path.join(destination, 'data/state.json'), JSON.stringify({ reports: saved.reports || [], generatedAt: saved.generatedAt || null }));
   await fs.writeFile(path.join(destination, 'data/status.json'), JSON.stringify(status));

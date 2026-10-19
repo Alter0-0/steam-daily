@@ -21,9 +21,9 @@ export function pageEvidence(html = '') {
   });
   return { timestamp: timestamp || null, earlyAccessDate: parseReleaseDate(early), announcements };
 }
-export function resolveReleaseTime({ storeText, searchText, html = '', demo = false, earlyAccess = false, comingSoon = false, now = new Date() }) {
+export function resolveReleaseTime({ storeText, searchText, html = '', evidence: cachedEvidence, demo = false, earlyAccess = false, comingSoon = false, now = new Date() }) {
   const storeDate = parseReleaseDate(storeText) || parseReleaseDate(searchText);
-  const evidence = pageEvidence(html);
+  const evidence = cachedEvidence || pageEvidence(html);
   const withinDate = timestamp => storeDate && Number.isFinite(timestamp) && timestamp > 0 && timestamp * 1000 <= +new Date(now) && Math.abs(Date.parse(cnDate(timestamp * 1000)) - Date.parse(storeDate)) <= 2 * 86400000;
   const timestampMatches = withinDate(evidence.timestamp);
   let eventKind = demo ? 'demo' : earlyAccess ? 'early-access' : evidence.earlyAccessDate ? 'full-release' : 'release';

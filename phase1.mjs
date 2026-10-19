@@ -67,15 +67,15 @@ export function placeholder(record, now) {
     price:'待核实',priceValue:999999,rating:null,reviews:'0',tags:[],status:[demo?'Demo':'信息待补充'],studio:'待核实',publisher:'待核实',demo,
     ...resolveReleaseTime({searchText:item.releasedText,demo,now}),firstObservedAt:record.firstObservedAt,snapshotAt:now,metadataPending:['detail','reviews','time'],provisional:true,source:'release-search',storeUrl:`https://store.steampowered.com/app/${item.appid}/` };
 }
-export function normalizeRecord(record, detail, review, html, now) {
+export function normalizeRecord(record, detail, review, html, now, evidence) {
   const d=detail.data;
   if(!['game','demo'].includes(d.type))return null;
   const total=review?.query_summary?.total_reviews; const positive=review?.query_summary?.total_positive;
   const tags=(d.genres||[]).map(g=>g.description).filter(Boolean).slice(0,8);
   const demo=d.type==='demo'; const earlyAccess=(d.genres||[]).some(g=>String(g.id)==='70'||/抢先体验|Early Access/i.test(g.description));
-  const timing=resolveReleaseTime({storeText:d.release_date?.date,searchText:record.item.releasedText,html,demo,earlyAccess,comingSoon:!!d.release_date?.coming_soon,now});
+  const timing=resolveReleaseTime({storeText:d.release_date?.date,searchText:record.item.releasedText,html,evidence,demo,earlyAccess,comingSoon:!!d.release_date?.coming_soon,now});
   const stage=demo?'Demo':earlyAccess?'抢先体验':timing.eventKind==='full-release'?'正式版上线':'游戏发售';
-  const pending=[];if(!review?.query_summary)pending.push('reviews');if(!html)pending.push('time');
+  const pending=[];if(!review?.query_summary)pending.push('reviews');if(!html&&!evidence)pending.push('time');
   return { id:record.item.appid,name:d.name||record.item.searchName,en:record.item.searchName||d.name,cover:d.header_image||`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${record.item.appid}/header.jpg`,
     price:d.is_free?'免费':d.price_overview?.final_formatted||'未定价',priceValue:d.is_free?0:(d.price_overview?.final??99999900)/100,
     rating:total>0?Math.round(positive/total*100):null,reviews:(total||0).toLocaleString('en-US'),tags,status:[stage],studio:(d.developers||[]).join(', ')||'未知',publisher:(d.publishers||[]).join(', ')||'未知',demo,
@@ -85,9 +85,10 @@ export function preserveSnapshot(old, fresh) {
   if(!old || old.provisional)return {...fresh,snapshotAt:old?.snapshotAt||fresh.snapshotAt};
   // Preserve every previously known price/review. Only fill fields that failed then.
   const pending=old.metadataPending||[];
-  return {...old,...fresh,price:old.price,priceValue:old.priceValue,rating:pending.includes('reviews')?fresh.rating:old.rating,reviews:pending.includes('reviews')?fresh.reviews:old.reviews,
+  const missingPrice=old.price==null||['待核实','未定价'].includes(old.price);
+  return {...old,...fresh,price:missingPrice?fresh.price:old.price,priceValue:missingPrice?fresh.priceValue:old.priceValue,rating:pending.includes('reviews')?fresh.rating:old.rating,reviews:pending.includes('reviews')?fresh.reviews:old.reviews,
     snapshotAt:old.snapshotAt??null,firstObservedAt:old.firstObservedAt||fresh.firstObservedAt,
-    priceSnapshotAt:old.priceSnapshotAt||old.snapshotAt||null,reviewSnapshotAt:pending.includes('reviews')?fresh.reviewSnapshotAt:old.reviewSnapshotAt||old.snapshotAt||null,
+    priceSnapshotAt:missingPrice?fresh.priceSnapshotAt:old.priceSnapshotAt||old.snapshotAt||null,reviewSnapshotAt:pending.includes('reviews')?fresh.reviewSnapshotAt:old.reviewSnapshotAt||old.snapshotAt||null,
     metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:fresh.metadataPending,provisional:false};
 }
 function ensureReport(state,date,now) {
@@ -136,11 +137,38 @@ export function applyRecord(state, record, fresh, now, latest) {
   }
   state.reports=state.reports.filter(r=>r.date>=oldest).sort((a,b)=>b.date.localeCompare(a.date));
 }
+export function needsDetails(record) {
+  return !record.snapshot || !!record.snapshot.provisional || !!record.snapshot.metadataPending?.length;
+}
+export function backlog(state,plan,now) {
+  const active=Object.values(state.phase1.catalog).filter(r=>!r.excluded);
+  const due=r=>!r.retryAfter || r.retryAfter<=now;
+  const refresh=r=>r.verifiedAt && +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY);
+  return {missingDetails:active.filter(needsDetails).length,
+    initialVerification:active.filter(r=>!needsDetails(r)&&!r.verifiedAt).length,
+    refreshDue:active.filter(r=>!needsDetails(r)&&refresh(r)).length,
+    waitingRetry:active.filter(r=>!due(r)).length};
+}
+const QUEUE_SLOTS=['priority','missing-game','missing-demo','missing-game','verify','missing-demo','refresh'];
 export function workQueue(state,plan,now) {
   const due = Object.values(state.phase1.catalog).filter(r=>!r.excluded && (!r.retryAfter||r.retryAfter<=now) &&
-    (!r.verifiedAt || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY)));
-  // Failed items cannot monopolize the front; unverified historical rows must progress.
-  return due.sort((a,b)=>(a.attempts||0)-(b.attempts||0)||Number(!!a.verifiedAt)-Number(!!b.verifiedAt)||String(b.item.releaseDate||'').localeCompare(a.item.releaseDate||'')||a.item.appid-b.item.appid);
+    (needsDetails(r) || !r.verifiedAt || r.priorityRequestedAt>(r.priorityAttemptedAt||'') || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY)));
+  const lanes=Object.fromEntries([...new Set(QUEUE_SLOTS)].map(k=>[k,[]]));
+  for(const r of due) {
+    const demo=r.snapshot?.demo ?? (r.item.sources?.includes('demo')&&!r.item.sources?.includes('games'));
+    const lane=r.priorityRequestedAt>(r.priorityAttemptedAt||'')?'priority':needsDetails(r)?(demo?'missing-demo':'missing-game'):!r.verifiedAt?'verify':'refresh';
+    lanes[lane].push(r);
+  }
+  // Old untouched rows precede retried rows. Separate shares prevent either
+  // Demo volume or routine rechecks from blocking initial detail completion.
+  for(const lane of Object.values(lanes))lane.sort((a,b)=>String(a.lastAttemptAt||a.firstObservedAt||state.phase1.initializedAt||'').localeCompare(b.lastAttemptAt||b.firstObservedAt||state.phase1.initializedAt||'')||String(a.item.releaseDate||'').localeCompare(b.item.releaseDate||'')||a.item.appid-b.item.appid);
+  const queue=[];let turn=state.phase1.queueTurn||0;
+  while(queue.length<due.length) {
+    const preferred=QUEUE_SLOTS[turn++%QUEUE_SLOTS.length];
+    const lane=lanes[preferred].length?lanes[preferred]:Object.values(lanes).find(items=>items.length);
+    queue.push(lane.shift());
+  }
+  return queue;
 }
 export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()=>false}) {
   const key=`${plan.oldest}:${filter}`;
@@ -172,32 +200,51 @@ export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()
   }
   return false;
 }
-export async function runSweep(state,{now=new Date().toISOString(),latest,force30=false,getPage,getDetail,save=async()=>{},deadline=()=>false}) {
+export async function runSweep(state,{now=new Date().toISOString(),latest,force30=false,getPage,getDetail,save=async()=>{},deadline=()=>false,scanDeadline=deadline,stopReason=()=>null,maxDetails=Infinity,priorityIds=[],priorityRequests=[],onProgress=async()=>{}}) {
   initialize(state,now);const plan=sweepPlan(state,now,latest,force30);
+  for(const id of priorityIds)if(state.phase1.catalog[id])state.phase1.catalog[id].priorityRequestedAt=now;
   ensureReport(state,latest,now);
-  let scansComplete=true;
+  let processed=0,completedDetails=0,verified=0,failed=0,excluded=0,scansComplete=false;
+  const checkpoint=async stage=>{
+    state.phase1.progress={startedAt:now,updatedAt:new Date().toISOString(),reportDate:latest,stage,scanDays:plan.scanDays,scansComplete,processed,completedDetails,verified,failed,excluded,...backlog(state,plan,now)};
+    await save();await onProgress(state.phase1.progress);
+  };
+  await checkpoint('search');
+  scansComplete=true;
   for(const filter of ['games','demo']) {
-    const complete=await scanWindow(state,plan,filter,{getPage,save,now,deadline});
+    const complete=await scanWindow(state,plan,filter,{getPage,save,now,deadline:()=>deadline()||scanDeadline()});
     scansComplete=complete&&scansComplete;
     if(deadline()){scansComplete=false;break;}
   }
-  let processed=0;
+  for(const request of priorityRequests) {
+    const record=state.phase1.catalog[request.appid];
+    if(record&&request.requestedAt>(record.priorityRequestedAt||''))record.priorityRequestedAt=request.requestedAt;
+  }
+  for(const id of priorityIds)if(state.phase1.catalog[id])state.phase1.catalog[id].priorityRequestedAt=now;
   const queue=workQueue(state,plan,now);
   // Immediately show every newly discovered candidate, even on an interrupted run.
   for(const record of queue)if(!record.snapshot){applyRecord(state,record,placeholder(record,now),now,latest);}
-  await save();
+  await checkpoint('details');
   for(const record of queue) {
-    if(deadline())break;
+    if(deadline()||processed>=maxDetails)break;
+    const wasMissing=needsDetails(record);
+    record.lastAttemptAt=now;
+    if(record.priorityRequestedAt)record.priorityAttemptedAt=now;
+    state.phase1.queueTurn=((state.phase1.queueTurn||0)+1)%QUEUE_SLOTS.length;
     try {
       const result=await getDetail(record);
-      const game=result===null?null:normalizeRecord(record,result.detail,result.review,result.html,now);
+      const game=result===null?null:normalizeRecord(record,result.detail,result.review,result.html,now,result.evidence);
       applyRecord(state,record,game,now,latest);
       record.verifiedAt=now;record.attempts=0;delete record.lastError;delete record.retryAfter;
       if(game?.metadataPending?.length){record.verifiedAt=null;record.retryAfter=new Date(+new Date(now)+3600000).toISOString();record.attempts=1;}
+      if(game===null)excluded++;
+      else if(!needsDetails(record)){if(wasMissing)completedDetails++;else verified++;}
+      else failed++;
     } catch(e) {
       record.lastError=e.message;record.attempts=(record.attempts||0)+1;record.retryAfter=new Date(+new Date(now)+3600000).toISOString();
+      failed++;
     }
-    processed++;await save();
+    processed++;await checkpoint('details');
   }
   const pending=Object.values(state.phase1.catalog).filter(r=>!r.excluded&&(!r.verifiedAt||r.snapshot?.metadataPending?.length));
   const weeklyQueueDone=!queue.some(r=>!r.verifiedAt || r.verifiedAt<now);
@@ -215,7 +262,9 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
     }
   }
   state.generatedAt=now;state.phase1.lastRunAt=now;
-  state.phase1.lastSummary={scanDays:plan.scanDays,scansComplete,processed,candidates:Object.keys(state.phase1.catalog).length,pending:pending.length};
+  const reason=stopReason() || (processed<queue.length&&processed>=maxDetails?'batch-limit':deadline()?'time-budget':!scansComplete?'search-incomplete':failed?'request-failed':pending.length?'backlog':null);
+  await checkpoint('finished');
+  state.phase1.lastSummary={...state.phase1.progress,stopReason:reason,candidates:Object.keys(state.phase1.catalog).length,pending:pending.length};
   // Prune operational records outside retention only AFTER a successful full sweep.
   if(plan.weekly&&scansComplete&&weeklyQueueDone) {
     for(const [id,r]of Object.entries(state.phase1.catalog))if(r.snapshot?.releaseDate&&r.snapshot.releaseDate<plan.retentionOldest)delete state.phase1.catalog[id];

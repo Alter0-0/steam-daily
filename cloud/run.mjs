@@ -17,7 +17,7 @@ if (hour < 4) {
   catch (error) { if (error.code !== 'ENOENT') throw error; }
   const latest = state.reports.find(report => report.date === target);
   const lastRunAt = state.phase1?.lastRunAt;
-  if (lastRunAt && Date.now() - Date.parse(lastRunAt) < 45 * 60 * 1000 && latest && !process.argv.includes('--review-30')) {
+  if (lastRunAt && Date.now() - Date.parse(lastRunAt) < 45 * 60 * 1000 && latest && !process.argv.includes('--review-30') && !process.env.PRIORITY_APP_IDS?.trim() && !Number(process.env.MAX_DETAILS)) {
     console.log('距离上次复查不足45分钟，等待下一轮；已发布日报仍会持续复查');
   } else {
     const startedAt = now.toISOString();
@@ -26,7 +26,9 @@ if (hour < 4) {
     const result = spawnSync(process.execPath, args, { cwd: root, stdio: 'inherit', timeout: 35 * 60 * 1000, killSignal: 'SIGTERM' });
     if (result.error || result.signal) {
       await fs.mkdir(path.join(root, 'data'), { recursive: true });
-      await fs.writeFile(path.join(root, 'data/status.json'), JSON.stringify({ state: 'error', startedAt, finishedAt: new Date().toISOString(), reportDate: target, message: '本轮达到运行时限或中断，已成功的请求已保存；下轮继续' }, null, 2));
+      let checkpoint={};
+      try{checkpoint=JSON.parse(await fs.readFile(path.join(root,'data/status.json'),'utf8'));}catch{}
+      await fs.writeFile(path.join(root, 'data/status.json'), JSON.stringify({ ...checkpoint,state: 'error', startedAt, finishedAt: new Date().toISOString(), reportDate: target,stopReason:'interrupted',message: '本轮达到运行时限或中断，已成功的请求已保存；下轮继续' }, null, 2));
     }
     process.exitCode = result.status ?? 1;
   }

@@ -58,6 +58,14 @@
     .toggle input { accent-color: var(--orange); width: 16px; height: 16px; }
     .result-meta { color: var(--muted); font-size: 13px; margin-left: auto; }
     .archive-search-bar { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .collection-progress { background:#fff; border:1px solid var(--line); border-radius:7px; padding:16px; margin-bottom:18px; }
+    .progress-heading { display:flex; justify-content:space-between; gap:12px; align-items:center; }
+    .progress-heading h2 { font-size:16px; margin:0; }
+    .progress-heading button { background:#fff; border:1px solid var(--line); border-radius:5px; padding:7px 11px; color:var(--navy); }
+    .progress-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(135px,1fr)); gap:12px; margin:14px 0; }
+    .progress-grid dt { color:var(--muted); font-size:12px; }
+    .progress-grid dd { font-size:22px; margin:5px 0 0; }
+    .progress-note { color:var(--muted); font-size:12px; line-height:1.7; margin:5px 0 0; overflow-wrap:anywhere; }
     .archive-search-bar p { margin: 0; color: var(--muted); font-size: 13px; }
     .archive-search-button { border: 1px solid var(--navy-2); border-radius: 6px; padding: 11px 17px; background: var(--navy); color: #fff; white-space: nowrap; }
     .global-search-dialog { width: min(780px, calc(100% - 32px)); max-height: calc(100dvh - 40px); padding: 0; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--bg); box-shadow: var(--shadow); }
@@ -158,6 +166,20 @@
       </div>
     </header>
     <main>
+      <section class="collection-progress" aria-labelledby="progressTitle">
+        <div class="progress-heading"><h2 id="progressTitle">采集进度</h2><button type="button" id="refreshProgress">刷新进度</button></div>
+        <p class="progress-note" id="progressTime">正在读取最近一次采集记录…</p>
+        <dl class="progress-grid">
+          <div><dt>本轮已处理</dt><dd id="progressProcessed">—</dd></div>
+          <div><dt>本轮补齐详情</dt><dd id="progressCompleted">—</dd></div>
+          <div><dt>本轮完成复核</dt><dd id="progressVerified">—</dd></div>
+          <div><dt>仍待补详情</dt><dd id="progressMissing">—</dd></div>
+          <div><dt>已有资料待首次复核</dt><dd id="progressInitial">—</dd></div>
+          <div><dt>到期例行复查</dt><dd id="progressRefresh">—</dd></div>
+        </dl>
+        <p class="progress-note" id="progressReason" role="status">这里显示最近已发布的采集快照。</p>
+        <p class="progress-note" id="progressCoverage">待补详情是已发现但资料不全的条目，不等于漏收游戏数量。搜索复查完成也不代表 Steam 全量覆盖。</p>
+      </section>
       <div class="archive-search-bar">
         <p>按日期阅读日报，或直接查找已收录的游戏。</p>
         <button class="archive-search-button" id="openGlobalSearch" type="button">搜索全部日报</button>
@@ -469,8 +491,27 @@
     tagSelect.addEventListener('change', event => { state.tag = event.target.value; render(); });
     sortSelect.addEventListener('change', event => { state.sort = event.target.value; render(); });
     demoOnly.addEventListener('change', event => { state.demoOnly = event.target.checked; render(); });
+    function renderCollectionProgress(status) {
+      const count=(id,value)=>document.querySelector(id).textContent=Number.isFinite(value)?value.toLocaleString('zh-CN'):'—';
+      count('#progressProcessed',status.processed);count('#progressCompleted',status.completedDetails);count('#progressVerified',status.verified);
+      count('#progressMissing',status.missingDetails);count('#progressInitial',status.initialVerification);count('#progressRefresh',status.refreshDue);
+      const stamp=value=>value&&Number.isFinite(Date.parse(value))?new Date(value).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'暂无记录';
+      const ended=status.finishedAt||status.updatedAt||status.startedAt;
+      const stale=ended&&Date.now()-Date.parse(ended)>3*3600000;
+      document.querySelector('#progressTime').textContent=`最近采集：${stamp(status.startedAt)}${status.finishedAt?' · 结束：'+stamp(status.finishedAt):''}（北京时间）${stale?' · 这份记录已超过3小时，请留意后续更新':''}`;
+      const reasons={'steam-limit':'Steam 暂时限制访问，本轮已暂停；成功结果已保存，后续定时任务将继续尝试。','time-budget':'本轮30分钟时段结束，进度已保存，后续定时任务继续。','batch-limit':'本轮设定条数已处理完，剩余队列留待后续任务。','search-incomplete':'搜索分页尚未扫完或请求失败，已保存位置，下轮继续。','request-failed':'部分资料请求失败，已进入延后重试队列。','backlog':'本轮结束，仍有积压资料或等待重试的条目，后续任务继续。','interrupted':'本轮中断，显示最后保存的进度；下轮继续。','error':'本轮运行异常，显示已保存的进度，等待后续任务重试。'};
+      let reason=reasons[status.stopReason]||(status.state==='error'?'本轮运行异常，成功保存的日报仍可查看。':status.state==='partial'?'本轮部分完成，仍有条目待补查。':status.state==='success'?'本轮检查完成。':'暂无完整采集记录。');
+      if(status.state==='running')reason='这是运行中保存的检查点，不代表云端此刻仍在运行；下一次发布后会更新。';
+      if(Number.isFinite(status.waitingRetry)&&status.waitingRetry)reason+=` 其中 ${status.waitingRetry} 个条目等待重试时间到达。`;
+      if(typeof status.scansComplete==='boolean')reason+=status.scansComplete?' 本轮搜索窗口已扫完。':' 本轮搜索窗口尚未扫完。';
+      document.querySelector('#progressReason').textContent=reason+' 页面每5分钟检查已发布更新，也可手动刷新进度。';
+    }
+    let loadingReports=false;
     async function loadLiveReports() {
       if (location.protocol === 'file:') return;
+      if(loadingReports)return;
+      loadingReports=true;
+      const refreshButton=document.querySelector('#refreshProgress');refreshButton.disabled=true;
       const cloud = window.STEAM_DAILY_STATIC === true;
       try {
         const [response, statusResponse] = await Promise.all([
@@ -480,8 +521,12 @@
         if (!response.ok || !statusResponse.ok) throw new Error('日报服务暂不可用');
         const payload = await response.json();
         const status = await statusResponse.json();
+        renderCollectionProgress(status);
         if (Array.isArray(payload.reports) && payload.reports.length) {
+          const selectedDate=reports[state.reportIndex]?.date;
           reports = payload.reports.map(report => ({ ...report, label: report.label || '日报' }));
+          const selectedIndex=reports.findIndex(report=>report.date===selectedDate);
+          state.reportIndex=selectedIndex>=0?selectedIndex:0;
           const failed = status.state === 'error';
           const partial = status.state === 'partial';
           const latestComplete = reports.find(report => report.date === status.reportDate)?.collection?.state === 'complete';
@@ -494,8 +539,13 @@
         }
       } catch (error) {
         document.querySelector('#dataStatus').textContent = cloud ? '云端日报暂时无法读取，请稍后刷新' : '演示数据 · 本地服务未返回日报';
+        document.querySelector('#progressReason').textContent='本次读取失败，保留页面已有日报和进度。请检查网络，或稍后点击“刷新进度”。';
+      } finally {
+        loadingReports=false;refreshButton.disabled=false;
       }
     }
+    document.querySelector('#refreshProgress').addEventListener('click',loadLiveReports);
+    setInterval(()=>{if(!document.hidden)loadLiveReports();},5*60*1000);
     refreshTags(); refreshGlobalSearch(); render(); loadLiveReports();
   </script>
 </body>
