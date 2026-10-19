@@ -1,14 +1,12 @@
 {
   "state": "partial",
-  "startedAt": "2026-10-19T01:23:09.125Z",
-  "finishedAt": "2026-10-19T01:24:40.371Z",
   "reportDate": "2026-10-18",
-  "pendingDates": [
-    "2026-10-07",
-    "2026-10-08",
-    "2026-10-12",
-    "2026-10-18",
-    "2026-10-17"
-  ],
-  "message": "最新日报已保存成功条目，未完成项目将在下次任务继续"
+  "scanDays": 30,
+  "scansComplete": false,
+  "processed": 0,
+  "candidates": 3448,
+  "pending": 3448,
+  "message": "初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖",
+  "startedAt": "2026-10-19T03:17:31.443Z",
+  "finishedAt": "2026-10-19T03:18:20.327Z"
 }
