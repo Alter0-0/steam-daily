@@ -147,7 +147,7 @@ export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()
       scan.completeAt=now;delete scan.error;await save();return true;
     }
     const signature=items.map(i=>i.appid).join(',');
-    if(scan.signatures.includes(signature)){scan.error='搜索重复页，保留游标待复查';scan.start=0;scan.pages=0;scan.signatures=[];await save();return false;}
+    if(scan.signatures.includes(signature)){scan.error=`搜索在偏移 ${scan.start} 返回重复页，保留已确认游标待复查`;await save();return false;}
     scan.signatures.push(signature);
     const relevant=items.filter(i=>!i.releaseDate||i.releaseDate>=plan.searchCutoff);
     ingest(state,relevant,filter,now);
@@ -209,5 +209,6 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
     state.phase1.scans=Object.fromEntries(Object.entries(state.phase1.scans).filter(([key])=>key.startsWith(plan.oldest)));
   }
   await save();
-  return {state:pending.length||!scansComplete?'partial':'success',reportDate:latest,...state.phase1.lastSummary,message:'初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖'};
+  const scanErrors=Object.fromEntries(Object.entries(state.phase1.scans).filter(([key,scan])=>key.startsWith(plan.oldest)&&scan.error).map(([key,scan])=>[key,scan.error]));
+  return {state:pending.length||!scansComplete?'partial':'success',reportDate:latest,...state.phase1.lastSummary,scanErrors,message:'初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖'};
 }

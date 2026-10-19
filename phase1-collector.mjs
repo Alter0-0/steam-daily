@@ -21,7 +21,8 @@ try {
   const handle=await fs.open(lock,'wx');await handle.writeFile(JSON.stringify({pid:process.pid,startedAt}));await handle.close();acquired=true;
   const state=await read('state.json',{reports:[],firstSeen:{}});
   const cache=await read('detail-cache.json',{});
-  const client=createSteamClient();
+  // Cloud egress hit Steam's search limit with the former 1.4-second spacing.
+  const client=createSteamClient({interval:5000});
   const budget=Date.now()+30*60*1000;
   let requestHalted=false;
   const request=async(url,options)=>{try{return await client(url,options);}catch(e){if(/403|429|限制请求|已暂停/.test(e.message))requestHalted=true;throw e;}};
@@ -36,6 +37,7 @@ try {
       if(p.success!==1||typeof p.results_html!=='string')throw new Error('Steam 搜索未返回有效数据');
       const items=parseSearchRows(p.results_html);
       if(p.results_html.includes('data-ds-appid=')&&!items.length)throw new Error('Steam 搜索格式发生变化，等待核实');
+      console.log(JSON.stringify({search:filter,start,received:items.length,total:Number(p.total_count),first:items[0]?.appid,last:items.at(-1)?.appid}));
       return {items,total:Number(p.total_count)};
     },
     getDetail:async record=>{

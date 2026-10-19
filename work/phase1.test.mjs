@@ -114,7 +114,10 @@ test('saved pagination resumes after interruption; premature empty page is not c
 test('repeated pages and deadline leave a resumable partial state',async()=>{
   const state={reports:[]};initialize(state,now);
   assert.equal(await scanWindow(state,sweepPlan(state,now,latest),'games',{getPage:async()=>({items:[row(1)],total:100}),now,save:async()=>{}}),false);
-  assert.equal(Object.values(state.phase1.scans)[0].start,0);assert.ok(state.phase1.catalog[1]);
+  assert.equal(Object.values(state.phase1.scans)[0].start,1);assert.ok(state.phase1.catalog[1]);
+  const restored=JSON.parse(JSON.stringify(state));const starts=[];
+  assert.equal(await scanWindow(restored,sweepPlan(restored,now,latest),'games',{getPage:async(filter,start)=>{starts.push(start);return {items:[row(2)],total:2};},now,save:async()=>{}}),true);
+  assert.deepEqual(starts,[1]);assert.ok(restored.phase1.catalog[1]);assert.ok(restored.phase1.catalog[2]);
   const summary=await runSweep(state,{now,latest,getPage:emptyPage,getDetail:async()=>response(1),deadline:()=>true});
   assert.equal(summary.state,'partial');assert.equal(summary.scansComplete,false);
 });
