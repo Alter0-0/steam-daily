@@ -6,7 +6,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { resolveReleaseTime, parseReleaseDate } from '../release-time.mjs';
-import { initialize, sweepPlan, runSweep, scanWindow, normalizeRecord, applyRecord, ingest } from '../phase1.mjs';
+import { initialize, sweepPlan, runSweep, scanWindow, parseSearchPage, normalizeRecord, applyRecord, ingest } from '../phase1.mjs';
 
 const latest='2026-10-18', now='2026-10-19T02:00:00.000Z';
 const row=(id,date='2026-10-15')=>({appid:id,searchName:`Game ${id}`,releaseDate:date,releasedText:`${Number(date.slice(8))} Oct, 2026`});
@@ -124,6 +124,20 @@ test('saved pagination resumes after interruption; premature empty page is not c
   const bad={reports:[]};initialize(bad,now);
   assert.equal(await scanWindow(bad,sweepPlan(bad,now,latest),'games',{getPage:async()=>({items:[],total:100}),now,save:async()=>{}}),false);
   assert.match(Object.values(bad.phase1.scans)[0].error,/空页/);
+});
+
+test('duplicate app IDs do not reduce the raw Steam pagination offset',async()=>{
+  const raw=id=>`<a class="search_result_row" data-ds-appid="${id}"><span class="title">Game ${id}</span><div class="search_released">15 Oct, 2026</div></a>`;
+  const page=parseSearchPage({start:1000,total_count:1101,results_html:raw(1)+raw(1)},1000);
+  assert.equal(page.items.length,1);assert.equal(page.nextStart,1002);
+  const state={reports:[]};initialize(state,now);const plan=sweepPlan(state,now,latest);
+  state.phase1.scans[`${plan.oldest}:games`]={start:1000,pages:10,olderPages:0,signatures:[]};
+  const starts=[];
+  assert.equal(await scanWindow(state,plan,'games',{getPage:async(filter,start)=>{
+    starts.push(start);return start===1000?page:{items:[row(2)],total:1003,nextStart:1003};
+  },now,save:async()=>{}}),true);
+  assert.deepEqual(starts,[1000,1002]);
+  assert.equal(Object.keys(state.phase1.catalog).length,2);
 });
 
 test('repeated pages and deadline leave a resumable partial state',async()=>{

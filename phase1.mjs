@@ -44,6 +44,16 @@ export function parseSearchRows(html) {
   }
   return items;
 }
+export function parseSearchPage(payload, requestedStart) {
+  const items=parseSearchRows(payload.results_html);
+  // Pagination counts raw result rows, including repeated IDs discarded above.
+  // Using unique app IDs as the offset can land inside the same Steam page.
+  const rawRows=[...payload.results_html.matchAll(/<a\b[^>]*\bclass=["'][^"']*\bsearch_result_row\b[^"']*["']/g)].length;
+  const rowCount=rawRows||[...payload.results_html.matchAll(/data-ds-appid=/g)].length;
+  const responseStart=Number(payload.start);
+  const start=Number.isInteger(responseStart)&&responseStart>=0?responseStart:requestedStart;
+  return {items,total:Number(payload.total_count),nextStart:start+(rowCount||items.length)};
+}
 export function ingest(state, items, source, now) {
   const catalog=state.phase1.catalog;
   for (const item of items) {
@@ -153,7 +163,9 @@ export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()
     const relevant=items.filter(i=>!i.releaseDate||i.releaseDate>=plan.searchCutoff);
     ingest(state,relevant,filter,now);
     // Persist identity BEFORE attempting app details or review requests.
-    scan.start+=items.length;scan.pages++;pagesThisRun++;
+    const nextStart=payload.nextStart??scan.start+items.length;
+    if(!Number.isInteger(nextStart)||nextStart<=scan.start){scan.error='搜索偏移未前进，保留游标等待复查';await save();return false;}
+    scan.start=nextStart;scan.pages++;pagesThisRun++;
     scan.olderPages=items.every(i=>i.releaseDate&&i.releaseDate<plan.searchCutoff)?scan.olderPages+1:0;
     if(scan.olderPages>=3||(Number.isFinite(total)&&scan.start>=total)){scan.completeAt=now;delete scan.error;await save();return true;}
     await save();

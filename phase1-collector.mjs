@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createSteamClient } from './steam-network.mjs';
-import { runSweep, parseSearchRows } from './phase1.mjs';
+import { runSweep, parseSearchPage } from './phase1.mjs';
 import { cnDate } from './release-time.mjs';
 import { shiftDate } from './history.mjs';
 
@@ -35,10 +35,10 @@ try {
       const params=new URLSearchParams({query:'',start:String(start),count:'100',sort_by:'Released_DESC',infinite:'1',cc:'cn',l:'english',category1:filter==='demo'?'10':'998'});
       const p=await request('https://store.steampowered.com/search/results/?'+params);
       if(p.success!==1||typeof p.results_html!=='string')throw new Error('Steam 搜索未返回有效数据');
-      const items=parseSearchRows(p.results_html);
+      const page=parseSearchPage(p,start);const {items}=page;
       if(p.results_html.includes('data-ds-appid=')&&!items.length)throw new Error('Steam 搜索格式发生变化，等待核实');
-      console.log(JSON.stringify({search:filter,start,received:items.length,total:Number(p.total_count),first:items[0]?.appid,last:items.at(-1)?.appid}));
-      return {items,total:Number(p.total_count)};
+      console.log(JSON.stringify({search:filter,start,nextStart:page.nextStart,received:items.length,total:Number(p.total_count),first:items[0]?.appid,last:items.at(-1)?.appid}));
+      return page;
     },
     getDetail:async record=>{
       const id=record.item.appid;
