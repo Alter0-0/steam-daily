@@ -13,7 +13,7 @@ if(process.argv.includes('--published')){
 }
 const game={id:1,name:'测试游戏',en:'Sample',tags:['动作'],status:[],reviews:'10',rating:90,price:'免费',priceValue:0,time:'待核实',cover:'https://image.test/x'};
 let payload={reports:[{date:'2026-10-18',sections:[{key:'release',title:'当日发售',games:[game]}]}]};
-let status={state:'partial',startedAt:'2026-10-19T04:00:00Z',finishedAt:'2026-10-19T04:30:00Z',processed:21,completedDetails:15,verified:4,missingDetails:100,initialVerification:200,refreshDue:3,waitingRetry:2,scansComplete:true,stopReason:'time-budget'};
+let status={state:'partial',startedAt:'2026-10-19T04:00:00Z',finishedAt:'2026-10-19T04:30:00Z',processed:21,completedDetails:15,verified:4,failed:2,missingDetails:100,initialVerification:200,refreshDue:3,waitingRetry:2,scansComplete:true,stopReason:'time-budget'};
 let fail=false;
 const req=createRequire('C:/Users/xbjy2/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');
 const browser=await req('playwright').chromium.launch({headless:true,executablePath:'C:/Users/xbjy2/AppData/Local/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-win64/chrome-headless-shell.exe'});
@@ -27,6 +27,7 @@ async function refresh(){await page.locator('#refreshProgress').click();await pa
 try{
   await page.goto('https://progress.test/');await page.waitForFunction(()=>document.querySelector('#progressProcessed').textContent==='21');
   assert.match(await page.locator('#progressReason').innerText(),/30分钟.*已保存/);
+  assert.match(await page.locator('#progressReason').innerText(),/2 个条目的资料未能补齐/);
   await page.locator('#searchInput').fill('测试');await page.locator('#sortSelect').selectOption('reviews');
   await page.locator('#openGlobalSearch').click();await page.locator('#globalSearchInput').fill('测试');
   payload.reports.unshift({date:'2026-10-19',sections:[]});

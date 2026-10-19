@@ -41,6 +41,16 @@ test('backoff is obeyed and older retries precede later arrivals',()=>{
   const later='2026-10-19T07:00:00.000Z';
   assert.deepEqual(workQueue(state,sweepPlan(state,later,latest),later).map(r=>r.item.appid),[1,2]);
 });
+test('a failed older game is eventually retried despite new arrivals every run',async()=>{
+  let state=fixture();add(state,1,'missing-game',{lastAttemptAt:'2026-10-18T01:00:00.000Z'});
+  const processed=[];
+  for(let run=0;run<5;run++){
+    for(let i=0;i<8;i++)add(state,100+run*8+i,'missing-game',{firstObservedAt:new Date(Date.parse(now)+run*3600000).toISOString()});
+    await runSweep(state,{now:new Date(Date.parse(now)+run*3600000).toISOString(),latest,getPage:emptyPage,getDetail:async r=>{processed.push(r.item.appid);return response(r);},maxDetails:1});
+    state=JSON.parse(JSON.stringify(state));
+  }
+  assert.equal(processed[0],1);
+});
 test('one-time reported priority does not repeatedly refill its lane',async()=>{
   const state=fixture();add(state,1);add(state,2);const requested=[{appid:2,requestedAt:now}];const order=[];
   await runSweep(state,{now,latest,priorityRequests:requested,getPage:emptyPage,getDetail:async r=>{order.push(r.item.appid);return response(r);},maxDetails:1});
