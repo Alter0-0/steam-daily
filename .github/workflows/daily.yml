@@ -8,6 +8,10 @@ on:
     - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
+      publish_only:
+        description: '只更新网页（使用已有日报，不重新采集）'
+        type: boolean
+        default: false
       review_30:
         description: '立即回查最近30天（会保存进度并分轮续采）'
         type: boolean
@@ -40,12 +44,13 @@ jobs:
         with:
           node-version: '24'
       - name: Verify report merging, paging and durable storage
-        run: node --test work/history.test.mjs work/cloud.test.mjs work/phase1.test.mjs
+        run: node --test work/history.test.mjs work/cloud.test.mjs work/phase1.test.mjs work/search.test.mjs
       - name: Restore durable reports and successful detail requests
         id: restore
         run: node cloud/state-branch.mjs load
       - name: Collect or resume pending records
         id: collect
+        if: ${{ !inputs.publish_only }}
         continue-on-error: true
         run: node cloud/run.mjs ${{ inputs.review_30 && '--review-30' || '' }}
       - name: Save progress even if Steam is unavailable

@@ -8,10 +8,12 @@
 
 网页按日期浏览近 30 天，支持按好评率或评论量排序、标签筛选、名称搜索和只看 Demo。评论量排序将各分类中评论最多的游戏放在前面，数量相同时优先显示好评率较高的游戏；数量以日报采集时的测评数据为准。项目包含本机版和云端版。
 
+搜索有两个独立入口：“搜索当前日报”配合当日标签和 Demo 筛选使用；页面上方“搜索全部日报”查询本站目前保留的所有日报，支持中文名、英文名、部分名称和 AppID，不受当日筛选影响。同一游戏合并展示，并列出各日期和栏目；点击日期后跳转并突出对应游戏，同时清除当日搜索、标签和 Demo 筛选。仅打开或关闭全局搜索不会改动当日筛选。结果可继续加载，没有仅显示前30款的总量限制。尚未采集的游戏、尚未补齐的中文名无法凭空检索。
+
 部署步骤见 [CLOUD-SETUP.md](CLOUD-SETUP.md)，本机操作见 [outputs/README.md](outputs/README.md)。
 
 ```sh
-node --test work/history.test.mjs work/cloud.test.mjs work/phase1.test.mjs
+node --test work/history.test.mjs work/cloud.test.mjs work/phase1.test.mjs work/search.test.mjs
 node cloud/build.mjs
 ```
 
