@@ -1,6 +1,7 @@
 import {reviewUrl,normalizeReviews} from '../review-service.mjs';
 const urls=[
   reviewUrl(3755350),
+  reviewUrl(4155150),
   'https://store.steampowered.com/appreviews/3755350?json=1&language=all&purchase_type=all&num_per_page=1',
   'https://store.steampowered.com/api/appdetails?appids=3755350&cc=cn&l=schinese',
   'https://store.steampowered.com/search/results/?query=&start=0&count=1&sort_by=Released_DESC&infinite=1&cc=cn&l=schinese&category1=998'

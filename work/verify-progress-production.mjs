@@ -18,6 +18,7 @@ await page.route('**/*',route=>{
 });
 try{
   await page.goto('https://live-progress.test/');await page.waitForFunction(()=>document.querySelector('#progressProcessed').textContent==='21');
+  if(await page.locator('#collectionMetrics').count())await page.locator('#collectionMetrics>summary').click();
   assert.equal(await page.locator('#progressMissing').innerText(),status.missingDetails.toLocaleString('zh-CN'));
   await page.screenshot({path:path.join(qa,'production-desktop.png')});
   for(const [id,name] of [[3755350,'爱丽丝与彼岸'],[3318210,'破灭的御宅族']]){

@@ -26,6 +26,7 @@ await page.route('**/*',route=>{
 async function refresh(){await page.locator('#refreshProgress').click();await page.waitForFunction(()=>!document.querySelector('#refreshProgress').disabled);}
 try{
   await page.goto('https://progress.test/');await page.waitForFunction(()=>document.querySelector('#progressProcessed').textContent==='21');
+  if(await page.locator('#collectionMetrics').count())await page.locator('#collectionMetrics>summary').click();
   assert.match(await page.locator('#progressReason').innerText(),/30分钟.*已保存/);
   assert.match(await page.locator('#progressReason').innerText(),/2 个条目的资料未能补齐/);
   await page.locator('#searchInput').fill('测试');await page.locator('#sortSelect').selectOption('reviews');

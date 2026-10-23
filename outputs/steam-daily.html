@@ -44,6 +44,8 @@
     .date-card.active { border: 2px solid var(--orange); padding: 12px 13px; box-shadow: 0 8px 20px rgba(231, 126, 69, .14); }
     .date-label { display: block; color: var(--muted); font-size: 12px; margin-bottom: 7px; }
     .date-card.active .date-label { color: var(--orange); font-weight: 700; }
+    .history-picker { grid-column:1/-1; display:flex; align-items:center; gap:12px; color:var(--muted); font-size:13px; }
+    .history-picker select { flex:1; min-width:0; }
     .date-number { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
     .date-number strong { font-size: 18px; letter-spacing: .02em; }
     .date-count { color: var(--muted); font-size: 12px; }
@@ -175,7 +177,7 @@
       <section class="collection-progress" aria-labelledby="progressTitle">
         <div class="progress-heading"><h2 id="progressTitle">采集进度</h2><button type="button" id="refreshProgress">刷新进度</button></div>
         <p class="progress-note" id="progressTime">正在读取最近一次采集记录…</p>
-        <dl class="progress-grid">
+        <details id="collectionMetrics"><summary>查看本轮处理数量与积压明细</summary><dl class="progress-grid">
           <div><dt>本轮已处理</dt><dd id="progressProcessed">—</dd></div>
           <div><dt>本轮补齐详情</dt><dd id="progressCompleted">—</dd></div>
           <div><dt>本轮新增可读资料</dt><dd id="progressBasic">—</dd></div>
@@ -183,7 +185,7 @@
           <div><dt>仍待补详情</dt><dd id="progressMissing">—</dd></div>
           <div><dt>已有资料待首次复核</dt><dd id="progressInitial">—</dd></div>
           <div><dt>到期例行复查</dt><dd id="progressRefresh">—</dd></div>
-        </dl>
+        </dl></details>
         <p class="progress-note" id="progressReason" role="status">这里显示最近已发布的采集快照。</p>
         <details><summary>查看采集范围与限制</summary><p class="progress-note" id="progressCoverage">待补详情是已发现但资料不全的条目，不等于漏收游戏数量。可读资料已取得名称、价格状态和厂商等详情，测评或精确时刻仍可能缺少。搜索复查完成也不代表 Steam 全量覆盖。云端定时任务可能延迟。</p></details>
       </section>
@@ -473,12 +475,15 @@
       </article>`;
     }
     function renderRail() {
-      dateRail.innerHTML = reports.map((report, index) => {
+      const visibleReports=reports.map((report,index)=>({report,index})).filter(({index})=>index<6||index===state.reportIndex);
+      dateRail.innerHTML = visibleReports.map(({report, index}) => {
         const total = new Set(allGames(report).map(game => game.id)).size;
         const readable=new Set(allGames(report).filter(g=>!g.provisional).map(g=>g.id)).size;
         return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${readable} 款可读 · ${total-readable} 款待补资料</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
       }).join('');
+      if(reports.length>6)dateRail.innerHTML+=`<label class="history-picker">历史日报<select id="historyDate" aria-label="选择历史日报"><option value="">选择其他日期（共 ${reports.length} 天）</option>${reports.map((r,index)=>`<option value="${index}" ${index===state.reportIndex?'selected':''}>${formatDate(r.date)}</option>`).join('')}</select></label>`;
       dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
+      dateRail.querySelector('#historyDate')?.addEventListener('change',event=>{if(event.target.value==='')return;state.reportIndex=Number(event.target.value);render();});
     }
     function render() {
       navigationNotice.hidden = true;
@@ -530,15 +535,17 @@
       loadingReports=true;
       const refreshButton=document.querySelector('#refreshProgress');refreshButton.disabled=true;
       const cloud = window.STEAM_DAILY_STATIC === true;
+      const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),15000);
       try {
         const [response, statusResponse] = await Promise.all([
-          fetch(cloud ? './data/state.json' : '/api/reports?days=30', { cache: 'no-store' }),
-          fetch(cloud ? './data/status.json' : '/api/status', { cache: 'no-store' })
+          fetch(cloud ? './data/state.json' : '/api/reports?days=30', { cache: 'no-store',signal:controller.signal }),
+          fetch(cloud ? './data/status.json' : '/api/status', { cache: 'no-store',signal:controller.signal }).catch(()=>null)
         ]);
-        if (!response.ok || !statusResponse.ok) throw new Error('日报服务暂不可用');
+        if (!response.ok) throw new Error('日报服务暂不可用');
         const payload = await response.json();
-        const status = await statusResponse.json();
+        const status = statusResponse?.ok?await statusResponse.json().catch(()=>({state:'unknown'})):{state:'unknown'};
         renderCollectionProgress(status);
+        if(status.state==='unknown')document.querySelector('#progressReason').textContent='进度记录暂时无法读取，已保存的日报仍可正常查看。';
         if (Array.isArray(payload.reports) && payload.reports.length) {
           const selectedDate=reports[state.reportIndex]?.date;
           reports = payload.reports.map(report => ({ ...report, label: report.label || '日报' }));
@@ -558,6 +565,7 @@
         document.querySelector('#dataStatus').textContent = cloud ? '云端日报暂时无法读取，请稍后刷新' : '演示数据 · 本地服务未返回日报';
         document.querySelector('#progressReason').textContent='本次读取失败，保留页面已有日报和进度。请检查网络，或稍后点击“刷新进度”。';
       } finally {
+        clearTimeout(timeout);
         loadingReports=false;refreshButton.disabled=false;
       }
     }

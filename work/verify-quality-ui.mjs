@@ -1,0 +1,41 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {fileURLToPath} from 'node:url';
+import {buildSite} from '../cloud/build.mjs';
+const root=path.dirname(path.dirname(fileURLToPath(import.meta.url))),qa=path.join(root,'qa-phase1/quality');await fs.mkdir(qa,{recursive:true});await buildSite(path.join(qa,'site'));
+const html=await fs.readFile(path.join(qa,'site/index.html'),'utf8');
+const ready=(id,name,extra={})=>({id,name,en:name,price:'¥30',priceValue:30,rating:80,reviews:'10',tags:['动作'],status:[],studio:'Studio',publisher:'Publisher',time:'2026 年 10 月 22 日',cover:'https://covers.test/missing.jpg',...extra});
+const pending=ready(3,'待补游戏',{provisional:true,metadataPending:['detail','reviews','time'],price:'待核实',rating:null,reviews:'0'});
+let payload={reports:Array.from({length:30},(_,i)=>({date:new Date(Date.parse('2026-10-22T12:00:00Z')-i*86400000).toISOString().slice(0,10),sections:[{key:'release',title:'当日发售',games:i?[]:[ready(1,'资料完整'),ready(2,'测评失败但可读',{rating:null,metadataPending:['reviews']}),pending]}]}))};
+let statusFail=false,dataFail=false;
+const req=createRequire('C:/Users/xbjy2/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');
+const browser=await req('playwright').chromium.launch({headless:true,executablePath:'C:/Users/xbjy2/AppData/Local/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-win64/chrome-headless-shell.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.route('**/*',route=>{
+  const u=new URL(route.request().url());if(u.origin!=='https://quality.test')return route.abort();
+  if(u.pathname.endsWith('state.json'))return dataFail?route.fulfill({status:503}):route.fulfill({json:payload});
+  if(u.pathname.endsWith('status.json'))return statusFail?route.fulfill({status:503}):route.fulfill({json:{state:'partial',processed:63,basicCompleted:2,reviewService:{state:'paused'}}});
+  return route.fulfill({body:html,contentType:'text/html;charset=utf-8'});
+});
+const refresh=async()=>{await page.locator('#refreshProgress').click();await page.waitForFunction(()=>!document.querySelector('#refreshProgress').disabled);};
+try{
+  await page.goto('https://quality.test/');await page.waitForFunction(()=>document.querySelectorAll('.game-card').length===3);
+  assert.equal(await page.locator('.game-card:visible').count(),2);assert.equal(await page.locator('.pending-list').evaluate(e=>e.open),false);
+  assert.match(await page.locator('.report-quality').innerText(),/3 款.*2 款已有可读资料.*1 款详情/);
+  assert.equal(await page.locator('.date-card').count(),6);assert.equal(await page.locator('#historyDate option').count(),31);
+  assert.match(await page.locator('.game-card[data-game-id="2"]').innerText(),/测评暂未取得/);assert.doesNotMatch(await page.locator('.game-card[data-game-id="2"]').innerText(),/0 条测评/);
+  assert.match(await page.locator('#progressReason').innerText(),/测评服务暂时异常/);
+  await page.locator('#openGlobalSearch').click();await page.locator('#globalSearchInput').fill('待补游戏');await page.locator('.global-search-record').click();
+  assert.equal(await page.locator('.pending-list').evaluate(e=>e.open),true);assert.equal(await page.locator('.search-target').getAttribute('data-game-id'),'3');assert.equal(await page.locator('.search-target').isVisible(),true);
+  await page.locator('#searchInput').fill('待补游戏');assert.equal(await page.locator('.pending-list').evaluate(e=>e.open),true);
+  await page.locator('#searchInput').fill('');await page.locator('#historyDate').selectOption('25');assert.equal(await page.locator('.date-card.active').getAttribute('data-index'),'25');assert.equal(await page.locator('.date-card').count(),7);
+  await page.locator('#historyDate').selectOption('0');
+  statusFail=true;await refresh();assert.equal(await page.locator('.game-card:visible').count(),2);assert.match(await page.locator('#progressReason').innerText(),/日报仍可正常查看/);
+  dataFail=true;await refresh();assert.equal(await page.locator('.game-card:visible').count(),2);assert.match(await page.locator('#progressReason').innerText(),/保留页面已有日报/);
+  statusFail=false;dataFail=false;await refresh();
+  await page.screenshot({path:path.join(qa,'quality-desktop.png')});await page.setViewportSize({width:390,height:844});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:path.join(qa,'quality-mobile.png')});
+  assert.deepEqual(errors,[]);const result={passed:true,checks:17,errors,checkedAt:new Date().toISOString()};await fs.writeFile(path.join(qa,'quality-ui-verification.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+}finally{await browser.close();}

@@ -99,7 +99,7 @@ export function normalizeRecord(record, detail, review, html, now, evidence) {
   const timing=resolveReleaseTime({storeText:d.release_date?.date,searchText:record.item.releasedText,html,evidence,demo,earlyAccess,comingSoon:!!d.release_date?.coming_soon,now});
   const stage=demo?'Demo':earlyAccess?'抢先体验':timing.eventKind==='full-release'?'正式版上线':'游戏发售';
   const pending=[];if(!summary&&!listingReview)pending.push('reviews');if(!html&&!evidence)pending.push('time');
-  return { id:record.item.appid,name:d.name||record.item.searchName,en:record.item.searchName||d.name,cover:d.header_image||`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${record.item.appid}/header.jpg`,
+  return { id:record.item.appid,name:d.name||record.item.searchName,en:record.snapshot?.en||record.item.searchName||d.name,cover:d.header_image||`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${record.item.appid}/header.jpg`,
     price:demo?'Demo 试玩':d.is_free?'免费':d.price_overview?.final_formatted||(d.release_date?.coming_soon?'尚未公布售价':'国区暂无售价'),priceValue:demo||d.is_free?0:(d.price_overview?.final??99999900)/100,
     rating:listingReview?listingReview.rating:total>0?Math.round(positive/total*100):null,reviews:(total||0).toLocaleString('en-US'),tags,status:[stage],studio:(d.developers||[]).join(', ')||'未知',publisher:(d.publishers||[]).join(', ')||'未知',demo,
     ...timing,firstObservedAt:record.firstObservedAt,snapshotAt:now,priceSnapshotAt:now,reviewSnapshotAt:summary?now:listingReview?record.lastSeenAt||now:null,reviewSource:listingReview?'store-search':summary?'reviews-api':null,metadataPending:pending,source:'release-search+appdetails+store-page',storeUrl:`https://store.steampowered.com/app/${record.item.appid}/` };
@@ -175,7 +175,7 @@ export function backlog(state,plan,now) {
     refreshDue:active.filter(r=>!needsDetails(r)&&refresh(r)).length,
     waitingRetry:active.filter(r=>!due(r)).length};
 }
-const QUEUE_SLOTS=['priority','recent','recent','history','recent','enrich','recent','history','verify','refresh'];
+const QUEUE_SLOTS=['priority','recent','recent','recent','history','recent','enrich','recent','recent','history','recent','verify','refresh'];
 export function workQueue(state,plan,now) {
   const due = Object.values(state.phase1.catalog).filter(r=>!r.excluded && (!r.retryAfter||r.retryAfter<=now) &&
     (needsDetails(r) || !r.verifiedAt || r.priorityRequestedAt>(r.priorityAttemptedAt||'') || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY)));

@@ -22,18 +22,18 @@ test('unknown price can be completed while a previously known price remains hist
   assert.equal(preserveSnapshot({price:'未定价',priceValue:999999},fresh).price,'¥30');
   assert.equal(preserveSnapshot({price:'¥10',priceValue:10},fresh).price,'¥10');
 });
-test('ten one-item runs retain recent, history, enrichment and recheck shares',async()=>{
+test('thirteen one-item runs retain recent, history, enrichment and recheck shares',async()=>{
   let state=fixture();
   for(let i=1;i<=30;i++)add(state,i,i<=10?'missing-game':i<=20?'missing-demo':i<=25?'verify':'refresh',i>10&&i<=20?{item:{appid:i,releaseDate:'2026-10-01',releasedText:'1 Oct, 2026',sources:['demo']},firstObservedAt:'2026-10-01T00:00:00.000Z'}:{});
   add(state,90,'verify');state.phase1.catalog[90].snapshot.metadataPending=['reviews'];
   add(state,100,'verify',{priorityRequestedAt:now});
   const ids=[];
-  for(let i=0;i<10;i++){
+  for(let i=0;i<13;i++){
     await runSweep(state,{now:new Date(Date.parse(now)+i*3600000).toISOString(),latest,getPage:emptyPage,getDetail:async r=>{ids.push(r.item.appid);return response(r);},maxDetails:1});
     state=JSON.parse(JSON.stringify(state));
   }
-  assert.equal(ids[0],100);assert.equal(ids.filter(id=>id<=10).length,4);assert.equal(ids.filter(id=>id>10&&id<=20).length,2);
-  assert.ok(ids.includes(90));assert.ok(ids.some(id=>id>=21&&id<=25));assert.ok(ids.some(id=>id>=26&&id<=30));assert.equal(new Set(ids).size,10);
+  assert.equal(ids[0],100);assert.equal(ids.filter(id=>id<=10).length,7);assert.equal(ids.filter(id=>id>10&&id<=20).length,2);
+  assert.ok(ids.includes(90));assert.ok(ids.some(id=>id>=21&&id<=25));assert.ok(ids.some(id=>id>=26&&id<=30));assert.equal(new Set(ids).size,13);
 });
 test('backoff is obeyed and older retries precede later arrivals',()=>{
   const state=fixture();add(state,1,'missing-game',{lastAttemptAt:'2026-10-18T01:00:00.000Z',retryAfter:'2026-10-19T06:00:00.000Z'});
