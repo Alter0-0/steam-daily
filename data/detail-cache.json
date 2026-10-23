@@ -75344,6 +75344,78 @@
     },
     "evidenceAt": "2026-10-23T05:21:39.848Z"
   },
+  "5087740": {
+    "savedAt": "2026-10-23T13:51:12.729Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "烤肉!!!",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5900,
+            "final": 5015,
+            "discount_percent": 15,
+            "initial_formatted": "¥ 59.00",
+            "final_formatted": "¥ 50.15"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5087740/12e68f13a1b8c3e7049a62ed576429d02171d4bc/header_schinese.jpg?t=1792584241",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Team Apron"
+          ],
+          "publishers": [
+            "Lime Studios"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 21 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 1,
+          "review_score": 0,
+          "review_score_desc": "4 user reviews",
+          "total_positive": 3,
+          "total_negative": 1,
+          "total_reviews": 4
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1792584242,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "万圣节活动现已上线！",
+          "timestamp": 1792672200
+        },
+        {
+          "title": "《烤肉！！！》正式发售，开门迎客啦！",
+          "timestamp": 1792585020
+        }
+      ]
+    },
+    "evidenceAt": "2026-10-23T13:51:17.901Z",
+    "reviewAt": "2026-10-23T13:51:18.249Z"
+  },
   "5088650": {
     "savedAt": "2026-10-20T00:26:16.138Z",
     "result": {
@@ -131271,6 +131343,65 @@
     },
     "evidenceAt": "2026-10-20T20:51:13.970Z"
   },
+  "5333500": {
+    "savedAt": "2026-10-23T13:51:43.924Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "CartWare Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5333500/b2c3c8f4e548e9ee146f500c146a62ae12226513/header.jpg?t=1791743464",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "PROACTIC"
+          ],
+          "publishers": [
+            "PROACTIC"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 11 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1791743462,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-10-23T13:51:49.138Z",
+    "reviewAt": "2026-10-23T13:51:49.354Z"
+  },
   "5333540": {
     "savedAt": "2026-10-21T10:38:04.443Z",
     "result": {
@@ -150408,14 +150539,24 @@
           }
         }
       },
-      "review": null
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
     },
     "evidence": {
       "timestamp": 1798704000,
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T23:10:55.413Z"
+    "evidenceAt": "2026-10-22T23:10:55.413Z",
+    "reviewAt": "2026-10-23T13:50:58.039Z"
   },
   "5385280": {
     "savedAt": "2026-10-21T20:16:41.359Z",
@@ -153839,6 +153980,61 @@
     },
     "evidenceAt": "2026-10-22T23:17:10.887Z"
   },
+  "5395500": {
+    "savedAt": "2026-10-23T13:51:23.015Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Bleep Wildlife Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5395500/112feda8311c1c553b89f5f64e2c366d1e71d731/header.jpg?t=1792523971",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Clown Tribes"
+          ],
+          "publishers": [
+            "Clown Tribes"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 17 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1792287859,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-10-23T13:51:28.264Z",
+    "reviewAt": "2026-10-23T13:51:28.476Z"
+  },
   "5395600": {
     "savedAt": "2026-10-22T20:29:01.039Z",
     "result": {
@@ -154516,6 +154712,57 @@
     },
     "evidenceAt": "2026-10-22T23:18:59.094Z"
   },
+  "5397320": {
+    "savedAt": "2026-10-23T13:51:02.353Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "未春节 Festival of Unborn Spring Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5397320/bc22df887c274f4ea1b4612c26868040fcc0514d/header_schinese.jpg?t=1792739417",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "未春节制作组"
+          ],
+          "publishers": [
+            "Cugetoley Network Technology"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 22 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1792684804,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-10-23T13:51:07.609Z",
+    "reviewAt": "2026-10-23T13:51:07.767Z"
+  },
   "5398070": {
     "savedAt": "2026-10-23T10:15:50.655Z",
     "result": {
@@ -155164,6 +155411,62 @@
       ]
     },
     "evidenceAt": "2026-10-22T23:01:24.787Z"
+  },
+  "5402660": {
+    "savedAt": "2026-10-23T13:51:33.381Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Fedanheim Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5402660/f9ee7528edc31b324a16997c3196a145db707c4a/header.jpg?t=1792688538",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Goeshaze"
+          ],
+          "publishers": [
+            "Goeshaze"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 22 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1830240000,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "A DEMO of Fedanheim is available for a limited time!",
+          "timestamp": 1792694700
+        }
+      ]
+    },
+    "evidenceAt": "2026-10-23T13:51:38.806Z",
+    "reviewAt": "2026-10-23T13:51:39.011Z"
   },
   "5402700": {
     "savedAt": "2026-10-17T21:58:19.727Z",
