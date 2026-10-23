@@ -58,6 +58,12 @@ test('known date with no published timestamp is distinguished from a failed page
   const withPage=resolveReleaseTime({storeText:'2026 年 10 月 22 日',evidence:{timestamp:null,earlyAccessDate:null,announcements:[]},now});assert.match(withPage.time,/未公开/);assert.doesNotMatch(withPage.time,/未核实/);
   assert.match(resolveReleaseTime({storeText:'2026 年 10 月 22 日',now}).time,/未核实/);
 });
+test('failed timing refreshes cannot move a known Beijing release back to a raw Steam date',()=>{
+  const old={price:'¥30',rating:90,reviews:'10',releaseAt:'2026-10-22T02:00:00Z',releaseDate:'2026-10-22',storeReleaseDate:'2026-10-21',timePrecision:'store-timestamp',eventKind:'release',time:'北京时间10月22日10:00',metadataPending:[]};
+  const fresh={...old,releaseAt:null,releaseDate:'2026-10-21',timePrecision:'date-only',time:'21 Oct, 2026',metadataPending:['time']};
+  const result=preserveSnapshot(old,fresh);assert.equal(result.releaseDate,'2026-10-22');assert.equal(result.releaseAt,old.releaseAt);assert.deepEqual(result.metadataPending,[]);
+  const newEvent=preserveSnapshot(old,{...fresh,eventKind:'full-release',storeReleaseDate:'2026-10-23',releaseDate:'2026-10-23'});assert.equal(newEvent.releaseDate,'2026-10-23');assert.equal(newEvent.releaseAt,null);
+});
 test('demos and unpublished prices do not masquerade as missing details',()=>{
   const record={item:{appid:1,releasedText:'22 Oct, 2026',sources:['demo']}};
   const normalize=data=>normalizeRecord(record,{data},{query_summary:{total_reviews:0,total_positive:0}},'<html></html>',now);

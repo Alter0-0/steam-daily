@@ -110,11 +110,15 @@ export function preserveSnapshot(old, fresh) {
   const pending=old.metadataPending||[];
   const missingPrice=old.price==null||['待核实','未定价','国区暂无售价','尚未公布售价'].includes(old.price);
   const freshPending=[...new Set(fresh.metadataPending||[])].filter(key=>key!=='reviews'||pending.includes('reviews'));
+  const sameStoreDate=old.storeReleaseDate&&old.storeReleaseDate===fresh.storeReleaseDate;
+  const keepTime=old.releaseAt&&!fresh.releaseAt&&sameStoreDate&&!pending.includes('time')&&
+    (old.eventKind===fresh.eventKind||freshPending.includes('time')&&fresh.eventKind==='release');
+  const timing=keepTime?Object.fromEntries(['releaseDate','releaseAt','time','timePrecision','eventKind','earlyAccessDate','timeEvidence','status'].map(key=>[key,old[key]])):{};
   return {...old,...fresh,price:missingPrice?fresh.price:old.price,priceValue:missingPrice?fresh.priceValue:old.priceValue,rating:pending.includes('reviews')?fresh.rating:old.rating,reviews:pending.includes('reviews')?fresh.reviews:old.reviews,
     snapshotAt:old.snapshotAt??null,firstObservedAt:old.firstObservedAt||fresh.firstObservedAt,
     priceSnapshotAt:missingPrice?fresh.priceSnapshotAt:old.priceSnapshotAt||old.snapshotAt||null,reviewSnapshotAt:pending.includes('reviews')?fresh.reviewSnapshotAt:old.reviewSnapshotAt||old.snapshotAt||null,
     reviewSource:pending.includes('reviews')?fresh.reviewSource:old.reviewSource||null,
-    metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:freshPending,provisional:false};
+    ...timing,metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:keepTime?freshPending.filter(key=>key!=='time'):freshPending,provisional:false};
 }
 function ensureReport(state,date,now) {
   let report=state.reports.find(r=>r.date===date);
