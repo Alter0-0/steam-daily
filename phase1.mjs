@@ -199,12 +199,23 @@ export function workQueue(state,plan,now) {
     const recentOrder=key==='recent'?String(b.item.releaseDate||b.firstObservedAt||'').slice(0,10).localeCompare(String(a.item.releaseDate||a.firstObservedAt||'').slice(0,10)):0;
     return recentOrder||String(a.lastAttemptAt||a.firstObservedAt||state.phase1.initializedAt||'').localeCompare(b.lastAttemptAt||b.firstObservedAt||state.phase1.initializedAt||'')||String(a.item.releaseDate||'').localeCompare(b.item.releaseDate||'')||a.item.appid-b.item.appid;
   });
+  const recentIds=new Set(lanes.recent.map(r=>r.item.appid));
+  const days=new Map();for(const r of lanes.recent){const date=r.item.releaseDate;if(!days.has(date))days.set(date,[]);days.get(date).push(r);}
+  const dateSlots=[plan.latest,plan.latest,shiftDate(plan.latest,-1),plan.latest,shiftDate(plan.latest,-2),shiftDate(plan.latest,-3)];
+  const balanced=[];let dateTurn=state.phase1.recentTurn||0;
+  while(balanced.length<lanes.recent.length){
+    const preferred=days.get(dateSlots[dateTurn++%dateSlots.length]);
+    const lane=preferred?.length?preferred:[...days.values()].find(rows=>rows.length);
+    balanced.push(lane.shift());
+  }
+  lanes.recent=balanced;
   const queue=[];let turn=state.phase1.queueTurn||0;
   while(queue.length<due.length) {
     const preferred=QUEUE_SLOTS[turn++%QUEUE_SLOTS.length];
     const lane=lanes[preferred].length?lanes[preferred]:Object.values(lanes).find(items=>items.length);
     queue.push(lane.shift());
   }
+  Object.defineProperty(queue,'recentIds',{value:recentIds});
   return queue;
 }
 export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()=>false}) {
@@ -269,6 +280,7 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
     record.lastAttemptAt=now;
     if(record.priorityRequestedAt)record.priorityAttemptedAt=now;
     state.phase1.queueTurn=((state.phase1.queueTurn||0)+1)%QUEUE_SLOTS.length;
+    if(queue.recentIds.has(record.item.appid))state.phase1.recentTurn=((state.phase1.recentTurn||0)+1)%6;
     try {
       const result=await getDetail(record);
       const game=result===null?null:normalizeRecord(record,result.detail,result.review,result.html,now,result.evidence);

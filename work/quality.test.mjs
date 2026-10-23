@@ -34,6 +34,13 @@ test('a recent issue is serviced even with thousands of old candidates and futur
   for(const id of [2001,2002,2003])s.phase1.catalog[id]={item:{appid:id,releaseDate:'2026-10-22',sources:['games']},firstObservedAt:now};
   const ids=workQueue(s,sweepPlan(s,now,latest),now).slice(0,7).map(r=>r.item.appid);assert.ok(ids.filter(id=>id>=2001).length>=3);assert.ok(ids.some(id=>id<=1000));
 });
+test('recent date rotation lets the last three issues improve together',()=>{
+  const s={reports:[]};initialize(s,now);
+  for(let day=19;day<=22;day++)for(let i=0;i<20;i++){const id=day*100+i;s.phase1.catalog[id]={item:{appid:id,releaseDate:`2026-10-${day}`,sources:['games']},firstObservedAt:now};}
+  const queue=workQueue(s,sweepPlan(s,now,latest),now);
+  assert.deepEqual(queue.slice(0,6).map(r=>r.item.releaseDate),['2026-10-22','2026-10-22','2026-10-21','2026-10-22','2026-10-20','2026-10-19']);
+  s.phase1.recentTurn=2;assert.equal(workQueue(s,sweepPlan(s,now,latest),now)[0].item.releaseDate,'2026-10-21');
+});
 const raw=(id,title,extra='')=>`<a data-ds-appid="${id}"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${id}/hash/capsule.jpg"><span class="title">${title}</span><div class="search_released">2026 年 10 月 22 日</div>${extra}</a>`;
 test('discovery rows retain real Chinese names, covers, prices and store review summaries',()=>{
   const [item]=parseSearchRows(raw(1,'三国义','<span data-tooltip-html="特别好评&lt;br&gt;此游戏的 1,075 篇用户评测中有 97% 为好评。"></span><div data-price-final="3519"><div class="discount_final_price">¥35.19</div></div>'));
