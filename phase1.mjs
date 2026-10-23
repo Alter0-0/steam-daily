@@ -77,7 +77,7 @@ export function normalizeRecord(record, detail, review, html, now, evidence) {
   const stage=demo?'Demo':earlyAccess?'抢先体验':timing.eventKind==='full-release'?'正式版上线':'游戏发售';
   const pending=[];if(!review?.query_summary)pending.push('reviews');if(!html&&!evidence)pending.push('time');
   return { id:record.item.appid,name:d.name||record.item.searchName,en:record.item.searchName||d.name,cover:d.header_image||`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${record.item.appid}/header.jpg`,
-    price:d.is_free?'免费':d.price_overview?.final_formatted||'未定价',priceValue:d.is_free?0:(d.price_overview?.final??99999900)/100,
+    price:demo?'Demo 试玩':d.is_free?'免费':d.price_overview?.final_formatted||(d.release_date?.coming_soon?'尚未公布售价':'国区暂无售价'),priceValue:demo||d.is_free?0:(d.price_overview?.final??99999900)/100,
     rating:total>0?Math.round(positive/total*100):null,reviews:(total||0).toLocaleString('en-US'),tags,status:[stage],studio:(d.developers||[]).join(', ')||'未知',publisher:(d.publishers||[]).join(', ')||'未知',demo,
     ...timing,firstObservedAt:record.firstObservedAt,snapshotAt:now,priceSnapshotAt:now,reviewSnapshotAt:review?.query_summary?now:null,metadataPending:pending,source:'release-search+appdetails+store-page',storeUrl:`https://store.steampowered.com/app/${record.item.appid}/` };
 }
@@ -85,11 +85,12 @@ export function preserveSnapshot(old, fresh) {
   if(!old || old.provisional)return {...fresh,snapshotAt:old?.snapshotAt||fresh.snapshotAt};
   // Preserve every previously known price/review. Only fill fields that failed then.
   const pending=old.metadataPending||[];
-  const missingPrice=old.price==null||['待核实','未定价'].includes(old.price);
+  const missingPrice=old.price==null||['待核实','未定价','国区暂无售价','尚未公布售价'].includes(old.price);
+  const freshPending=[...new Set(fresh.metadataPending||[])].filter(key=>key!=='reviews'||pending.includes('reviews'));
   return {...old,...fresh,price:missingPrice?fresh.price:old.price,priceValue:missingPrice?fresh.priceValue:old.priceValue,rating:pending.includes('reviews')?fresh.rating:old.rating,reviews:pending.includes('reviews')?fresh.reviews:old.reviews,
     snapshotAt:old.snapshotAt??null,firstObservedAt:old.firstObservedAt||fresh.firstObservedAt,
     priceSnapshotAt:missingPrice?fresh.priceSnapshotAt:old.priceSnapshotAt||old.snapshotAt||null,reviewSnapshotAt:pending.includes('reviews')?fresh.reviewSnapshotAt:old.reviewSnapshotAt||old.snapshotAt||null,
-    metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:fresh.metadataPending,provisional:false};
+    metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:freshPending,provisional:false};
 }
 function ensureReport(state,date,now) {
   let report=state.reports.find(r=>r.date===date);
@@ -140,6 +141,7 @@ export function applyRecord(state, record, fresh, now, latest) {
 export function needsDetails(record) {
   return !record.snapshot || !!record.snapshot.provisional || !!record.snapshot.metadataPending?.length;
 }
+export function needsBasics(record){return !record.snapshot||!!record.snapshot.provisional||record.snapshot.metadataPending?.includes('detail');}
 export function backlog(state,plan,now) {
   const active=Object.values(state.phase1.catalog).filter(r=>!r.excluded);
   const due=r=>!r.retryAfter || r.retryAfter<=now;
@@ -149,19 +151,25 @@ export function backlog(state,plan,now) {
     refreshDue:active.filter(r=>!needsDetails(r)&&refresh(r)).length,
     waitingRetry:active.filter(r=>!due(r)).length};
 }
-const QUEUE_SLOTS=['priority','missing-game','missing-demo','missing-game','verify','missing-demo','refresh'];
+const QUEUE_SLOTS=['priority','recent','recent','history','recent','enrich','recent','history','verify','refresh'];
 export function workQueue(state,plan,now) {
   const due = Object.values(state.phase1.catalog).filter(r=>!r.excluded && (!r.retryAfter||r.retryAfter<=now) &&
     (needsDetails(r) || !r.verifiedAt || r.priorityRequestedAt>(r.priorityAttemptedAt||'') || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY)));
   const lanes=Object.fromEntries([...new Set(QUEUE_SLOTS)].map(k=>[k,[]]));
   for(const r of due) {
     const demo=r.snapshot?.demo ?? (r.item.sources?.includes('demo')&&!r.item.sources?.includes('games'));
-    const lane=r.priorityRequestedAt>(r.priorityAttemptedAt||'')?'priority':needsDetails(r)?(demo?'missing-demo':'missing-game'):!r.verifiedAt?'verify':'refresh';
+    const observed=String(r.firstObservedAt||'').slice(0,10);
+    const recent=r.item.releaseDate>=shiftDate(plan.latest,-3)||observed>=shiftDate(plan.latest,-2);
+    const lane=r.priorityRequestedAt>(r.priorityAttemptedAt||'')?'priority':needsBasics(r)?(recent?'recent':'history'):needsDetails(r)?'enrich':!r.verifiedAt?'verify':'refresh';
     lanes[lane].push(r);
   }
   // Old untouched rows precede retried rows. Separate shares prevent either
   // Demo volume or routine rechecks from blocking initial detail completion.
-  for(const lane of Object.values(lanes))lane.sort((a,b)=>String(a.lastAttemptAt||a.firstObservedAt||state.phase1.initializedAt||'').localeCompare(b.lastAttemptAt||b.firstObservedAt||state.phase1.initializedAt||'')||String(a.item.releaseDate||'').localeCompare(b.item.releaseDate||'')||a.item.appid-b.item.appid);
+  for(const [key,lane] of Object.entries(lanes))lane.sort((a,b)=>{
+    // Within recent work, give the newest issue its first usable cards promptly.
+    const recentOrder=key==='recent'?String(b.item.releaseDate||b.firstObservedAt||'').slice(0,10).localeCompare(String(a.item.releaseDate||a.firstObservedAt||'').slice(0,10)):0;
+    return recentOrder||String(a.lastAttemptAt||a.firstObservedAt||state.phase1.initializedAt||'').localeCompare(b.lastAttemptAt||b.firstObservedAt||state.phase1.initializedAt||'')||String(a.item.releaseDate||'').localeCompare(b.item.releaseDate||'')||a.item.appid-b.item.appid;
+  });
   const queue=[];let turn=state.phase1.queueTurn||0;
   while(queue.length<due.length) {
     const preferred=QUEUE_SLOTS[turn++%QUEUE_SLOTS.length];
@@ -204,9 +212,9 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
   initialize(state,now);const plan=sweepPlan(state,now,latest,force30);
   for(const id of priorityIds)if(state.phase1.catalog[id])state.phase1.catalog[id].priorityRequestedAt=now;
   ensureReport(state,latest,now);
-  let processed=0,completedDetails=0,verified=0,failed=0,excluded=0,scansComplete=false;
+  let processed=0,completedDetails=0,basicCompleted=0,verified=0,failed=0,excluded=0,scansComplete=false;
   const checkpoint=async stage=>{
-    state.phase1.progress={startedAt:now,updatedAt:new Date().toISOString(),reportDate:latest,stage,scanDays:plan.scanDays,scansComplete,processed,completedDetails,verified,failed,excluded,...backlog(state,plan,now)};
+    state.phase1.progress={startedAt:now,updatedAt:new Date().toISOString(),reportDate:latest,stage,scanDays:plan.scanDays,scansComplete,processed,completedDetails,basicCompleted,verified,failed,excluded,...backlog(state,plan,now)};
     await save();await onProgress(state.phase1.progress);
   };
   await checkpoint('search');
@@ -228,6 +236,7 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
   for(const record of queue) {
     if(deadline()||processed>=maxDetails)break;
     const wasMissing=needsDetails(record);
+    const wasBasic=needsBasics(record);
     record.lastAttemptAt=now;
     if(record.priorityRequestedAt)record.priorityAttemptedAt=now;
     state.phase1.queueTurn=((state.phase1.queueTurn||0)+1)%QUEUE_SLOTS.length;
@@ -236,7 +245,8 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
       const game=result===null?null:normalizeRecord(record,result.detail,result.review,result.html,now,result.evidence);
       applyRecord(state,record,game,now,latest);
       record.verifiedAt=now;record.attempts=0;delete record.lastError;delete record.retryAfter;
-      if(game?.metadataPending?.length){record.verifiedAt=null;record.retryAfter=new Date(+new Date(now)+3600000).toISOString();record.attempts=1;}
+      if(game&&record.snapshot?.metadataPending?.length){record.verifiedAt=null;record.retryAfter=new Date(+new Date(now)+3600000).toISOString();record.attempts=1;record.lastError=result.reviewError||result.pageError||'部分补充资料尚未取得';}
+      if(game&&wasBasic&&!needsBasics(record))basicCompleted++;
       if(game===null)excluded++;
       else if(!needsDetails(record)){if(wasMissing)completedDetails++;else verified++;}
       else failed++;

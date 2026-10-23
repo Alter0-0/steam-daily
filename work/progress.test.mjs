@@ -22,17 +22,18 @@ test('unknown price can be completed while a previously known price remains hist
   assert.equal(preserveSnapshot({price:'未定价',priceValue:999999},fresh).price,'¥30');
   assert.equal(preserveSnapshot({price:'¥10',priceValue:10},fresh).price,'¥10');
 });
-test('seven one-item runs retain lane shares across persisted state',async()=>{
+test('ten one-item runs retain recent, history, enrichment and recheck shares',async()=>{
   let state=fixture();
-  for(let i=1;i<=30;i++)add(state,i,i<=10?'missing-game':i<=20?'missing-demo':i<=25?'verify':'refresh');
+  for(let i=1;i<=30;i++)add(state,i,i<=10?'missing-game':i<=20?'missing-demo':i<=25?'verify':'refresh',i>10&&i<=20?{item:{appid:i,releaseDate:'2026-10-01',releasedText:'1 Oct, 2026',sources:['demo']},firstObservedAt:'2026-10-01T00:00:00.000Z'}:{});
+  add(state,90,'verify');state.phase1.catalog[90].snapshot.metadataPending=['reviews'];
   add(state,100,'verify',{priorityRequestedAt:now});
   const ids=[];
-  for(let i=0;i<7;i++){
+  for(let i=0;i<10;i++){
     await runSweep(state,{now:new Date(Date.parse(now)+i*3600000).toISOString(),latest,getPage:emptyPage,getDetail:async r=>{ids.push(r.item.appid);return response(r);},maxDetails:1});
     state=JSON.parse(JSON.stringify(state));
   }
-  assert.equal(ids[0],100);assert.equal(ids.filter(id=>id<=10).length,2);assert.equal(ids.filter(id=>id>10&&id<=20).length,2);
-  assert.ok(ids.some(id=>id>=21&&id<=25));assert.ok(ids.some(id=>id>=26&&id<=30));assert.equal(new Set(ids).size,7);
+  assert.equal(ids[0],100);assert.equal(ids.filter(id=>id<=10).length,4);assert.equal(ids.filter(id=>id>10&&id<=20).length,2);
+  assert.ok(ids.includes(90));assert.ok(ids.some(id=>id>=21&&id<=25));assert.ok(ids.some(id=>id>=26&&id<=30));assert.equal(new Set(ids).size,10);
 });
 test('backoff is obeyed and older retries precede later arrivals',()=>{
   const state=fixture();add(state,1,'missing-game',{lastAttemptAt:'2026-10-18T01:00:00.000Z',retryAfter:'2026-10-19T06:00:00.000Z'});
@@ -117,20 +118,20 @@ test('old status publication derives backlog without inventing historical comple
 });
 test('collector reuses successful detail, review and page evidence across retries',async t=>{
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-progress-cache-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
-  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
+  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs','review-service.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
   await fs.writeFile(path.join(dir,'preload.mjs'),`
     const timer=setTimeout;globalThis.setTimeout=(f,ms,...a)=>timer(f,Math.min(ms,1),...a);
     globalThis.fetch=async value=>{const u=new URL(value);console.log('FETCH '+u.pathname);let p;
       if(u.pathname==='/search/results/')p={success:1,total_count:u.searchParams.get('category1')==='10'?0:1,results_html:u.searchParams.get('category1')==='10'?'':'<a data-ds-appid="1"><span class="title">One</span><div class="search_released">16 Oct, 2026</div></a>'};
       else if(u.pathname==='/api/appdetails')p={'1':{success:true,data:{type:'game',name:'One',is_free:true,release_date:{date:'16 Oct, 2026'}}}};
-      else if(u.pathname.startsWith('/appreviews/'))p=process.env.FAIL_REVIEW==='true'?{}:{query_summary:{total_reviews:1,total_positive:1}};
+      else if(u.pathname.startsWith('/IUserReviewsService/'))p=process.env.FAIL_REVIEW==='true'?{}:{response:{query_summary:{total_reviews:1,total_positive:1}}};
       else return {ok:true,text:async()=>'<html></html>'};return{ok:true,json:async()=>p};};
   `);
   const collect=fail=>spawnSync(process.execPath,['--import','./preload.mjs','phase1-collector.mjs'],{cwd:dir,encoding:'utf8',timeout:15000,env:{...process.env,FAIL_REVIEW:String(fail)}});
   const first=collect(true);assert.equal(first.status,1,first.stderr);
-  assert.equal((first.stdout.match(/FETCH \/appreviews\//g)||[]).length,1);
+  assert.equal((first.stdout.match(/FETCH \/IUserReviewsService\//g)||[]).length,1);
   const statePath=path.join(dir,'data/state.json');const state=JSON.parse(await fs.readFile(statePath));state.phase1.catalog[1].retryAfter=null;await fs.writeFile(statePath,JSON.stringify(state));
   const second=collect(false);assert.equal(second.status,0,second.stderr);
-  assert.doesNotMatch(second.stdout,/FETCH \/api\/appdetails|FETCH \/app\/1/);assert.match(second.stdout,/FETCH \/appreviews\/1/);
+  assert.doesNotMatch(second.stdout,/FETCH \/api\/appdetails|FETCH \/app\/1/);assert.match(second.stdout,/FETCH \/IUserReviewsService\//);
   const status=JSON.parse(await fs.readFile(path.join(dir,'data/status.json')));assert.equal(status.completedDetails,1);assert.equal(status.missingDetails,0);
 });

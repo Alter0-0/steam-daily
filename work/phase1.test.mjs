@@ -182,7 +182,7 @@ test('web page labels unverified dates, partial metadata and preserved snapshot 
 test('new cloud collector persists a raw candidate before a real child-process interruption',async t=>{
   const fixture=await fs.mkdtemp(path.join(os.tmpdir(),'steam-phase1-process-'));
   t.after(()=>fs.rm(fixture,{recursive:true,force:true}));
-  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(fixture,name));
+  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs','review-service.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(fixture,name));
   const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
   const target=new Date(date+'T12:00:00Z');target.setUTCDate(target.getUTCDate()-(hour<4?2:1));
@@ -193,7 +193,7 @@ test('new cloud collector persists a raw candidate before a real child-process i
       const u=new URL(value);let p;
       if(u.pathname==='/search/results/')p={success:1,total_count:u.searchParams.get('category1')==='10'?0:1,results_html:u.searchParams.get('category1')==='10'?'':'<a data-ds-appid="3755350"><span class="title">Alice Nation</span><div class="search_released">${releasedText}</div></a>'};
       else if(u.pathname==='/api/appdetails'){if(process.env.INTERRUPT==='true')process.exit(42);p={'3755350':${JSON.stringify(detail(3755350,{release_date:{date:releasedText}}))}};}
-      else if(u.pathname.startsWith('/appreviews/'))p={query_summary:{total_reviews:10,total_positive:8}};
+      else if(u.pathname.startsWith('/IUserReviewsService/'))p={response:{query_summary:{total_reviews:10,total_positive:8}}};
       else return {ok:true,text:async()=>'<html></html>'};
       return {ok:true,json:async()=>p};
     };
