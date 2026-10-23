@@ -136,9 +136,8 @@ export function applyRecord(state, record, fresh, now, latest) {
   const merged=preserveSnapshot(old,fresh);
   record.snapshot=merged;
   const date=merged.releaseDate;
-  const oldest=shiftDate(latest,-29);
   // A correction can move the release section, while historical discoveries stay.
-  if(!merged.comingSoon && date && date>=oldest && date<=latest) {
+  if(!merged.comingSoon && date && date<=latest) {
     const priorRelease=state.reports.flatMap(r=>(r.sections||[]).filter(s=>s.key==='release'||s.key==='demo').flatMap(s=>s.games)).find(g=>g.id===merged.id);
     for(const report of state.reports)for(const section of report.sections||[]) {
       if(section.key==='release'||section.key==='demo')section.games=section.games.filter(g=>g.id!==merged.id||report.date===date);
@@ -164,25 +163,30 @@ export function applyRecord(state, record, fresh, now, latest) {
     if(!section.games.some(g=>g.id===merged.id))section.games.push({...merged,isNew:true,firstSeen:cnDate(record.firstObservedAt),discoveryNote:'采集器首次发现，不代表页面创建时间'});
     record.newPageAdded=true;
   }
-  state.reports=state.reports.filter(r=>r.date>=oldest).sort((a,b)=>b.date.localeCompare(a.date));
+  // Published reports never expire. The 30-day window controls work, not storage.
+  state.reports.sort((a,b)=>b.date.localeCompare(a.date));
 }
 export function needsDetails(record) {
   return !record.snapshot || !!record.snapshot.provisional || !!record.snapshot.metadataPending?.length;
 }
 export function needsBasics(record){return !record.snapshot||!!record.snapshot.provisional||record.snapshot.metadataPending?.includes('detail');}
+function routineEligible(record,plan){
+  const date=record.snapshot?.releaseDate||record.item.releaseDate;
+  return !date || date>=shiftDate(plan.latest,-29) || record.snapshot?.comingSoon;
+}
 export function backlog(state,plan,now) {
   const active=Object.values(state.phase1.catalog).filter(r=>!r.excluded);
   const due=r=>!r.retryAfter || r.retryAfter<=now;
   const refresh=r=>r.verifiedAt && +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY);
   return {missingDetails:active.filter(needsDetails).length,
-    initialVerification:active.filter(r=>!needsDetails(r)&&!r.verifiedAt).length,
-    refreshDue:active.filter(r=>!needsDetails(r)&&refresh(r)).length,
+    initialVerification:active.filter(r=>routineEligible(r,plan)&&!needsDetails(r)&&!r.verifiedAt).length,
+    refreshDue:active.filter(r=>routineEligible(r,plan)&&!needsDetails(r)&&refresh(r)).length,
     waitingRetry:active.filter(r=>!due(r)).length};
 }
 const QUEUE_SLOTS=['priority','recent','recent','recent','history','recent','enrich','recent','recent','history','recent','verify','refresh'];
 export function workQueue(state,plan,now) {
   const due = Object.values(state.phase1.catalog).filter(r=>!r.excluded && (!r.retryAfter||r.retryAfter<=now) &&
-    (needsDetails(r) || !r.verifiedAt || r.priorityRequestedAt>(r.priorityAttemptedAt||'') || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY)));
+    (needsDetails(r) || r.priorityRequestedAt>(r.priorityAttemptedAt||'') || routineEligible(r,plan)&&(!r.verifiedAt || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY))));
   const lanes=Object.fromEntries([...new Set(QUEUE_SLOTS)].map(k=>[k,[]]));
   for(const r of due) {
     const demo=r.snapshot?.demo ?? (r.item.sources?.includes('demo')&&!r.item.sources?.includes('games'));
@@ -297,7 +301,7 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
     }
     processed++;await checkpoint('details');
   }
-  const pending=Object.values(state.phase1.catalog).filter(r=>!r.excluded&&(!r.verifiedAt||r.snapshot?.metadataPending?.length));
+  const pending=Object.values(state.phase1.catalog).filter(r=>!r.excluded&&(needsDetails(r)||routineEligible(r,plan)&&!r.verifiedAt));
   const weeklyQueueDone=!queue.some(r=>!r.verifiedAt || r.verifiedAt<now);
   // The 30-day search has its own cadence. Unresolved detail records remain in
   // the durable queue even after switching back to the recent seven-day scan.

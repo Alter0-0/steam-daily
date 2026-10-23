@@ -2,13 +2,14 @@
 import fs from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
+import {restoreMissingReports} from '../archive.mjs';
 import { fileURLToPath } from 'node:url';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 if (process.env.GITHUB_ACTIONS !== 'true') throw new Error('此脚本仅供 GitHub Actions 保存云端状态');
 const mode = process.argv[2];
 if (!['load', 'save'].includes(mode)) throw new Error('mode must be load or save');
 function git(args, input) {
-  const result = spawnSync('git', args, { cwd: root, input, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  const result = spawnSync('git', args, { cwd: root, input, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
   if (result.status !== 0) throw new Error(`git ${args[0]} failed: ${result.error?.message || result.stderr}`);
   return result.stdout.trim();
 }
@@ -29,6 +30,13 @@ if (mode === 'load') {
     }
     console.log('已恢复持久化日报和请求缓存');
   } else console.log('首次云端运行，使用项目自带的历史日报');
+  try {
+    const recovered=JSON.parse(await fs.readFile(path.join(root,'data/recovered-reports.json'),'utf8'));
+    const state=JSON.parse(await fs.readFile(path.join(root,'data/state.json'),'utf8'));
+    const added=restoreMissingReports(state,recovered);
+    if(added)await fs.writeFile(path.join(root,'data/state.json'),JSON.stringify(state));
+    console.log(`已恢复 ${added} 期缺失的历史日报，已有日期不覆盖`);
+  }catch(error){if(error.code!=='ENOENT')throw error;}
 } else {
   const entries = [];
   for (const name of files) {

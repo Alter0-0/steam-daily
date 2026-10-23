@@ -2,6 +2,7 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {publication} from './archive.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const outputDir = path.join(root, 'outputs');
@@ -27,8 +28,16 @@ const server = http.createServer(async (req, res) => {
   }
   if (url.pathname === '/api/reports') {
     const state = await readJson(path.join(dataDir, 'state.json'), { reports: [], generatedAt: null });
-    const days = Math.max(1, Math.min(30, Number(url.searchParams.get('days') || 7)));
-    return send(res, 200, { ...state, reports: (state.reports || []).slice(0, days) });
+    const published=publication(state.reports,state.generatedAt);
+    return send(res, 200, { reports:published.recent,generatedAt:state.generatedAt,history:published.history });
+  }
+  if(url.pathname.startsWith('/data/archive/')){
+    const state=await readJson(path.join(dataDir,'state.json'),{reports:[]});
+    const published=publication(state.reports,state.generatedAt);
+    if(url.pathname==='/data/archive/search.json')return send(res,200,{reports:published.searchReports});
+    if(url.pathname==='/data/archive/index.json')return send(res,200,published.history);
+    const month=url.pathname.match(/^\/data\/archive\/(\d{4}-\d{2})\.json$/)?.[1];
+    return month&&published.months.has(month)?send(res,200,{reports:published.months.get(month)}):send(res,404,{error:'not_found'});
   }
   const requested = url.pathname === '/' ? '/steam-daily.html' : url.pathname;
   const file = path.resolve(outputDir, `.${requested}`);

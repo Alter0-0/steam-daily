@@ -194,6 +194,7 @@
         <button class="archive-search-button" id="openGlobalSearch" type="button">搜索全部日报</button>
       </div>
       <nav class="date-rail" id="dateRail" aria-label="历史日报"></nav>
+      <p class="progress-note" id="historySummary"></p>
       <section class="toolbar" aria-label="筛选工具">
         <label class="search-wrap">
           <span class="search-mark" aria-hidden="true">⌕</span>
@@ -223,6 +224,7 @@
           <form method="dialog"><button class="global-search-close" aria-label="关闭全局搜索">关闭</button></form>
         </div>
         <p id="globalSearchScope">搜索本站已收录的全部日报，不受当前日期、标签和 Demo 筛选影响。</p>
+        <p class="progress-note" id="archiveSearchStatus" role="status" hidden></p>
         <label class="search-wrap">
           <span class="search-mark" aria-hidden="true">⌕</span>
           <input id="globalSearchInput" type="search" placeholder="输入中文名、英文名或 AppID" aria-label="搜索全部日报的游戏" autocomplete="off" autofocus />
@@ -330,6 +332,68 @@
     const globalSearchResults = document.querySelector('#globalSearchResults');
     const globalSearchSummary = document.querySelector('#globalSearchSummary');
     const globalSearch = { index: [], query: '', matches: [], limit: 30 };
+    let historyInfo=null,historyExpanded=false,archiveSearchReports=[],archiveSearchLoaded=false,archiveSearchTask=null,historyNavigation=0;
+    const archiveMonthTasks=new Map();
+    async function fetchArchiveJson(url) {
+      const target=new URL(url,location.href);
+      if(target.origin!==location.origin||!target.pathname.includes('/data/archive/'))throw new Error('历史存档地址无效');
+      target.searchParams.set('v',historyInfo?.generatedAt||'1');
+      const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+      try{
+        const response=await fetch(target,{cache:'no-store',signal:controller.signal});
+        if(!response.ok)throw new Error('历史存档暂时无法读取');
+        return await response.json();
+      }finally{clearTimeout(timer);}
+    }
+    async function ensureArchiveSearch() {
+      if(!historyInfo?.searchUrl||archiveSearchLoaded)return;
+      if(archiveSearchTask)return archiveSearchTask;
+      const notice=document.querySelector('#archiveSearchStatus'),version=historyInfo.generatedAt;
+      notice.hidden=false;notice.textContent='正在载入更早日报的搜索目录…';
+      const task=(async()=>{
+        try{
+          const payload=await fetchArchiveJson(historyInfo.searchUrl);
+          if(!Array.isArray(payload.reports))throw new Error('历史搜索目录格式不完整');
+          if(version!==historyInfo?.generatedAt)return;
+          archiveSearchReports=payload.reports;archiveSearchLoaded=true;
+          notice.hidden=true;refreshGlobalSearch();
+        }catch(error){
+          if(version!==historyInfo?.generatedAt)return;
+          notice.innerHTML='历史搜索目录暂未载入，目前仅搜索已载入的日报。 <button type="button" id="retryArchiveSearch">重试历史搜索</button>';
+          notice.querySelector('button').addEventListener('click',ensureArchiveSearch);
+        }finally{if(archiveSearchTask===task)archiveSearchTask=null;}
+      })();
+      archiveSearchTask=task;return task;
+    }
+    async function ensureReportDate(date) {
+      if(reports.some(r=>r.date===date))return;
+      const month=historyInfo?.months?.find(m=>m.month===date.slice(0,7));
+      if(!month)throw new Error('没有找到这一天的历史存档');
+      if(!archiveMonthTasks.has(month.month)){
+        const task=fetchArchiveJson(month.url).then(payload=>{
+          if(!Array.isArray(payload.reports)||!payload.reports.some(r=>r.date===date))throw new Error('历史存档中缺少这个日期');
+          const known=new Set(reports.map(r=>r.date));
+          reports.push(...payload.reports.filter(r=>!known.has(r.date)));
+          reports.sort((a,b)=>b.date.localeCompare(a.date));
+          refreshTags();refreshGlobalSearch();
+        }).catch(error=>{archiveMonthTasks.delete(month.month);throw error;});
+        archiveMonthTasks.set(month.month,task);
+      }
+      await archiveMonthTasks.get(month.month);
+      if(!reports.some(r=>r.date===date))throw new Error('历史存档中缺少这个日期');
+    }
+    async function selectHistoryDate(date) {
+      const request=++historyNavigation,previousDate=reports[state.reportIndex]?.date;
+      navigationNotice.hidden=false;navigationNotice.textContent=`正在打开 ${date} 的日报…`;
+      try{
+        await ensureReportDate(date);if(request!==historyNavigation)return;
+        state.reportIndex=reports.findIndex(r=>r.date===date);render();
+      }catch(error){
+        if(request!==historyNavigation)return;
+        state.reportIndex=Math.max(0,reports.findIndex(r=>r.date===previousDate));render();
+        navigationNotice.hidden=false;navigationNotice.textContent='历史日报暂时无法读取，已保留当前页面。请重新选择日期重试。';
+      }
+    }
 
     // Global search core: independent of the currently selected day and filters.
     function normalizeSearch(value) {
@@ -367,8 +431,8 @@
     // End global search core.
     const escapeSearchText = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
     function refreshGlobalSearch() {
-      globalSearch.index = buildGlobalSearchIndex(reports);
-      const dates = reports.map(report => report.date).sort();
+      globalSearch.index = buildGlobalSearchIndex([...reports,...archiveSearchReports]);
+      const dates = (historyInfo?.dates||reports).map(report => report.date).sort();
       document.querySelector('#globalSearchScope').textContent = dates.length
         ? `搜索 ${dates[0]} 至 ${dates.at(-1)} 的全部已收录日报，不受当前日期、标签和 Demo 筛选影响。`
         : '暂无已收录日报，数据载入后可搜索。不受当前日报筛选影响。';
@@ -377,7 +441,7 @@
     }
     function renderGlobalSearch() {
       if (!normalizeSearch(globalSearch.query)) {
-        globalSearchSummary.textContent = `已收录 ${globalSearch.index.length} 款游戏。输入名称或 AppID 开始查找。`;
+        globalSearchSummary.textContent = `${historyInfo?.searchUrl&&!archiveSearchLoaded?'当前已载入':'已收录'} ${globalSearch.index.length} 款游戏。输入名称或 AppID 开始查找。`;
         globalSearchResults.innerHTML = '<div class="empty">这里只搜索本站已有日报。资料待补齐的游戏可能暂时只有英文名。</div>';
         return;
       }
@@ -397,6 +461,7 @@
     document.querySelector('#openGlobalSearch').addEventListener('click', () => {
       globalSearchDialog.showModal();
       globalSearchInput.focus();
+      ensureArchiveSearch();
     });
     globalSearchDialog.addEventListener('keydown', event => {
       if (event.key === 'Escape' && !event.isComposing) {
@@ -411,7 +476,7 @@
       renderGlobalSearch();
     });
     globalSearchInput.addEventListener('compositionend', () => globalSearchInput.dispatchEvent(new Event('input')));
-    globalSearchResults.addEventListener('click', event => {
+    globalSearchResults.addEventListener('click', async event => {
       if (event.target.closest('#showMoreSearchResults')) {
         globalSearch.limit += 30;
         renderGlobalSearch();
@@ -422,8 +487,15 @@
       const entry = globalSearch.matches[Number(button.dataset.searchResult)];
       const hit = entry?.occurrences[Number(button.dataset.searchHit)];
       if (!hit) return;
+      const request=++historyNavigation;
+      try{await ensureReportDate(hit.date);}catch(error){
+        if(request===historyNavigation)globalSearchSummary.textContent='这一天的历史日报暂时无法读取，搜索结果已保留，请再点日期重试。';
+        return;
+      }
+      if(request!==historyNavigation)return;
       const reportIndex = reports.findIndex(report => report.date === hit.date);
       if (reportIndex < 0) return;
+      if(historyInfo?.dates?.some(r=>r.date===hit.date&&r.archived))historyExpanded=true;
       state.reportIndex = reportIndex;
       state.query = ''; searchInput.value = '';
       state.tag = 'all'; tagSelect.value = 'all';
@@ -481,9 +553,21 @@
         const readable=new Set(allGames(report).filter(g=>!g.provisional).map(g=>g.id)).size;
         return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${readable} 款可读 · ${total-readable} 款待补资料</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
       }).join('');
-      if(reports.length>6)dateRail.innerHTML+=`<label class="history-picker">历史日报<select id="historyDate" aria-label="选择历史日报"><option value="">选择其他日期（共 ${reports.length} 天）</option>${reports.map((r,index)=>`<option value="${index}" ${index===state.reportIndex?'selected':''}>${formatDate(r.date)}</option>`).join('')}</select></label>`;
-      dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
-      dateRail.querySelector('#historyDate')?.addEventListener('change',event=>{if(event.target.value==='')return;state.reportIndex=Number(event.target.value);render();});
+      const dates=historyInfo?.dates||reports.map(r=>({date:r.date,archived:false}));
+      const hasArchive=dates.some(r=>r.archived);
+      const choices=historyExpanded?dates:dates.filter(r=>!r.archived);
+      const selectedDate=reports[state.reportIndex]?.date;
+      if(dates.length>6)dateRail.innerHTML+=`<label class="history-picker">${historyExpanded?'全部历史':'近期日报'}<select id="historyDate" aria-label="选择历史日报"><option value="">选择其他日期（共 ${choices.length} 天）</option>${choices.map(r=>{const index=reports.findIndex(report=>report.date===r.date);return `<option value="${index>=0?index:'archive:'+r.date}" ${r.date===selectedDate?'selected':''}>${r.date}${r.archived?' · 存档':''}</option>`;}).join('')}</select></label>`;
+      if(hasArchive)dateRail.innerHTML+=`<button type="button" class="archive-search-button" id="toggleHistory">${historyExpanded?'返回近30天':'查看全部历史（'+dates.length+'天）'}</button>`;
+      document.querySelector('#historySummary').textContent=historyInfo?`已长期保存 ${dates.length} 天日报；首页默认近30天，更早记录可从“查看全部历史”或全局搜索打开。历史价格和测评保留各自的快照时间。`:'';
+      dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { historyNavigation++;state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
+      dateRail.querySelector('#historyDate')?.addEventListener('change',event=>{const value=event.target.value;if(!value)return;selectHistoryDate(value.startsWith('archive:')?value.slice(8):reports[Number(value)].date);});
+      dateRail.querySelector('#toggleHistory')?.addEventListener('click',()=>{
+        historyNavigation++;
+        historyExpanded=!historyExpanded;
+        if(!historyExpanded&&dates.some(r=>r.date===selectedDate&&r.archived))state.reportIndex=0;
+        render();
+      });
     }
     function render() {
       navigationNotice.hidden = true;
@@ -548,7 +632,15 @@
         if(status.state==='unknown')document.querySelector('#progressReason').textContent='进度记录暂时无法读取，已保存的日报仍可正常查看。';
         if (Array.isArray(payload.reports) && payload.reports.length) {
           const selectedDate=reports[state.reportIndex]?.date;
+          const previousSelected=reports[state.reportIndex],previousReports=reports;
+          const nextHistory=payload.history||null;
+          const historyChanged=historyInfo?.generatedAt!==nextHistory?.generatedAt;
+          if(historyChanged){archiveSearchReports=[];archiveSearchLoaded=false;archiveSearchTask=null;archiveMonthTasks.clear();document.querySelector('#archiveSearchStatus').hidden=true;}
+          historyInfo=nextHistory;
           reports = payload.reports.map(report => ({ ...report, label: report.label || '日报' }));
+          const retained=historyChanged?[previousSelected].filter(Boolean):previousReports;
+          for(const oldReport of retained)if(historyInfo?.dates?.some(r=>r.date===oldReport.date&&r.archived)&&!reports.some(r=>r.date===oldReport.date))reports.push(oldReport);
+          reports.sort((a,b)=>b.date.localeCompare(a.date));
           const selectedIndex=reports.findIndex(report=>report.date===selectedDate);
           const dailyIndex=reports.findIndex(report=>report.date===status.reportDate);
           state.reportIndex=selectedIndex>=0?selectedIndex:dailyIndex>=0?dailyIndex:0;
@@ -559,6 +651,7 @@
           document.querySelector('#dataStatus').classList.toggle('demo', failed);
           document.querySelector('#syncStatus').textContent = `最后同步：${payload.generatedAt ? new Date(payload.generatedAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : '未知'} · Steam 公共接口`;
           refreshTags(); refreshGlobalSearch(); render();
+          if(globalSearchDialog.open)ensureArchiveSearch();
         } else if (cloud) {
           document.querySelector('#dataStatus').textContent = '云端日报 · 等待首次采集';
         }

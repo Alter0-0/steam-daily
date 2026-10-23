@@ -140,7 +140,7 @@ async function collectDaily(state, reportDate, startedAt) {
     });
     report.collection.pendingItems = remaining;
     report.collection.baseline = baseline;
-    state.reports = [report, ...state.reports.filter(r => r.date !== reportDate)].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 30);
+    state.reports = [report, ...state.reports.filter(r => r.date !== reportDate)].sort((a, b) => b.date.localeCompare(a.date));
     if (games.length) state.initialized = true;
     state.generatedAt = startedAt;
     state.source = 'Steam public store API';

@@ -73,6 +73,7 @@ test('durable data branch saves and restores state in a fresh checkout', async t
   git(['init','--bare',bare]); git(['init']); git(['remote','add','origin',bare]);
   await fs.mkdir(path.join(checkout,'cloud')); await fs.mkdir(path.join(checkout,'data'));
   await fs.copyFile(new URL('../cloud/state-branch.mjs',import.meta.url),path.join(checkout,'cloud/state-branch.mjs'));
+  for(const name of ['archive.mjs','history.mjs'])await fs.copyFile(new URL(`../${name}`,import.meta.url),path.join(checkout,name));
   const expected = {reports:[{date:'2026-10-13',sections:[{key:'release',games:Array.from({length:600},(_,index)=>({id:index,name:`Game ${index}`,tags:['x'.repeat(2000)]}))}]}],firstSeen:{1:'2026-10-13'}};
   await fs.writeFile(path.join(checkout,'data/state.json'),JSON.stringify(expected));
   function run(mode) {
