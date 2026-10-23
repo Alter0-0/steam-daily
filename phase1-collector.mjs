@@ -27,6 +27,7 @@ try {
   // A failure in the review API must not block the independent store service.
   const reviewClient=createSteamClient({interval:5000,timeoutMs:12000,maxAttempts:1});
   const reviews=createReviewService({request:reviewClient});
+  let lastLoggedStage=null;
   const maxDetails=Number(process.env.MAX_DETAILS||0);
   if(!Number.isInteger(maxDetails)||maxDetails<0||maxDetails>1000)throw new Error('每轮条数必须为0至1000的整数');
   const priorityInput=process.env.PRIORITY_APP_IDS?.trim()||'';
@@ -47,7 +48,10 @@ try {
     scanDeadline:()=>Date.now()>searchBudget,
     stopReason:()=>requestHalted?'steam-limit':Date.now()>budget?'time-budget':null,
     save:()=>write('state.json',state),
-    onProgress:progress=>write('status.json',{state:'running',...progress,reviewService:reviews.stats(),message:'本轮采集中；网页显示最近已发布的进度快照'}),
+    onProgress:async progress=>{
+      await write('status.json',{state:'running',...progress,reviewService:reviews.stats(),message:'本轮采集中；网页显示最近已发布的进度快照'});
+      if(progress.stage!==lastLoggedStage||progress.processed>0&&progress.processed%10===0){console.log(JSON.stringify({progress:progress.stage,processed:progress.processed,basicCompleted:progress.basicCompleted,completedDetails:progress.completedDetails,failed:progress.failed,reviewService:reviews.stats()}));lastLoggedStage=progress.stage;}
+    },
     getPage:async(filter,start)=>{
       const params=new URLSearchParams({query:'',start:String(start),count:'100',sort_by:'Released_DESC',infinite:'1',cc:'cn',l:'schinese',category1:filter==='demo'?'10':'998'});
       const p=await request('https://store.steampowered.com/search/results/?'+params);
@@ -69,7 +73,7 @@ try {
         if(!['game','demo'].includes(detail.data.type))return null;
         const d=detail.data;
         result={detail:{success:true,data:Object.fromEntries(['type','name','is_free','price_overview','header_image','genres','developers','publishers','release_date'].map(k=>[k,d[k]]))},review:null};
-        cache[id]={savedAt:new Date().toISOString(),result};
+        cache[id]={...cached,savedAt:new Date().toISOString(),result};
         await write('detail-cache.json',cache);
       }
       let evidence=cached?.evidence&&Date.now()-Date.parse(cached.evidenceAt)<24*3600000?cached.evidence:null;

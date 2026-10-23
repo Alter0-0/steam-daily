@@ -550,7 +550,8 @@
           const selectedDate=reports[state.reportIndex]?.date;
           reports = payload.reports.map(report => ({ ...report, label: report.label || '日报' }));
           const selectedIndex=reports.findIndex(report=>report.date===selectedDate);
-          state.reportIndex=selectedIndex>=0?selectedIndex:0;
+          const dailyIndex=reports.findIndex(report=>report.date===status.reportDate);
+          state.reportIndex=selectedIndex>=0?selectedIndex:dailyIndex>=0?dailyIndex:0;
           const failed = status.state === 'error';
           const partial = status.state === 'partial';
           const latestComplete = reports.find(report => report.date === status.reportDate)?.collection?.state === 'complete';
