@@ -88,6 +88,12 @@
     .global-search-result .store-link { display: inline-block; margin-top: 4px; }
     .navigation-notice { padding: 12px 15px; margin-bottom: 18px; border-radius: 6px; background: var(--blue-soft); color: var(--navy-2); font-size: 13px; }
     .game-card.search-target { outline: 3px solid var(--orange); outline-offset: 3px; }
+    .pending-list { margin-top:14px; border:1px solid var(--line); border-radius:7px; background:#fff; }
+    .pending-list summary { cursor:pointer; padding:13px 15px; color:var(--muted); font-size:13px; }
+    .pending-list .game-grid { padding:0 14px 14px; }
+    .report-quality { padding:14px 16px; background:#fff; border:1px solid var(--line); border-radius:7px; font-size:13px; line-height:1.8; }
+    .collection-progress details { margin-top:10px; }
+    .collection-progress details>summary { cursor:pointer; color:var(--muted); font-size:12px; }
     .sections { display: grid; gap: 26px; }
     .section-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
     .section-title { display: flex; gap: 10px; align-items: center; }
@@ -172,13 +178,14 @@
         <dl class="progress-grid">
           <div><dt>本轮已处理</dt><dd id="progressProcessed">—</dd></div>
           <div><dt>本轮补齐详情</dt><dd id="progressCompleted">—</dd></div>
+          <div><dt>本轮新增可读资料</dt><dd id="progressBasic">—</dd></div>
           <div><dt>本轮完成复核</dt><dd id="progressVerified">—</dd></div>
           <div><dt>仍待补详情</dt><dd id="progressMissing">—</dd></div>
           <div><dt>已有资料待首次复核</dt><dd id="progressInitial">—</dd></div>
           <div><dt>到期例行复查</dt><dd id="progressRefresh">—</dd></div>
         </dl>
         <p class="progress-note" id="progressReason" role="status">这里显示最近已发布的采集快照。</p>
-        <p class="progress-note" id="progressCoverage">待补详情是已发现但资料不全的条目，不等于漏收游戏数量。搜索复查完成也不代表 Steam 全量覆盖。</p>
+        <details><summary>查看采集范围与限制</summary><p class="progress-note" id="progressCoverage">待补详情是已发现但资料不全的条目，不等于漏收游戏数量。可读资料已取得名称、价格状态和厂商等详情，测评或精确时刻仍可能缺少。搜索复查完成也不代表 Steam 全量覆盖。云端定时任务可能延迟。</p></details>
       </section>
       <div class="archive-search-bar">
         <p>按日期阅读日报，或直接查找已收录的游戏。</p>
@@ -425,6 +432,7 @@
       navigationNotice.textContent = `已打开 ${hit.date} · ${hit.title}。当前日报的搜索、标签和 Demo 筛选已清除，目标游戏已标出。`;
       const target = [...sections.querySelectorAll('.game-card')].find(card => card.dataset.gameId === entry.id && card.dataset.sectionKey === hit.sectionKey);
       if (target) {
+        const pending=target.closest('details');if(pending)pending.open=true;
         target.classList.add('search-target'); target.tabIndex = -1;
         target.focus({ preventScroll: true });
         target.scrollIntoView({ block: 'center', behavior: 'instant' });
@@ -437,36 +445,38 @@
         const haystack = `${game.name} ${game.en} ${game.studio} ${game.publisher}`.toLowerCase();
         return (!state.query || haystack.includes(state.query.toLowerCase())) && (state.tag === 'all' || game.tags.includes(state.tag)) && (!state.demoOnly || game.demo);
       }).sort((a, b) => {
+        if(!!a.provisional!==!!b.provisional)return a.provisional?1:-1;
         if (state.sort === 'reviews') {
           const count = game => Number(String(game.reviews ?? 0).replace(/[,，\s]/g, '')) || 0;
           return count(b) - count(a) || (b.rating ?? -1) - (a.rating ?? -1);
         }
         if (state.sort === 'time') return a.time.localeCompare(b.time);
         if (state.sort === 'price') return a.priceValue - b.priceValue;
-        return b.rating - a.rating;
+        return (b.rating ?? -1) - (a.rating ?? -1);
       });
     }
     function gameCard(game, sectionKey = '') {
       const ratingClass = game.rating < 80 ? 'low' : '';
       const escapeText = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
       const stamp = value => value ? new Date(value).toLocaleString('zh-CN', { timeZone:'Asia/Shanghai',hour12:false }) : '原始日报';
-      const reviewText = game.metadataPending?.includes('reviews') ? '测评待核实' : `${game.reviews || '0'} 条测评`;
+      const reviewText = game.metadataPending?.includes('reviews') ? '测评暂未取得' : `${game.reviews || '0'} 条测评${game.reviewSource==='store-search'?' · 商店汇总':''}`;
       const dateNote = game.storeReleaseText ? `<div class="info-line"><span class="info-label">商店原文</span><span class="info-value" title="${escapeText(game.storeReleaseText)}">${escapeText(game.storeReleaseText)}</span></div>` : '';
-      const snapshotNote = game.provisional ? '已发现，详情待补充' : `${game.recoveredAt ? '补录 ' + stamp(game.recoveredAt) + ' · ' : ''}价格快照：${stamp(game.priceSnapshotAt || game.snapshotAt || game.recoveredAt)} · 测评快照：${stamp(game.reviewSnapshotAt || game.snapshotAt || game.recoveredAt)}`;
+      const snapshotNote = game.provisional ? '已发现，详情待补充' : `${game.recoveredAt ? '补录 ' + stamp(game.recoveredAt) + ' · ' : ''}价格快照：${stamp(game.priceSnapshotAt || game.snapshotAt || game.recoveredAt)} · 测评${game.metadataPending?.includes('reviews')?'尚未取得':'快照：'+stamp(game.reviewSnapshotAt || game.snapshotAt || game.recoveredAt)}`;
       return `<article class="game-card" data-game-id="${escapeText(game.id)}" data-section-key="${escapeText(sectionKey)}">
-        <img class="cover" src="${game.cover}" alt="${game.name} 封面" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('cover-missing')" />
+        <img class="cover" src="${escapeText(game.cover)}" alt="${escapeText(game.name)} 封面" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('cover-missing')" />
         <div class="card-body">
           <div class="card-topline"><div><h3 class="game-name">${escapeText(game.name)}</h3><div class="game-name-en">${escapeText(game.en)}</div></div><div class="rating ${ratingClass}">${game.rating == null ? '暂无' : `${game.rating}%`}<small>${reviewText}</small></div></div>
           <div class="tags">${game.status.map(status => `<span class="tag ${status === 'Demo' ? 'demo' : 'status'}">${escapeText(status)}</span>`).join('')}${game.tags.map(tag => `<span class="tag">${escapeText(tag)}</span>`).join('')}</div>
           <div class="card-info"><div class="info-line release-time"><span class="info-label">时间</span><span class="info-value" title="${escapeText(game.time)}">${escapeText(game.time)}</span></div>${dateNote}<div class="info-line"><span class="info-label">开发</span><span class="info-value">${escapeText(game.studio)}</span></div><div class="info-line"><span class="info-label">发行</span><span class="info-value">${escapeText(game.publisher)}</span></div></div>
-          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${game.price}</span><span class="price-note" title="${escapeText(snapshotNote)}">${snapshotNote}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
+          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${escapeText(game.price)}</span><span class="price-note" title="${escapeText(snapshotNote)}">${escapeText(snapshotNote)}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
         </div>
       </article>`;
     }
     function renderRail() {
       dateRail.innerHTML = reports.map((report, index) => {
         const total = new Set(allGames(report).map(game => game.id)).size;
-        return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${report.collection?.coverage ? (report.collection.state === 'partial' ? '持续补查' : '已复查，仍会补充') : report.label}</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
+        const readable=new Set(allGames(report).filter(g=>!g.provisional).map(g=>g.id)).size;
+        return `<button class="date-card ${index === state.reportIndex ? 'active' : ''}" data-index="${index}"><span class="date-label">${readable} 款可读 · ${total-readable} 款待补资料</span><span class="date-number"><strong>${formatDate(report.date)}</strong><span class="date-count">${total} 条</span></span></button>`;
       }).join('');
       dateRail.querySelectorAll('.date-card').forEach(button => button.addEventListener('click', () => { state.reportIndex = Number(button.dataset.index); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
     }
@@ -480,10 +490,14 @@
         return;
       }
       const visibleIds = new Set();
-      sections.innerHTML = (report.collection?.coverage ? `<div class="empty">日报发布后持续复查，发现迟到游戏会补录。当前 ${report.collection.pendingIds?.length || 0} 个条目待核实；搜索复查不代表 Steam 全量覆盖。${report.collection.lastCheckedAt ? ' 最近复查：' + new Date(report.collection.lastCheckedAt).toLocaleString('zh-CN', { timeZone:'Asia/Shanghai',hour12:false }) : ''}</div>` : report.collection?.state === 'partial' ? `<div class="empty">这天的日报部分完成：已保存成功条目，${report.collection.pendingIds?.length || 0} 个项目等待重试${report.collection.scanComplete ? '。' : '；搜索尚未完整覆盖，将继续补查。'}</div>` : '') + (report.recovery && !report.collection?.coverage ? `<div class="empty">${report.recovery.note}${report.recovery.recoveredAt ? ' 补采时间：' + new Date(report.recovery.recoveredAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }) : ''}</div>` : '') + report.sections.map(section => {
+      const unique=[...new Map(allGames(report).map(g=>[g.id,g])).values()];
+      const readable=unique.filter(g=>!g.provisional),waiting=unique.length-readable.length;
+      const withoutReviews=readable.filter(g=>g.metadataPending?.includes('reviews')).length;
+      sections.innerHTML = `<div class="report-quality">${formatDate(report.date)}：已收录 ${unique.length} 款，其中 ${readable.length} 款已有可读资料${waiting?'，'+waiting+' 款详情仍在补采':''}。${withoutReviews?' '+withoutReviews+' 款的测评暂未取得，其他资料可正常查看。':''}${waiting?' 只有名称的候选放在各栏的可展开列表中。':''}</div>` + report.sections.map(section => {
         const games = visibleGames(section.games);
+        const ready=games.filter(g=>!g.provisional),pending=games.filter(g=>g.provisional);
         games.forEach(game => visibleIds.add(game.id));
-        return `<section><div class="section-heading"><div class="section-title"><span class="section-dot ${section.tone === 'blue' ? 'blue' : section.tone === 'mint' ? 'mint' : ''}"></span><h2>${section.title}</h2><span class="section-count">${games.length} 款</span></div><span class="section-rule"></span></div>${games.length ? `<div class="game-grid">${games.map(game => gameCard(game, section.key)).join('')}</div>` : `<div class="empty">${report.recovery ? '缺失历史或尚未补采到可核实条目' : '暂无符合条件的条目'}</div>`}</section>`;
+        return `<section><div class="section-heading"><div class="section-title"><span class="section-dot ${section.tone === 'blue' ? 'blue' : section.tone === 'mint' ? 'mint' : ''}"></span><h2>${section.title}</h2><span class="section-count">${ready.length} 款可读${pending.length?' · '+pending.length+' 款待补':''}</span></div><span class="section-rule"></span></div>${ready.length ? `<div class="game-grid">${ready.map(game => gameCard(game, section.key)).join('')}</div>` : `<div class="empty">${pending.length?'已发现候选，详情尚在补采；可展开下方列表直接查看商店。':'暂无符合条件的条目'}</div>`}${pending.length?`<details class="pending-list" ${state.query?'open':''}><summary>展开 ${pending.length} 款待补资料的游戏（保留名称和商店链接）</summary><div class="game-grid">${pending.map(game=>gameCard(game,section.key)).join('')}</div></details>`:''}</section>`;
       }).join('');
       resultMeta.textContent = `当前日报 ${visibleIds.size} 款`;
     }
@@ -494,6 +508,7 @@
     function renderCollectionProgress(status) {
       const count=(id,value)=>document.querySelector(id).textContent=Number.isFinite(value)?value.toLocaleString('zh-CN'):'—';
       count('#progressProcessed',status.processed);count('#progressCompleted',status.completedDetails);count('#progressVerified',status.verified);
+      count('#progressBasic',status.basicCompleted);
       count('#progressMissing',status.missingDetails);count('#progressInitial',status.initialVerification);count('#progressRefresh',status.refreshDue);
       const stamp=value=>value&&Number.isFinite(Date.parse(value))?new Date(value).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'暂无记录';
       const ended=status.finishedAt||status.updatedAt||status.startedAt;
@@ -503,6 +518,7 @@
       let reason=reasons[status.stopReason]||(status.state==='error'?'本轮运行异常，成功保存的日报仍可查看。':status.state==='partial'?'本轮部分完成，仍有条目待补查。':status.state==='success'?'本轮检查完成。':'暂无完整采集记录。');
       if(status.state==='running')reason='这是运行中保存的检查点，不代表云端此刻仍在运行；下一次发布后会更新。';
       if(Number.isFinite(status.failed)&&status.failed)reason+=` 本轮有 ${status.failed} 个条目的资料未能补齐，已保留待重试。`;
+      if(status.reviewService?.state==='paused')reason+=' 测评服务暂时异常，已暂停这部分请求，名称、价格和厂商等详情仍会继续采集。';
       if(Number.isFinite(status.waitingRetry)&&status.waitingRetry)reason+=` 其中 ${status.waitingRetry} 个条目等待重试时间到达。`;
       if(typeof status.scansComplete==='boolean')reason+=status.scansComplete?' 本轮搜索窗口已扫完。':' 本轮搜索窗口尚未扫完。';
       document.querySelector('#progressReason').textContent=reason+' 页面每5分钟检查已发布更新，也可手动刷新进度。';

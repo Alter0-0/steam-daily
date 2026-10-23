@@ -37,10 +37,22 @@ export function sweepPlan(state, now, latest, force30 = false) {
 }
 export function parseSearchRows(html) {
   const items=[];const ids=new Set();
-  for (const m of html.matchAll(/data-ds-appid="(\d+)"[\s\S]*?<span class="title">([\s\S]*?)<\/span>[\s\S]*?<div class="search_released[^\"]*">([\s\S]*?)<\/div>/g)) {
+  const matches=[...html.matchAll(/data-ds-appid="(\d+)"[\s\S]*?<span class="title">([\s\S]*?)<\/span>[\s\S]*?<div class="search_released[^\"]*">([\s\S]*?)<\/div>/g)];
+  for (const [index,m] of matches.entries()) {
     const appid=Number(m[1]);if(ids.has(appid))continue;ids.add(appid);
     const clean = t => t.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();
-    items.push({appid,searchName:clean(m[2]),releasedText:clean(m[3]),releaseDate:parseReleaseDate(clean(m[3]))});
+    const body=html.slice(m.index,matches[index+1]?.index??html.length);
+    const priceText=body.match(/class="discount_final_price"[^>]*>([^<]+)/)?.[1];
+    const cents=body.match(/data-price-final="(\d+)"/)?.[1];
+    const cover=body.match(/<img\b[^>]*src="([^"]+)"/)?.[1];
+    const tooltip=body.match(/data-tooltip-html="([^"]+)"/)?.[1];
+    const cnReview=tooltip?.match(/([\d,，]+)\s*篇用户评测中有\s*(\d+)%/);
+    const enReview=tooltip?.match(/(\d+)%[^\d]+([\d,]+)\s+user reviews/i);
+    const listingReview=cnReview?{total:Number(cnReview[1].replace(/[,，]/g,'')),rating:Number(cnReview[2])}:enReview?{total:Number(enReview[2].replace(/,/g,'')),rating:Number(enReview[1])}:null;
+    items.push({appid,searchName:clean(m[2]),releasedText:clean(m[3]),releaseDate:parseReleaseDate(clean(m[3])),
+      ...(cents!=null&&priceText?{searchPrice:clean(priceText),searchPriceValue:Number(cents)/100}:{}),
+      ...(cover&&/^https:\/\/(shared\.[\w.]*steamstatic\.com|cdn\.[\w.]*steamstatic\.com)\//.test(cover)?{searchCover:cover}:{}),
+      ...(listingReview&&listingReview.rating<=100&&listingReview.total>0?{listingReview}:{})});
   }
   return items;
 }
@@ -56,30 +68,41 @@ export function parseSearchPage(payload, requestedStart) {
 }
 export function ingest(state, items, source, now) {
   const catalog=state.phase1.catalog;
+  const updatedCards=new Map();
   for (const item of items) {
     const old=catalog[item.appid];
     catalog[item.appid]={...old,item:{...old?.item,...item,sources:[...new Set([...(old?.item.sources||[]),source])]},firstObservedAt:old?.firstObservedAt||now,lastSeenAt:now,attempts:old?.attempts||0};
+    // Refresh search-only cards with real names/prices/covers, while retaining
+    // prior names for global search and leaving known historical snapshots alone.
+    if(old?.snapshot?.provisional){
+      const updated=placeholder(catalog[item.appid],now);
+      updatedCards.set(item.appid,updated);
+      catalog[item.appid].snapshot={...old.snapshot,...updated,en:old.snapshot.en||old.snapshot.name};
+    }
   }
+  if(updatedCards.size)for(const report of state.reports)for(const section of report.sections||[])section.games=section.games.map(g=>g.provisional&&updatedCards.has(g.id)?{...g,...updatedCards.get(g.id),en:g.en||g.name}:g);
 }
 export function placeholder(record, now) {
   const item=record.item; const demo=item.sources?.includes('demo') && !item.sources?.includes('games');
-  return { id:item.appid,name:item.searchName||`Steam 应用 ${item.appid}`,en:item.searchName||'',cover:`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${item.appid}/header.jpg`,
-    price:'待核实',priceValue:999999,rating:null,reviews:'0',tags:[],status:[demo?'Demo':'信息待补充'],studio:'待核实',publisher:'待核实',demo,
-    ...resolveReleaseTime({searchText:item.releasedText,demo,now}),firstObservedAt:record.firstObservedAt,snapshotAt:now,metadataPending:['detail','reviews','time'],provisional:true,source:'release-search',storeUrl:`https://store.steampowered.com/app/${item.appid}/` };
+  return { id:item.appid,name:item.searchName||`Steam 应用 ${item.appid}`,en:item.searchName||'',cover:item.searchCover||`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${item.appid}/header.jpg`,
+    price:demo?'Demo 试玩':item.searchPrice||'待核实',priceValue:demo?0:item.searchPriceValue??999999,rating:item.listingReview?.rating??null,reviews:item.listingReview?item.listingReview.total.toLocaleString('en-US'):'0',tags:[],status:[demo?'Demo':'信息待补充'],studio:'待核实',publisher:'待核实',demo,
+    ...resolveReleaseTime({searchText:item.releasedText,demo,now}),firstObservedAt:record.firstObservedAt,snapshotAt:now,priceSnapshotAt:item.searchPrice?now:null,reviewSnapshotAt:item.listingReview?now:null,reviewSource:item.listingReview?'store-search':null,metadataPending:['detail',...(!item.listingReview?['reviews']:[]),'time'],provisional:true,source:'release-search',storeUrl:`https://store.steampowered.com/app/${item.appid}/` };
 }
 export function normalizeRecord(record, detail, review, html, now, evidence) {
   const d=detail.data;
   if(!['game','demo'].includes(d.type))return null;
-  const total=review?.query_summary?.total_reviews; const positive=review?.query_summary?.total_positive;
+  const summary=review?.query_summary;
+  const listingReview=!summary?record.item.listingReview:null;
+  const total=summary?.total_reviews??listingReview?.total; const positive=summary?.total_positive;
   const tags=(d.genres||[]).map(g=>g.description).filter(Boolean).slice(0,8);
   const demo=d.type==='demo'; const earlyAccess=(d.genres||[]).some(g=>String(g.id)==='70'||/抢先体验|Early Access/i.test(g.description));
   const timing=resolveReleaseTime({storeText:d.release_date?.date,searchText:record.item.releasedText,html,evidence,demo,earlyAccess,comingSoon:!!d.release_date?.coming_soon,now});
   const stage=demo?'Demo':earlyAccess?'抢先体验':timing.eventKind==='full-release'?'正式版上线':'游戏发售';
-  const pending=[];if(!review?.query_summary)pending.push('reviews');if(!html&&!evidence)pending.push('time');
+  const pending=[];if(!summary&&!listingReview)pending.push('reviews');if(!html&&!evidence)pending.push('time');
   return { id:record.item.appid,name:d.name||record.item.searchName,en:record.item.searchName||d.name,cover:d.header_image||`https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${record.item.appid}/header.jpg`,
     price:demo?'Demo 试玩':d.is_free?'免费':d.price_overview?.final_formatted||(d.release_date?.coming_soon?'尚未公布售价':'国区暂无售价'),priceValue:demo||d.is_free?0:(d.price_overview?.final??99999900)/100,
-    rating:total>0?Math.round(positive/total*100):null,reviews:(total||0).toLocaleString('en-US'),tags,status:[stage],studio:(d.developers||[]).join(', ')||'未知',publisher:(d.publishers||[]).join(', ')||'未知',demo,
-    ...timing,firstObservedAt:record.firstObservedAt,snapshotAt:now,priceSnapshotAt:now,reviewSnapshotAt:review?.query_summary?now:null,metadataPending:pending,source:'release-search+appdetails+store-page',storeUrl:`https://store.steampowered.com/app/${record.item.appid}/` };
+    rating:listingReview?listingReview.rating:total>0?Math.round(positive/total*100):null,reviews:(total||0).toLocaleString('en-US'),tags,status:[stage],studio:(d.developers||[]).join(', ')||'未知',publisher:(d.publishers||[]).join(', ')||'未知',demo,
+    ...timing,firstObservedAt:record.firstObservedAt,snapshotAt:now,priceSnapshotAt:now,reviewSnapshotAt:summary?now:listingReview?record.lastSeenAt||now:null,reviewSource:listingReview?'store-search':summary?'reviews-api':null,metadataPending:pending,source:'release-search+appdetails+store-page',storeUrl:`https://store.steampowered.com/app/${record.item.appid}/` };
 }
 export function preserveSnapshot(old, fresh) {
   if(!old || old.provisional)return {...fresh,snapshotAt:old?.snapshotAt||fresh.snapshotAt};
@@ -90,6 +113,7 @@ export function preserveSnapshot(old, fresh) {
   return {...old,...fresh,price:missingPrice?fresh.price:old.price,priceValue:missingPrice?fresh.priceValue:old.priceValue,rating:pending.includes('reviews')?fresh.rating:old.rating,reviews:pending.includes('reviews')?fresh.reviews:old.reviews,
     snapshotAt:old.snapshotAt??null,firstObservedAt:old.firstObservedAt||fresh.firstObservedAt,
     priceSnapshotAt:missingPrice?fresh.priceSnapshotAt:old.priceSnapshotAt||old.snapshotAt||null,reviewSnapshotAt:pending.includes('reviews')?fresh.reviewSnapshotAt:old.reviewSnapshotAt||old.snapshotAt||null,
+    reviewSource:pending.includes('reviews')?fresh.reviewSource:old.reviewSource||null,
     metadataUpdatedAt:fresh.metadataUpdatedAt||fresh.snapshotAt,metadataPending:freshPending,provisional:false};
 }
 function ensureReport(state,date,now) {
@@ -158,8 +182,9 @@ export function workQueue(state,plan,now) {
   const lanes=Object.fromEntries([...new Set(QUEUE_SLOTS)].map(k=>[k,[]]));
   for(const r of due) {
     const demo=r.snapshot?.demo ?? (r.item.sources?.includes('demo')&&!r.item.sources?.includes('games'));
-    const observed=String(r.firstObservedAt||'').slice(0,10);
-    const recent=r.item.releaseDate>=shiftDate(plan.latest,-3)||observed>=shiftDate(plan.latest,-2);
+    // An undated future page first seen today must not precede yesterday's
+    // releases simply because its observation date is newer.
+    const recent=r.item.releaseDate>=shiftDate(plan.latest,-3)&&r.item.releaseDate<=shiftDate(plan.latest,1);
     const lane=r.priorityRequestedAt>(r.priorityAttemptedAt||'')?'priority':needsBasics(r)?(recent?'recent':'history'):needsDetails(r)?'enrich':!r.verifiedAt?'verify':'refresh';
     lanes[lane].push(r);
   }

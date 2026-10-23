@@ -176,7 +176,7 @@ test('web page labels unverified dates, partial metadata and preserved snapshot 
   const fn=source.slice(source.indexOf('    function gameCard('),source.indexOf('    function renderRail('));
   const game={id:1,name:'Example',en:'Example',rating:null,reviews:'0',tags:[],status:[],price:'待核实',time:'2026-10-15（Steam 标注，具体时刻未核实）',storeReleaseText:'2026 年 10 月 15 日',provisional:true,metadataPending:['reviews']};
   const output=vm.runInNewContext(fn+';gameCard(game)',{game});
-  assert.match(output,/测评待核实/);assert.match(output,/具体时刻未核实/);assert.match(output,/商店原文/);assert.match(output,/详情待补充/);assert.doesNotMatch(output,/0 条测评/);
+  assert.match(output,/测评暂未取得/);assert.match(output,/具体时刻未核实/);assert.match(output,/商店原文/);assert.match(output,/详情待补充/);assert.doesNotMatch(output,/0 条测评/);
 });
 
 test('new cloud collector persists a raw candidate before a real child-process interruption',async t=>{

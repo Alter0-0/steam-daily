@@ -8,7 +8,7 @@ const urls=[
 for(const url of urls){
   try{
     const r=await fetch(url,{signal:AbortSignal.timeout(15000)});const body=await r.text();let p;try{p=JSON.parse(body);}catch{}
-    console.log(JSON.stringify({endpoint:new URL(url).pathname,status:r.status,keys:Object.keys(p||{}),responseKeys:Object.keys(p?.response||{}),summary:normalizeReviews(p),sample:p?.response||p?.['3755350']?.data?.name||p?.results_html?.slice(0,10000)||body.slice(0,500)}));
+    console.log(JSON.stringify({endpoint:new URL(url).pathname,status:r.status,keys:Object.keys(p||{}),responseKeys:Object.keys(p?.response||{}),summary:normalizeReviews(p),sample:p?.['3755350']?.data?.name||p?.results_html?.slice(0,10000)||(!p?body.slice(0,500):undefined)}));
   }catch(e){console.log(JSON.stringify({endpoint:new URL(url).pathname,error:e.message}));}
   await new Promise(r=>setTimeout(r,5000));
 }

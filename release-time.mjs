@@ -39,6 +39,6 @@ export function resolveReleaseTime({ storeText, searchText, html = '', evidence:
   const precision = verifiedTimestamp ? 'store-timestamp' : announcedTimestamp ? 'announcement' : 'date-only';
   const date = releaseAt ? cnDate(releaseAt) : storeDate;
   const time = releaseAt ? `${new Date(releaseAt).toLocaleString('zh-CN', { timeZone:'Asia/Shanghai', hour12:false })}（北京时间${announcedTimestamp ? '，发布公告时间' : '，商店上线记录'}）`
-    : `${storeText || searchText || '日期待定'}（Steam 标注，具体时刻未核实）`;
+    : `${storeText || searchText || '日期待定'}（Steam 标注，${html||cachedEvidence?'未公开可核对的精确时刻':'具体时刻未核实'}）`;
   return { releaseDate: date, releaseAt, storeReleaseDate: storeDate, storeReleaseText: storeText || searchText || null, time, timePrecision: precision, eventKind, earlyAccessDate: evidence.earlyAccessDate, comingSoon, timeEvidence: { pageTimestamp: evidence.timestamp, announcementTimestamp: announcedTimestamp } };
 }
