@@ -470,7 +470,7 @@
           <div class="card-topline"><div><h3 class="game-name">${escapeText(game.name)}</h3><div class="game-name-en">${escapeText(game.en)}</div></div><div class="rating ${ratingClass}">${game.rating == null ? '暂无' : `${game.rating}%`}<small>${reviewText}</small></div></div>
           <div class="tags">${game.status.map(status => `<span class="tag ${status === 'Demo' ? 'demo' : 'status'}">${escapeText(status)}</span>`).join('')}${game.tags.map(tag => `<span class="tag">${escapeText(tag)}</span>`).join('')}</div>
           <div class="card-info"><div class="info-line release-time"><span class="info-label">时间</span><span class="info-value" title="${escapeText(game.time)}">${escapeText(game.time)}</span></div>${dateNote}<div class="info-line"><span class="info-label">开发</span><span class="info-value">${escapeText(game.studio)}</span></div><div class="info-line"><span class="info-label">发行</span><span class="info-value">${escapeText(game.publisher)}</span></div></div>
-          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${escapeText(game.price)}</span><span class="price-note" title="${escapeText(snapshotNote)}">${escapeText(snapshotNote)}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
+          <div class="card-footer"><span class="price ${game.price === '免费' ? 'free' : ''}">${escapeText(game.demo?'Demo 试玩':game.price)}</span><span class="price-note" title="${escapeText(snapshotNote)}">${escapeText(snapshotNote)}</span><a class="store-link" href="https://store.steampowered.com/app/${game.id}/" target="_blank" rel="noreferrer">打开商店 ↗</a></div>
         </div>
       </article>`;
     }
