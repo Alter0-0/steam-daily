@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 const root=path.dirname(path.dirname(fileURLToPath(import.meta.url))),qa=path.join(root,'qa-phase1/progress');
-function get(file){const r=spawnSync('curl.exe',['-sS','--fail','--max-time','45','--proxy','http://127.0.0.1:7890',`https://xbjy0713.github.io/steam-daily/${file}?live-check=${Date.now()}`],{encoding:'utf8',maxBuffer:40*1024*1024});assert.equal(r.status,0,r.stderr);return r.stdout;}
+function get(file){const r=spawnSync('curl.exe',['-sS','--fail','--max-time','45','--proxy','http://127.0.0.1:7890',`https://alter0-0.github.io/steam-daily/${file}?live-check=${Date.now()}`],{encoding:'utf8',maxBuffer:40*1024*1024});assert.equal(r.status,0,r.stderr);return r.stdout;}
 const html=get(''),state=JSON.parse(get('data/state.json')),status=JSON.parse(get('data/status.json'));
 assert.equal(status.processed,21);assert.ok(status.completedDetails>0);assert.ok(!('phase1' in state));
 const req=createRequire('C:/Users/xbjy2/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');

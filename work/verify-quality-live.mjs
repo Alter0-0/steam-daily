@@ -30,7 +30,7 @@ assert.equal(sample.length,6);const result={checkedAt:new Date().toISOString(),s
 await fs.writeFile(path.join(qa,'live-verification.json'),JSON.stringify(result,null,2));await fs.writeFile(path.join(qa,'after-status.json'),JSON.stringify(status,null,2));
 console.log(JSON.stringify(result,null,2));
 if(process.argv.includes('--published')){
-  function get(file){const r=spawnSync('curl.exe',['-sS','--fail','--max-time','45','--proxy','http://127.0.0.1:7890',`https://xbjy0713.github.io/steam-daily/${file}?quality=${Date.now()}`],{encoding:'utf8',maxBuffer:80*1024*1024});assert.equal(r.status,0,r.stderr);return r.stdout;}
+  function get(file){const r=spawnSync('curl.exe',['-sS','--fail','--max-time','45','--proxy','http://127.0.0.1:7890',`https://alter0-0.github.io/steam-daily/${file}?quality=${Date.now()}`],{encoding:'utf8',maxBuffer:80*1024*1024});assert.equal(r.status,0,r.stderr);return r.stdout;}
   const html=get(''),publicState=JSON.parse(get('data/state.json')),publicStatus=JSON.parse(get('data/status.json'));
   assert.equal(publicStatus.startedAt,status.startedAt);assert.ok(html.includes('id="historyDate"'));assert.ok(html.includes('id="collectionMetrics"'));
   const req=createRequire('C:/Users/xbjy2/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');const browser=await req('playwright').chromium.launch({headless:true,executablePath:'C:/Users/xbjy2/AppData/Local/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-win64/chrome-headless-shell.exe'});

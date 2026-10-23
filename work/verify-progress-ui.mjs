@@ -9,7 +9,7 @@ const qa=path.join(root,'qa-phase1/progress');await fs.mkdir(qa,{recursive:true}
 await buildSite(path.join(qa,'site'));
 let html=await fs.readFile(path.join(qa,'site/index.html'),'utf8');
 if(process.argv.includes('--published')){
-  const r=spawnSync('curl.exe',['-sS','--fail','--proxy','http://127.0.0.1:7890',`https://xbjy0713.github.io/steam-daily/?progress-qa=${Date.now()}`],{encoding:'utf8',maxBuffer:8*1024*1024});assert.equal(r.status,0,r.stderr);html=r.stdout;
+  const r=spawnSync('curl.exe',['-sS','--fail','--proxy','http://127.0.0.1:7890',`https://alter0-0.github.io/steam-daily/?progress-qa=${Date.now()}`],{encoding:'utf8',maxBuffer:8*1024*1024});assert.equal(r.status,0,r.stderr);html=r.stdout;
 }
 const game={id:1,name:'测试游戏',en:'Sample',tags:['动作'],status:[],reviews:'10',rating:90,price:'免费',priceValue:0,time:'待核实',cover:'https://image.test/x'};
 let payload={reports:[{date:'2026-10-18',sections:[{key:'release',title:'当日发售',games:[game]}]}]};
