@@ -7,7 +7,158 @@
       "automaticResume": false,
       "startedAt": "2026-10-29T04:46:56.625Z",
       "target": "2026-10-28",
-      "commit": "b88cc4c8b35ab671d9b27773a391ceb0abfe0f59"
+      "commit": "b88cc4c8b35ab671d9b27773a391ceb0abfe0f59",
+      "finishedAt": "2026-10-29T04:47:08.927Z",
+      "publication": {
+        "state": "success",
+        "at": "2026-10-29T04:47:08.927Z"
+      },
+      "readiness": [
+        {
+          "date": "2026-10-28",
+          "sections": {
+            "release": {
+              "total": 165,
+              "readable": 97,
+              "pending": 68,
+              "percent": 58.8
+            },
+            "demo": {
+              "total": 53,
+              "readable": 44,
+              "pending": 9,
+              "percent": 83
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-27",
+          "sections": {
+            "release": {
+              "total": 202,
+              "readable": 60,
+              "pending": 142,
+              "percent": 29.7
+            },
+            "demo": {
+              "total": 58,
+              "readable": 42,
+              "pending": 16,
+              "percent": 72.4
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-26",
+          "sections": {
+            "release": {
+              "total": 203,
+              "readable": 25,
+              "pending": 178,
+              "percent": 12.3
+            },
+            "demo": {
+              "total": 81,
+              "readable": 55,
+              "pending": 26,
+              "percent": 67.9
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-25",
+          "sections": {
+            "release": {
+              "total": 79,
+              "readable": 33,
+              "pending": 46,
+              "percent": 41.8
+            },
+            "demo": {
+              "total": 32,
+              "readable": 20,
+              "pending": 12,
+              "percent": 62.5
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-24",
+          "sections": {
+            "release": {
+              "total": 55,
+              "readable": 36,
+              "pending": 19,
+              "percent": 65.5
+            },
+            "demo": {
+              "total": 48,
+              "readable": 40,
+              "pending": 8,
+              "percent": 83.3
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-23",
+          "sections": {
+            "release": {
+              "total": 171,
+              "readable": 89,
+              "pending": 82,
+              "percent": 52
+            },
+            "demo": {
+              "total": 97,
+              "readable": 84,
+              "pending": 13,
+              "percent": 86.6
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-22",
+          "sections": {
+            "release": {
+              "total": 192,
+              "readable": 123,
+              "pending": 69,
+              "percent": 64.1
+            },
+            "demo": {
+              "total": 95,
+              "readable": 85,
+              "pending": 10,
+              "percent": 89.5
+            }
+          },
+          "scanComplete": true
+        }
+      ]
     }
-  ]
+  ],
+  "acceptance": {
+    "threshold": 0.9,
+    "scope": "known-candidates-only",
+    "days": [
+      {
+        "date": "2026-10-29",
+        "deadline": "2026-10-31T04:00:00+08:00"
+      },
+      {
+        "date": "2026-10-30",
+        "deadline": "2026-11-01T04:00:00+08:00"
+      },
+      {
+        "date": "2026-10-31",
+        "deadline": "2026-11-02T04:00:00+08:00"
+      }
+    ]
+  }
 }
