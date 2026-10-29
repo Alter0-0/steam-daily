@@ -141,6 +141,25 @@
           "scanComplete": true
         }
       ]
+    },
+    {
+      "id": "40819734658",
+      "event": "workflow_dispatch",
+      "automaticResume": false,
+      "startedAt": "2026-10-29T04:48:05.317Z",
+      "target": "2026-10-28",
+      "commit": "b88cc4c8b35ab671d9b27773a391ceb0abfe0f59",
+      "collection": {
+        "attempted": true,
+        "startedAt": "2026-10-29T04:48:05.380Z",
+        "finishedAt": "2026-10-29T05:11:00.093Z",
+        "health": "partial",
+        "processed": 120,
+        "basicCompleted": 111,
+        "failed": 3,
+        "stopReason": "batch-limit",
+        "exitCode": 0
+      }
     }
   ],
   "acceptance": {
