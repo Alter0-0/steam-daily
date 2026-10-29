@@ -110,3 +110,24 @@ test('a build shows the actual last publication outcome independently of healthy
   assert.equal(status.health.collection,'complete');assert.equal(status.health.lastPublication.state,'failed');
   assert.equal(status.health.readiness[0].sections.release.percent,90);
 });
+
+test('cloud continuation sends one bounded dispatch and persists failed network attempts',async t=>{
+  const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-continuation-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
+  await fs.mkdir(path.join(dir,'cloud'));await fs.mkdir(path.join(dir,'data'));
+  for(const name of ['cloud/health.mjs','stability.mjs','history.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
+  await fs.writeFile(path.join(dir,'preload.mjs'),`
+    import fs from 'node:fs';globalThis.fetch=async (url,options)=>{
+      if(process.env.FAIL_NETWORK==='true')throw new Error('network unavailable');
+      fs.appendFileSync('data/requests.jsonl',JSON.stringify({url,body:JSON.parse(options.body)})+'\\n');return {ok:true,status:204};
+    };
+  `);
+  const initial={...successfulRun('2026-10-30T18:00:00Z'),readiness:[{sections:{release:{pending:5},demo:{pending:1}}}]};
+  const reset=()=>fs.writeFile(path.join(dir,'data/operations.json'),JSON.stringify({runs:[initial]}));
+  const run=fail=>spawnSync(process.execPath,['--import','./preload.mjs','cloud/health.mjs','continue'],{cwd:dir,encoding:'utf8',env:{...process.env,GITHUB_RUN_ID:'123',GITHUB_EVENT_NAME:'schedule',GITHUB_REPOSITORY:'fixture/steam-daily',GH_TOKEN:'fixture-no-real-credential',FAIL_NETWORK:String(fail)}});
+  await reset();assert.equal(run(false).status,0);assert.equal(run(false).status,0);
+  const requests=(await fs.readFile(path.join(dir,'data/requests.jsonl'),'utf8')).trim().split('\n');assert.equal(requests.length,1);
+  assert.deepEqual(JSON.parse(requests[0]).body,{ref:'main',inputs:{auto_resume:true}});
+  await reset();assert.equal(run(true).status,1);
+  const ledger=JSON.parse(await fs.readFile(path.join(dir,'data/operations.json')));assert.equal(ledger.runs[0].continuation.state,'failed');
+  assert.ok(!JSON.stringify(ledger).includes('fixture-no-real-credential'));
+});

@@ -43,7 +43,13 @@ async function main() {
     if(!token||!repository)throw new Error('缺少 GitHub 云端续采授权');
     // Only schedule events can create one continuation. The dispatched child
     // cannot dispatch another child, even when the queue remains unfinished.
-    const response=await fetch(`https://api.github.com/repos/${repository}/actions/workflows/daily.yml/dispatches`,{method:'POST',headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify({ref:'main',inputs:{auto_resume:true}}),signal:AbortSignal.timeout(20000)});
+    let response;
+    try{
+      response=await fetch(`https://api.github.com/repos/${repository}/actions/workflows/daily.yml/dispatches`,{method:'POST',headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify({ref:'main',inputs:{auto_resume:true}}),signal:AbortSignal.timeout(20000)});
+    }catch(error){
+      run.continuation={at:new Date().toISOString(),state:'failed',message:'GitHub 续采请求未取得响应'};
+      await writeData(root,'operations.json',ledger);throw new Error('GitHub 续采请求未取得响应',{cause:error});
+    }
     run.continuation={at:new Date().toISOString(),state:response.ok?'requested':'failed',httpStatus:response.status};
     await writeData(root,'operations.json',ledger);
     if(!response.ok)throw new Error(`追加续采请求失败：HTTP ${response.status}`);
