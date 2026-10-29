@@ -1717,7 +1717,140 @@
         "failed": 0,
         "stopReason": "time-budget",
         "exitCode": 0
-      }
+      },
+      "finishedAt": "2026-10-29T18:34:26.919Z",
+      "publication": {
+        "state": "success",
+        "at": "2026-10-29T18:34:26.919Z"
+      },
+      "readiness": [
+        {
+          "date": "2026-10-28",
+          "sections": {
+            "release": {
+              "total": 270,
+              "readable": 270,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 89,
+              "readable": 89,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-27",
+          "sections": {
+            "release": {
+              "total": 318,
+              "readable": 318,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 81,
+              "readable": 81,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-26",
+          "sections": {
+            "release": {
+              "total": 111,
+              "readable": 111,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 66,
+              "readable": 66,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-25",
+          "sections": {
+            "release": {
+              "total": 51,
+              "readable": 51,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 27,
+              "readable": 26,
+              "pending": 1,
+              "percent": 96.3
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-24",
+          "sections": {
+            "release": {
+              "total": 119,
+              "readable": 119,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 56,
+              "readable": 55,
+              "pending": 1,
+              "percent": 98.2
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-23",
+          "sections": {
+            "release": {
+              "total": 158,
+              "readable": 158,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 95,
+              "readable": 95,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-22",
+          "sections": {
+            "release": {
+              "total": 123,
+              "readable": 123,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 85,
+              "readable": 85,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        }
+      ]
     }
   ],
   "acceptance": {
