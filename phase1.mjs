@@ -170,6 +170,38 @@ export function needsDetails(record) {
   return !record.snapshot || !!record.snapshot.provisional || !!record.snapshot.metadataPending?.length;
 }
 export function needsBasics(record){return !record.snapshot||!!record.snapshot.provisional||record.snapshot.metadataPending?.includes('detail');}
+export function reconcileReports(state,now,latest) {
+  const catalog=state.phase1?.catalog;
+  if(!catalog)return {apps:0,removedPlaceholders:0};
+  const releases=new Map(),updates=new Set();let removedPlaceholders=0;
+  for(const report of state.reports)for(const section of report.sections||[]) {
+    if(section.key==='release'||section.key==='demo') {
+      section.games=section.games.filter(game=>{
+        const record=catalog[game.id];
+        // A timestamp correction may point into the next, not-yet-open issue.
+        // Keep the verified snapshot in the catalog, but remove the stale dated
+        // placeholder now instead of leaving it to a later network refresh.
+        const remove=game.provisional&&record&&(record.excluded||!needsBasics(record)&&(record.snapshot.comingSoon||record.snapshot.releaseDate>latest));
+        if(remove){removedPlaceholders++;return false;}
+        if(!releases.has(game.id))releases.set(game.id,[]);
+        releases.get(game.id).push({date:report.date,key:section.key,game});return true;
+      });
+    }else if(section.key==='new-page') {
+      for(const game of section.games)if(game.provisional&&catalog[game.id]&&!catalog[game.id].excluded&&!needsBasics(catalog[game.id]))updates.add(game.id);
+    }
+  }
+  for(const record of Object.values(catalog)) {
+    if(record.excluded||needsBasics(record))continue;
+    const game=record.snapshot,date=game.releaseDate,key=game.demo?'demo':'release';
+    if(!date||date>latest||game.comingSoon)continue;
+    const existing=releases.get(game.id)||[];
+    if(!existing.some(entry=>entry.date===date&&entry.key===key)||existing.some(entry=>entry.date!==date||entry.key!==key||entry.game.provisional))updates.add(game.id);
+  }
+  for(const id of updates){const record=catalog[id];applyRecord(state,record,{...record.snapshot},now,latest);}
+  const result={apps:updates.size,removedPlaceholders};
+  if(updates.size||removedPlaceholders)state.phase1.lastReconciliation={...result,at:now};
+  return result;
+}
 function routineEligible(record,plan){
   const date=record.snapshot?.releaseDate||record.item.releaseDate;
   return !date || date>=shiftDate(plan.latest,-29) || record.snapshot?.comingSoon;
@@ -267,7 +299,7 @@ export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()
   return false;
 }
 export async function runSweep(state,{now=new Date().toISOString(),latest,force30=false,getPage,getDetail,save=async()=>{},deadline=()=>false,scanDeadline=deadline,stopReason=()=>null,maxDetails=Infinity,priorityIds=[],priorityRequests=[],onProgress=async()=>{}}) {
-  initialize(state,now);const plan=sweepPlan(state,now,latest,force30);
+  initialize(state,now);reconcileReports(state,now,latest);const plan=sweepPlan(state,now,latest,force30);
   for(const id of priorityIds)if(state.phase1.catalog[id])state.phase1.catalog[id].priorityRequestedAt=now;
   ensureReport(state,latest,now);
   let processed=0,completedDetails=0,basicCompleted=0,verified=0,failed=0,excluded=0,scansComplete=false;

@@ -34,7 +34,7 @@ export async function buildSite(destination = site, dataRoot = path.join(root, '
   // The artifact is built before deployment. Show only a previously confirmed
   // publication, never claim that this build has already been published.
   const prior=operations?.runs?.filter(r=>r.publication).at(-1);
-  status.health={builtAt:new Date().toISOString(),runId:process.env.GITHUB_RUN_ID||null,collection:collectionHealth(status),lastPublication:prior?{...prior.publication,runId:prior.id}:null,lastInvocation:operations?.runs?.at(-1)||null,readiness:recentReadiness(saved.reports,status.reportDate||reportTarget()),acceptance:acceptanceView(operations?.acceptance)};
+  status.health={builtAt:new Date().toISOString(),runId:process.env.GITHUB_RUN_ID||null,collection:collectionHealth(status),lastPublication:prior?{...prior.publication,runId:prior.id}:null,lastInvocation:operations?.runs?.at(-1)||null,synchronization:saved.phase1?.lastReconciliation||null,readiness:recentReadiness(saved.reports,status.reportDate||reportTarget()),acceptance:acceptanceView(operations?.acceptance)};
   // Publish report fields only. Detail cache and operational metadata stay out.
   const published=publication(saved.reports,saved.generatedAt||null);
   await fs.mkdir(path.join(destination,'data/archive'),{recursive:true});

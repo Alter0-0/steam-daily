@@ -99,6 +99,7 @@ test('parent timeout preserves checkpoint counters and provides a visible interr
   await fs.copyFile(new URL('../cloud/run.mjs',import.meta.url),path.join(dir,'cloud/run.mjs'));
   await fs.copyFile(new URL('../cloud/health.mjs',import.meta.url),path.join(dir,'cloud/health.mjs'));
   await fs.copyFile(new URL('../stability.mjs',import.meta.url),path.join(dir,'stability.mjs'));
+  for(const name of ['phase1.mjs','release-time.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
   await fs.copyFile(new URL('../history.mjs',import.meta.url),path.join(dir,'history.mjs'));
   await fs.writeFile(path.join(dir,'data/status.json'),JSON.stringify({processed:7,completedDetails:5,missingDetails:20}));
   await fs.writeFile(path.join(dir,'preload.mjs'),`

@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {reportTarget,collectionHealth,sectionReadiness,newAcceptance,recordAcceptance,acceptanceView,shouldContinue} from '../stability.mjs';
-import {initialize,runSweep} from '../phase1.mjs';
+import {initialize,runSweep,reconcileReports} from '../phase1.mjs';
 import {buildSite} from '../cloud/build.mjs';
 
 test('overnight resumes keep the previous issue until exactly Beijing 04:00',()=>{
@@ -17,7 +17,7 @@ test('overnight resumes keep the previous issue until exactly Beijing 04:00',()=
 test('early morning wrapper actually invokes collection; cooldown is recorded separately',async t=>{
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-overnight-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
   await fs.mkdir(path.join(dir,'cloud'));await fs.mkdir(path.join(dir,'data'));
-  for(const name of ['cloud/run.mjs','cloud/health.mjs','stability.mjs','history.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
+  for(const name of ['cloud/run.mjs','cloud/health.mjs','stability.mjs','history.mjs','phase1.mjs','release-time.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
   await fs.writeFile(path.join(dir,'preload.mjs'),`
     import cp from 'node:child_process';import {syncBuiltinESMExports} from 'node:module';import fs from 'node:fs';
     cp.spawnSync=()=>{fs.writeFileSync('data/called.json','true');return {status:0};};syncBuiltinESMExports();
@@ -122,7 +122,7 @@ test('a build shows the actual last publication outcome independently of healthy
 test('cloud continuation sends one bounded dispatch and persists failed network attempts',async t=>{
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-continuation-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
   await fs.mkdir(path.join(dir,'cloud'));await fs.mkdir(path.join(dir,'data'));
-  for(const name of ['cloud/health.mjs','stability.mjs','history.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
+  for(const name of ['cloud/health.mjs','stability.mjs','history.mjs','phase1.mjs','release-time.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
   await fs.writeFile(path.join(dir,'preload.mjs'),`
     import fs from 'node:fs';globalThis.fetch=async (url,options)=>{
       if(process.env.FAIL_NETWORK==='true')throw new Error('network unavailable');
@@ -138,4 +138,28 @@ test('cloud continuation sends one bounded dispatch and persists failed network 
   await reset();assert.equal(run(true).status,1);
   const ledger=JSON.parse(await fs.readFile(path.join(dir,'data/operations.json')));assert.equal(ledger.runs[0].continuation.state,'failed');
   assert.ok(!JSON.stringify(ledger).includes('fixture-no-real-credential'));
+});
+
+test('cached verified snapshots replace stale placeholders when the corrected issue opens, without network calls',()=>{
+  const snapshot={id:1,name:'Known',releaseDate:'2026-10-29',price:'¥10',priceValue:10,rating:80,reviews:'10',metadataPending:[],snapshotAt:'2026-10-28T21:00:00Z'};
+  const state={reports:[{date:'2026-10-28',sections:[{key:'release',games:[{id:1,name:'Placeholder',releaseDate:'2026-10-28',provisional:true}]},{key:'new-page',games:[{id:1,provisional:true}]}]}]};
+  initialize(state,'2026-10-29T01:00:00Z');state.phase1.catalog[1].snapshot={...snapshot};
+  const first=reconcileReports(state,'2026-10-29T02:00:00Z','2026-10-28');
+  assert.equal(first.removedPlaceholders,1);assert.equal(state.reports.find(r=>r.date==='2026-10-28').sections[0].games.length,0);
+  assert.equal(state.reports[0].sections[1].games[0].name,'Known');
+  assert.equal(state.phase1.catalog[1].snapshot.price,'¥10');
+  const next=reconcileReports(state,'2026-10-29T20:01:00Z','2026-10-29');
+  assert.equal(next.apps,1);const release=state.reports.find(r=>r.date==='2026-10-29').sections.find(s=>s.key==='release').games[0];
+  assert.equal(release.provisional,false);assert.equal(release.price,'¥10');assert.equal(release.rating,80);
+  assert.deepEqual(reconcileReports(state,'2026-10-29T20:02:00Z','2026-10-29'),{apps:0,removedPlaceholders:0});
+});
+
+test('cache reconciliation moves corrected releases and preserves known historical prices and discoveries',()=>{
+  const known={id:1,name:'Known',releaseDate:'2026-10-27',price:'¥10',priceValue:10,rating:50,reviews:'2',metadataPending:[]};
+  const state={reports:[{date:'2026-10-27',sections:[{key:'release',games:[{...known}]},{key:'new-page',games:[{...known}]}]}]};
+  initialize(state,'2026-10-29T01:00:00Z');state.phase1.catalog[1].snapshot={...known,releaseDate:'2026-10-28',price:'¥20',rating:90};
+  reconcileReports(state,'2026-10-29T02:00:00Z','2026-10-28');
+  const old=state.reports.find(r=>r.date==='2026-10-27'),current=state.reports.find(r=>r.date==='2026-10-28');
+  assert.equal(old.sections[0].games.length,0);assert.equal(old.sections[1].games[0].price,'¥10');
+  assert.equal(current.sections[0].games[0].price,'¥10');assert.equal(current.sections[0].games[0].rating,50);
 });

@@ -611,6 +611,7 @@
       document.querySelector('#publicationHealth').textContent=health?`本页数据快照：${stamp(health.builtAt)} · 上一轮已确认发布：${publication?publication.state==='success'?'成功':'失败':'暂无记录'}${publication?'（'+stamp(publication.at)+'）':''}。当前这轮的发布结果将在后续快照中显示。`:'尚无独立发布记录，现有日报可继续查看。';
       const invocation=health?.lastInvocation?.collection;
       document.querySelector('#collectionHealth').textContent=health?`采集状态：${({complete:'本轮检查完成',partial:'已保存，仍有资料待补',error:'采集异常，已保留成功结果',running:'运行中检查点'})[health.collection]||'暂无记录'}。${invocation?.attempted===false?'最近一次任务因间隔不足45分钟跳过，未进行采集。':''}`:'';
+      if(health?.synchronization)document.querySelector('#collectionHealth').textContent+=` 最近存档同步（${stamp(health.synchronization.at)}）：${health.synchronization.apps} 款游戏按已有详情补齐或校正归类，清理 ${health.synchronization.removedPlaceholders} 条过期占位记录；不计为新采集。`;
       const readiness=health?.readiness||[];
       document.querySelector('#readinessRows').replaceChildren(...readiness.map(day=>{
         const line=document.createElement('p');

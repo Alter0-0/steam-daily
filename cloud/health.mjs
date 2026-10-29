@@ -3,6 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {reportTarget,collectionHealth,recentReadiness,recordAcceptance,newAcceptance,shouldContinue} from '../stability.mjs';
 import {shiftDate} from '../history.mjs';
+import {reconcileReports} from '../phase1.mjs';
 const root=path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 export async function readData(root,name,fallback) {
   try{return JSON.parse(await fs.readFile(path.join(root,'data',name),'utf8'));}catch(e){if(e.code==='ENOENT')return fallback;throw e;}
@@ -22,7 +23,12 @@ export async function updateRun(root,patch={}) {
 }
 async function main() {
   const mode=process.argv[2];
-  if(mode==='begin'){await updateRun(root);return;}
+  if(mode==='begin'){
+    const state=await readData(root,'state.json',{reports:[]});
+    const synchronization=reconcileReports(state,new Date().toISOString(),reportTarget());
+    if(synchronization.apps||synchronization.removedPlaceholders)await writeData(root,'state.json',state);
+    await updateRun(root,{synchronization});return;
+  }
   const {ledger,run}=await updateRun(root);
   if(mode==='finalize') {
     run.finishedAt=new Date().toISOString();
