@@ -36,9 +36,12 @@ try{
   status.health.synchronization={apps:973,removedPlaceholders:79,at:'2026-10-29T04:00:00Z'};
   await page.locator('#refreshProgress').click();await page.waitForFunction(()=>!document.querySelector('#refreshProgress').disabled);
   assert.match(await page.locator('#collectionHealth').innerText(),/973 款游戏.*79 条过期占位记录.*不计为新采集/);
+  status.health.acceptance.days[0].deadline='2026-10-28T04:00:00+08:00';status.health.acceptance.days[0].state='observing';
+  await page.locator('#refreshProgress').click();await page.waitForFunction(()=>!document.querySelector('#refreshProgress').disabled);
+  assert.match(await page.locator('#acceptanceStatus').innerText(),/2026-10-29：缺少自动发布证据/);
   await page.screenshot({path:path.join(qa,'desktop.png')});
   await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(qa,'mobile.png')});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
-  await fs.writeFile(path.join(qa,'ui-verification.json'),JSON.stringify({passed:true,checks:11,errors},null,2));
-  console.log('11项发布状态、存档同步、分类比例、三天验收和手机布局检查通过');
+  await fs.writeFile(path.join(qa,'ui-verification.json'),JSON.stringify({passed:true,checks:12,errors},null,2));
+  console.log('12项发布状态、存档同步、过期验收、分类比例和手机布局检查通过');
 }finally{await browser.close();}

@@ -619,7 +619,14 @@
         line.textContent=`${day.date} · 发售 ${text('release')} · Demo ${text('demo')}`;return line;
       }));
       const acceptance=health?.acceptance;
-      document.querySelector('#acceptanceStatus').textContent=acceptance?`验收目标：已发现的发售、Demo 分别至少90%可读，并有24小时内自动发布记录；不代表 Steam 全量收录。${acceptance.days.map(day=>`${day.date}：${({observing:'观察中',passed:'达标','below-target':'未达标','no-evidence':'缺少自动发布证据'})[day.state]}，截止${stamp(day.deadline)}`).join('；')}。`:'三天验收记录将从升级后的自动任务开始积累。';
+      // Evaluate deadlines in the browser as well: a missed cloud run must not
+      // leave an old artifact displaying "observing" indefinitely.
+      const acceptanceState=day=>{
+        if(Date.now()<Date.parse(day.deadline))return 'observing';
+        const sample=day.lastAutomatic;
+        return sample?.scanComplete&&['release','demo'].every(key=>sample.sections[key].total>0&&sample.sections[key].readable/sample.sections[key].total>=acceptance.threshold)?'passed':sample?'below-target':'no-evidence';
+      };
+      document.querySelector('#acceptanceStatus').textContent=acceptance?`验收目标：已发现的发售、Demo 分别至少90%可读，并有24小时内自动发布记录；不代表 Steam 全量收录。${acceptance.days.map(day=>`${day.date}：${({observing:'观察中',passed:'达标','below-target':'未达标','no-evidence':'缺少自动发布证据'})[acceptanceState(day)]}，截止${stamp(day.deadline)}`).join('；')}。`:'三天验收记录将从升级后的自动任务开始积累。';
       const reasons={'steam-limit':'Steam 暂时限制访问，本轮已暂停；成功结果已保存，后续定时任务将继续尝试。','time-budget':'本轮30分钟时段结束，进度已保存，后续定时任务继续。','batch-limit':'本轮设定条数已处理完，剩余队列留待后续任务。','search-incomplete':'搜索分页尚未扫完或请求失败，已保存位置，下轮继续。','request-failed':'部分资料请求失败，已进入延后重试队列。','backlog':'本轮结束，仍有积压资料或等待重试的条目，后续任务继续。','interrupted':'本轮中断，显示最后保存的进度；下轮继续。','error':'本轮运行异常，显示已保存的进度，等待后续任务重试。'};
       let reason=reasons[status.stopReason]||(status.state==='error'?'本轮运行异常，成功保存的日报仍可查看。':status.state==='partial'?'本轮部分完成，仍有条目待补查。':status.state==='success'?'本轮检查完成。':'暂无完整采集记录。');
       if(status.state==='running')reason='这是运行中保存的检查点，不代表云端此刻仍在运行；下一次发布后会更新。';
