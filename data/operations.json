@@ -2012,6 +2012,29 @@
         "state": "requested",
         "httpStatus": 204
       }
+    },
+    {
+      "id": "40959861330",
+      "event": "workflow_dispatch",
+      "automaticResume": true,
+      "startedAt": "2026-10-29T21:41:33.974Z",
+      "target": "2026-10-29",
+      "commit": "e57326014770c9ca37949c8465aa82b0865eecbd",
+      "synchronization": {
+        "apps": 0,
+        "removedPlaceholders": 28
+      },
+      "collection": {
+        "attempted": true,
+        "startedAt": "2026-10-29T21:41:34.043Z",
+        "finishedAt": "2026-10-29T22:11:36.255Z",
+        "health": "partial",
+        "processed": 172,
+        "basicCompleted": 155,
+        "failed": 6,
+        "stopReason": "time-budget",
+        "exitCode": 0
+      }
     }
   ],
   "acceptance": {
