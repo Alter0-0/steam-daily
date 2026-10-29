@@ -177,6 +177,9 @@
       <section class="collection-progress" aria-labelledby="progressTitle">
         <div class="progress-heading"><h2 id="progressTitle">采集进度</h2><button type="button" id="refreshProgress">刷新进度</button></div>
         <p class="progress-note" id="progressTime">正在读取最近一次采集记录…</p>
+        <p class="progress-note" id="publicationHealth">正在读取发布记录…</p>
+        <p class="progress-note" id="collectionHealth"></p>
+        <details id="readinessPanel"><summary>近期发售与 Demo 资料完整度、三天验收</summary><div id="readinessRows" class="progress-note"></div><p id="acceptanceStatus" class="progress-note"></p></details>
         <details id="collectionMetrics"><summary>查看本轮处理数量与积压明细</summary><dl class="progress-grid">
           <div><dt>本轮已处理</dt><dd id="progressProcessed">—</dd></div>
           <div><dt>本轮补齐详情</dt><dd id="progressCompleted">—</dd></div>
@@ -603,6 +606,19 @@
       const ended=status.finishedAt||status.updatedAt||status.startedAt;
       const stale=ended&&Date.now()-Date.parse(ended)>3*3600000;
       document.querySelector('#progressTime').textContent=`最近采集：${stamp(status.startedAt)}${status.finishedAt?' · 结束：'+stamp(status.finishedAt):''}（北京时间）${stale?' · 这份记录已超过3小时，请留意后续更新':''}`;
+      const health=status.health;
+      const publication=health?.lastPublication;
+      document.querySelector('#publicationHealth').textContent=health?`本页数据快照：${stamp(health.builtAt)} · 上一轮已确认发布：${publication?publication.state==='success'?'成功':'失败':'暂无记录'}${publication?'（'+stamp(publication.at)+'）':''}。当前这轮的发布结果将在后续快照中显示。`:'尚无独立发布记录，现有日报可继续查看。';
+      const invocation=health?.lastInvocation?.collection;
+      document.querySelector('#collectionHealth').textContent=health?`采集状态：${({complete:'本轮检查完成',partial:'已保存，仍有资料待补',error:'采集异常，已保留成功结果',running:'运行中检查点'})[health.collection]||'暂无记录'}。${invocation?.attempted===false?'最近一次任务因间隔不足45分钟跳过，未进行采集。':''}`:'';
+      const readiness=health?.readiness||[];
+      document.querySelector('#readinessRows').replaceChildren(...readiness.map(day=>{
+        const line=document.createElement('p');
+        const text=key=>{const s=day.sections[key];return `${s.readable}/${s.total} 可读${s.percent==null?'（暂无候选）':`（${s.percent}%）`}`;};
+        line.textContent=`${day.date} · 发售 ${text('release')} · Demo ${text('demo')}`;return line;
+      }));
+      const acceptance=health?.acceptance;
+      document.querySelector('#acceptanceStatus').textContent=acceptance?`验收目标：已发现的发售、Demo 分别至少90%可读，并有24小时内自动发布记录；不代表 Steam 全量收录。${acceptance.days.map(day=>`${day.date}：${({observing:'观察中',passed:'达标','below-target':'未达标','no-evidence':'缺少自动发布证据'})[day.state]}，截止${stamp(day.deadline)}`).join('；')}。`:'三天验收记录将从升级后的自动任务开始积累。';
       const reasons={'steam-limit':'Steam 暂时限制访问，本轮已暂停；成功结果已保存，后续定时任务将继续尝试。','time-budget':'本轮30分钟时段结束，进度已保存，后续定时任务继续。','batch-limit':'本轮设定条数已处理完，剩余队列留待后续任务。','search-incomplete':'搜索分页尚未扫完或请求失败，已保存位置，下轮继续。','request-failed':'部分资料请求失败，已进入延后重试队列。','backlog':'本轮结束，仍有积压资料或等待重试的条目，后续任务继续。','interrupted':'本轮中断，显示最后保存的进度；下轮继续。','error':'本轮运行异常，显示已保存的进度，等待后续任务重试。'};
       let reason=reasons[status.stopReason]||(status.state==='error'?'本轮运行异常，成功保存的日报仍可查看。':status.state==='partial'?'本轮部分完成，仍有条目待补查。':status.state==='success'?'本轮检查完成。':'暂无完整采集记录。');
       if(status.state==='running')reason='这是运行中保存的检查点，不代表云端此刻仍在运行；下一次发布后会更新。';

@@ -13,7 +13,7 @@ function git(args, input) {
   if (result.status !== 0) throw new Error(`git ${args[0]} failed: ${result.error?.message || result.stderr}`);
   return result.stdout.trim();
 }
-const files = ['state.json', 'status.json', 'detail-cache.json'];
+const files = ['state.json', 'status.json', 'detail-cache.json', 'operations.json'];
 const branch = 'daily-data';
 const found = Boolean(git(['ls-remote', '--heads', 'origin', `refs/heads/${branch}`]));
 if (found) git(['fetch', '--depth=1', 'origin', `refs/heads/${branch}:refs/remotes/origin/${branch}`]);

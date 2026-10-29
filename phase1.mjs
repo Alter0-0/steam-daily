@@ -183,13 +183,14 @@ export function backlog(state,plan,now) {
     refreshDue:active.filter(r=>routineEligible(r,plan)&&!needsDetails(r)&&refresh(r)).length,
     waitingRetry:active.filter(r=>!due(r)).length};
 }
-const QUEUE_SLOTS=['priority','recent','recent','recent','history','recent','enrich','recent','recent','history','recent','verify','refresh'];
+// Twelve of sixteen slots go to unreadable recent releases/Demos. The other
+// four guarantee progress for explicit requests, older basics and enrichment.
+const QUEUE_SLOTS=['priority','recent','recent','recent','recent','history','recent','recent','recent','enrich','recent','recent','recent','verify','recent','recent'];
 export function workQueue(state,plan,now) {
   const due = Object.values(state.phase1.catalog).filter(r=>!r.excluded && (!r.retryAfter||r.retryAfter<=now) &&
     (needsDetails(r) || r.priorityRequestedAt>(r.priorityAttemptedAt||'') || routineEligible(r,plan)&&(!r.verifiedAt || +new Date(now)-Date.parse(r.verifiedAt)>=(r.item.releaseDate>=shiftDate(plan.latest,-6)?DAY:7*DAY))));
-  const lanes=Object.fromEntries([...new Set(QUEUE_SLOTS)].map(k=>[k,[]]));
+  const lanes=Object.fromEntries([...new Set([...QUEUE_SLOTS,'refresh'])].map(k=>[k,[]]));
   for(const r of due) {
-    const demo=r.snapshot?.demo ?? (r.item.sources?.includes('demo')&&!r.item.sources?.includes('games'));
     // An undated future page first seen today must not precede yesterday's
     // releases simply because its observation date is newer.
     const recent=r.item.releaseDate>=shiftDate(plan.latest,-3)&&r.item.releaseDate<=shiftDate(plan.latest,1);
@@ -205,6 +206,15 @@ export function workQueue(state,plan,now) {
   });
   const recentIds=new Set(lanes.recent.map(r=>r.item.appid));
   const days=new Map();for(const r of lanes.recent){const date=r.item.releaseDate;if(!days.has(date))days.set(date,[]);days.get(date).push(r);}
+  // Alternate game and Demo candidates within each day, independently of AppID.
+  // Persist the chosen kind so one-item resumptions remain fair as well.
+  for(const [date,rows] of days) {
+    const isDemo=r=>r.snapshot?.demo??(r.item.sources?.includes('demo')&&!r.item.sources?.includes('games'));
+    const groups=[rows.filter(r=>!isDemo(r)),rows.filter(isDemo)];
+    const ordered=[];let kind=state.phase1.recentKinds?.[date]||0;
+    while(ordered.length<rows.length){const group=groups[kind++%2];ordered.push((group.length?group:groups.find(g=>g.length)).shift());}
+    days.set(date,ordered);
+  }
   const dateSlots=[plan.latest,plan.latest,shiftDate(plan.latest,-1),plan.latest,shiftDate(plan.latest,-2),shiftDate(plan.latest,-3)];
   const balanced=[];let dateTurn=state.phase1.recentTurn||0;
   while(balanced.length<lanes.recent.length){
@@ -213,13 +223,17 @@ export function workQueue(state,plan,now) {
     balanced.push(lane.shift());
   }
   lanes.recent=balanced;
-  const queue=[];let turn=state.phase1.queueTurn||0;
+  const maintenanceIds=new Set([...lanes.verify,...lanes.refresh].map(r=>r.item.appid));
+  const queue=[];let turn=state.phase1.queueTurn||0,maintenanceTurn=state.phase1.maintenanceTurn||0;
   while(queue.length<due.length) {
     const preferred=QUEUE_SLOTS[turn++%QUEUE_SLOTS.length];
-    const lane=lanes[preferred].length?lanes[preferred]:Object.values(lanes).find(items=>items.length);
+    const chosen=preferred==='verify'?['verify','refresh'][maintenanceTurn++%2]:preferred;
+    const maintenance=preferred==='verify'?[lanes[chosen],lanes[chosen==='verify'?'refresh':'verify']].find(items=>items.length):null;
+    const lane=maintenance|| (lanes[chosen]?.length?lanes[chosen]:Object.values(lanes).find(items=>items.length));
     queue.push(lane.shift());
   }
   Object.defineProperty(queue,'recentIds',{value:recentIds});
+  Object.defineProperty(queue,'maintenanceIds',{value:maintenanceIds});
   return queue;
 }
 export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()=>false}) {
@@ -284,7 +298,13 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
     record.lastAttemptAt=now;
     if(record.priorityRequestedAt)record.priorityAttemptedAt=now;
     state.phase1.queueTurn=((state.phase1.queueTurn||0)+1)%QUEUE_SLOTS.length;
-    if(queue.recentIds.has(record.item.appid))state.phase1.recentTurn=((state.phase1.recentTurn||0)+1)%6;
+    if(queue.maintenanceIds.has(record.item.appid))state.phase1.maintenanceTurn=((state.phase1.maintenanceTurn||0)+1)%2;
+    if(queue.recentIds.has(record.item.appid)){
+      state.phase1.recentTurn=((state.phase1.recentTurn||0)+1)%6;
+      state.phase1.recentKinds||={};
+      const demo=record.snapshot?.demo??(record.item.sources?.includes('demo')&&!record.item.sources?.includes('games'));
+      state.phase1.recentKinds[record.item.releaseDate]=demo?0:1;
+    }
     try {
       const result=await getDetail(record);
       const game=result===null?null:normalizeRecord(record,result.detail,result.review,result.html,now,result.evidence);

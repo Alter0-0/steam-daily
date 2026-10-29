@@ -3,9 +3,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createSteamClient } from './steam-network.mjs';
 import { runSweep, parseSearchPage } from './phase1.mjs';
-import { cnDate, pageEvidence } from './release-time.mjs';
-import { shiftDate } from './history.mjs';
+import { pageEvidence } from './release-time.mjs';
 import { createReviewService } from './review-service.mjs';
+import {reportTarget,collectionHealth} from './stability.mjs';
 
 const root=path.dirname(fileURLToPath(import.meta.url));
 const dataDir=path.join(root,'data');
@@ -13,8 +13,7 @@ await fs.mkdir(dataDir,{recursive:true});
 const read=async(name,fallback)=>{try{return JSON.parse(await fs.readFile(path.join(dataDir,name),'utf8'));}catch(e){if(e.code==='ENOENT')return fallback;throw e;}};
 const write=async(name,value)=>{const p=path.join(dataDir,name);await fs.writeFile(p+'.tmp',JSON.stringify(value,null,2));await fs.rename(p+'.tmp',p);};
 const startedAt=new Date().toISOString();
-const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
-const latest=shiftDate(cnDate(),hour<4?-2:-1);
+const latest=reportTarget();
 const lock=path.join(dataDir,'collector.lock');
 let acquired=false;
 try {
@@ -90,7 +89,9 @@ try {
   });
   await write('status.json',{...summary,reviewService:reviews.stats(),startedAt,finishedAt:new Date().toISOString()});
   console.log(JSON.stringify(summary));
-  if(summary.stopReason==='steam-limit'||Object.keys(summary.scanErrors||{}).length||summary.failed)process.exitCode=1;
+  // Individual metadata failures remain visible as partial collection. Actual
+  // source outages, rate limits and a batch with no usable results still fail.
+  if(collectionHealth(summary)==='error')process.exitCode=1;
 } catch(e) {
   if(acquired){const prior=await read('status.json',{});await write('status.json',{...(prior.startedAt===startedAt?prior:{}),state:'error',startedAt,finishedAt:new Date().toISOString(),stopReason:'error',reportDate:latest,message:e.message});}
   console.error(e);process.exitCode=1;

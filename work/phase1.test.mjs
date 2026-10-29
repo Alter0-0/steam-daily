@@ -182,7 +182,7 @@ test('web page labels unverified dates, partial metadata and preserved snapshot 
 test('new cloud collector persists a raw candidate before a real child-process interruption',async t=>{
   const fixture=await fs.mkdtemp(path.join(os.tmpdir(),'steam-phase1-process-'));
   t.after(()=>fs.rm(fixture,{recursive:true,force:true}));
-  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs','review-service.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(fixture,name));
+  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs','review-service.mjs','stability.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(fixture,name));
   const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
   const target=new Date(date+'T12:00:00Z');target.setUTCDate(target.getUTCDate()-(hour<4?2:1));

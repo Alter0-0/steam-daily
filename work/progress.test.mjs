@@ -22,18 +22,19 @@ test('unknown price can be completed while a previously known price remains hist
   assert.equal(preserveSnapshot({price:'未定价',priceValue:999999},fresh).price,'¥30');
   assert.equal(preserveSnapshot({price:'¥10',priceValue:10},fresh).price,'¥10');
 });
-test('thirteen one-item runs retain recent, history, enrichment and recheck shares',async()=>{
+test('one-item resumptions give recent basics 75 percent while preserving other work',async()=>{
   let state=fixture();
   for(let i=1;i<=30;i++)add(state,i,i<=10?'missing-game':i<=20?'missing-demo':i<=25?'verify':'refresh',i>10&&i<=20?{item:{appid:i,releaseDate:'2026-10-01',releasedText:'1 Oct, 2026',sources:['demo']},firstObservedAt:'2026-10-01T00:00:00.000Z'}:{});
+  for(let i=200;i<240;i++)add(state,i);
   add(state,90,'verify');state.phase1.catalog[90].snapshot.metadataPending=['reviews'];
   add(state,100,'verify',{priorityRequestedAt:now});
   const ids=[];
-  for(let i=0;i<13;i++){
+  for(let i=0;i<32;i++){
     await runSweep(state,{now:new Date(Date.parse(now)+i*3600000).toISOString(),latest,getPage:emptyPage,getDetail:async r=>{ids.push(r.item.appid);return response(r);},maxDetails:1});
     state=JSON.parse(JSON.stringify(state));
   }
-  assert.equal(ids[0],100);assert.equal(ids.filter(id=>id<=10).length,7);assert.equal(ids.filter(id=>id>10&&id<=20).length,2);
-  assert.ok(ids.includes(90));assert.ok(ids.some(id=>id>=21&&id<=25));assert.ok(ids.some(id=>id>=26&&id<=30));assert.equal(new Set(ids).size,13);
+  assert.equal(ids[0],100);assert.ok(ids.filter(id=>id<=10||id>=200).length>=24);assert.ok(ids.filter(id=>id>10&&id<=20).length>=2);
+  assert.ok(ids.includes(90));assert.ok(ids.some(id=>id>=21&&id<=25));assert.ok(ids.some(id=>id>=26&&id<=30));assert.equal(new Set(ids).size,32);
 });
 test('backoff is obeyed and older retries precede later arrivals',()=>{
   const state=fixture();add(state,1,'missing-game',{lastAttemptAt:'2026-10-18T01:00:00.000Z',retryAfter:'2026-10-19T06:00:00.000Z'});
@@ -96,6 +97,8 @@ test('parent timeout preserves checkpoint counters and provides a visible interr
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-progress-timeout-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
   await fs.mkdir(path.join(dir,'cloud'));await fs.mkdir(path.join(dir,'data'));
   await fs.copyFile(new URL('../cloud/run.mjs',import.meta.url),path.join(dir,'cloud/run.mjs'));
+  await fs.copyFile(new URL('../cloud/health.mjs',import.meta.url),path.join(dir,'cloud/health.mjs'));
+  await fs.copyFile(new URL('../stability.mjs',import.meta.url),path.join(dir,'stability.mjs'));
   await fs.copyFile(new URL('../history.mjs',import.meta.url),path.join(dir,'history.mjs'));
   await fs.writeFile(path.join(dir,'data/status.json'),JSON.stringify({processed:7,completedDetails:5,missingDetails:20}));
   await fs.writeFile(path.join(dir,'preload.mjs'),`
@@ -118,7 +121,7 @@ test('old status publication derives backlog without inventing historical comple
 });
 test('collector reuses successful detail, review and page evidence across retries',async t=>{
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-progress-cache-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
-  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs','review-service.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
+  for(const name of ['phase1-collector.mjs','phase1.mjs','release-time.mjs','history.mjs','steam-network.mjs','review-service.mjs','stability.mjs'])await fs.copyFile(new URL('../'+name,import.meta.url),path.join(dir,name));
   await fs.writeFile(path.join(dir,'preload.mjs'),`
     const timer=setTimeout;globalThis.setTimeout=(f,ms,...a)=>timer(f,Math.min(ms,1),...a);
     globalThis.fetch=async value=>{const u=new URL(value);console.log('FETCH '+u.pathname);let p;
@@ -128,7 +131,8 @@ test('collector reuses successful detail, review and page evidence across retrie
       else return {ok:true,text:async()=>'<html></html>'};return{ok:true,json:async()=>p};};
   `);
   const collect=fail=>spawnSync(process.execPath,['--import','./preload.mjs','phase1-collector.mjs'],{cwd:dir,encoding:'utf8',timeout:15000,env:{...process.env,FAIL_REVIEW:String(fail)}});
-  const first=collect(true);assert.equal(first.status,1,first.stderr);
+  const first=collect(true);assert.equal(first.status,0,first.stderr);
+  const partial=JSON.parse(await fs.readFile(path.join(dir,'data/status.json')));assert.equal(partial.state,'partial');assert.equal(partial.failed,1);assert.equal(partial.basicCompleted,1);
   assert.equal((first.stdout.match(/FETCH \/IUserReviewsService\//g)||[]).length,1);
   const statePath=path.join(dir,'data/state.json');const state=JSON.parse(await fs.readFile(statePath));state.phase1.catalog[1].retryAfter=null;await fs.writeFile(statePath,JSON.stringify(state));
   const second=collect(false);assert.equal(second.status,0,second.stderr);

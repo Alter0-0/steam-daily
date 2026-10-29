@@ -6,6 +6,7 @@ on:
     - cron: '0 20 * * *'
     # Resume throughout the day. Published days remain subject to rolling checks.
     - cron: '17 * * * *'
+    - cron: '47 * * * *'
   workflow_dispatch:
     inputs:
       publish_only:
@@ -24,6 +25,10 @@ on:
         description: '本轮最多处理条数（0为使用完整30分钟时段）'
         type: string
         default: '0'
+      auto_resume:
+        description: '由定时任务追加的一轮续采（不会继续触发下一轮）'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths-ignore: ['data/**', 'outputs/README.md', 'CLOUD-SETUP.md']
@@ -32,6 +37,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: steam-daily-cloud
@@ -52,10 +58,14 @@ jobs:
         with:
           node-version: '24'
       - name: Verify report merging, paging and durable storage
-        run: node --test work/history.test.mjs work/cloud.test.mjs work/phase1.test.mjs work/search.test.mjs work/progress.test.mjs work/quality.test.mjs work/archive.test.mjs
+        run: node --test work/history.test.mjs work/cloud.test.mjs work/phase1.test.mjs work/search.test.mjs work/progress.test.mjs work/quality.test.mjs work/archive.test.mjs work/stability.test.mjs
       - name: Restore durable reports and successful detail requests
         id: restore
         run: node cloud/state-branch.mjs load
+      - name: Record invocation before deciding whether collection is due
+        env:
+          AUTO_RESUME: ${{ inputs.auto_resume || 'false' }}
+        run: node cloud/health.mjs begin
       - name: Collect or resume pending records
         id: collect
         if: ${{ !inputs.publish_only && github.event_name != 'push' }}
@@ -63,25 +73,45 @@ jobs:
         env:
           PRIORITY_APP_IDS: ${{ inputs.priority_app_ids }}
           MAX_DETAILS: ${{ inputs.max_details || '0' }}
+          AUTO_RESUME: ${{ inputs.auto_resume || 'false' }}
         run: node cloud/run.mjs ${{ inputs.review_30 && '--review-30' || '' }}
       - name: Save progress even if Steam is unavailable
+        id: save
         if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
         run: node cloud/state-branch.mjs save
       - name: Build website from actual saved reports
-        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        id: build
+        if: ${{ !cancelled() && steps.save.outcome == 'success' }}
         run: node cloud/build.mjs
       - name: Configure Pages
-        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        id: pages
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         uses: actions/configure-pages@v5
       - name: Upload website
-        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        id: upload
+        if: ${{ !cancelled() && steps.pages.outcome == 'success' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
       - name: Publish website
-        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.upload.outcome == 'success' }}
         id: deploy
         uses: actions/deploy-pages@v4
-      - name: Keep incomplete collection visible in Actions
+      - name: Record publication and daily acceptance independently
+        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        env:
+          PUBLISH_OUTCOME: ${{ steps.deploy.outcome }}
+          AUTO_RESUME: ${{ inputs.auto_resume || 'false' }}
+        run: node cloud/health.mjs finalize
+      - name: Request one bounded continuation for recent unreadable games
+        if: ${{ !cancelled() && steps.deploy.outcome == 'success' && github.event_name == 'schedule' && steps.collect.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node cloud/health.mjs continue
+      - name: Save operational history and acceptance evidence
+        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        run: node cloud/state-branch.mjs save
+      - name: Keep source outages visible in Actions
         if: ${{ steps.collect.outcome == 'failure' }}
         run: exit 1

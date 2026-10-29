@@ -76,14 +76,18 @@ test('durable data branch saves and restores state in a fresh checkout', async t
   for(const name of ['archive.mjs','history.mjs'])await fs.copyFile(new URL(`../${name}`,import.meta.url),path.join(checkout,name));
   const expected = {reports:[{date:'2026-10-13',sections:[{key:'release',games:Array.from({length:600},(_,index)=>({id:index,name:`Game ${index}`,tags:['x'.repeat(2000)]}))}]}],firstSeen:{1:'2026-10-13'}};
   await fs.writeFile(path.join(checkout,'data/state.json'),JSON.stringify(expected));
+  const operations={runs:[{id:'123',publication:{state:'failed'}}],acceptance:{days:[]}};
+  await fs.writeFile(path.join(checkout,'data/operations.json'),JSON.stringify(operations));
   function run(mode) {
     const r=spawnSync(process.execPath,['cloud/state-branch.mjs',mode],{cwd:checkout,encoding:'utf8',env:{...process.env,GITHUB_ACTIONS:'true'}});
     assert.equal(r.status,0,r.stderr); return r.stdout;
   }
   run('save');
   await fs.writeFile(path.join(checkout,'data/state.json'),'{}');
+  await fs.unlink(path.join(checkout,'data/operations.json'));
   run('load');
   assert.deepEqual(JSON.parse(await fs.readFile(path.join(checkout,'data/state.json'),'utf8')),expected);
+  assert.deepEqual(JSON.parse(await fs.readFile(path.join(checkout,'data/operations.json'),'utf8')),operations);
   assert.match(run('save'), /无需保存/);
 });
 

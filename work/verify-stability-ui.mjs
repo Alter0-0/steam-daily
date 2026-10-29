@@ -1,0 +1,41 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {fileURLToPath} from 'node:url';
+import {buildSite} from '../cloud/build.mjs';
+import {newAcceptance,acceptanceView} from '../stability.mjs';
+const root=path.dirname(path.dirname(fileURLToPath(import.meta.url))),qa=path.join(root,'qa-phase1/stability');
+await fs.mkdir(qa,{recursive:true});await buildSite(path.join(qa,'site'));
+const html=await fs.readFile(path.join(qa,'site/index.html'),'utf8');
+const game={id:1,name:'可读测试',en:'Sample',price:'免费',priceValue:0,rating:80,reviews:'10',tags:['动作'],status:[],studio:'Studio',publisher:'Publisher',time:'2026-10-28',cover:'https://covers.test/x'};
+const payload={reports:[{date:'2026-10-28',sections:[{key:'release',title:'当日发售',games:[game]}]}]};
+const status={state:'partial',reportDate:'2026-10-28',startedAt:'2026-10-29T01:00:00Z',finishedAt:'2026-10-29T01:30:00Z',basicCompleted:90,processed:100,failed:2,health:{builtAt:'2026-10-29T01:31:00Z',collection:'partial',lastPublication:{state:'failed',at:'2026-10-29T00:30:00Z'},lastInvocation:{collection:{attempted:false,reason:'cooldown'}},readiness:[{date:'2026-10-28',sections:{release:{readable:90,total:100,percent:90},demo:{readable:10,total:20,percent:50}}}],acceptance:acceptanceView(newAcceptance('2026-10-29'),'2026-10-29T01:00:00Z')}};
+const require=createRequire('C:/Users/xbjy2/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');
+const browser=await require('playwright').chromium.launch({headless:true,executablePath:'C:/Users/xbjy2/AppData/Local/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-win64/chrome-headless-shell.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.route('**/*',route=>{
+  const url=new URL(route.request().url());if(url.origin!=='https://stability.test')return route.abort();
+  if(url.pathname.endsWith('status.json'))return route.fulfill({json:status});
+  if(url.pathname.endsWith('.json'))return route.fulfill({json:payload});
+  return route.fulfill({body:html,contentType:'text/html;charset=utf-8'});
+});
+try{
+  await page.goto('https://stability.test/');await page.waitForFunction(()=>document.querySelector('#publicationHealth').textContent.includes('失败'));
+  assert.match(await page.locator('#publicationHealth').innerText(),/上一轮已确认发布：失败/);
+  assert.match(await page.locator('#collectionHealth').innerText(),/仍有资料待补.*间隔不足45分钟跳过/);
+  await page.locator('#readinessPanel>summary').click();
+  assert.match(await page.locator('#readinessRows').innerText(),/发售 90\/100.*90%.*Demo 10\/20.*50%/);
+  assert.match(await page.locator('#acceptanceStatus').innerText(),/10-29：观察中/);
+  assert.match(await page.locator('#acceptanceStatus').innerText(),/不代表 Steam 全量收录/);
+  assert.equal(await page.locator('.game-card:visible').count(),1);
+  status.health.lastPublication.state='success';status.health.lastInvocation.collection={attempted:true};
+  await page.locator('#refreshProgress').click();await page.waitForFunction(()=>!document.querySelector('#refreshProgress').disabled);
+  assert.match(await page.locator('#publicationHealth').innerText(),/上一轮已确认发布：成功/);
+  assert.doesNotMatch(await page.locator('#collectionHealth').innerText(),/跳过/);
+  await page.screenshot({path:path.join(qa,'desktop.png')});
+  await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(qa,'mobile.png')});
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
+  await fs.writeFile(path.join(qa,'ui-verification.json'),JSON.stringify({passed:true,checks:10,errors},null,2));
+  console.log('10项发布状态、分类比例、三天验收和手机布局检查通过');
+}finally{await browser.close();}
