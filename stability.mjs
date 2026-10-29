@@ -29,8 +29,11 @@ export function recentReadiness(reports, latest) {
 export function recordAcceptance(ledger, run, reports) {
   const check = ledger.acceptance;
   if (!check || run.publication?.state !== 'success' || !run.collection?.attempted || run.collection.health === 'error') return;
+  const publishedAt=Date.parse(run.publication.at),finishedAt=Date.parse(run.collection.finishedAt);
+  if(!Number.isFinite(publishedAt)||!Number.isFinite(finishedAt)||publishedAt<finishedAt)return;
   for (const day of check.days) {
-    if (Date.parse(run.publication.at) > Date.parse(day.deadline) || Date.parse(run.collection.finishedAt) > Date.parse(day.deadline)) continue;
+    const opens=Date.parse(`${shiftDate(day.date,1)}T04:00:00+08:00`);
+    if(publishedAt<opens || publishedAt>Date.parse(day.deadline) || finishedAt>Date.parse(day.deadline))continue;
     const report = reports.find(r=>r.date===day.date);
     if (!report) continue;
     const snapshot = {at:run.publication.at,runId:run.id,automatic:run.event==='schedule'||run.automaticResume===true,sections:sectionReadiness(report),scanComplete:report.collection?.scanComplete===true};

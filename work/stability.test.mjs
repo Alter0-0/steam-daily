@@ -92,6 +92,14 @@ test('zero Demo candidates or an incomplete search cannot be a passing observati
   }
 });
 
+test('acceptance rejects missing timestamps and observations before the issue opens',()=>{
+  const early=successfulRun('2026-10-29T18:00:00Z'),missing=successfulRun('2026-10-30T18:00:00Z');delete missing.collection.finishedAt;
+  for(const run of [early,missing]){
+    const ledger={acceptance:newAcceptance('2026-10-29')};recordAcceptance(ledger,run,[report()]);
+    assert.equal(acceptanceView(ledger.acceptance,'2026-11-01T00:00:00Z').days[0].state,'no-evidence');
+  }
+});
+
 test('continuations are bounded: children, skipped collections, outages and publication failures cannot dispatch',()=>{
   const readiness=[{sections:{release:{pending:5},demo:{pending:0}}}];
   const run=successfulRun('2026-10-30T18:00:00Z');
