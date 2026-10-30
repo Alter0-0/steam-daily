@@ -4394,6 +4394,144 @@
         "failed": 156,
         "stopReason": "time-budget",
         "exitCode": 0
+      },
+      "finishedAt": "2026-10-30T19:58:33.423Z",
+      "publication": {
+        "state": "success",
+        "at": "2026-10-30T19:58:33.423Z"
+      },
+      "readiness": [
+        {
+          "date": "2026-10-29",
+          "sections": {
+            "release": {
+              "total": 248,
+              "readable": 248,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 95,
+              "readable": 94,
+              "pending": 1,
+              "percent": 98.9
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-28",
+          "sections": {
+            "release": {
+              "total": 270,
+              "readable": 270,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 97,
+              "readable": 97,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-27",
+          "sections": {
+            "release": {
+              "total": 318,
+              "readable": 318,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 81,
+              "readable": 81,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-26",
+          "sections": {
+            "release": {
+              "total": 111,
+              "readable": 111,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 66,
+              "readable": 66,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-25",
+          "sections": {
+            "release": {
+              "total": 51,
+              "readable": 51,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 27,
+              "readable": 26,
+              "pending": 1,
+              "percent": 96.3
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-24",
+          "sections": {
+            "release": {
+              "total": 119,
+              "readable": 119,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 56,
+              "readable": 55,
+              "pending": 1,
+              "percent": 98.2
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-23",
+          "sections": {
+            "release": {
+              "total": 158,
+              "readable": 158,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 95,
+              "readable": 95,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        }
+      ],
+      "continuation": {
+        "at": "2026-10-30T19:58:35.346Z",
+        "state": "requested",
+        "httpStatus": 204
       }
     }
   ],
@@ -4405,8 +4543,8 @@
         "date": "2026-10-29",
         "deadline": "2026-10-31T04:00:00+08:00",
         "lastObserved": {
-          "at": "2026-10-30T17:15:28.622Z",
-          "runId": "41092633576",
+          "at": "2026-10-30T19:58:33.423Z",
+          "runId": "41115447567",
           "automatic": true,
           "sections": {
             "release": {
@@ -4425,8 +4563,8 @@
           "scanComplete": true
         },
         "lastAutomatic": {
-          "at": "2026-10-30T17:15:28.622Z",
-          "runId": "41092633576",
+          "at": "2026-10-30T19:58:33.423Z",
+          "runId": "41115447567",
           "automatic": true,
           "sections": {
             "release": {
