@@ -1531,7 +1531,7 @@
     "reviewAt": "2026-10-29T17:51:44.465Z"
   },
   "1047020": {
-    "savedAt": "2026-10-21T23:13:40.926Z",
+    "savedAt": "2026-10-31T23:38:08.426Z",
     "result": {
       "detail": {
         "success": true,
@@ -1542,10 +1542,10 @@
           "price_overview": {
             "currency": "CNY",
             "initial": 2200,
-            "final": 1760,
-            "discount_percent": 20,
-            "initial_formatted": "¥ 22.00",
-            "final_formatted": "¥ 17.60"
+            "final": 2200,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 22.00"
           },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1047020/header.jpg?t=1791654418",
           "genres": [
@@ -1578,10 +1578,10 @@
         "query_summary": {
           "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "6 user reviews",
-          "total_positive": 3,
-          "total_negative": 3,
-          "total_reviews": 6
+          "review_score_desc": "4 user reviews",
+          "total_positive": 2,
+          "total_negative": 2,
+          "total_reviews": 4
         }
       }
     },
@@ -1590,7 +1590,8 @@
       "earlyAccessDate": "2019-04-26",
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:13:46.891Z"
+    "evidenceAt": "2026-10-31T23:38:14.542Z",
+    "reviewAt": "2026-10-31T23:38:14.916Z"
   },
   "1054320": {
     "savedAt": "2026-10-30T20:11:21.217Z",
@@ -8977,7 +8978,7 @@
     "reviewAt": "2026-10-31T12:41:35.120Z"
   },
   "1965430": {
-    "savedAt": "2026-10-21T23:15:30.678Z",
+    "savedAt": "2026-10-31T23:38:19.658Z",
     "result": {
       "detail": {
         "success": true,
@@ -9018,12 +9019,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 8,
-          "review_score": 6,
-          "review_score_desc": "Mostly Positive",
-          "total_positive": 39,
-          "total_negative": 13,
-          "total_reviews": 52
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -9045,7 +9046,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:15:36.004Z"
+    "evidenceAt": "2026-10-31T23:38:25.062Z",
+    "reviewAt": "2026-10-31T23:38:25.612Z"
   },
   "1965550": {
     "savedAt": "2026-10-30T01:37:04.531Z",
@@ -25297,7 +25299,7 @@
     "reviewAt": "2026-10-30T17:10:26.538Z"
   },
   "2919270": {
-    "savedAt": "2026-10-22T05:19:08.773Z",
+    "savedAt": "2026-10-31T23:54:36.572Z",
     "result": {
       "detail": {
         "success": true,
@@ -25342,12 +25344,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 5,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "6 user reviews",
-          "total_positive": 6,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 6
+          "total_reviews": 0
         }
       }
     },
@@ -25365,7 +25367,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:19:13.981Z"
+    "evidenceAt": "2026-10-31T23:54:41.777Z",
+    "reviewAt": "2026-10-31T23:54:42.138Z"
   },
   "2920220": {
     "savedAt": "2026-10-29T18:15:15.599Z",
@@ -29927,7 +29930,7 @@
     "reviewAt": "2026-10-31T21:43:44.502Z"
   },
   "3058680": {
-    "savedAt": "2026-10-21T23:17:20.772Z",
+    "savedAt": "2026-10-31T23:38:30.190Z",
     "result": {
       "detail": {
         "success": true,
@@ -29943,7 +29946,7 @@
             "initial_formatted": "",
             "final_formatted": "¥ 22.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3058680/9550e4543559256ac5979d428be6a265c5c08c1f/header.jpg?t=1791652460",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3058680/44559a5a4adaab1aa4e47d911c27da6e3f40d5fa/header_schinese.jpg?t=1792866784",
           "genres": [
             {
               "id": "1",
@@ -30000,9 +30003,15 @@
     "evidence": {
       "timestamp": 1791652461,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "第一次更新公告",
+          "timestamp": 1793022720
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T23:17:26.043Z"
+    "evidenceAt": "2026-10-31T23:38:35.470Z",
+    "reviewAt": "2026-10-31T23:38:35.853Z"
   },
   "3063380": {
     "savedAt": "2026-10-28T09:47:55.157Z",
@@ -49296,7 +49305,7 @@
     "reviewAt": "2026-10-24T13:12:08.079Z"
   },
   "3568250": {
-    "savedAt": "2026-10-21T23:19:10.792Z",
+    "savedAt": "2026-10-31T23:38:40.588Z",
     "result": {
       "detail": {
         "success": true,
@@ -49356,7 +49365,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:19:16.154Z"
+    "evidenceAt": "2026-10-31T23:38:45.756Z",
+    "reviewAt": "2026-10-31T23:38:46.127Z"
   },
   "3569420": {
     "savedAt": "2026-10-30T20:14:32.780Z",
@@ -52188,7 +52198,7 @@
     "reviewAt": "2026-10-30T21:13:40.984Z"
   },
   "3627560": {
-    "savedAt": "2026-10-21T23:21:00.838Z",
+    "savedAt": "2026-10-31T23:38:50.890Z",
     "result": {
       "detail": {
         "success": true,
@@ -52247,6 +52257,10 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Bounty Hunter Horrors Will Be In Steam Scream V!!!",
+          "timestamp": 1792960800
+        },
+        {
           "title": "Bounty Hunter Horrors Release!",
           "timestamp": 1791651000
         },
@@ -52256,7 +52270,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:21:06.113Z"
+    "evidenceAt": "2026-10-31T23:38:56.234Z",
+    "reviewAt": "2026-10-31T23:38:56.630Z"
   },
   "3628640": {
     "savedAt": "2026-10-26T06:32:33.094Z",
@@ -57869,7 +57884,7 @@
     "reviewAt": "2026-10-25T22:35:27.589Z"
   },
   "3732880": {
-    "savedAt": "2026-10-22T05:08:05.609Z",
+    "savedAt": "2026-10-31T23:52:35.742Z",
     "result": {
       "detail": {
         "success": true,
@@ -57877,7 +57892,7 @@
           "type": "demo",
           "name": "Trailblazers: Into the March Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3732880/d4a0c3289ae527a3f4819c7904466841b15eea7b/header.jpg?t=1792172293",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3732880/d4a0c3289ae527a3f4819c7904466841b15eea7b/header.jpg?t=1793013274",
           "genres": [
             {
               "id": "23",
@@ -57910,12 +57925,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 20,
-          "review_score": 8,
-          "review_score_desc": "Very Positive",
-          "total_positive": 59,
-          "total_negative": 1,
-          "total_reviews": 60
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -57924,16 +57939,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Steam Next Fest Is Here!",
-          "timestamp": 1792429740
+          "title": "Into The Bloom! Live!",
+          "timestamp": 1792768440
         },
         {
-          "title": "Steam Demo Released!",
-          "timestamp": 1792168020
+          "title": "HOTFIX 1&2 : The Forgotten Changelog",
+          "timestamp": 1792754280
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:08:10.896Z"
+    "evidenceAt": "2026-10-31T23:52:41.084Z",
+    "reviewAt": "2026-10-31T23:52:41.539Z"
   },
   "3733710": {
     "savedAt": "2026-10-28T21:54:36.568Z",
@@ -59035,7 +59051,7 @@
     "reviewAt": "2026-10-26T06:51:50.454Z"
   },
   "3749340": {
-    "savedAt": "2026-10-21T23:22:53.924Z",
+    "savedAt": "2026-10-31T23:39:01.366Z",
     "result": {
       "detail": {
         "success": true,
@@ -59046,10 +59062,10 @@
           "price_overview": {
             "currency": "CNY",
             "initial": 7600,
-            "final": 5700,
-            "discount_percent": 25,
-            "initial_formatted": "¥ 76.00",
-            "final_formatted": "¥ 57.00"
+            "final": 7600,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 76.00"
           },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3749340/63a7ac54ee8846055b3303499494f9e5b4447427/header.jpg?t=1792532412",
           "genres": [
@@ -59084,7 +59100,7 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 20,
+          "num_reviews": 1,
           "review_score": 6,
           "review_score_desc": "Mostly Positive",
           "total_positive": 47,
@@ -59111,7 +59127,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:22:59.310Z"
+    "evidenceAt": "2026-10-31T23:39:06.816Z",
+    "reviewAt": "2026-10-31T23:39:07.205Z"
   },
   "3752410": {
     "savedAt": "2026-10-25T06:16:03.273Z",
@@ -62716,7 +62733,7 @@
     "reviewAt": "2026-10-31T05:59:16.911Z"
   },
   "3825370": {
-    "savedAt": "2026-10-22T05:19:55.462Z",
+    "savedAt": "2026-10-31T23:54:46.887Z",
     "result": {
       "detail": {
         "success": true,
@@ -62724,7 +62741,7 @@
           "type": "demo",
           "name": "不朽之树 Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3825370/9ee623ff030ce54806d48ea4880874fdf63c2b9a/header_schinese.jpg?t=1792479425",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3825370/9ee623ff030ce54806d48ea4880874fdf63c2b9a/header_schinese.jpg?t=1793080605",
           "genres": [
             {
               "id": "1",
@@ -62753,12 +62770,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 20,
-          "review_score": 8,
-          "review_score_desc": "Very Positive",
-          "total_positive": 74,
-          "total_negative": 11,
-          "total_reviews": 85
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -62767,12 +62784,12 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "《不朽之树》已收获10万愿望单 | 抽取游戏Key！",
-          "timestamp": 1792583940
+          "title": "《不朽之树》试玩将于11月3日结束",
+          "timestamp": 1793176080
         },
         {
-          "title": "关于《不朽之树》Demo崩溃问题的解决方法",
-          "timestamp": 1792474440
+          "title": "关于游戏登录异常的说明",
+          "timestamp": 1793157660
         },
         {
           "title": "Demo 0.6.19 版本更新说明",
@@ -62780,7 +62797,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:20:00.774Z"
+    "evidenceAt": "2026-10-31T23:54:52.070Z",
+    "reviewAt": "2026-10-31T23:54:52.420Z"
   },
   "3826670": {
     "savedAt": "2026-10-31T00:11:18.920Z",
@@ -74554,7 +74572,7 @@
     "reviewAt": "2026-10-30T20:16:26.268Z"
   },
   "3981270": {
-    "savedAt": "2026-10-21T23:24:43.808Z",
+    "savedAt": "2026-10-31T23:39:11.978Z",
     "result": {
       "detail": {
         "success": true,
@@ -74591,7 +74609,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:24:49.171Z"
+    "evidenceAt": "2026-10-31T23:39:17.490Z",
+    "reviewAt": "2026-10-31T23:39:17.863Z"
   },
   "3981360": {
     "savedAt": "2026-10-26T06:42:16.092Z",
@@ -80772,7 +80791,7 @@
     "reviewAt": "2026-10-26T06:43:03.927Z"
   },
   "4067950": {
-    "savedAt": "2026-10-21T23:26:33.458Z",
+    "savedAt": "2026-10-31T23:39:22.614Z",
     "result": {
       "detail": {
         "success": true,
@@ -80809,7 +80828,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:26:39.048Z"
+    "evidenceAt": "2026-10-31T23:39:27.984Z",
+    "reviewAt": "2026-10-31T23:39:28.339Z"
   },
   "4068850": {
     "savedAt": "2026-10-31T21:47:16.047Z",
@@ -105776,7 +105796,7 @@
     "reviewAt": "2026-10-29T12:07:37.281Z"
   },
   "4354120": {
-    "savedAt": "2026-10-22T04:57:20.878Z",
+    "savedAt": "2026-10-31T23:48:07.650Z",
     "result": {
       "detail": {
         "success": true,
@@ -105792,7 +105812,7 @@
             "initial_formatted": "",
             "final_formatted": "¥ 22.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354120/680d6ccf9e3d7b763bb3b888e068be95c401519b/header.jpg?t=1792534740",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4354120/d14e1762839f8dcce9e9a88341ead5a23b607b4f/header.jpg?t=1793128145",
           "genres": [
             {
               "id": "4",
@@ -105817,12 +105837,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 3,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "3 user reviews",
-          "total_positive": 2,
+          "review_score_desc": "2 user reviews",
+          "total_positive": 1,
           "total_negative": 1,
-          "total_reviews": 3
+          "total_reviews": 2
         }
       }
     },
@@ -105831,16 +105851,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Ant Clicker’s free demo is available now",
-          "timestamp": 1792535460
+          "title": "Ant Clicker 1.2 — The Living Colony",
+          "timestamp": 1793128680
         },
         {
-          "title": "Ant Clicker 1.1.1 — Rebirth recovery and ant movement",
-          "timestamp": 1792518900
+          "title": "Ant Clicker’s free demo is available now",
+          "timestamp": 1792535460
         }
       ]
     },
-    "evidenceAt": "2026-10-22T04:57:26.109Z"
+    "evidenceAt": "2026-10-31T23:48:12.854Z",
+    "reviewAt": "2026-10-31T23:48:13.237Z"
   },
   "4355070": {
     "savedAt": "2026-10-29T17:03:11.667Z",
@@ -112670,7 +112691,7 @@
     "reviewAt": "2026-10-30T19:28:56.679Z"
   },
   "4411900": {
-    "savedAt": "2026-10-22T05:20:58.193Z",
+    "savedAt": "2026-10-31T23:54:57.236Z",
     "result": {
       "detail": {
         "success": true,
@@ -112707,16 +112728,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "✨🏡 The Ellsydia Demo is Finally Here! 🏡✨",
-          "timestamp": 1792048200
+          "title": "✨ Next Fest is over! ✨",
+          "timestamp": 1793044680
         },
         {
-          "title": "September Development Log",
-          "timestamp": 1790994540
+          "title": "✨🏡 The Ellsydia Demo is Finally Here! 🏡✨",
+          "timestamp": 1792048200
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:21:03.807Z"
+    "evidenceAt": "2026-10-31T23:55:02.580Z",
+    "reviewAt": "2026-10-31T23:55:02.958Z"
   },
   "4412510": {
     "savedAt": "2026-10-29T08:49:46.087Z",
@@ -117749,7 +117771,7 @@
     "reviewAt": "2026-10-24T13:04:39.201Z"
   },
   "4456960": {
-    "savedAt": "2026-10-22T04:59:11.317Z",
+    "savedAt": "2026-10-31T23:48:18.026Z",
     "result": {
       "detail": {
         "success": true,
@@ -117802,12 +117824,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 2,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "2 user reviews",
-          "total_positive": 2,
+          "review_score_desc": "1 user reviews",
+          "total_positive": 1,
           "total_negative": 0,
-          "total_reviews": 2
+          "total_reviews": 1
         }
       }
     },
@@ -117816,7 +117838,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T04:59:16.560Z"
+    "evidenceAt": "2026-10-31T23:48:23.382Z",
+    "reviewAt": "2026-10-31T23:48:23.732Z"
   },
   "4457150": {
     "savedAt": "2026-10-22T10:15:35.941Z",
@@ -142747,7 +142770,7 @@
     "reviewAt": "2026-10-29T12:10:30.755Z"
   },
   "4655490": {
-    "savedAt": "2026-10-22T05:21:45.967Z",
+    "savedAt": "2026-10-31T23:55:07.735Z",
     "result": {
       "detail": {
         "success": true,
@@ -142780,20 +142803,21 @@
       }
     },
     "evidence": {
-      "timestamp": null,
+      "timestamp": 1806476400,
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "The Bedrotting Simulator Demo is Here!",
-          "timestamp": 1792028520
+          "title": "🎃A Special Halloween Update! Bedrotting Simulator Coming Early 2027",
+          "timestamp": 1793071260
         },
         {
-          "title": "The Bedrotting Simulator Free Playtest is Here",
-          "timestamp": 1787794680
+          "title": "The Bedrotting Simulator Demo is Here!",
+          "timestamp": 1792028520
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:21:51.438Z"
+    "evidenceAt": "2026-10-31T23:55:13.110Z",
+    "reviewAt": "2026-10-31T23:55:13.530Z"
   },
   "4655530": {
     "savedAt": "2026-10-29T18:26:03.183Z",
@@ -148629,7 +148653,7 @@
     "reviewAt": "2026-10-24T22:28:36.963Z"
   },
   "4691280": {
-    "savedAt": "2026-10-22T05:01:17.901Z",
+    "savedAt": "2026-10-31T23:48:28.498Z",
     "result": {
       "detail": {
         "success": true,
@@ -148639,11 +148663,11 @@
           "is_free": false,
           "price_overview": {
             "currency": "CNY",
-            "initial": 3500,
-            "final": 3500,
+            "initial": 2200,
+            "final": 2200,
             "discount_percent": 0,
             "initial_formatted": "",
-            "final_formatted": "¥ 35.00"
+            "final_formatted": "¥ 22.00"
           },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4691280/67a2f32d75cc121831793f332c4f5d4de62b7148/header.jpg?t=1791668129",
           "genres": [
@@ -148680,7 +148704,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:01:23.170Z"
+    "evidenceAt": "2026-10-31T23:48:33.964Z",
+    "reviewAt": "2026-10-31T23:48:34.395Z"
   },
   "4691490": {
     "savedAt": "2026-10-24T22:34:08.757Z",
@@ -153585,7 +153610,7 @@
     "reviewAt": "2026-10-30T19:44:29.952Z"
   },
   "4718070": {
-    "savedAt": "2026-10-22T05:03:08.533Z",
+    "savedAt": "2026-10-31T23:48:39.075Z",
     "result": {
       "detail": {
         "success": true,
@@ -153596,10 +153621,10 @@
           "price_overview": {
             "currency": "CNY",
             "initial": 9810,
-            "final": 7848,
-            "discount_percent": 20,
-            "initial_formatted": "¥ 98.10",
-            "final_formatted": "¥ 78.48"
+            "final": 9810,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 98.10"
           },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4718070/db2912d47aad0fc9476727f49c0b0d3a94c80296/header.jpg?t=1792597205",
           "genres": [
@@ -153652,12 +153677,13 @@
           "timestamp": 1783428540
         },
         {
-          "title": "New Quick Ability Menue and Controller Improvements",
-          "timestamp": 1785895800
+          "title": "Bugfixing with Achievements, Performance and Button Display",
+          "timestamp": 1793407994
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:03:13.762Z"
+    "evidenceAt": "2026-10-31T23:48:44.285Z",
+    "reviewAt": "2026-10-31T23:48:44.665Z"
   },
   "4718270": {
     "savedAt": "2026-10-29T00:17:26.236Z",
@@ -155956,7 +155982,7 @@
     "evidenceAt": "2026-10-20T23:22:09.436Z"
   },
   "4736480": {
-    "savedAt": "2026-10-22T05:22:48.826Z",
+    "savedAt": "2026-10-31T23:55:18.240Z",
     "result": {
       "detail": {
         "success": true,
@@ -156002,7 +156028,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:22:54.383Z"
+    "evidenceAt": "2026-10-31T23:55:23.643Z",
+    "reviewAt": "2026-10-31T23:55:23.996Z"
   },
   "4736580": {
     "savedAt": "2026-10-31T00:16:53.028Z",
@@ -156986,7 +157013,7 @@
     "reviewAt": "2026-10-25T22:19:27.060Z"
   },
   "4739680": {
-    "savedAt": "2026-10-22T05:04:57.980Z",
+    "savedAt": "2026-10-31T23:48:49.446Z",
     "result": {
       "detail": {
         "success": true,
@@ -157049,20 +157076,17 @@
       "earlyAccessDate": "2026-10-10",
       "announcements": [
         {
-          "title": "Three small tips: energy, a wider view, and the K key",
-          "timestamp": 1792612380
+          "title": "Update 0.9.7 - Minute One",
+          "timestamp": 1793273820
         },
         {
-          "title": "Update 0.9.3 - Building at the map edges is fixed",
-          "timestamp": 1792136580
-        },
-        {
-          "title": "Where did my discarded items go?",
-          "timestamp": 1792613580
+          "title": "Update 0.9.6 - Kepler Online: a home worth finding",
+          "timestamp": 1793210700
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:05:03.192Z"
+    "evidenceAt": "2026-10-31T23:48:54.644Z",
+    "reviewAt": "2026-10-31T23:48:54.990Z"
   },
   "4739820": {
     "savedAt": "2026-10-27T06:25:28.792Z",
@@ -161374,7 +161398,7 @@
     "reviewAt": "2026-10-31T06:39:35.015Z"
   },
   "4762410": {
-    "savedAt": "2026-10-22T05:08:52.587Z",
+    "savedAt": "2026-10-31T23:52:46.257Z",
     "result": {
       "detail": {
         "success": true,
@@ -161421,16 +161445,25 @@
       }
     },
     "evidence": {
-      "timestamp": 1793470020,
+      "timestamp": 1793444392,
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Demo Update: Forge Improvements and Combat Power Display",
-          "timestamp": 1792106880
+          "title": "Cultivation Legend — v0.1.0 Early Access Update",
+          "timestamp": 1793445360
+        },
+        {
+          "title": "Cultivation Legend — Early Access Update Preview",
+          "timestamp": 1793371080
+        },
+        {
+          "title": "Update: Gem Rework, Combat Continues in Town, and Inventory Improvements",
+          "timestamp": 1793485683
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:08:57.992Z"
+    "evidenceAt": "2026-10-31T23:52:51.592Z",
+    "reviewAt": "2026-10-31T23:52:52.039Z"
   },
   "4762810": {
     "savedAt": "2026-10-29T12:10:57.077Z",
@@ -161576,7 +161609,7 @@
     "reviewAt": "2026-10-31T08:27:35.115Z"
   },
   "4764290": {
-    "savedAt": "2026-10-22T05:06:47.162Z",
+    "savedAt": "2026-10-31T23:48:59.750Z",
     "result": {
       "detail": {
         "success": true,
@@ -161633,9 +161666,15 @@
     "evidence": {
       "timestamp": 1791662992,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Thank you for purchasing the game. I am preparing a major update for you.",
+          "timestamp": 1793350560
+        }
+      ]
     },
-    "evidenceAt": "2026-10-22T05:06:52.395Z"
+    "evidenceAt": "2026-10-31T23:49:05.001Z",
+    "reviewAt": "2026-10-31T23:49:05.350Z"
   },
   "4764310": {
     "savedAt": "2026-10-22T23:06:48.764Z",
@@ -167913,7 +167952,7 @@
     "reviewAt": "2026-10-24T01:59:15.246Z"
   },
   "4801060": {
-    "savedAt": "2026-10-21T23:14:59.324Z",
+    "savedAt": "2026-10-31T23:42:44.445Z",
     "result": {
       "detail": {
         "success": true,
@@ -167921,7 +167960,7 @@
           "type": "demo",
           "name": "Souls Divided Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4801060/628f5c2c6c6e2f2b686d6b3a563973d095a5c947/header.jpg?t=1791785985",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4801060/628f5c2c6c6e2f2b686d6b3a563973d095a5c947/header.jpg?t=1792882421",
           "developers": [
             "Stormdeep INC."
           ],
@@ -167950,7 +167989,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:15:04.782Z"
+    "evidenceAt": "2026-10-31T23:42:49.951Z",
+    "reviewAt": "2026-10-31T23:42:50.379Z"
   },
   "4801520": {
     "savedAt": "2026-10-30T20:24:31.161Z",
@@ -178109,7 +178149,7 @@
     "reviewAt": "2026-10-29T23:48:13.897Z"
   },
   "4846170": {
-    "savedAt": "2026-10-22T05:23:36.433Z",
+    "savedAt": "2026-10-31T23:55:28.800Z",
     "result": {
       "detail": {
         "success": true,
@@ -178164,7 +178204,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:23:41.739Z"
+    "evidenceAt": "2026-10-31T23:55:34.142Z",
+    "reviewAt": "2026-10-31T23:55:34.627Z"
   },
   "4846620": {
     "savedAt": "2026-10-31T00:19:14.404Z",
@@ -178468,7 +178509,7 @@
     "reviewAt": "2026-10-23T15:24:26.950Z"
   },
   "4847040": {
-    "savedAt": "2026-10-22T05:08:36.871Z",
+    "savedAt": "2026-10-31T23:49:10.154Z",
     "result": {
       "detail": {
         "success": true,
@@ -178516,9 +178557,9 @@
           "num_reviews": 1,
           "review_score": 7,
           "review_score_desc": "Positive",
-          "total_positive": 11,
+          "total_positive": 12,
           "total_negative": 0,
-          "total_reviews": 11
+          "total_reviews": 12
         }
       }
     },
@@ -178536,7 +178577,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:08:42.078Z"
+    "evidenceAt": "2026-10-31T23:49:15.364Z",
+    "reviewAt": "2026-10-31T23:49:15.865Z"
   },
   "4847230": {
     "savedAt": "2026-10-21T10:28:38.440Z",
@@ -188067,7 +188109,7 @@
     "reviewAt": "2026-10-29T16:20:53.217Z"
   },
   "4891050": {
-    "savedAt": "2026-10-21T23:15:46.350Z",
+    "savedAt": "2026-10-31T23:42:55.183Z",
     "result": {
       "detail": {
         "success": true,
@@ -188114,11 +188156,12 @@
       }
     },
     "evidence": {
-      "timestamp": 1811746800,
+      "timestamp": 1792780272,
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:15:51.726Z"
+    "evidenceAt": "2026-10-31T23:43:00.575Z",
+    "reviewAt": "2026-10-31T23:43:00.954Z"
   },
   "4891320": {
     "savedAt": "2026-10-29T23:49:49.058Z",
@@ -199033,7 +199076,7 @@
     "reviewAt": "2026-10-27T13:19:43.928Z"
   },
   "4929390": {
-    "savedAt": "2026-10-21T23:16:49.438Z",
+    "savedAt": "2026-10-31T23:43:05.698Z",
     "result": {
       "detail": {
         "success": true,
@@ -199097,7 +199140,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:16:54.726Z"
+    "evidenceAt": "2026-10-31T23:43:11.296Z",
+    "reviewAt": "2026-10-31T23:43:11.659Z"
   },
   "4929980": {
     "savedAt": "2026-10-29T23:51:02.801Z",
@@ -200775,7 +200819,7 @@
     "reviewAt": "2026-10-24T07:49:27.767Z"
   },
   "4934870": {
-    "savedAt": "2026-10-21T23:17:36.643Z",
+    "savedAt": "2026-10-31T23:43:16.526Z",
     "result": {
       "detail": {
         "success": true,
@@ -200783,7 +200827,7 @@
           "type": "demo",
           "name": "Maneki Mania Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934870/dba18079612cc964db1096762e052e0d577bf758/header.jpg?t=1792564126",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4934870/dba18079612cc964db1096762e052e0d577bf758/header.jpg?t=1793123404",
           "genres": [
             {
               "id": "4",
@@ -200832,7 +200876,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:17:42.021Z"
+    "evidenceAt": "2026-10-31T23:43:21.977Z",
+    "reviewAt": "2026-10-31T23:43:22.334Z"
   },
   "4935430": {
     "savedAt": "2026-10-30T07:49:51.768Z",
@@ -230033,7 +230078,7 @@
     "reviewAt": "2026-10-28T02:40:01.776Z"
   },
   "5015150": {
-    "savedAt": "2026-10-22T05:10:27.170Z",
+    "savedAt": "2026-10-31T23:49:20.496Z",
     "result": {
       "detail": {
         "success": true,
@@ -230066,12 +230111,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 1,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
+          "review_score_desc": "No user reviews",
           "total_positive": 0,
-          "total_negative": 1,
-          "total_reviews": 1
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -230080,7 +230125,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:10:32.625Z"
+    "evidenceAt": "2026-10-31T23:49:25.793Z",
+    "reviewAt": "2026-10-31T23:49:26.210Z"
   },
   "5015190": {
     "savedAt": "2026-10-29T21:26:14.453Z",
@@ -234921,7 +234967,7 @@
     "reviewAt": "2026-10-25T22:38:50.026Z"
   },
   "5025380": {
-    "savedAt": "2026-10-22T05:12:18.021Z",
+    "savedAt": "2026-10-31T23:49:30.933Z",
     "result": {
       "detail": {
         "success": true,
@@ -234964,7 +235010,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:12:23.344Z"
+    "evidenceAt": "2026-10-31T23:49:36.501Z",
+    "reviewAt": "2026-10-31T23:49:36.878Z"
   },
   "5025930": {
     "savedAt": "2026-10-30T08:01:24.343Z",
@@ -240376,7 +240423,7 @@
     "reviewAt": "2026-10-27T23:27:00.341Z"
   },
   "5038020": {
-    "savedAt": "2026-10-22T05:14:07.959Z",
+    "savedAt": "2026-10-31T23:49:41.660Z",
     "result": {
       "detail": {
         "success": true,
@@ -240392,7 +240439,7 @@
             "initial_formatted": "",
             "final_formatted": "¥ 26.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5038020/1cf0aca456adf88e8733f3e67f0bece475759880/header.jpg?t=1791644493",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5038020/1cf0aca456adf88e8733f3e67f0bece475759880/header.jpg?t=1793190765",
           "genres": [
             {
               "id": "4",
@@ -240421,12 +240468,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 20,
+          "num_reviews": 1,
           "review_score": 7,
           "review_score_desc": "Positive",
           "total_positive": 24,
-          "total_negative": 2,
-          "total_reviews": 26
+          "total_negative": 3,
+          "total_reviews": 27
         }
       }
     },
@@ -240443,12 +240490,13 @@
           "timestamp": 1791638520
         },
         {
-          "title": "Spell update!",
-          "timestamp": 1792062180
+          "title": "Oh yeah small update",
+          "timestamp": 1793191380
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:14:13.193Z"
+    "evidenceAt": "2026-10-31T23:49:47.102Z",
+    "reviewAt": "2026-10-31T23:49:47.473Z"
   },
   "5038030": {
     "savedAt": "2026-10-23T15:33:23.640Z",
@@ -256409,7 +256457,7 @@
     "reviewAt": "2026-10-23T07:29:36.753Z"
   },
   "5066550": {
-    "savedAt": "2026-10-21T23:18:39.461Z",
+    "savedAt": "2026-10-31T23:43:27.102Z",
     "result": {
       "detail": {
         "success": true,
@@ -256456,7 +256504,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:18:44.793Z"
+    "evidenceAt": "2026-10-31T23:43:32.615Z",
+    "reviewAt": "2026-10-31T23:43:33.044Z"
   },
   "5066560": {
     "savedAt": "2026-10-21T23:03:44.195Z",
@@ -257020,7 +257069,7 @@
     "reviewAt": "2026-10-24T22:14:19.230Z"
   },
   "5067480": {
-    "savedAt": "2026-10-21T23:19:26.404Z",
+    "savedAt": "2026-10-31T23:43:37.765Z",
     "result": {
       "detail": {
         "success": true,
@@ -257063,7 +257112,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:19:31.802Z"
+    "evidenceAt": "2026-10-31T23:43:43.242Z",
+    "reviewAt": "2026-10-31T23:43:43.602Z"
   },
   "5067680": {
     "savedAt": "2026-10-29T23:59:51.743Z",
@@ -259177,7 +259227,7 @@
     "reviewAt": "2026-10-29T11:58:29.909Z"
   },
   "5072490": {
-    "savedAt": "2026-10-21T23:20:29.364Z",
+    "savedAt": "2026-10-31T23:43:48.360Z",
     "result": {
       "detail": {
         "success": true,
@@ -259214,12 +259264,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 6,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "6 user reviews",
-          "total_positive": 6,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 6
+          "total_reviews": 0
         }
       }
     },
@@ -259228,12 +259278,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Development Update (Don't worry, it's good...)",
+          "timestamp": 1793060520
+        },
+        {
           "title": "First Impressions with ToastyTime",
           "timestamp": 1792371480
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:20:34.664Z"
+    "evidenceAt": "2026-10-31T23:43:53.625Z",
+    "reviewAt": "2026-10-31T23:43:54.034Z"
   },
   "5072920": {
     "savedAt": "2026-10-31T22:33:44.139Z",
@@ -262527,7 +262582,7 @@
     "reviewAt": "2026-10-25T01:16:05.676Z"
   },
   "5077690": {
-    "savedAt": "2026-10-22T05:15:58.345Z",
+    "savedAt": "2026-10-31T23:49:52.370Z",
     "result": {
       "detail": {
         "success": true,
@@ -262595,7 +262650,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:16:04.073Z"
+    "evidenceAt": "2026-10-31T23:49:57.915Z",
+    "reviewAt": "2026-10-31T23:49:58.313Z"
   },
   "5077740": {
     "savedAt": "2026-10-29T18:01:55.096Z",
@@ -287182,7 +287238,7 @@
     "reviewAt": "2026-10-30T08:09:36.399Z"
   },
   "5114480": {
-    "savedAt": "2026-10-22T05:17:49.750Z",
+    "savedAt": "2026-10-31T23:50:03.078Z",
     "result": {
       "detail": {
         "success": true,
@@ -287219,12 +287275,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 9,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "9 user reviews",
-          "total_positive": 9,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 9
+          "total_reviews": 0
         }
       }
     },
@@ -287233,12 +287289,12 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "The Cup is in Steam Next Fest · live today at 4:30 PM Pacific",
-          "timestamp": 1792452600
+          "title": "The Cup: the full game is out December 3",
+          "timestamp": 1793057580
         },
         {
-          "title": "The Cup: Creature Card Battler - playing THE ROAD in the demo!",
-          "timestamp": 1792346400
+          "title": "Can you clear THE ROAD?",
+          "timestamp": 1792695420
         },
         {
           "title": "0.0.9: drag your drafts, a new case 02, and THE ROAD's unlocks",
@@ -287246,7 +287302,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:17:55.020Z"
+    "evidenceAt": "2026-10-31T23:50:08.347Z",
+    "reviewAt": "2026-10-31T23:50:08.711Z"
   },
   "5114500": {
     "savedAt": "2026-10-31T01:13:35.093Z",
@@ -304846,7 +304903,7 @@
     "reviewAt": "2026-10-29T16:47:20.438Z"
   },
   "5136630": {
-    "savedAt": "2026-10-22T05:19:39.877Z",
+    "savedAt": "2026-10-31T23:50:13.475Z",
     "result": {
       "detail": {
         "success": true,
@@ -304895,12 +304952,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 20,
-          "review_score": 5,
-          "review_score_desc": "Mixed",
-          "total_positive": 17,
-          "total_negative": 8,
-          "total_reviews": 25
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -304918,7 +304975,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:19:45.102Z"
+    "evidenceAt": "2026-10-31T23:50:18.776Z",
+    "reviewAt": "2026-10-31T23:50:19.156Z"
   },
   "5136720": {
     "savedAt": "2026-10-30T01:46:15.964Z",
@@ -310181,7 +310239,7 @@
     "reviewAt": "2026-10-30T00:07:41.916Z"
   },
   "5145380": {
-    "savedAt": "2026-10-21T23:21:16.353Z",
+    "savedAt": "2026-10-31T23:43:58.752Z",
     "result": {
       "detail": {
         "success": true,
@@ -310228,7 +310286,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:21:21.577Z"
+    "evidenceAt": "2026-10-31T23:44:04.018Z",
+    "reviewAt": "2026-10-31T23:44:04.476Z"
   },
   "5145500": {
     "savedAt": "2026-10-20T23:07:00.020Z",
@@ -329569,7 +329628,7 @@
     "reviewAt": "2026-10-30T00:11:25.067Z"
   },
   "5170150": {
-    "savedAt": "2026-10-22T05:21:30.164Z",
+    "savedAt": "2026-10-31T23:50:23.910Z",
     "result": {
       "detail": {
         "success": true,
@@ -329585,7 +329644,7 @@
             "initial_formatted": "",
             "final_formatted": "¥ 42.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5170150/f245e8630069ef8e93123abda8932ea0cd9c0908/header.jpg?t=1792475236",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5170150/f245e8630069ef8e93123abda8932ea0cd9c0908/header.jpg?t=1792688911",
           "genres": [
             {
               "id": "4",
@@ -329641,7 +329700,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:21:35.597Z"
+    "evidenceAt": "2026-10-31T23:50:29.257Z",
+    "reviewAt": "2026-10-31T23:50:29.709Z"
   },
   "5170210": {
     "savedAt": "2026-10-28T02:49:01.105Z",
@@ -332475,7 +332535,7 @@
     "reviewAt": "2026-10-30T07:15:44.706Z"
   },
   "5173490": {
-    "savedAt": "2026-10-21T23:22:22.557Z",
+    "savedAt": "2026-10-31T23:44:09.167Z",
     "result": {
       "detail": {
         "success": true,
@@ -332526,7 +332586,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:22:28.056Z"
+    "evidenceAt": "2026-10-31T23:44:14.720Z",
+    "reviewAt": "2026-10-31T23:44:15.210Z"
   },
   "5173500": {
     "savedAt": "2026-10-28T23:54:40.351Z",
@@ -340111,7 +340172,7 @@
     "reviewAt": "2026-10-30T01:16:32.534Z"
   },
   "5182940": {
-    "savedAt": "2026-10-21T23:23:09.643Z",
+    "savedAt": "2026-10-31T23:44:19.877Z",
     "result": {
       "detail": {
         "success": true,
@@ -340162,7 +340223,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:23:14.937Z"
+    "evidenceAt": "2026-10-31T23:44:25.247Z",
+    "reviewAt": "2026-10-31T23:44:25.696Z"
   },
   "5182980": {
     "savedAt": "2026-10-31T01:21:29.579Z",
@@ -345954,7 +346016,7 @@
     "reviewAt": "2026-10-31T01:22:38.933Z"
   },
   "5188520": {
-    "savedAt": "2026-10-22T05:23:20.648Z",
+    "savedAt": "2026-10-31T23:50:34.415Z",
     "result": {
       "detail": {
         "success": true,
@@ -346021,7 +346083,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:23:26.113Z"
+    "evidenceAt": "2026-10-31T23:50:39.953Z",
+    "reviewAt": "2026-10-31T23:50:40.324Z"
   },
   "5188530": {
     "savedAt": "2026-10-30T16:47:36.674Z",
@@ -351307,7 +351370,7 @@
     "reviewAt": "2026-10-30T07:37:21.302Z"
   },
   "5193250": {
-    "savedAt": "2026-10-21T23:24:12.204Z",
+    "savedAt": "2026-10-31T23:44:30.403Z",
     "result": {
       "detail": {
         "success": true,
@@ -351315,7 +351378,7 @@
           "type": "demo",
           "name": "Raid Leader Simulator Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193250/52a655e4448dfee89dd3a85261fc948429f60778/header.jpg?t=1791775403",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5193250/52a655e4448dfee89dd3a85261fc948429f60778/header.jpg?t=1793323584",
           "genres": [
             {
               "id": "23",
@@ -351356,9 +351419,15 @@
     "evidence": {
       "timestamp": 1791775401,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Dev Update — King's Cup & Queen's Cup Rebuilt as Real-Time Auto Battles",
+          "timestamp": 1793172540
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T23:24:17.710Z"
+    "evidenceAt": "2026-10-31T23:44:35.977Z",
+    "reviewAt": "2026-10-31T23:44:36.332Z"
   },
   "5193430": {
     "savedAt": "2026-10-31T08:27:08.343Z",
@@ -351968,7 +352037,7 @@
     "reviewAt": "2026-10-26T01:19:17.749Z"
   },
   "5193970": {
-    "savedAt": "2026-10-22T05:09:55.656Z",
+    "savedAt": "2026-10-31T23:52:56.748Z",
     "result": {
       "detail": {
         "success": true,
@@ -352011,11 +352080,12 @@
       }
     },
     "evidence": {
-      "timestamp": 1793149200,
+      "timestamp": 1798704000,
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:10:01.150Z"
+    "evidenceAt": "2026-10-31T23:53:02.135Z",
+    "reviewAt": "2026-10-31T23:53:02.546Z"
   },
   "5194040": {
     "savedAt": "2026-10-23T07:13:53.372Z",
@@ -354126,7 +354196,7 @@
     "reviewAt": "2026-10-26T01:19:38.876Z"
   },
   "5195910": {
-    "savedAt": "2026-10-22T10:15:51.532Z",
+    "savedAt": "2026-10-31T23:58:06.642Z",
     "result": {
       "detail": {
         "success": true,
@@ -354167,12 +354237,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 1,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
-          "total_positive": 1,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 1
+          "total_reviews": 0
         }
       }
     },
@@ -354181,12 +354251,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Sort Labs Upgrades October 30 2026!",
+          "timestamp": 1793416560
+        },
+        {
           "title": "SORT LABS ARE NOW OPEN!",
           "timestamp": 1791644280
         }
       ]
     },
-    "evidenceAt": "2026-10-22T10:15:56.883Z"
+    "evidenceAt": "2026-10-31T23:58:12.186Z",
+    "reviewAt": "2026-10-31T23:58:12.542Z"
   },
   "5195950": {
     "savedAt": "2026-10-29T17:33:54.621Z",
@@ -364634,7 +364709,7 @@
     "reviewAt": "2026-10-26T20:44:23.006Z"
   },
   "5205700": {
-    "savedAt": "2026-10-22T10:17:41.093Z",
+    "savedAt": "2026-10-31T23:58:17.642Z",
     "result": {
       "detail": {
         "success": true,
@@ -364667,12 +364742,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 3,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "4 user reviews",
-          "total_positive": 4,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 4
+          "total_reviews": 0
         }
       }
     },
@@ -364681,7 +364756,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T10:17:46.367Z"
+    "evidenceAt": "2026-10-31T23:58:23.092Z",
+    "reviewAt": "2026-10-31T23:58:23.573Z"
   },
   "5205790": {
     "savedAt": "2026-10-31T18:12:44.781Z",
@@ -365251,7 +365327,7 @@
     "reviewAt": "2026-10-31T18:22:56.763Z"
   },
   "5206240": {
-    "savedAt": "2026-10-22T10:19:31.549Z",
+    "savedAt": "2026-10-31T23:58:28.235Z",
     "result": {
       "detail": {
         "success": true,
@@ -365259,7 +365335,7 @@
           "type": "demo",
           "name": "Kyle Coral Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206240/e71b534a78411ba1fdf480be1c81cd773350cf6a/header.jpg?t=1791662926",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5206240/e71b534a78411ba1fdf480be1c81cd773350cf6a/header.jpg?t=1793226392",
           "genres": [
             {
               "id": "25",
@@ -365298,16 +365374,25 @@
       }
     },
     "evidence": {
-      "timestamp": null,
+      "timestamp": 1794886620,
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Kyle Coral launches Nov 16",
+          "timestamp": 1793119140
+        },
+        {
           "title": "Kyle Coral is in Steam Next Fest: play the free demo",
           "timestamp": 1792452180
+        },
+        {
+          "title": "Fest Weekend Patch: Cleaner Caves and Cloud Saves",
+          "timestamp": 1792796640
         }
       ]
     },
-    "evidenceAt": "2026-10-22T10:19:36.976Z"
+    "evidenceAt": "2026-10-31T23:58:33.836Z",
+    "reviewAt": "2026-10-31T23:58:34.248Z"
   },
   "5206300": {
     "savedAt": "2026-10-29T21:32:54.696Z",
@@ -372052,7 +372137,7 @@
     "reviewAt": "2026-10-30T23:42:54.420Z"
   },
   "5211870": {
-    "savedAt": "2026-10-22T10:21:22.118Z",
+    "savedAt": "2026-10-31T23:58:39.003Z",
     "result": {
       "detail": {
         "success": true,
@@ -372063,10 +372148,10 @@
           "price_overview": {
             "currency": "CNY",
             "initial": 2200,
-            "final": 1760,
-            "discount_percent": 20,
-            "initial_formatted": "¥ 22.00",
-            "final_formatted": "¥ 17.60"
+            "final": 2200,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 22.00"
           },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5211870/6243f448ce25f35c5b4516b32b98653491c0a7c8/header.jpg?t=1791640072",
           "genres": [
@@ -372105,11 +372190,11 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 9,
+          "num_reviews": 1,
           "review_score": 0,
           "review_score_desc": "9 user reviews",
-          "total_positive": 8,
-          "total_negative": 1,
+          "total_positive": 9,
+          "total_negative": 0,
           "total_reviews": 9
         }
       }
@@ -372124,7 +372209,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T10:21:27.396Z"
+    "evidenceAt": "2026-10-31T23:58:44.353Z",
+    "reviewAt": "2026-10-31T23:58:44.758Z"
   },
   "5211890": {
     "savedAt": "2026-10-25T11:58:57.452Z",
@@ -373363,7 +373449,7 @@
     "reviewAt": "2026-10-25T11:59:13.821Z"
   },
   "5212810": {
-    "savedAt": "2026-10-22T10:23:12.453Z",
+    "savedAt": "2026-10-31T23:58:49.505Z",
     "result": {
       "detail": {
         "success": true,
@@ -373410,7 +373496,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T10:23:17.774Z"
+    "evidenceAt": "2026-10-31T23:58:54.858Z",
+    "reviewAt": "2026-10-31T23:58:55.250Z"
   },
   "5212830": {
     "savedAt": "2026-10-30T00:20:51.427Z",
@@ -375234,7 +375321,7 @@
     "reviewAt": "2026-10-29T09:13:21.723Z"
   },
   "5213990": {
-    "savedAt": "2026-10-22T05:10:43.081Z",
+    "savedAt": "2026-10-31T23:53:07.406Z",
     "result": {
       "detail": {
         "success": true,
@@ -375285,7 +375372,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:10:48.423Z"
+    "evidenceAt": "2026-10-31T23:53:12.726Z",
+    "reviewAt": "2026-10-31T23:53:13.115Z"
   },
   "5214090": {
     "savedAt": "2026-10-24T01:52:58.607Z",
@@ -384732,7 +384820,7 @@
     "reviewAt": "2026-10-29T17:41:10.519Z"
   },
   "5222530": {
-    "savedAt": "2026-10-22T10:25:02.241Z",
+    "savedAt": "2026-10-31T23:59:00.006Z",
     "result": {
       "detail": {
         "success": true,
@@ -384783,7 +384871,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T10:25:07.742Z"
+    "evidenceAt": "2026-10-31T23:59:05.390Z",
+    "reviewAt": "2026-10-31T23:59:05.798Z"
   },
   "5222590": {
     "savedAt": "2026-10-26T01:25:20.558Z",
@@ -416494,7 +416583,7 @@
     "reviewAt": "2026-10-26T01:29:28.845Z"
   },
   "5245940": {
-    "savedAt": "2026-10-22T05:07:02.806Z",
+    "savedAt": "2026-10-31T23:52:25.059Z",
     "result": {
       "detail": {
         "success": true,
@@ -416549,7 +416638,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:07:08.236Z"
+    "evidenceAt": "2026-10-31T23:52:30.558Z",
+    "reviewAt": "2026-10-31T23:52:30.956Z"
   },
   "5245970": {
     "savedAt": "2026-10-22T15:42:41.758Z",
@@ -422364,7 +422454,7 @@
     "reviewAt": "2026-10-29T18:29:18.795Z"
   },
   "5250000": {
-    "savedAt": "2026-10-21T20:22:27.362Z",
+    "savedAt": "2026-10-31T23:30:30.069Z",
     "result": {
       "detail": {
         "success": true,
@@ -422409,9 +422499,15 @@
     "evidence": {
       "timestamp": 1796025600,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Call of Donuts is Going Free-To-Play",
+          "timestamp": 1793391480
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T20:22:32.717Z"
+    "evidenceAt": "2026-10-31T23:30:35.397Z",
+    "reviewAt": "2026-10-31T23:30:35.889Z"
   },
   "5250070": {
     "savedAt": "2026-10-30T16:41:58.103Z",
@@ -424932,7 +425028,7 @@
     "reviewAt": "2026-10-29T09:19:47.437Z"
   },
   "5252050": {
-    "savedAt": "2026-10-21T20:24:17.705Z",
+    "savedAt": "2026-10-31T23:33:19.959Z",
     "result": {
       "detail": {
         "success": true,
@@ -424942,11 +425038,11 @@
           "is_free": false,
           "price_overview": {
             "currency": "CNY",
-            "initial": 3400,
-            "final": 3400,
+            "initial": 1900,
+            "final": 1900,
             "discount_percent": 0,
             "initial_formatted": "",
-            "final_formatted": "¥ 34.00"
+            "final_formatted": "¥ 19.00"
           },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5252050/eff4d035b2c65bed0ddde51b3a9322609911d4b4/header.jpg?t=1792369755",
           "genres": [
@@ -424969,12 +425065,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 1,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
-          "total_positive": 1,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 1
+          "total_reviews": 0
         }
       }
     },
@@ -424983,12 +425079,13 @@
       "earlyAccessDate": "2026-10-01",
       "announcements": [
         {
-          "title": "official release",
-          "timestamp": 1792369477
+          "title": "FIX BUG",
+          "timestamp": 1792835937
         }
       ]
     },
-    "evidenceAt": "2026-10-21T20:24:22.882Z"
+    "evidenceAt": "2026-10-31T23:33:25.139Z",
+    "reviewAt": "2026-10-31T23:33:25.478Z"
   },
   "5252090": {
     "savedAt": "2026-10-29T21:38:32.542Z",
@@ -426301,7 +426398,7 @@
     "reviewAt": "2026-10-30T01:50:55.785Z"
   },
   "5252940": {
-    "savedAt": "2026-10-21T20:26:07.334Z",
+    "savedAt": "2026-10-31T23:34:58.313Z",
     "result": {
       "detail": {
         "success": true,
@@ -426334,12 +426431,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 1,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
-          "total_positive": 1,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 1
+          "total_reviews": 0
         }
       }
     },
@@ -426348,7 +426445,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T20:26:12.676Z"
+    "evidenceAt": "2026-10-31T23:35:03.747Z",
+    "reviewAt": "2026-10-31T23:35:04.188Z"
   },
   "5252970": {
     "savedAt": "2026-10-25T01:33:38.572Z",
@@ -429325,7 +429423,7 @@
     "reviewAt": "2026-10-23T23:17:28.756Z"
   },
   "5254860": {
-    "savedAt": "2026-10-21T20:27:57.132Z",
+    "savedAt": "2026-10-31T23:35:08.854Z",
     "result": {
       "detail": {
         "success": true,
@@ -429364,10 +429462,10 @@
         "query_summary": {
           "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
-          "total_positive": 1,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 1
+          "total_reviews": 0
         }
       }
     },
@@ -429376,7 +429474,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T20:28:02.533Z"
+    "evidenceAt": "2026-10-31T23:35:14.148Z",
+    "reviewAt": "2026-10-31T23:35:14.531Z"
   },
   "5254910": {
     "savedAt": "2026-10-25T12:04:59.158Z",
@@ -437248,7 +437347,7 @@
     "reviewAt": "2026-10-30T23:47:01.242Z"
   },
   "5260420": {
-    "savedAt": "2026-10-21T20:29:46.780Z",
+    "savedAt": "2026-10-31T23:35:19.276Z",
     "result": {
       "detail": {
         "success": true,
@@ -437295,7 +437394,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T20:29:52.280Z"
+    "evidenceAt": "2026-10-31T23:35:24.798Z",
+    "reviewAt": "2026-10-31T23:35:25.199Z"
   },
   "5260430": {
     "savedAt": "2026-10-26T23:48:32.896Z",
@@ -441727,7 +441827,7 @@
     "reviewAt": "2026-10-31T18:25:44.866Z"
   },
   "5263230": {
-    "savedAt": "2026-10-21T20:31:36.993Z",
+    "savedAt": "2026-10-31T23:35:29.955Z",
     "result": {
       "detail": {
         "success": true,
@@ -441735,7 +441835,7 @@
           "type": "demo",
           "name": "点击战术：记忆的断章 试玩版",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5263230/1cdc8eaba824ca4e793528801782e7a6f55cbcf3/header_schinese.jpg?t=1792334178",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5263230/1cdc8eaba824ca4e793528801782e7a6f55cbcf3/header_schinese.jpg?t=1792658085",
           "genres": [
             {
               "id": "4",
@@ -441768,12 +441868,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 3,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "3 user reviews",
-          "total_positive": 3,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 3
+          "total_reviews": 0
         }
       }
     },
@@ -441791,7 +441891,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T20:31:42.303Z"
+    "evidenceAt": "2026-10-31T23:35:35.246Z",
+    "reviewAt": "2026-10-31T23:35:35.616Z"
   },
   "5263250": {
     "savedAt": "2026-10-24T07:32:50.381Z",
@@ -445909,7 +446010,7 @@
     "reviewAt": "2026-10-24T07:36:29.252Z"
   },
   "5265870": {
-    "savedAt": "2026-10-21T20:33:27.574Z",
+    "savedAt": "2026-10-31T23:35:40.432Z",
     "result": {
       "detail": {
         "success": true,
@@ -445942,12 +446043,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 2,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "2 user reviews",
-          "total_positive": 2,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 2
+          "total_reviews": 0
         }
       }
     },
@@ -445956,7 +446057,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T20:33:32.889Z"
+    "evidenceAt": "2026-10-31T23:35:45.724Z",
+    "reviewAt": "2026-10-31T23:35:46.088Z"
   },
   "5265900": {
     "savedAt": "2026-10-20T06:20:17.233Z",
@@ -447080,7 +447182,7 @@
     "reviewAt": "2026-10-26T23:49:21.521Z"
   },
   "5266420": {
-    "savedAt": "2026-10-21T20:35:17.730Z",
+    "savedAt": "2026-10-31T23:35:50.857Z",
     "result": {
       "detail": {
         "success": true,
@@ -447129,9 +447231,15 @@
     "evidence": {
       "timestamp": null,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "The Library Opens: Unique Dungeon (Urgent 01), New Threat Level, Big Fixes",
+          "timestamp": 1793358900
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T20:35:23.280Z"
+    "evidenceAt": "2026-10-31T23:35:56.463Z",
+    "reviewAt": "2026-10-31T23:35:56.799Z"
   },
   "5266480": {
     "savedAt": "2026-10-24T22:22:37.555Z",
@@ -447962,7 +448070,7 @@
     "reviewAt": "2026-10-26T23:49:43.089Z"
   },
   "5266880": {
-    "savedAt": "2026-10-21T20:37:07.482Z",
+    "savedAt": "2026-10-31T23:36:01.719Z",
     "result": {
       "detail": {
         "success": true,
@@ -447970,7 +448078,7 @@
           "type": "demo",
           "name": "Desktop Truck Simulator Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5266880/5b35d26f63bd257c8b10496fc370dfa6fb12c548/header.jpg?t=1792594443",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5266880/5b35d26f63bd257c8b10496fc370dfa6fb12c548/header.jpg?t=1792717245",
           "genres": [
             {
               "id": "4",
@@ -448013,16 +448121,21 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Spooky Nights Return: Desktop Truck Simulator Halloween Update!",
+          "timestamp": 1793071560
+        },
+        {
           "title": "Desktop Truck Simulator Demo Is Here!",
           "timestamp": 1792372260
         },
         {
-          "title": "Introduction of Desktop Truck Simulator",
-          "timestamp": 1791294060
+          "title": "Desktop Truck Simulator Demo updated to v0.0.6!",
+          "timestamp": 1793072760
         }
       ]
     },
-    "evidenceAt": "2026-10-21T20:37:12.796Z"
+    "evidenceAt": "2026-10-31T23:36:07.309Z",
+    "reviewAt": "2026-10-31T23:36:07.689Z"
   },
   "5266930": {
     "savedAt": "2026-10-31T18:26:00.480Z",
@@ -451558,7 +451671,7 @@
     "reviewAt": "2026-10-31T08:21:31.334Z"
   },
   "5268440": {
-    "savedAt": "2026-10-21T23:24:59.466Z",
+    "savedAt": "2026-10-31T23:44:41.203Z",
     "result": {
       "detail": {
         "success": true,
@@ -451620,7 +451733,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:25:04.910Z"
+    "evidenceAt": "2026-10-31T23:44:46.682Z",
+    "reviewAt": "2026-10-31T23:44:47.105Z"
   },
   "5268460": {
     "savedAt": "2026-10-30T23:47:48.742Z",
@@ -454912,7 +455026,7 @@
     "reviewAt": "2026-10-29T12:36:00.790Z"
   },
   "5270370": {
-    "savedAt": "2026-10-21T20:38:57.751Z",
+    "savedAt": "2026-10-31T23:36:12.450Z",
     "result": {
       "detail": {
         "success": true,
@@ -454959,7 +455073,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T20:39:03.115Z"
+    "evidenceAt": "2026-10-31T23:36:17.848Z",
+    "reviewAt": "2026-10-31T23:36:18.199Z"
   },
   "5270430": {
     "savedAt": "2026-10-27T06:40:28.669Z",
@@ -455968,7 +456083,7 @@
     "reviewAt": "2026-10-24T07:30:09.314Z"
   },
   "5271370": {
-    "savedAt": "2026-10-21T23:26:02.022Z",
+    "savedAt": "2026-10-31T23:44:51.802Z",
     "result": {
       "detail": {
         "success": true,
@@ -456009,9 +456124,19 @@
     "evidence": {
       "timestamp": null,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Version Update 0.1.1",
+          "timestamp": 1793176980
+        },
+        {
+          "title": "Restikon Foundry multiplayer playtest",
+          "timestamp": 1792648080
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T23:26:07.476Z"
+    "evidenceAt": "2026-10-31T23:44:57.314Z",
+    "reviewAt": "2026-10-31T23:44:57.738Z"
   },
   "5271380": {
     "savedAt": "2026-10-25T06:31:06.628Z",
@@ -461543,7 +461668,7 @@
     "reviewAt": "2026-10-26T01:34:28.142Z"
   },
   "5274820": {
-    "savedAt": "2026-10-21T20:40:47.996Z",
+    "savedAt": "2026-10-31T23:36:23.063Z",
     "result": {
       "detail": {
         "success": true,
@@ -461590,16 +461715,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "RESIDUE — Steam Next Fest Gameplay Showcase",
-          "timestamp": 1792537020
+          "title": "RESIDUE Demo: Police Drones Update",
+          "timestamp": 1793126580
         },
         {
-          "title": "RESIDUE Demo Is Live — Steam Next Fest",
-          "timestamp": 1792424760
+          "title": "RESIDUE — Steam Next Fest Gameplay Showcase",
+          "timestamp": 1792537020
         }
       ]
     },
-    "evidenceAt": "2026-10-21T20:40:53.281Z"
+    "evidenceAt": "2026-10-31T23:36:28.451Z",
+    "reviewAt": "2026-10-31T23:36:28.824Z"
   },
   "5274830": {
     "savedAt": "2026-10-25T22:16:26.541Z",
@@ -461713,7 +461839,7 @@
     "reviewAt": "2026-10-31T01:31:02.219Z"
   },
   "5274990": {
-    "savedAt": "2026-10-21T20:42:37.421Z",
+    "savedAt": "2026-10-31T23:36:33.601Z",
     "result": {
       "detail": {
         "success": true,
@@ -461756,7 +461882,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T20:42:42.800Z"
+    "evidenceAt": "2026-10-31T23:36:39.021Z",
+    "reviewAt": "2026-10-31T23:36:39.379Z"
   },
   "5275010": {
     "savedAt": "2026-10-25T22:17:14.260Z",
@@ -462005,7 +462132,7 @@
     "reviewAt": "2026-10-24T01:40:40.822Z"
   },
   "5275180": {
-    "savedAt": "2026-10-21T22:59:33.098Z",
+    "savedAt": "2026-10-31T23:45:23.886Z",
     "result": {
       "detail": {
         "success": true,
@@ -462042,12 +462169,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 6,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "6 user reviews",
-          "total_positive": 3,
-          "total_negative": 3,
-          "total_reviews": 6
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -462062,10 +462189,15 @@
         {
           "title": "(Demo) Update 1.1.0",
           "timestamp": 1792459560
+        },
+        {
+          "title": "(Demo) Update 1.1.4",
+          "timestamp": 1792637280
         }
       ]
     },
-    "evidenceAt": "2026-10-21T22:59:38.321Z"
+    "evidenceAt": "2026-10-31T23:45:29.196Z",
+    "reviewAt": "2026-10-31T23:45:29.574Z"
   },
   "5275210": {
     "savedAt": "2026-10-24T01:42:10.539Z",
@@ -463747,7 +463879,7 @@
     "reviewAt": "2026-10-26T23:51:39.643Z"
   },
   "5276350": {
-    "savedAt": "2026-10-21T23:01:22.875Z",
+    "savedAt": "2026-10-31T23:45:34.376Z",
     "result": {
       "detail": {
         "success": true,
@@ -463794,7 +463926,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:01:28.203Z"
+    "evidenceAt": "2026-10-31T23:45:39.723Z",
+    "reviewAt": "2026-10-31T23:45:40.112Z"
   },
   "5276370": {
     "savedAt": "2026-10-23T15:33:44.261Z",
@@ -463848,7 +463981,7 @@
     "reviewAt": "2026-10-23T15:33:49.633Z"
   },
   "5276540": {
-    "savedAt": "2026-10-22T05:11:46.813Z",
+    "savedAt": "2026-10-31T23:53:17.886Z",
     "result": {
       "detail": {
         "success": true,
@@ -463856,7 +463989,7 @@
           "type": "demo",
           "name": "PITCHFORK Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5276540/876bf0a0df7d5aba1791681d8414b968c710783a/header.jpg?t=1792476602",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5276540/876bf0a0df7d5aba1791681d8414b968c710783a/header.jpg?t=1792910043",
           "genres": [
             {
               "id": "1",
@@ -463869,6 +464002,10 @@
             {
               "id": "23",
               "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
             }
           ],
           "developers": [
@@ -463885,12 +464022,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 18,
-          "review_score": 7,
-          "review_score_desc": "Positive",
-          "total_positive": 17,
-          "total_negative": 1,
-          "total_reviews": 18
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -463907,12 +464044,13 @@
           "timestamp": 1791957900
         },
         {
-          "title": "PITCHFORK Demo Update #2",
-          "timestamp": 1792319940
+          "title": "PITCHFORK Demo Update #4",
+          "timestamp": 1792671720
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:11:52.113Z"
+    "evidenceAt": "2026-10-31T23:53:23.241Z",
+    "reviewAt": "2026-10-31T23:53:23.959Z"
   },
   "5276560": {
     "savedAt": "2026-10-25T22:19:32.081Z",
@@ -464552,7 +464690,7 @@
     "reviewAt": "2026-10-29T12:37:03.219Z"
   },
   "5276810": {
-    "savedAt": "2026-10-21T23:03:13.088Z",
+    "savedAt": "2026-10-31T23:45:44.847Z",
     "result": {
       "detail": {
         "success": true,
@@ -464560,7 +464698,7 @@
           "type": "demo",
           "name": "Colorways Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5276810/59306b48ed8fc53ce752e3c4a5780fc6d19c4667/header.jpg?t=1792356702",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5276810/8bcc240a9379e5fe22d0740ffe565eda5b1b07a2/header.jpg?t=1793094155",
           "genres": [
             {
               "id": "4",
@@ -464603,7 +464741,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:03:18.356Z"
+    "evidenceAt": "2026-10-31T23:45:50.236Z",
+    "reviewAt": "2026-10-31T23:45:50.642Z"
   },
   "5276830": {
     "savedAt": "2026-10-29T12:37:08.085Z",
@@ -465361,7 +465500,7 @@
     "reviewAt": "2026-10-29T12:01:18.069Z"
   },
   "5277440": {
-    "savedAt": "2026-10-21T23:05:03.052Z",
+    "savedAt": "2026-10-31T23:45:55.368Z",
     "result": {
       "detail": {
         "success": true,
@@ -465400,16 +465539,21 @@
       }
     },
     "evidence": {
-      "timestamp": null,
+      "timestamp": 1798704000,
       "earlyAccessDate": null,
       "announcements": [
+        {
+          "title": "Demo Update Announcement",
+          "timestamp": 1792836660
+        },
         {
           "title": "Morpheus [Dreamscape Rhythm] Is Now Live on Steam!",
           "timestamp": 1785126180
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:05:08.414Z"
+    "evidenceAt": "2026-10-31T23:46:00.852Z",
+    "reviewAt": "2026-10-31T23:46:01.484Z"
   },
   "5277500": {
     "savedAt": "2026-10-31T06:48:17.146Z",
@@ -470203,7 +470347,7 @@
     "reviewAt": "2026-10-31T08:06:27.060Z"
   },
   "5280820": {
-    "savedAt": "2026-10-21T23:06:52.423Z",
+    "savedAt": "2026-10-31T23:46:05.999Z",
     "result": {
       "detail": {
         "success": true,
@@ -470266,7 +470410,8 @@
       "earlyAccessDate": "2026-10-18",
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:06:57.693Z"
+    "evidenceAt": "2026-10-31T23:46:11.256Z",
+    "reviewAt": "2026-10-31T23:46:11.627Z"
   },
   "5280880": {
     "savedAt": "2026-10-29T09:23:00.702Z",
@@ -478654,7 +478799,7 @@
     "reviewAt": "2026-10-31T18:28:22.121Z"
   },
   "5286570": {
-    "savedAt": "2026-10-21T23:08:42.544Z",
+    "savedAt": "2026-10-31T23:46:16.492Z",
     "result": {
       "detail": {
         "success": true,
@@ -478705,7 +478850,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:08:47.862Z"
+    "evidenceAt": "2026-10-31T23:46:21.914Z",
+    "reviewAt": "2026-10-31T23:46:22.315Z"
   },
   "5286590": {
     "savedAt": "2026-10-27T13:37:25.842Z",
@@ -480410,7 +480556,7 @@
     "reviewAt": "2026-10-30T01:53:48.045Z"
   },
   "5287900": {
-    "savedAt": "2026-10-21T23:10:32.464Z",
+    "savedAt": "2026-10-31T23:46:27.027Z",
     "result": {
       "detail": {
         "success": true,
@@ -480465,7 +480611,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:10:37.830Z"
+    "evidenceAt": "2026-10-31T23:46:32.402Z",
+    "reviewAt": "2026-10-31T23:46:32.709Z"
   },
   "5287910": {
     "savedAt": "2026-10-30T21:47:03.498Z",
@@ -487596,7 +487743,7 @@
     "reviewAt": "2026-10-30T00:17:30.629Z"
   },
   "5293900": {
-    "savedAt": "2026-10-21T23:12:21.865Z",
+    "savedAt": "2026-10-31T23:46:37.619Z",
     "result": {
       "detail": {
         "success": true,
@@ -487653,10 +487800,15 @@
         {
           "title": "The free demo is out now! Catch, upgrade, and reel in more fish.",
           "timestamp": 1792379400
+        },
+        {
+          "title": "Demo update: Keep fishing, with clearer information",
+          "timestamp": 1793212440
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:12:27.286Z"
+    "evidenceAt": "2026-10-31T23:46:43.035Z",
+    "reviewAt": "2026-10-31T23:46:43.396Z"
   },
   "5293920": {
     "savedAt": "2026-10-29T09:25:16.959Z",
@@ -488437,7 +488589,7 @@
     "reviewAt": "2026-10-29T17:44:24.255Z"
   },
   "5294110": {
-    "savedAt": "2026-10-21T23:14:12.686Z",
+    "savedAt": "2026-10-31T23:46:48.163Z",
     "result": {
       "detail": {
         "success": true,
@@ -488445,7 +488597,7 @@
           "type": "demo",
           "name": "Absolute Dap Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5294110/4220cbb0f21f35c7bce7febac3faab4bcd00769b/header.jpg?t=1792588751",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5294110/4220cbb0f21f35c7bce7febac3faab4bcd00769b/header.jpg?t=1793140562",
           "genres": [
             {
               "id": "1",
@@ -488476,19 +488628,25 @@
         "query_summary": {
           "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
-          "total_positive": 1,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 1
+          "total_reviews": 0
         }
       }
     },
     "evidence": {
       "timestamp": 1792345872,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Absolute Dap Demo Update",
+          "timestamp": 1793140260
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T23:14:17.964Z"
+    "evidenceAt": "2026-10-31T23:46:53.636Z",
+    "reviewAt": "2026-10-31T23:46:54.002Z"
   },
   "5294130": {
     "savedAt": "2026-10-30T09:19:41.279Z",
@@ -492055,7 +492213,7 @@
     "reviewAt": "2026-10-29T08:36:26.257Z"
   },
   "5296620": {
-    "savedAt": "2026-10-21T23:16:02.004Z",
+    "savedAt": "2026-10-31T23:46:58.806Z",
     "result": {
       "detail": {
         "success": true,
@@ -492111,7 +492269,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:16:07.556Z"
+    "evidenceAt": "2026-10-31T23:47:04.275Z",
+    "reviewAt": "2026-10-31T23:47:04.673Z"
   },
   "5296670": {
     "savedAt": "2026-10-30T09:20:33.093Z",
@@ -497620,7 +497779,7 @@
     "reviewAt": "2026-10-31T18:30:18.789Z"
   },
   "5299800": {
-    "savedAt": "2026-10-21T23:26:49.367Z",
+    "savedAt": "2026-10-31T23:45:02.546Z",
     "result": {
       "detail": {
         "success": true,
@@ -497680,7 +497839,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:26:54.682Z"
+    "evidenceAt": "2026-10-31T23:45:08.074Z",
+    "reviewAt": "2026-10-31T23:45:08.452Z"
   },
   "5299840": {
     "savedAt": "2026-10-28T10:05:58.295Z",
@@ -498943,7 +499103,7 @@
     "reviewAt": "2026-10-31T18:35:03.910Z"
   },
   "5300740": {
-    "savedAt": "2026-10-21T23:19:42.054Z",
+    "savedAt": "2026-10-31T23:47:14.596Z",
     "result": {
       "detail": {
         "success": true,
@@ -498986,7 +499146,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:19:47.321Z"
+    "evidenceAt": "2026-10-31T23:47:20.078Z",
+    "reviewAt": "2026-10-31T23:47:20.438Z"
   },
   "5300750": {
     "savedAt": "2026-10-27T00:41:53.952Z",
@@ -501453,7 +501614,7 @@
     "reviewAt": "2026-10-31T18:30:50.483Z"
   },
   "5301850": {
-    "savedAt": "2026-10-21T23:21:31.885Z",
+    "savedAt": "2026-10-31T23:47:25.278Z",
     "result": {
       "detail": {
         "success": true,
@@ -501491,7 +501652,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:21:37.234Z"
+    "evidenceAt": "2026-10-31T23:47:30.716Z",
+    "reviewAt": "2026-10-31T23:47:31.106Z"
   },
   "5301910": {
     "savedAt": "2026-10-30T09:21:51.290Z",
@@ -511008,7 +511170,7 @@
     "reviewAt": "2026-10-30T01:09:57.244Z"
   },
   "5308280": {
-    "savedAt": "2026-10-21T23:23:25.156Z",
+    "savedAt": "2026-10-31T23:47:35.865Z",
     "result": {
       "detail": {
         "success": true,
@@ -511059,7 +511221,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:23:30.438Z"
+    "evidenceAt": "2026-10-31T23:47:41.375Z",
+    "reviewAt": "2026-10-31T23:47:41.754Z"
   },
   "5308300": {
     "savedAt": "2026-10-30T14:21:31.428Z",
@@ -511745,7 +511908,7 @@
     "reviewAt": "2026-10-30T23:26:22.454Z"
   },
   "5308780": {
-    "savedAt": "2026-10-21T23:25:15.251Z",
+    "savedAt": "2026-10-31T23:47:46.597Z",
     "result": {
       "detail": {
         "success": true,
@@ -511797,7 +511960,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:25:20.594Z"
+    "evidenceAt": "2026-10-31T23:47:52.136Z",
+    "reviewAt": "2026-10-31T23:47:52.496Z"
   },
   "5308840": {
     "savedAt": "2026-10-29T00:14:36.188Z",
@@ -514070,7 +514234,7 @@
     "reviewAt": "2026-10-30T07:47:56.649Z"
   },
   "5310130": {
-    "savedAt": "2026-10-21T23:27:05.028Z",
+    "savedAt": "2026-10-31T23:47:57.296Z",
     "result": {
       "detail": {
         "success": true,
@@ -514119,12 +514283,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 2,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "2 user reviews",
-          "total_positive": 0,
-          "total_negative": 2,
-          "total_reviews": 2
+          "review_score_desc": "4 user reviews",
+          "total_positive": 1,
+          "total_negative": 3,
+          "total_reviews": 4
         }
       }
     },
@@ -514133,7 +514297,8 @@
       "earlyAccessDate": "2026-10-18",
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:27:10.228Z"
+    "evidenceAt": "2026-10-31T23:48:02.530Z",
+    "reviewAt": "2026-10-31T23:48:02.971Z"
   },
   "5310160": {
     "savedAt": "2026-10-29T21:49:14.813Z",
@@ -514366,7 +514531,7 @@
     "reviewAt": "2026-10-30T23:53:03.514Z"
   },
   "5310420": {
-    "savedAt": "2026-10-22T04:57:52.370Z",
+    "savedAt": "2026-10-31T23:55:39.268Z",
     "result": {
       "detail": {
         "success": true,
@@ -514399,12 +514564,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 9,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "9 user reviews",
-          "total_positive": 8,
-          "total_negative": 1,
-          "total_reviews": 9
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -514413,7 +514578,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T04:57:57.651Z"
+    "evidenceAt": "2026-10-31T23:55:44.515Z",
+    "reviewAt": "2026-10-31T23:55:44.868Z"
   },
   "5310460": {
     "savedAt": "2026-10-30T09:24:54.063Z",
@@ -517590,7 +517756,7 @@
     "reviewAt": "2026-10-30T19:56:48.765Z"
   },
   "5312940": {
-    "savedAt": "2026-10-22T04:59:42.801Z",
+    "savedAt": "2026-10-31T23:55:49.635Z",
     "result": {
       "detail": {
         "success": true,
@@ -517635,12 +517801,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 1,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
+          "review_score_desc": "No user reviews",
           "total_positive": 0,
-          "total_negative": 1,
-          "total_reviews": 1
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -517649,7 +517815,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T04:59:48.040Z"
+    "evidenceAt": "2026-10-31T23:55:55.118Z",
+    "reviewAt": "2026-10-31T23:55:55.516Z"
   },
   "5313010": {
     "savedAt": "2026-10-30T19:56:53.572Z",
@@ -519252,7 +519419,7 @@
     "reviewAt": "2026-10-29T16:38:04.309Z"
   },
   "5314150": {
-    "savedAt": "2026-10-22T05:01:49.217Z",
+    "savedAt": "2026-10-31T23:56:00.329Z",
     "result": {
       "detail": {
         "success": true,
@@ -519289,12 +519456,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 3,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "3 user reviews",
-          "total_positive": 3,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 3
+          "total_reviews": 0
         }
       }
     },
@@ -519303,7 +519470,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:01:54.653Z"
+    "evidenceAt": "2026-10-31T23:56:05.950Z",
+    "reviewAt": "2026-10-31T23:56:06.295Z"
   },
   "5314160": {
     "savedAt": "2026-10-30T07:19:05.893Z",
@@ -522293,7 +522461,7 @@
     "reviewAt": "2026-10-29T09:31:03.599Z"
   },
   "5315860": {
-    "savedAt": "2026-10-22T05:03:39.853Z",
+    "savedAt": "2026-10-31T23:56:11.111Z",
     "result": {
       "detail": {
         "success": true,
@@ -522350,9 +522518,15 @@
     "evidence": {
       "timestamp": 1792327574,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "What if you could step out of your tank?",
+          "timestamp": 1792681500
+        }
+      ]
     },
-    "evidenceAt": "2026-10-22T05:03:45.121Z"
+    "evidenceAt": "2026-10-31T23:56:16.445Z",
+    "reviewAt": "2026-10-31T23:56:16.835Z"
   },
   "5316020": {
     "savedAt": "2026-10-23T15:32:31.532Z",
@@ -524469,7 +524643,7 @@
     "reviewAt": "2026-10-30T23:35:13.068Z"
   },
   "5317660": {
-    "savedAt": "2026-10-21T23:27:51.574Z",
+    "savedAt": "2026-10-31T23:45:13.206Z",
     "result": {
       "detail": {
         "success": true,
@@ -524513,7 +524687,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:27:56.811Z"
+    "evidenceAt": "2026-10-31T23:45:18.719Z",
+    "reviewAt": "2026-10-31T23:45:19.079Z"
   },
   "5317670": {
     "savedAt": "2026-10-29T16:38:51.833Z",
@@ -525696,7 +525871,7 @@
     "reviewAt": "2026-10-31T08:08:01.848Z"
   },
   "5318380": {
-    "savedAt": "2026-10-22T05:05:29.146Z",
+    "savedAt": "2026-10-31T23:56:21.584Z",
     "result": {
       "detail": {
         "success": true,
@@ -525747,7 +525922,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:05:34.510Z"
+    "evidenceAt": "2026-10-31T23:56:26.959Z",
+    "reviewAt": "2026-10-31T23:56:27.315Z"
   },
   "5318410": {
     "savedAt": "2026-10-31T18:32:51.018Z",
@@ -529429,7 +529605,7 @@
     "reviewAt": "2026-10-29T16:39:08.605Z"
   },
   "5320920": {
-    "savedAt": "2026-10-22T05:07:18.592Z",
+    "savedAt": "2026-10-31T23:56:32.066Z",
     "result": {
       "detail": {
         "success": true,
@@ -529463,21 +529639,31 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 3,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "3 user reviews",
-          "total_positive": 3,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 3
+          "total_reviews": 0
         }
       }
     },
     "evidence": {
       "timestamp": 1792318148,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "《永眠之匣，雪上之樱》DEMO现已公开！",
+          "timestamp": 1792776000
+        },
+        {
+          "title": "V0.6.0更新",
+          "timestamp": 1793373360
+        }
+      ]
     },
-    "evidenceAt": "2026-10-22T05:07:23.784Z"
+    "evidenceAt": "2026-10-31T23:56:37.441Z",
+    "reviewAt": "2026-10-31T23:56:37.897Z"
   },
   "5320950": {
     "savedAt": "2026-10-31T13:24:56.949Z",
@@ -533607,7 +533793,7 @@
     "reviewAt": "2026-10-31T18:42:26.294Z"
   },
   "5323530": {
-    "savedAt": "2026-10-22T05:12:33.702Z",
+    "savedAt": "2026-10-31T23:53:28.444Z",
     "result": {
       "detail": {
         "success": true,
@@ -533650,11 +533836,17 @@
       }
     },
     "evidence": {
-      "timestamp": null,
+      "timestamp": 1794369600,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Last days to play the Soundway demo in Next Fest",
+          "timestamp": 1792816740
+        }
+      ]
     },
-    "evidenceAt": "2026-10-22T05:12:39.021Z"
+    "evidenceAt": "2026-10-31T23:53:33.957Z",
+    "reviewAt": "2026-10-31T23:53:34.442Z"
   },
   "5323600": {
     "savedAt": "2026-10-30T09:10:50.729Z",
@@ -534293,7 +534485,7 @@
     "reviewAt": "2026-10-30T14:47:53.590Z"
   },
   "5323980": {
-    "savedAt": "2026-10-22T05:09:08.287Z",
+    "savedAt": "2026-10-31T23:56:42.623Z",
     "result": {
       "detail": {
         "success": true,
@@ -534345,7 +534537,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:09:13.714Z"
+    "evidenceAt": "2026-10-31T23:56:48.135Z",
+    "reviewAt": "2026-10-31T23:56:48.582Z"
   },
   "5324110": {
     "savedAt": "2026-10-31T18:37:04.663Z",
@@ -534928,7 +535121,7 @@
     "reviewAt": "2026-10-29T12:45:48.029Z"
   },
   "5324590": {
-    "savedAt": "2026-10-22T05:10:58.929Z",
+    "savedAt": "2026-10-31T23:56:53.285Z",
     "result": {
       "detail": {
         "success": true,
@@ -534983,12 +535176,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Halloween Offers Are Live! 🎃",
+          "timestamp": 1793018700
+        },
+        {
           "title": "Demo Deadstate is live!",
           "timestamp": 1792386720
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:11:04.729Z"
+    "evidenceAt": "2026-10-31T23:56:58.644Z",
+    "reviewAt": "2026-10-31T23:56:59.051Z"
   },
   "5324680": {
     "savedAt": "2026-10-27T13:39:20.502Z",
@@ -538663,7 +538861,7 @@
     "reviewAt": "2026-10-31T23:20:10.342Z"
   },
   "5327360": {
-    "savedAt": "2026-10-22T05:12:49.415Z",
+    "savedAt": "2026-10-31T23:57:03.756Z",
     "result": {
       "detail": {
         "success": true,
@@ -538710,7 +538908,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:12:54.865Z"
+    "evidenceAt": "2026-10-31T23:57:09.168Z",
+    "reviewAt": "2026-10-31T23:57:09.530Z"
   },
   "5327460": {
     "savedAt": "2026-10-30T16:50:29.798Z",
@@ -539957,7 +540156,7 @@
     "reviewAt": "2026-10-30T09:53:49.825Z"
   },
   "5328220": {
-    "savedAt": "2026-10-22T05:14:39.335Z",
+    "savedAt": "2026-10-31T23:57:14.312Z",
     "result": {
       "detail": {
         "success": true,
@@ -539968,12 +540167,12 @@
           "price_overview": {
             "currency": "CNY",
             "initial": 2900,
-            "final": 2320,
-            "discount_percent": 20,
-            "initial_formatted": "¥ 29.00",
-            "final_formatted": "¥ 23.20"
+            "final": 2900,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 29.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5328220/3e866ad33f1b2cad5a227f4f283faae2caf072b5/header.jpg?t=1792359871",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5328220/3e866ad33f1b2cad5a227f4f283faae2caf072b5/header.jpg?t=1792741902",
           "genres": [
             {
               "id": "25",
@@ -540002,7 +540201,7 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 2,
+          "num_reviews": 1,
           "review_score": 0,
           "review_score_desc": "2 user reviews",
           "total_positive": 1,
@@ -540021,7 +540220,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:14:44.624Z"
+    "evidenceAt": "2026-10-31T23:57:19.573Z",
+    "reviewAt": "2026-10-31T23:57:19.944Z"
   },
   "5328310": {
     "savedAt": "2026-10-30T21:44:33.430Z",
@@ -544014,7 +544214,7 @@
     "reviewAt": "2026-10-30T01:16:21.468Z"
   },
   "5331040": {
-    "savedAt": "2026-10-21T22:58:30.022Z",
+    "savedAt": "2026-10-31T23:39:33.208Z",
     "result": {
       "detail": {
         "success": true,
@@ -544057,7 +544257,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T22:58:35.484Z"
+    "evidenceAt": "2026-10-31T23:39:38.521Z",
+    "reviewAt": "2026-10-31T23:39:38.952Z"
   },
   "5331100": {
     "savedAt": "2026-10-31T22:59:33.894Z",
@@ -545137,7 +545338,7 @@
     "reviewAt": "2026-10-23T22:55:07.182Z"
   },
   "5331710": {
-    "savedAt": "2026-10-22T05:20:11.147Z",
+    "savedAt": "2026-10-31T23:57:35.001Z",
     "result": {
       "detail": {
         "success": true,
@@ -545197,7 +545398,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:20:16.533Z"
+    "evidenceAt": "2026-10-31T23:57:40.409Z",
+    "reviewAt": "2026-10-31T23:57:40.809Z"
   },
   "5331730": {
     "savedAt": "2026-10-30T14:32:41.240Z",
@@ -548881,7 +549083,7 @@
     "reviewAt": "2026-10-29T16:41:17.900Z"
   },
   "5334050": {
-    "savedAt": "2026-10-22T05:22:01.751Z",
+    "savedAt": "2026-10-31T23:57:45.578Z",
     "result": {
       "detail": {
         "success": true,
@@ -548918,12 +549120,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 5,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "5 user reviews",
-          "total_positive": 5,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 5
+          "total_reviews": 0
         }
       }
     },
@@ -548941,7 +549143,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:22:07.101Z"
+    "evidenceAt": "2026-10-31T23:57:50.906Z",
+    "reviewAt": "2026-10-31T23:57:51.285Z"
   },
   "5334120": {
     "savedAt": "2026-10-29T04:53:56.288Z",
@@ -549262,7 +549465,7 @@
     "reviewAt": "2026-10-30T21:45:41.263Z"
   },
   "5334250": {
-    "savedAt": "2026-10-22T05:23:52.322Z",
+    "savedAt": "2026-10-31T23:57:56.105Z",
     "result": {
       "detail": {
         "success": true,
@@ -549270,7 +549473,7 @@
           "type": "demo",
           "name": "The Adventurer's Guild Idler Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5334250/28e96e4fca56adb8fb0d12f9cfe2e6e593b65b7f/header.jpg?t=1792541255",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5334250/28e96e4fca56adb8fb0d12f9cfe2e6e593b65b7f/header.jpg?t=1793372393",
           "genres": [
             {
               "id": "4",
@@ -549305,7 +549508,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:23:57.651Z"
+    "evidenceAt": "2026-10-31T23:58:01.529Z",
+    "reviewAt": "2026-10-31T23:58:01.907Z"
   },
   "5334330": {
     "savedAt": "2026-10-31T07:34:52.891Z",
@@ -553061,7 +553265,7 @@
     "reviewAt": "2026-10-30T09:36:04.195Z"
   },
   "5336480": {
-    "savedAt": "2026-10-22T04:57:36.515Z",
+    "savedAt": "2026-10-31T23:50:45.083Z",
     "result": {
       "detail": {
         "success": true,
@@ -553108,7 +553312,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T04:57:42.023Z"
+    "evidenceAt": "2026-10-31T23:50:50.482Z",
+    "reviewAt": "2026-10-31T23:50:50.859Z"
   },
   "5336490": {
     "savedAt": "2026-10-29T16:43:05.958Z",
@@ -553243,13 +553448,13 @@
     "reviewAt": "2026-10-30T21:45:56.756Z"
   },
   "5336510": {
-    "savedAt": "2026-10-21T22:59:17.091Z",
+    "savedAt": "2026-10-31T23:39:43.635Z",
     "result": {
       "detail": {
         "success": true,
         "data": {
           "type": "demo",
-          "name": "Check Please! Demo",
+          "name": "异世界餐馆 试玩版",
           "is_free": true,
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5336510/fd98fed73b02519f52b4aee22087624ae5141ee2/header.jpg?t=1792428893",
           "genres": [
@@ -553300,7 +553505,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T22:59:22.649Z"
+    "evidenceAt": "2026-10-31T23:39:48.942Z",
+    "reviewAt": "2026-10-31T23:39:49.294Z"
   },
   "5336530": {
     "savedAt": "2026-10-31T18:42:51.966Z",
@@ -553350,7 +553556,7 @@
     "reviewAt": "2026-10-31T18:42:58.025Z"
   },
   "5336560": {
-    "savedAt": "2026-10-21T23:00:20.053Z",
+    "savedAt": "2026-10-31T23:39:54.202Z",
     "result": {
       "detail": {
         "success": true,
@@ -553401,7 +553607,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:00:25.490Z"
+    "evidenceAt": "2026-10-31T23:39:59.643Z",
+    "reviewAt": "2026-10-31T23:40:00.011Z"
   },
   "5336570": {
     "savedAt": "2026-10-31T18:39:20.640Z",
@@ -558594,7 +558801,7 @@
     "reviewAt": "2026-10-30T07:41:33.289Z"
   },
   "5339590": {
-    "savedAt": "2026-10-21T23:01:07.341Z",
+    "savedAt": "2026-10-31T23:40:04.822Z",
     "result": {
       "detail": {
         "success": true,
@@ -558627,12 +558834,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 4,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "4 user reviews",
-          "total_positive": 4,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 4
+          "total_reviews": 0
         }
       }
     },
@@ -558641,7 +558848,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:01:12.568Z"
+    "evidenceAt": "2026-10-31T23:40:10.330Z",
+    "reviewAt": "2026-10-31T23:40:10.725Z"
   },
   "5339640": {
     "savedAt": "2026-10-31T01:38:34.768Z",
@@ -560139,7 +560347,7 @@
     "evidenceAt": "2026-10-22T10:21:59.229Z"
   },
   "5340610": {
-    "savedAt": "2026-10-21T23:02:10.216Z",
+    "savedAt": "2026-10-31T23:40:15.444Z",
     "result": {
       "detail": {
         "success": true,
@@ -560190,7 +560398,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:02:15.548Z"
+    "evidenceAt": "2026-10-31T23:40:21.063Z",
+    "reviewAt": "2026-10-31T23:40:21.426Z"
   },
   "5340670": {
     "savedAt": "2026-10-30T01:20:50.011Z",
@@ -566836,7 +567045,7 @@
     "reviewAt": "2026-10-30T01:22:40.946Z"
   },
   "5344950": {
-    "savedAt": "2026-10-22T04:58:39.385Z",
+    "savedAt": "2026-10-31T23:50:55.684Z",
     "result": {
       "detail": {
         "success": true,
@@ -566891,7 +567100,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T04:58:45.018Z"
+    "evidenceAt": "2026-10-31T23:51:01.094Z",
+    "reviewAt": "2026-10-31T23:51:01.548Z"
   },
   "5345030": {
     "savedAt": "2026-10-31T06:24:54.560Z",
@@ -570943,7 +571153,7 @@
     "reviewAt": "2026-10-30T09:41:09.241Z"
   },
   "5348150": {
-    "savedAt": "2026-10-22T04:59:27.044Z",
+    "savedAt": "2026-10-31T23:51:06.295Z",
     "result": {
       "detail": {
         "success": true,
@@ -570984,12 +571194,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 11,
-          "review_score": 7,
-          "review_score_desc": "Positive",
-          "total_positive": 11,
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 11
+          "total_reviews": 0
         }
       }
     },
@@ -570998,7 +571208,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T04:59:32.422Z"
+    "evidenceAt": "2026-10-31T23:51:11.550Z",
+    "reviewAt": "2026-10-31T23:51:12.132Z"
   },
   "5348180": {
     "savedAt": "2026-10-25T22:28:27.991Z",
@@ -580009,7 +580220,7 @@
     "reviewAt": "2026-10-29T21:57:26.410Z"
   },
   "5354030": {
-    "savedAt": "2026-10-22T05:00:46.325Z",
+    "savedAt": "2026-10-31T23:51:16.663Z",
     "result": {
       "detail": {
         "success": true,
@@ -580017,7 +580228,7 @@
           "type": "demo",
           "name": "我带过的最差一届 试玩版",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5354030/26b126d373711f215172233e9fd9c1ed852a8af6/header_schinese.jpg?t=1792575287",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5354030/26b126d373711f215172233e9fd9c1ed852a8af6/header_schinese.jpg?t=1792725924",
           "genres": [
             {
               "id": "1",
@@ -580051,12 +580262,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 20,
-          "review_score": 7,
-          "review_score_desc": "Positive",
-          "total_positive": 25,
-          "total_negative": 3,
-          "total_reviews": 28
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -580065,12 +580276,12 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "【全校通报】7日破20万！全新玩法更新完毕（Demo 0.1.10 更新公告）",
-          "timestamp": 1792547340
+          "title": "【开课通知】《我带过的最差一届》定档11月10日正式发售 荣获新品节TOP1！",
+          "timestamp": 1793072940
         },
         {
-          "title": "【全校通报】首日破万！教务处连夜紧急维修完毕（Demo 0.1.4 更新公告）",
-          "timestamp": 1791970920
+          "title": "【全校通报】10日破30万！全新电脑教室关卡现已发布",
+          "timestamp": 1792743900
         },
         {
           "title": "《我带过的最差一届》Demo 0.1.9 更新公告",
@@ -580078,7 +580289,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:00:51.631Z"
+    "evidenceAt": "2026-10-31T23:51:21.858Z",
+    "reviewAt": "2026-10-31T23:51:22.295Z"
   },
   "5354260": {
     "savedAt": "2026-10-31T13:16:05.400Z",
@@ -580804,7 +581016,7 @@
     "reviewAt": "2026-10-26T14:31:46.050Z"
   },
   "5354570": {
-    "savedAt": "2026-10-21T23:02:57.403Z",
+    "savedAt": "2026-10-31T23:40:26.205Z",
     "result": {
       "detail": {
         "success": true,
@@ -580864,7 +581076,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:03:02.873Z"
+    "evidenceAt": "2026-10-31T23:40:31.661Z",
+    "reviewAt": "2026-10-31T23:40:32.398Z"
   },
   "5354610": {
     "savedAt": "2026-10-30T09:44:53.777Z",
@@ -588997,7 +589210,7 @@
     "reviewAt": "2026-10-24T07:46:04.158Z"
   },
   "5360620": {
-    "savedAt": "2026-10-21T23:03:59.856Z",
+    "savedAt": "2026-10-31T23:40:36.840Z",
     "result": {
       "detail": {
         "success": true,
@@ -589044,7 +589257,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:04:05.544Z"
+    "evidenceAt": "2026-10-31T23:40:42.246Z",
+    "reviewAt": "2026-10-31T23:40:42.600Z"
   },
   "5360630": {
     "savedAt": "2026-10-29T12:01:54.364Z",
@@ -589669,7 +589883,7 @@
     "reviewAt": "2026-10-30T01:27:22.070Z"
   },
   "5361060": {
-    "savedAt": "2026-10-22T05:01:33.455Z",
+    "savedAt": "2026-10-31T23:51:27.013Z",
     "result": {
       "detail": {
         "success": true,
@@ -589677,7 +589891,7 @@
           "type": "demo",
           "name": "Cardboard Gladiators Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5361060/05cffcac3115ccfd66d6fdd97da15a0074abdfd8/header.jpg?t=1791824863",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5361060/05cffcac3115ccfd66d6fdd97da15a0074abdfd8/header.jpg?t=1793091260",
           "genres": [
             {
               "id": "2",
@@ -589698,12 +589912,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 3,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "3 user reviews",
-          "total_positive": 3,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 3
+          "total_reviews": 0
         }
       }
     },
@@ -589721,7 +589935,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:01:38.723Z"
+    "evidenceAt": "2026-10-31T23:51:32.294Z",
+    "reviewAt": "2026-10-31T23:51:32.650Z"
   },
   "5361110": {
     "savedAt": "2026-10-31T06:29:21.253Z",
@@ -595758,7 +595973,7 @@
     "reviewAt": "2026-10-30T15:13:00.948Z"
   },
   "5366360": {
-    "savedAt": "2026-10-22T05:02:36.756Z",
+    "savedAt": "2026-10-31T23:51:37.432Z",
     "result": {
       "detail": {
         "success": true,
@@ -595795,7 +596010,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:02:42.263Z"
+    "evidenceAt": "2026-10-31T23:51:42.783Z",
+    "reviewAt": "2026-10-31T23:51:43.172Z"
   },
   "5366400": {
     "savedAt": "2026-10-27T13:40:32.867Z",
@@ -602999,7 +603215,7 @@
     "evidenceAt": "2026-10-22T20:24:50.703Z"
   },
   "5371860": {
-    "savedAt": "2026-10-22T05:03:24.168Z",
+    "savedAt": "2026-10-31T23:51:47.917Z",
     "result": {
       "detail": {
         "success": true,
@@ -603059,7 +603275,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:03:29.512Z"
+    "evidenceAt": "2026-10-31T23:51:53.327Z",
+    "reviewAt": "2026-10-31T23:51:53.728Z"
   },
   "5371880": {
     "savedAt": "2026-10-30T09:50:03.981Z",
@@ -603661,7 +603878,7 @@
     "reviewAt": "2026-10-30T09:50:30.676Z"
   },
   "5372220": {
-    "savedAt": "2026-10-21T23:04:47.370Z",
+    "savedAt": "2026-10-31T23:40:47.458Z",
     "result": {
       "detail": {
         "success": true,
@@ -603722,9 +603939,19 @@
     "evidence": {
       "timestamp": null,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Vǫrðr 0.7: Your Multiverse Awaits",
+          "timestamp": 1793074560
+        },
+        {
+          "title": "Version 0.7.0.2 uploaded",
+          "timestamp": 1793342760
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T23:04:52.690Z"
+    "evidenceAt": "2026-10-31T23:40:52.933Z",
+    "reviewAt": "2026-10-31T23:40:53.403Z"
   },
   "5372350": {
     "savedAt": "2026-10-31T13:28:59.680Z",
@@ -604338,7 +604565,7 @@
     "reviewAt": "2026-10-30T07:20:23.493Z"
   },
   "5372820": {
-    "savedAt": "2026-10-22T05:04:26.622Z",
+    "savedAt": "2026-10-31T23:51:58.489Z",
     "result": {
       "detail": {
         "success": true,
@@ -604387,10 +604614,15 @@
         {
           "title": "Knight of the Forgotten Realm Demo Now Live!",
           "timestamp": 1792428600
+        },
+        {
+          "title": "Knight of the Forgotten Realm Demo Update Now Live!",
+          "timestamp": 1793152440
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:04:32.078Z"
+    "evidenceAt": "2026-10-31T23:52:04.068Z",
+    "reviewAt": "2026-10-31T23:52:04.440Z"
   },
   "5372830": {
     "savedAt": "2026-10-30T01:33:14.011Z",
@@ -608989,7 +609221,7 @@
     "reviewAt": "2026-10-31T00:00:31.010Z"
   },
   "5376310": {
-    "savedAt": "2026-10-21T22:59:01.508Z",
+    "savedAt": "2026-10-31T23:36:44.185Z",
     "result": {
       "detail": {
         "success": true,
@@ -609022,12 +609254,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 6,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "6 user reviews",
-          "total_positive": 6,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 6
+          "total_reviews": 0
         }
       }
     },
@@ -609036,7 +609268,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T22:59:06.760Z"
+    "evidenceAt": "2026-10-31T23:36:49.428Z",
+    "reviewAt": "2026-10-31T23:36:49.844Z"
   },
   "5376340": {
     "savedAt": "2026-10-30T17:04:23.044Z",
@@ -610197,7 +610430,7 @@
     "reviewAt": "2026-10-23T07:29:47.176Z"
   },
   "5377210": {
-    "savedAt": "2026-10-22T05:13:36.456Z",
+    "savedAt": "2026-10-31T23:53:39.095Z",
     "result": {
       "detail": {
         "success": true,
@@ -610256,10 +610489,11 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:13:41.802Z"
+    "evidenceAt": "2026-10-31T23:53:44.477Z",
+    "reviewAt": "2026-10-31T23:53:45.185Z"
   },
   "5377250": {
-    "savedAt": "2026-10-22T05:05:13.511Z",
+    "savedAt": "2026-10-31T23:52:09.206Z",
     "result": {
       "detail": {
         "success": true,
@@ -610310,7 +610544,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:05:18.835Z"
+    "evidenceAt": "2026-10-31T23:52:14.625Z",
+    "reviewAt": "2026-10-31T23:52:15.007Z"
   },
   "5377260": {
     "savedAt": "2026-10-30T01:34:28.028Z",
@@ -611183,7 +611418,7 @@
     "reviewAt": "2026-10-31T23:17:57.509Z"
   },
   "5377870": {
-    "savedAt": "2026-10-21T23:00:51.499Z",
+    "savedAt": "2026-10-31T23:36:54.652Z",
     "result": {
       "detail": {
         "success": true,
@@ -611234,7 +611469,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:00:57.026Z"
+    "evidenceAt": "2026-10-31T23:37:00.017Z",
+    "reviewAt": "2026-10-31T23:37:00.371Z"
   },
   "5377880": {
     "savedAt": "2026-10-28T02:32:58.479Z",
@@ -613757,7 +613993,7 @@
     "reviewAt": "2026-10-30T21:46:48.449Z"
   },
   "5380100": {
-    "savedAt": "2026-10-21T23:05:49.916Z",
+    "savedAt": "2026-10-31T23:40:58.145Z",
     "result": {
       "detail": {
         "success": true,
@@ -613802,9 +614038,15 @@
     "evidence": {
       "timestamp": 1791689219,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "NextFest Brings Leaderboards, Wagers, and Quality of Life!",
+          "timestamp": 1792801320
+        }
+      ]
     },
-    "evidenceAt": "2026-10-21T23:05:55.147Z"
+    "evidenceAt": "2026-10-31T23:41:03.402Z",
+    "reviewAt": "2026-10-31T23:41:03.930Z"
   },
   "5380120": {
     "savedAt": "2026-10-31T01:46:09.786Z",
@@ -615902,7 +616144,7 @@
     "reviewAt": "2026-10-23T10:34:01.037Z"
   },
   "5381480": {
-    "savedAt": "2026-10-21T23:02:41.430Z",
+    "savedAt": "2026-10-31T23:37:05.136Z",
     "result": {
       "detail": {
         "success": true,
@@ -615910,7 +616152,7 @@
           "type": "demo",
           "name": "Dicebound Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5381480/6ef162cfe70e2242599f62073445078c1bf8151b/header.jpg?t=1791925645",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5381480/834a2923291110439ce6140c5ea64cb9b6af8fa5/header.jpg?t=1792694315",
           "genres": [
             {
               "id": "23",
@@ -615945,7 +616187,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:02:46.963Z"
+    "evidenceAt": "2026-10-31T23:37:10.540Z",
+    "reviewAt": "2026-10-31T23:37:10.902Z"
   },
   "5381520": {
     "savedAt": "2026-10-22T15:48:59.736Z",
@@ -617984,7 +618227,7 @@
     "reviewAt": "2026-10-31T00:01:12.834Z"
   },
   "5382900": {
-    "savedAt": "2026-10-21T23:06:36.772Z",
+    "savedAt": "2026-10-31T23:41:08.541Z",
     "result": {
       "detail": {
         "success": true,
@@ -618021,7 +618264,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:06:42.148Z"
+    "evidenceAt": "2026-10-31T23:41:14.045Z",
+    "reviewAt": "2026-10-31T23:41:14.520Z"
   },
   "5383030": {
     "savedAt": "2026-10-29T21:21:42.473Z",
@@ -618840,7 +619084,7 @@
     "reviewAt": "2026-10-31T22:17:50.769Z"
   },
   "5383610": {
-    "savedAt": "2026-10-21T23:04:31.685Z",
+    "savedAt": "2026-10-31T23:37:15.725Z",
     "result": {
       "detail": {
         "success": true,
@@ -618904,7 +619148,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:04:37.044Z"
+    "evidenceAt": "2026-10-31T23:37:21.083Z",
+    "reviewAt": "2026-10-31T23:37:21.486Z"
   },
   "5383620": {
     "savedAt": "2026-10-27T06:45:40.184Z",
@@ -620058,7 +620303,7 @@
     "reviewAt": "2026-10-23T23:15:01.769Z"
   },
   "5385010": {
-    "savedAt": "2026-10-21T23:07:39.842Z",
+    "savedAt": "2026-10-31T23:41:19.455Z",
     "result": {
       "detail": {
         "success": true,
@@ -620109,7 +620354,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:07:45.106Z"
+    "evidenceAt": "2026-10-31T23:41:24.876Z",
+    "reviewAt": "2026-10-31T23:41:25.301Z"
   },
   "5385030": {
     "savedAt": "2026-10-24T22:34:52.353Z",
@@ -620957,7 +621203,7 @@
     "reviewAt": "2026-10-24T13:05:21.184Z"
   },
   "5385660": {
-    "savedAt": "2026-10-21T23:06:20.997Z",
+    "savedAt": "2026-10-31T23:37:26.211Z",
     "result": {
       "detail": {
         "success": true,
@@ -621008,7 +621254,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:06:26.472Z"
+    "evidenceAt": "2026-10-31T23:37:31.523Z",
+    "reviewAt": "2026-10-31T23:37:31.885Z"
   },
   "5385760": {
     "savedAt": "2026-10-23T07:30:55.430Z",
@@ -621654,7 +621901,7 @@
     "reviewAt": "2026-10-31T01:46:58.084Z"
   },
   "5386260": {
-    "savedAt": "2026-10-21T23:08:26.912Z",
+    "savedAt": "2026-10-31T23:41:29.997Z",
     "result": {
       "detail": {
         "success": true,
@@ -621709,7 +621956,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:08:32.208Z"
+    "evidenceAt": "2026-10-31T23:41:35.488Z",
+    "reviewAt": "2026-10-31T23:41:35.882Z"
   },
   "5386300": {
     "savedAt": "2026-10-22T23:12:38.827Z",
@@ -622124,7 +622372,7 @@
     "evidenceAt": "2026-10-22T15:28:45.105Z"
   },
   "5386850": {
-    "savedAt": "2026-10-21T23:08:11.085Z",
+    "savedAt": "2026-10-31T23:37:36.686Z",
     "result": {
       "detail": {
         "success": true,
@@ -622175,7 +622423,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:08:16.662Z"
+    "evidenceAt": "2026-10-31T23:37:42.073Z",
+    "reviewAt": "2026-10-31T23:37:42.421Z"
   },
   "5386920": {
     "savedAt": "2026-10-31T00:01:28.294Z",
@@ -622593,7 +622842,7 @@
     "reviewAt": "2026-10-24T22:27:54.503Z"
   },
   "5387120": {
-    "savedAt": "2026-10-21T23:10:00.852Z",
+    "savedAt": "2026-10-31T23:37:47.221Z",
     "result": {
       "detail": {
         "success": true,
@@ -622601,7 +622850,7 @@
           "type": "demo",
           "name": "WhiskersOS: Click and Survive Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5387120/0a8ab3f77bf7a2a40a688464a2a125b6547714d5/header.jpg?t=1792192633",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5387120/473d8daac0343c1a54d1a028dcb32a4b23d17e68/header.jpg?t=1792657132",
           "genres": [
             {
               "id": "1",
@@ -622649,7 +622898,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:10:06.231Z"
+    "evidenceAt": "2026-10-31T23:37:52.647Z",
+    "reviewAt": "2026-10-31T23:37:53.027Z"
   },
   "5387140": {
     "savedAt": "2026-10-30T09:56:11.083Z",
@@ -622992,7 +623242,7 @@
     "reviewAt": "2026-10-24T13:05:31.457Z"
   },
   "5387370": {
-    "savedAt": "2026-10-21T23:09:29.746Z",
+    "savedAt": "2026-10-31T23:41:40.759Z",
     "result": {
       "detail": {
         "success": true,
@@ -623047,12 +623297,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Development Update",
+          "timestamp": 1793427540
+        },
+        {
           "title": "Next Fest Oct 19th",
           "timestamp": 1789702800
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:09:35.018Z"
+    "evidenceAt": "2026-10-31T23:41:46.251Z",
+    "reviewAt": "2026-10-31T23:41:46.717Z"
   },
   "5387380": {
     "savedAt": "2026-10-23T10:09:36.481Z",
@@ -623675,7 +623930,7 @@
     "reviewAt": "2026-10-31T01:47:19.398Z"
   },
   "5387750": {
-    "savedAt": "2026-10-21T23:11:50.340Z",
+    "savedAt": "2026-10-31T23:37:57.753Z",
     "result": {
       "detail": {
         "success": true,
@@ -623722,11 +623977,12 @@
       }
     },
     "evidence": {
-      "timestamp": 1803801600,
+      "timestamp": 1796025600,
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:11:55.720Z"
+    "evidenceAt": "2026-10-31T23:38:03.118Z",
+    "reviewAt": "2026-10-31T23:38:03.482Z"
   },
   "5387770": {
     "savedAt": "2026-10-31T06:32:26.765Z",
@@ -624184,7 +624440,7 @@
     "reviewAt": "2026-10-31T22:20:32.222Z"
   },
   "5388010": {
-    "savedAt": "2026-10-21T23:10:16.498Z",
+    "savedAt": "2026-10-31T23:41:51.447Z",
     "result": {
       "detail": {
         "success": true,
@@ -624192,7 +624448,7 @@
           "type": "demo",
           "name": "Gee, Tea, Eh, Seven? Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5388010/c802257efce1e5fcf48482c5d5e09299b4918ce4/header.jpg?t=1792374313",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5388010/c802257efce1e5fcf48482c5d5e09299b4918ce4/header.jpg?t=1792644328",
           "genres": [
             {
               "id": "1",
@@ -624231,20 +624487,21 @@
       }
     },
     "evidence": {
-      "timestamp": 1794498420,
+      "timestamp": 1806476400,
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Gee, Next Fest, Eh, Seven? DEMO LIVESTREAM with the developer!",
-          "timestamp": 1792425300
+          "title": "A crucial decision: Gee, Tea, Eh, Seven? to launch Q1 2027 instead~",
+          "timestamp": 1793085780
         },
         {
-          "title": "350 wishlists! MASSIVE progress and a world you will want to chill in",
-          "timestamp": 1792191480
+          "title": "A tripling of wishlists?! THANK YOU for 1,000 wishlists!!!!!",
+          "timestamp": 1792729680
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:10:22.179Z"
+    "evidenceAt": "2026-10-31T23:41:57.073Z",
+    "reviewAt": "2026-10-31T23:41:57.528Z"
   },
   "5388030": {
     "savedAt": "2026-10-25T22:30:45.362Z",
@@ -626012,7 +626269,7 @@
     "reviewAt": "2026-10-23T10:11:04.914Z"
   },
   "5389510": {
-    "savedAt": "2026-10-21T23:11:19.332Z",
+    "savedAt": "2026-10-31T23:42:02.318Z",
     "result": {
       "detail": {
         "success": true,
@@ -626059,7 +626316,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:11:24.687Z"
+    "evidenceAt": "2026-10-31T23:42:07.827Z",
+    "reviewAt": "2026-10-31T23:42:08.179Z"
   },
   "5389520": {
     "savedAt": "2026-10-30T09:58:16.773Z",
@@ -629463,7 +629721,7 @@
     "reviewAt": "2026-10-31T00:03:21.576Z"
   },
   "5392250": {
-    "savedAt": "2026-10-21T23:12:06.059Z",
+    "savedAt": "2026-10-31T23:42:12.950Z",
     "result": {
       "detail": {
         "success": true,
@@ -629510,7 +629768,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-21T23:12:11.511Z"
+    "evidenceAt": "2026-10-31T23:42:18.456Z",
+    "reviewAt": "2026-10-31T23:42:18.820Z"
   },
   "5392260": {
     "savedAt": "2026-10-31T06:32:58.468Z",
@@ -630733,7 +630992,7 @@
     "reviewAt": "2026-10-23T22:59:50.682Z"
   },
   "5393280": {
-    "savedAt": "2026-10-21T23:13:09.274Z",
+    "savedAt": "2026-10-31T23:42:23.609Z",
     "result": {
       "detail": {
         "success": true,
@@ -630770,12 +631029,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 5,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "5 user reviews",
-          "total_positive": 5,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 5
+          "total_reviews": 0
         }
       }
     },
@@ -630784,20 +631043,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "A New Look for the Archive: UI & Map Overhaul",
+          "timestamp": 1792885080
+        },
+        {
           "title": "Demo Update: Clearer Guidance, Colours & More Music",
           "timestamp": 1792192980
-        },
-        {
-          "title": "We’re Sorry: Scentkeeper’s Release Is Moving to November 27",
-          "timestamp": 1792050540
-        },
-        {
-          "title": "Mouse Sensitivity Improvements",
-          "timestamp": 1792580880
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:13:14.847Z"
+    "evidenceAt": "2026-10-31T23:42:28.854Z",
+    "reviewAt": "2026-10-31T23:42:29.266Z"
   },
   "5393320": {
     "savedAt": "2026-10-24T12:57:26.217Z",
@@ -631037,7 +631293,7 @@
     "reviewAt": "2026-10-31T00:03:32.317Z"
   },
   "5393480": {
-    "savedAt": "2026-10-22T05:15:26.560Z",
+    "savedAt": "2026-10-31T23:53:54.720Z",
     "result": {
       "detail": {
         "success": true,
@@ -631097,7 +631353,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:15:32.094Z"
+    "evidenceAt": "2026-10-31T23:54:00.081Z",
+    "reviewAt": "2026-10-31T23:54:00.538Z"
   },
   "5393500": {
     "savedAt": "2026-10-22T23:00:48.064Z",
@@ -633777,7 +634034,7 @@
     "evidenceAt": "2026-10-22T20:29:06.777Z"
   },
   "5395660": {
-    "savedAt": "2026-10-21T23:13:57.131Z",
+    "savedAt": "2026-10-31T23:42:34.029Z",
     "result": {
       "detail": {
         "success": true,
@@ -633810,12 +634067,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 8,
+          "num_reviews": 0,
           "review_score": 0,
-          "review_score_desc": "8 user reviews",
-          "total_positive": 8,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
           "total_negative": 0,
-          "total_reviews": 8
+          "total_reviews": 0
         }
       }
     },
@@ -633833,7 +634090,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-21T23:14:02.467Z"
+    "evidenceAt": "2026-10-31T23:42:39.319Z",
+    "reviewAt": "2026-10-31T23:42:39.713Z"
   },
   "5395740": {
     "savedAt": "2026-10-22T20:30:53.356Z",
@@ -633898,7 +634156,7 @@
     "evidenceAt": "2026-10-22T20:30:58.678Z"
   },
   "5395760": {
-    "savedAt": "2026-10-22T05:16:14.586Z",
+    "savedAt": "2026-10-31T23:54:05.206Z",
     "result": {
       "detail": {
         "success": true,
@@ -633927,12 +634185,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 18,
-          "review_score": 6,
-          "review_score_desc": "Mostly Positive",
-          "total_positive": 17,
-          "total_negative": 5,
-          "total_reviews": 22
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
         }
       }
     },
@@ -633954,7 +634212,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-22T05:16:19.863Z"
+    "evidenceAt": "2026-10-31T23:54:10.524Z",
+    "reviewAt": "2026-10-31T23:54:10.891Z"
   },
   "5395870": {
     "savedAt": "2026-10-26T23:38:46.863Z",
@@ -636049,7 +636308,7 @@
     "evidenceAt": "2026-10-22T20:40:16.702Z"
   },
   "5397200": {
-    "savedAt": "2026-10-22T05:17:17.880Z",
+    "savedAt": "2026-10-31T23:54:15.634Z",
     "result": {
       "detail": {
         "success": true,
@@ -636100,7 +636359,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:17:23.574Z"
+    "evidenceAt": "2026-10-31T23:54:20.990Z",
+    "reviewAt": "2026-10-31T23:54:21.368Z"
   },
   "5397230": {
     "savedAt": "2026-10-22T23:18:53.453Z",
@@ -639596,7 +639856,7 @@
     "reviewAt": "2026-10-30T14:53:25.356Z"
   },
   "5400760": {
-    "savedAt": "2026-10-22T05:18:05.398Z",
+    "savedAt": "2026-10-31T23:54:26.101Z",
     "result": {
       "detail": {
         "success": true,
@@ -639643,7 +639903,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-22T05:18:10.693Z"
+    "evidenceAt": "2026-10-31T23:54:31.458Z",
+    "reviewAt": "2026-10-31T23:54:31.788Z"
   },
   "5400860": {
     "savedAt": "2026-10-22T23:20:15.508Z",
