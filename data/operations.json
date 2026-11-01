@@ -9263,6 +9263,29 @@
           "scanComplete": true
         }
       ]
+    },
+    {
+      "id": "41361323138",
+      "event": "schedule",
+      "automaticResume": false,
+      "startedAt": "2026-11-01T23:17:07.133Z",
+      "target": "2026-11-01",
+      "commit": "e57326014770c9ca37949c8465aa82b0865eecbd",
+      "synchronization": {
+        "apps": 1,
+        "removedPlaceholders": 17
+      },
+      "collection": {
+        "attempted": true,
+        "startedAt": "2026-11-01T23:17:07.202Z",
+        "finishedAt": "2026-11-01T23:47:11.378Z",
+        "health": "partial",
+        "processed": 268,
+        "basicCompleted": 1,
+        "failed": 191,
+        "stopReason": "time-budget",
+        "exitCode": 0
+      }
     }
   ],
   "acceptance": {
