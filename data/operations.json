@@ -8790,6 +8790,29 @@
         "state": "requested",
         "httpStatus": 204
       }
+    },
+    {
+      "id": "41322783452",
+      "event": "workflow_dispatch",
+      "automaticResume": true,
+      "startedAt": "2026-11-01T15:45:25.579Z",
+      "target": "2026-10-31",
+      "commit": "e57326014770c9ca37949c8465aa82b0865eecbd",
+      "synchronization": {
+        "apps": 1,
+        "removedPlaceholders": 1
+      },
+      "collection": {
+        "attempted": true,
+        "startedAt": "2026-11-01T15:45:25.633Z",
+        "finishedAt": "2026-11-01T16:15:28.399Z",
+        "health": "partial",
+        "processed": 189,
+        "basicCompleted": 0,
+        "failed": 34,
+        "stopReason": "time-budget",
+        "exitCode": 0
+      }
     }
   ],
   "acceptance": {
