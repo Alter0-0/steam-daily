@@ -8183,6 +8183,144 @@
         "failed": 195,
         "stopReason": "time-budget",
         "exitCode": 0
+      },
+      "finishedAt": "2026-11-01T08:08:43.238Z",
+      "publication": {
+        "state": "success",
+        "at": "2026-11-01T08:08:43.238Z"
+      },
+      "readiness": [
+        {
+          "date": "2026-10-31",
+          "sections": {
+            "release": {
+              "total": 253,
+              "readable": 228,
+              "pending": 25,
+              "percent": 90.1
+            },
+            "demo": {
+              "total": 87,
+              "readable": 83,
+              "pending": 4,
+              "percent": 95.4
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-30",
+          "sections": {
+            "release": {
+              "total": 391,
+              "readable": 391,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 126,
+              "readable": 126,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-29",
+          "sections": {
+            "release": {
+              "total": 248,
+              "readable": 248,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 108,
+              "readable": 107,
+              "pending": 1,
+              "percent": 99.1
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-28",
+          "sections": {
+            "release": {
+              "total": 270,
+              "readable": 270,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 97,
+              "readable": 97,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-27",
+          "sections": {
+            "release": {
+              "total": 318,
+              "readable": 318,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 81,
+              "readable": 81,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-26",
+          "sections": {
+            "release": {
+              "total": 111,
+              "readable": 111,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 66,
+              "readable": 66,
+              "pending": 0,
+              "percent": 100
+            }
+          },
+          "scanComplete": true
+        },
+        {
+          "date": "2026-10-25",
+          "sections": {
+            "release": {
+              "total": 51,
+              "readable": 51,
+              "pending": 0,
+              "percent": 100
+            },
+            "demo": {
+              "total": 27,
+              "readable": 26,
+              "pending": 1,
+              "percent": 96.3
+            }
+          },
+          "scanComplete": true
+        }
+      ],
+      "continuation": {
+        "at": "2026-11-01T08:08:44.711Z",
+        "state": "requested",
+        "httpStatus": 204
       }
     }
   ],
@@ -8282,41 +8420,41 @@
         "date": "2026-10-31",
         "deadline": "2026-11-02T04:00:00+08:00",
         "lastObserved": {
-          "at": "2026-11-01T02:15:54.673Z",
-          "runId": "41262370779",
+          "at": "2026-11-01T08:08:43.238Z",
+          "runId": "41285566201",
           "automatic": true,
           "sections": {
             "release": {
-              "total": 227,
-              "readable": 227,
-              "pending": 0,
-              "percent": 100
+              "total": 253,
+              "readable": 228,
+              "pending": 25,
+              "percent": 90.1
             },
             "demo": {
-              "total": 71,
-              "readable": 71,
-              "pending": 0,
-              "percent": 100
+              "total": 87,
+              "readable": 83,
+              "pending": 4,
+              "percent": 95.4
             }
           },
           "scanComplete": true
         },
         "lastAutomatic": {
-          "at": "2026-11-01T02:15:54.673Z",
-          "runId": "41262370779",
+          "at": "2026-11-01T08:08:43.238Z",
+          "runId": "41285566201",
           "automatic": true,
           "sections": {
             "release": {
-              "total": 227,
-              "readable": 227,
-              "pending": 0,
-              "percent": 100
+              "total": 253,
+              "readable": 228,
+              "pending": 25,
+              "percent": 90.1
             },
             "demo": {
-              "total": 71,
-              "readable": 71,
-              "pending": 0,
-              "percent": 100
+              "total": 87,
+              "readable": 83,
+              "pending": 4,
+              "percent": 95.4
             }
           },
           "scanComplete": true
