@@ -1,21 +1,21 @@
 {
   "state": "partial",
   "reportDate": "2026-11-01",
-  "startedAt": "2026-11-01T23:17:07.655Z",
-  "updatedAt": "2026-11-01T23:47:10.032Z",
+  "startedAt": "2026-11-01T23:47:52.662Z",
+  "updatedAt": "2026-11-02T00:18:00.495Z",
   "stage": "finished",
   "scanDays": 7,
   "scansComplete": true,
-  "processed": 268,
-  "completedDetails": 1,
-  "basicCompleted": 1,
-  "verified": 76,
-  "failed": 191,
+  "processed": 174,
+  "completedDetails": 0,
+  "basicCompleted": 0,
+  "verified": 173,
+  "failed": 1,
   "excluded": 0,
   "missingDetails": 152,
   "initialVerification": 39,
-  "refreshDue": 2905,
-  "waitingRetry": 191,
+  "refreshDue": 2732,
+  "waitingRetry": 192,
   "stopReason": "time-budget",
   "candidates": 11685,
   "pending": 191,
@@ -24,9 +24,9 @@
   "reviewService": {
     "state": "healthy",
     "failures": 0,
-    "successes": 76,
+    "successes": 173,
     "lastError": null,
     "pausedUntil": null
   },
-  "finishedAt": "2026-11-01T23:47:11.338Z"
+  "finishedAt": "2026-11-02T00:18:01.793Z"
 }
