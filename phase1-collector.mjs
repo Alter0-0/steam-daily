@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createSteamClient } from './steam-network.mjs';
-import { runSweep, parseSearchPage } from './phase1.mjs';
+import { runSweep, parseSearchPage, parseFeaturedCategories } from './phase1.mjs';
 import { pageEvidence } from './release-time.mjs';
 import { createReviewService } from './review-service.mjs';
 import {reportTarget,collectionHealth} from './stability.mjs';
@@ -59,6 +59,13 @@ try {
       if(p.results_html.includes('data-ds-appid=')&&!items.length)throw new Error('Steam 搜索格式发生变化，等待核实');
       console.log(JSON.stringify({search:filter,start,nextStart:page.nextStart,received:items.length,total:Number(p.total_count),first:items[0]?.appid,last:items.at(-1)?.appid}));
       return page;
+    },
+    getDiscoveryItems:async()=>{
+      const payload=await request('https://store.steampowered.com/api/featuredcategories/?cc=cn&l=schinese');
+      const items=parseFeaturedCategories(payload);
+      if(!Object.keys(payload).some(key=>['new_releases','coming_soon'].includes(key)))throw new Error('Steam 精选列表未返回新品或即将推出分类');
+      console.log(JSON.stringify({discovery:'featured-store',candidates:items.length,newReleases:payload.new_releases?.items?.length||0,comingSoon:payload.coming_soon?.items?.length||0}));
+      return items;
     },
     getDetail:async record=>{
       const id=record.item.appid;

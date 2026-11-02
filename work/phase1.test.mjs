@@ -6,7 +6,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { spawnSync } from 'node:child_process';
 import { resolveReleaseTime, parseReleaseDate } from '../release-time.mjs';
-import { initialize, sweepPlan, runSweep, scanWindow, parseSearchPage, normalizeRecord, applyRecord, ingest } from '../phase1.mjs';
+import { initialize, sweepPlan, runSweep, scanWindow, parseSearchPage, parseFeaturedCategories, normalizeRecord, applyRecord, ingest } from '../phase1.mjs';
 
 const latest='2026-10-18', now='2026-10-19T02:00:00.000Z';
 const row=(id,date='2026-10-15')=>({appid:id,searchName:`Game ${id}`,releaseDate:date,releasedText:`${Number(date.slice(8))} Oct, 2026`});
@@ -138,6 +138,30 @@ test('duplicate app IDs do not reduce the raw Steam pagination offset',async()=>
   },now,save:async()=>{}}),true);
   assert.deepEqual(starts,[1000,1002]);
   assert.equal(Object.keys(state.phase1.catalog).length,2);
+});
+
+test('featured Steam lists supplement discovery without duplicate IDs or invented release dates',()=>{
+  const items=parseFeaturedCategories({new_releases:{items:[{id:11,name:'New Game'},{id:12,name:'Shared'}]},coming_soon:{items:[{id:12,name:'Shared again'},{id:13,name:'Coming Soon'}]}},{maxNewReleases:2,maxComingSoon:2});
+  assert.deepEqual(items.map(x=>[x.appid,x.searchName,x.discoverySource,x.releaseDate]),[[11,'New Game','featured-new-releases',null],[12,'Shared','featured-new-releases',null],[13,'Coming Soon','featured-coming-soon',null]]);
+  assert.deepEqual(parseFeaturedCategories({new_releases:{items:[{id:'bad',name:'Bad'},{id:0,name:'Zero'}]}}),[]);
+});
+
+test('supplemental discovery outages do not invalidate complete primary scans',async()=>{
+  const state={reports:[]};
+  const summary=await runSweep(state,{now,latest,getPage:emptyPage,getDetail:async()=>response(1),getDiscoveryItems:async()=>{throw new Error('featured feed unavailable');}});
+  assert.equal(summary.scansComplete,true);assert.equal(summary.discovery.state,'unavailable');assert.match(summary.discovery.error,/unavailable/);
+});
+
+test('featured rediscovery never erases an existing Steam search date',async()=>{
+  const state={reports:[]};
+  const summary=await runSweep(state,{now,latest,getPage:async filter=>filter==='games'?{items:[row(78,'2026-10-15')],total:1}:{items:[],total:0},getDiscoveryItems:async()=>[{appid:78,searchName:'Featured Game',releaseDate:null,discoverySource:'featured-new-releases'}],getDetail:async record=>response(record.item.appid)});
+  assert.equal(summary.discovery.added,0);assert.equal(state.phase1.catalog[78].item.releaseDate,'2026-10-15');
+});
+
+test('a newly discovered featured candidate is queued promptly and corrected into its real release date',async()=>{
+  const state={reports:[]};const seen=[];
+  const summary=await runSweep(state,{now,latest,getPage:emptyPage,getDiscoveryItems:async()=>[{appid:77,searchName:'Featured Game',releaseDate:null,discoverySource:'featured-new-releases'}],getDetail:async record=>{seen.push(record.item.appid);return {...response(record.item.appid),detail:detail(record.item.appid,{release_date:{date:'2026 年 10 月 15 日'}})};},save:async()=>{}});
+  assert.deepEqual(seen,[77]);assert.equal(summary.discovery.added,1);assert.ok(allGames(state).some(g=>g.id===77&&g.releaseDate==='2026-10-16'));
 });
 
 test('repeated pages and deadline leave a resumable partial state',async()=>{

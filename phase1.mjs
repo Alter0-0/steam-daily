@@ -66,6 +66,20 @@ export function parseSearchPage(payload, requestedStart) {
   const start=Number.isInteger(responseStart)&&responseStart>=0?responseStart:requestedStart;
   return {items,total:Number(payload.total_count),nextStart:start+(rowCount||items.length)};
 }
+export function parseFeaturedCategories(payload, {maxNewReleases=30,maxComingSoon=10}={}) {
+  const items=[];const seen=new Set();
+  for(const [key,limit,source] of [['new_releases',maxNewReleases,'featured-new-releases'],['coming_soon',maxComingSoon,'featured-coming-soon']]) {
+    const rows=payload?.[key]?.items;
+    if(!Array.isArray(rows))continue;
+    for(const row of rows.slice(0,limit)) {
+      const appid=Number(row?.id);
+      if(!Number.isSafeInteger(appid)||appid<=0||seen.has(appid))continue;
+      seen.add(appid);
+      items.push({appid,searchName:typeof row.name==='string'?row.name.trim():'',releaseDate:null,releasedText:null,discoverySource:source});
+    }
+  }
+  return items;
+}
 export function ingest(state, items, source, now) {
   const catalog=state.phase1.catalog;
   const updatedCards=new Map();
@@ -225,7 +239,7 @@ export function workQueue(state,plan,now) {
   for(const r of due) {
     // An undated future page first seen today must not precede yesterday's
     // releases simply because its observation date is newer.
-    const recent=r.item.releaseDate>=shiftDate(plan.latest,-3)&&r.item.releaseDate<=shiftDate(plan.latest,1);
+    const recent=r.item.discoverySource?.startsWith('featured-')||r.item.releaseDate>=shiftDate(plan.latest,-3)&&r.item.releaseDate<=shiftDate(plan.latest,1);
     const lane=r.priorityRequestedAt>(r.priorityAttemptedAt||'')?'priority':needsBasics(r)?(recent?'recent':'history'):needsDetails(r)?'enrich':!r.verifiedAt?'verify':'refresh';
     lanes[lane].push(r);
   }
@@ -298,7 +312,7 @@ export async function scanWindow(state,plan,filter,{getPage,save,now,deadline=()
   }
   return false;
 }
-export async function runSweep(state,{now=new Date().toISOString(),latest,force30=false,getPage,getDetail,save=async()=>{},deadline=()=>false,scanDeadline=deadline,stopReason=()=>null,maxDetails=Infinity,priorityIds=[],priorityRequests=[],onProgress=async()=>{}}) {
+export async function runSweep(state,{now=new Date().toISOString(),latest,force30=false,getPage,getDetail,getDiscoveryItems=null,save=async()=>{},deadline=()=>false,scanDeadline=deadline,stopReason=()=>null,maxDetails=Infinity,priorityIds=[],priorityRequests=[],onProgress=async()=>{}}) {
   initialize(state,now);reconcileReports(state,now,latest);const plan=sweepPlan(state,now,latest,force30);
   for(const id of priorityIds)if(state.phase1.catalog[id])state.phase1.catalog[id].priorityRequestedAt=now;
   ensureReport(state,latest,now);
@@ -313,6 +327,24 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
     const complete=await scanWindow(state,plan,filter,{getPage,save,now,deadline:()=>deadline()||scanDeadline()});
     scansComplete=complete&&scansComplete;
     if(deadline()){scansComplete=false;break;}
+  }
+  let discovery={state:getDiscoveryItems?'pending':'not-configured',candidates:0,added:0};
+  if(getDiscoveryItems&&!deadline()) {
+    await checkpoint('discovery');
+    try {
+      const items=await getDiscoveryItems();
+      const usable=Array.isArray(items)?items.filter(item=>Number.isSafeInteger(Number(item.appid))&&Number(item.appid)>0):[];
+      let added=0;
+      for(const item of usable) {
+        const existing=state.phase1.catalog[item.appid];
+        if(!existing)added++;
+        ingest(state,[{...item,appid:Number(item.appid),releaseDate:item.releaseDate||existing?.item.releaseDate||null,releasedText:item.releasedText||existing?.item.releasedText||null,discoverySource:existing?.item.discoverySource||item.discoverySource}],item.discoverySource||'featured-store',now);
+      }
+      discovery={state:'healthy',candidates:usable.length,added};
+    } catch(error) {
+      discovery={state:'unavailable',candidates:0,added:0,error:error.message};
+    }
+    state.phase1.lastDiscovery={...discovery,at:now};
   }
   for(const request of priorityRequests) {
     const record=state.phase1.catalog[request.appid];
@@ -379,5 +411,6 @@ export async function runSweep(state,{now=new Date().toISOString(),latest,force3
   }
   await save();
   const scanErrors=Object.fromEntries(Object.entries(state.phase1.scans).filter(([key,scan])=>key.startsWith(plan.oldest)&&scan.error).map(([key,scan])=>[key,scan.error]));
-  return {state:pending.length||!scansComplete||failed||processed<queue.length?'partial':'success',reportDate:latest,...state.phase1.lastSummary,scanErrors,message:'初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖'};
+  state.phase1.lastSummary.discovery=discovery;
+  return {state:pending.length||!scansComplete||failed||processed<queue.length?'partial':'success',reportDate:latest,...state.phase1.lastSummary,discovery,scanErrors,message:'初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖'};
 }
