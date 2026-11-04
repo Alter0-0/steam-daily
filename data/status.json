@@ -1,37 +1,37 @@
 {
   "state": "partial",
   "reportDate": "2026-11-03",
-  "startedAt": "2026-11-03T21:36:08.654Z",
-  "updatedAt": "2026-11-03T22:06:16.273Z",
+  "startedAt": "2026-11-04T00:19:15.632Z",
+  "updatedAt": "2026-11-04T00:49:24.053Z",
   "stage": "finished",
   "scanDays": 7,
   "scansComplete": true,
-  "processed": 256,
-  "completedDetails": 0,
-  "basicCompleted": 0,
-  "verified": 86,
-  "failed": 170,
+  "processed": 264,
+  "completedDetails": 16,
+  "basicCompleted": 16,
+  "verified": 61,
+  "failed": 187,
   "excluded": 0,
   "missingDetails": 152,
   "initialVerification": 35,
-  "refreshDue": 1953,
-  "waitingRetry": 188,
+  "refreshDue": 2125,
+  "waitingRetry": 187,
   "stopReason": "time-budget",
-  "candidates": 12386,
+  "candidates": 12402,
   "pending": 187,
   "discovery": {
     "state": "healthy",
-    "candidates": 39,
-    "added": 0
+    "candidates": 40,
+    "added": 16
   },
   "scanErrors": {},
   "message": "初版发布后持续补充；搜索复查通过不代表 Steam 全量覆盖",
   "reviewService": {
     "state": "healthy",
     "failures": 0,
-    "successes": 86,
+    "successes": 77,
     "lastError": null,
     "pausedUntil": null
   },
-  "finishedAt": "2026-11-03T22:06:17.620Z"
+  "finishedAt": "2026-11-04T00:49:25.447Z"
 }
