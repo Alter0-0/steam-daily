@@ -25214,6 +25214,77 @@
     "evidenceAt": "2026-11-03T02:55:48.850Z",
     "reviewAt": "2026-11-03T02:55:49.211Z"
   },
+  "2766210": {
+    "savedAt": "2026-11-05T06:56:44.607Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Arcanos One",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5200,
+            "final": 5200,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 52.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2766210/ba784bbaa6a015660fe005a5ea6d30b3e8234a51/header.jpg?t=1793858863",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "9",
+              "description": "竞速"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "Cakebyte"
+          ],
+          "publishers": [
+            "Cakebyte"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793858864,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:56:49.889Z",
+    "reviewAt": "2026-11-05T06:56:50.416Z"
+  },
   "2766390": {
     "savedAt": "2026-11-05T00:04:03.283Z",
     "result": {
@@ -33761,6 +33832,82 @@
     },
     "evidenceAt": "2026-10-31T23:38:35.470Z",
     "reviewAt": "2026-10-31T23:38:35.853Z"
+  },
+  "3059040": {
+    "savedAt": "2026-11-05T06:57:37.880Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Cat-Astrophy",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5900,
+            "final": 5310,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 59.00",
+            "final_formatted": "¥ 53.10"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3059040/ea12db08d78db6052143b901e4abd1947a5b6f06/header.jpg?t=1793838061",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Heraan Studios"
+          ],
+          "publishers": [
+            "Dojo System"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793838063,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "开发者来信：Cat-Astrophy 本周四发售 💌",
+          "timestamp": 1793725200
+        },
+        {
+          "title": "Polo 的航行日志：飞船",
+          "timestamp": 1793466000
+        },
+        {
+          "title": "试玩版更新",
+          "timestamp": 1785859200
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:57:43.364Z",
+    "reviewAt": "2026-11-05T06:57:43.762Z"
   },
   "3063380": {
     "savedAt": "2026-11-04T17:22:30.129Z",
@@ -43507,6 +43654,65 @@
     "evidenceAt": "2026-11-01T23:35:17.136Z",
     "reviewAt": "2026-11-01T23:35:17.571Z"
   },
+  "3301840": {
+    "savedAt": "2026-11-05T06:57:06.098Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "凡修",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3301840/dc648bf23fe2b2b1af4a197bb93cb99909d2f7e0/header_schinese.jpg?t=1793776246",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "来点Game"
+          ],
+          "publishers": [
+            "来点Game"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:57:11.506Z",
+    "reviewAt": "2026-11-05T06:57:11.989Z"
+  },
   "3303790": {
     "savedAt": "2026-10-27T00:44:35.285Z",
     "result": {
@@ -44026,6 +44232,61 @@
     },
     "evidenceAt": "2026-11-03T02:42:26.952Z",
     "reviewAt": "2026-11-03T02:42:27.337Z"
+  },
+  "3319470": {
+    "savedAt": "2026-11-05T06:58:30.830Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Don Bradman Cricket Jr",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 14800,
+            "final": 14800,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 148.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3319470/56b1a580b90eca7c19a7dd96ca394b0a09e04e6d/header.jpg?t=1793844252",
+          "genres": [
+            {
+              "id": "18",
+              "description": "体育"
+            }
+          ],
+          "developers": [
+            "Tru Blu Games"
+          ],
+          "publishers": [
+            "Tru Blu Games"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793844253,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:58:36.092Z",
+    "reviewAt": "2026-11-05T06:58:36.539Z"
   },
   "3319700": {
     "savedAt": "2026-10-21T16:02:17.463Z",
@@ -49621,6 +49882,63 @@
     },
     "evidenceAt": "2026-11-01T23:35:59.083Z",
     "reviewAt": "2026-11-01T23:35:59.558Z"
+  },
+  "3432860": {
+    "savedAt": "2026-11-05T06:57:16.733Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "异病侦探",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3432860/b627a0cebcf59f2021489eb7e3fad7a3854fc360/header_schinese.jpg?t=1793251691",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            }
+          ],
+          "developers": [
+            "PHOSEPO"
+          ],
+          "publishers": [
+            "Thermite Games",
+            "Smilegate"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "🎮《异病侦探》直播须知",
+          "timestamp": 1793855580
+        },
+        {
+          "title": "《异病侦探》Demo 更新公告",
+          "timestamp": 1789640580
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:57:22.049Z",
+    "reviewAt": "2026-11-05T06:57:22.622Z"
   },
   "3434370": {
     "savedAt": "2026-10-29T17:01:36.423Z",
@@ -55662,6 +55980,74 @@
     "evidenceAt": "2026-10-31T21:45:01.526Z",
     "reviewAt": "2026-10-31T21:45:01.829Z"
   },
+  "3573120": {
+    "savedAt": "2026-11-05T06:58:04.548Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "SpellChain",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3573120/17cda876f224924c39f0f4076ad4a638e6239584/header.jpg?t=1793785603",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "Big Wiz"
+          ],
+          "publishers": [
+            "Big Wiz"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Over 20k Wishlists! THANK YOU!",
+          "timestamp": 1793610240
+        },
+        {
+          "title": "Update v1.2",
+          "timestamp": 1792300200
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:58:09.928Z",
+    "reviewAt": "2026-11-05T06:58:10.421Z"
+  },
   "3575500": {
     "savedAt": "2026-10-21T00:14:41.162Z",
     "result": {
@@ -56629,6 +57015,73 @@
     },
     "evidenceAt": "2026-11-01T08:27:11.087Z",
     "reviewAt": "2026-11-01T08:27:11.506Z"
+  },
+  "3589030": {
+    "savedAt": "2026-11-05T06:59:02.432Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "StandOff",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 3300,
+            "final": 2310,
+            "discount_percent": 30,
+            "initial_formatted": "¥ 33.00",
+            "final_formatted": "¥ 23.10"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3589030/8efb2a6863002146a15552eda5533e3f16c4d748/header.jpg?t=1793839220",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "BlauGhost"
+          ],
+          "publishers": [
+            "BlauGhost"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793839221,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:59:07.803Z",
+    "reviewAt": "2026-11-05T06:59:08.254Z"
   },
   "3590040": {
     "savedAt": "2026-11-03T02:57:07.004Z",
@@ -70206,6 +70659,70 @@
     "evidenceAt": "2026-11-04T01:01:50.326Z",
     "reviewAt": "2026-11-04T01:01:50.745Z"
   },
+  "3810240": {
+    "savedAt": "2026-11-05T06:58:20.327Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "In Full Bloom",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3810240/2b1c6d8f85834cc9116377177ecb722a77474259/header_schinese.jpg?t=1793742241",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "obleak games"
+          ],
+          "publishers": [
+            "obleak games"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793862000,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Release Date Announcement",
+          "timestamp": 1790002800
+        },
+        {
+          "title": "Developer Let's Play: In Full Bloom Demo | Steam Next Fest 2026",
+          "timestamp": 1781629080
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:58:25.698Z",
+    "reviewAt": "2026-11-05T06:58:26.230Z"
+  },
   "3810780": {
     "savedAt": "2026-11-02T23:44:12.541Z",
     "result": {
@@ -71088,6 +71605,86 @@
     },
     "evidenceAt": "2026-10-31T00:11:24.182Z",
     "reviewAt": "2026-10-31T00:11:24.510Z"
+  },
+  "3826790": {
+    "savedAt": "2026-11-05T06:59:44.544Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Ashen",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1900,
+            "final": 1710,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 19.00",
+            "final_formatted": "¥ 17.10"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3826790/e28bf5e04ef4c547d145e076d1c3006326805187/header.jpg?t=1793858941",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "Bando Corp"
+          ],
+          "publishers": [
+            "Bando Corp"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793858942,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": [
+        {
+          "title": "Ashen Discord 上线啦!",
+          "timestamp": 1791793080
+        },
+        {
+          "title": "《Ashen》抢先体验版正式推出！",
+          "timestamp": 1793860440
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:59:49.768Z",
+    "reviewAt": "2026-11-05T06:59:50.338Z"
   },
   "3827330": {
     "savedAt": "2026-11-01T15:48:17.620Z",
@@ -96644,6 +97241,83 @@
     "evidenceAt": "2026-11-04T17:16:42.903Z",
     "reviewAt": "2026-11-04T17:16:43.465Z"
   },
+  "4139580": {
+    "savedAt": "2026-11-05T07:00:31.981Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "崩落之国",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 4200,
+            "final": 4200,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 42.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4139580/66f0780fdaafb7743e3ada064763522633964c95/header.jpg?t=1793857618",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "CygamesEdge",
+            "ZEREO Inc."
+          ],
+          "publishers": [
+            "Cygames, Inc."
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793854264,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Where the Seeds Fall Is Now Available to Download and Play!",
+          "timestamp": 1793854860
+        },
+        {
+          "title": "Where the Seeds Fall Is Now Available to Download and Play!",
+          "timestamp": 1793854800
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:00:37.247Z",
+    "reviewAt": "2026-11-05T07:00:37.711Z"
+  },
   "4140580": {
     "savedAt": "2026-11-04T00:56:46.185Z",
     "result": {
@@ -99599,6 +100273,78 @@
     },
     "evidenceAt": "2026-11-03T07:23:02.487Z",
     "reviewAt": "2026-11-03T07:23:02.891Z"
+  },
+  "4176000": {
+    "savedAt": "2026-11-05T07:01:08.883Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "False Myth 2",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 10000,
+            "final": 9000,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 100.00",
+            "final_formatted": "¥ 90.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4176000/24cab3eac2cefdda32c87afdf83f721829333f7e/header.jpg?t=1793858727",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "不志陀羅亭"
+          ],
+          "publishers": [
+            "akaeroCore"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793858728,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "美少女后宫JRPG《False Myth 2》今日于Steam平台正式发售！",
+          "timestamp": 1793859000
+        },
+        {
+          "title": "《False Myth 2~爱憎的自我沉溺~》2026/11/4 更新",
+          "timestamp": 1793724240
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:01:14.128Z",
+    "reviewAt": "2026-11-05T07:01:14.678Z"
   },
   "4176030": {
     "savedAt": "2026-11-03T07:37:29.594Z",
@@ -146937,6 +147683,58 @@
     "evidenceAt": "2026-10-27T00:46:49.299Z",
     "reviewAt": "2026-10-27T00:46:49.816Z"
   },
+  "4564400": {
+    "savedAt": "2026-11-05T07:01:51.017Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "THE HALLWAY",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4564400/76df53bb8fbe3da1a6e46ef373cb86b3bb16b81d/header.jpg?t=1793723909",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            }
+          ],
+          "developers": [
+            "Peyton Bright"
+          ],
+          "publishers": [
+            "Peyton Bright"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "即将推出"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793860895,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "THE HALLWAY IS HERE!",
+          "timestamp": 1793861040
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:01:56.343Z",
+    "reviewAt": "2026-11-05T07:01:56.821Z"
+  },
   "4564590": {
     "savedAt": "2026-10-31T21:49:04.877Z",
     "result": {
@@ -150773,6 +151571,74 @@
       "announcements": []
     },
     "evidenceAt": "2026-10-21T20:31:58.048Z"
+  },
+  "4593350": {
+    "savedAt": "2026-11-05T07:02:49.062Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "性无能者的空庭",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1004,
+            "final": 903,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 10.04",
+            "final_formatted": "¥ 9.03"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4593350/7dd9aade9ae63118622a751a46e9b2ff40f74d90/header.jpg?t=1793861516",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "疯情一种工作室"
+          ],
+          "publishers": [
+            "疯情一种工作室"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793840967,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "游戏现已发行！",
+          "timestamp": 1793842020
+        },
+        {
+          "title": "demo英文上线",
+          "timestamp": 1790513580
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:02:54.577Z",
+    "reviewAt": "2026-11-05T07:02:55.018Z"
   },
   "4593860": {
     "savedAt": "2026-10-22T10:18:43.888Z",
@@ -166143,6 +167009,74 @@
     },
     "evidenceAt": "2026-10-29T02:03:21.083Z",
     "reviewAt": "2026-10-29T02:03:21.547Z"
+  },
+  "4676890": {
+    "savedAt": "2026-11-05T06:56:23.445Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": " 蓝侬与路卡 Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4676890/b319a5cb294ef9cdab59470e1614ad6276a056bc/header.jpg?t=1793843342",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Shades Studio"
+          ],
+          "publishers": [
+            "Shades Studio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793843337,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "《蓝侬与路卡》Steam 试玩版（Demo）现已正式上线！",
+          "timestamp": 1793843580
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:56:28.817Z",
+    "reviewAt": "2026-11-05T06:56:29.362Z"
   },
   "4677000": {
     "savedAt": "2026-10-29T02:03:26.358Z",
@@ -190328,6 +191262,69 @@
     "evidenceAt": "2026-11-05T03:15:25.032Z",
     "reviewAt": "2026-11-05T03:15:25.378Z"
   },
+  "4796230": {
+    "savedAt": "2026-11-05T07:03:10.460Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Höllenburg, Hell Castle",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5900,
+            "final": 5900,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 59.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4796230/33415660a9761f6a2f09e8afd7c4e977f507e641/header.jpg?t=1793857028",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Demon Videogames"
+          ],
+          "publishers": [
+            "Demon Videogames"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793857029,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:03:15.903Z",
+    "reviewAt": "2026-11-05T07:03:16.358Z"
+  },
   "4797110": {
     "savedAt": "2026-11-05T00:11:01.432Z",
     "result": {
@@ -203209,6 +204206,69 @@
     "evidenceAt": "2026-11-02T16:33:35.264Z",
     "reviewAt": "2026-11-02T16:33:35.636Z"
   },
+  "4843600": {
+    "savedAt": "2026-11-05T07:03:36.710Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Epoch of Dimensions",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4843600/4d1c2cb43f7b18e9179af7e06e0f69204430c582/header.jpg?t=1793844179",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "Liu Hao"
+          ],
+          "publishers": [
+            "Liu Hao"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793844178,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:03:41.910Z",
+    "reviewAt": "2026-11-05T07:03:42.454Z"
+  },
   "4843860": {
     "savedAt": "2026-10-31T13:17:29.284Z",
     "result": {
@@ -209365,6 +210425,75 @@
     "evidenceAt": "2026-11-05T00:12:51.666Z",
     "reviewAt": "2026-11-05T00:12:52.089Z"
   },
+  "4869690": {
+    "savedAt": "2026-11-05T06:57:27.418Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "螺钉与浮城 Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4869690/fbe4a35a5c66288c2755690afac897e4c9263702/header_schinese.jpg?t=1793851177",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "Orca Studio"
+          ],
+          "publishers": [
+            "UltraPlayers",
+            "OKJOY"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793847313,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "会开机甲的猫？国产类银河恶魔城《螺钉与浮城》免费DEMO上线啦！",
+          "timestamp": 1793847660
+        },
+        {
+          "title": "免费DEMO定档11月5日！我们做的类银河恶魔城游戏《螺钉与浮城》来啦！",
+          "timestamp": 1793173920
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:57:32.710Z",
+    "reviewAt": "2026-11-05T06:57:33.236Z"
+  },
   "4869900": {
     "savedAt": "2026-10-29T17:57:12.926Z",
     "result": {
@@ -215192,6 +216321,65 @@
     "evidenceAt": "2026-10-30T07:56:48.601Z",
     "reviewAt": "2026-10-30T07:56:48.925Z"
   },
+  "4891380": {
+    "savedAt": "2026-11-05T07:03:57.746Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Nino: the Persuader",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 500,
+            "final": 500,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 5.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4891380/7455e75fae6af97d8c601127bf7f912d8609c723/header.jpg?t=1793845401",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "VEBRIFT"
+          ],
+          "publishers": [
+            "VEBRIFT"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793845406,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:04:03.035Z",
+    "reviewAt": "2026-11-05T07:04:03.610Z"
+  },
   "4891520": {
     "savedAt": "2026-10-20T20:53:45.883Z",
     "result": {
@@ -220978,6 +222166,58 @@
     },
     "evidenceAt": "2026-11-04T00:35:22.089Z",
     "reviewAt": "2026-11-04T00:35:22.608Z"
+  },
+  "4908020": {
+    "savedAt": "2026-11-05T06:59:12.984Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Love Joy Happiness",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4908020/124d369723ff9ca6291c6cd1c6bfe4f126d12d09/header.jpg?t=1792566610",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            }
+          ],
+          "developers": [
+            "Jindřich Skeldal"
+          ],
+          "publishers": [
+            "Jindřich Skeldal"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Demo Update",
+          "timestamp": 1791362400
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:59:18.382Z",
+    "reviewAt": "2026-11-05T06:59:18.982Z"
   },
   "4908070": {
     "savedAt": "2026-10-31T13:39:13.501Z",
@@ -229786,6 +231026,82 @@
     "evidenceAt": "2026-10-31T23:43:21.977Z",
     "reviewAt": "2026-10-31T23:43:22.334Z"
   },
+  "4935230": {
+    "savedAt": "2026-11-05T07:04:19.033Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Red Glare The Reckoning",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5900,
+            "final": 5310,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 59.00",
+            "final_formatted": "¥ 53.10"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4935230/8a0a9ce00acc722ecee399ad1ee22fc8aa159ef6/header.jpg?t=1793833373",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "BT Studios"
+          ],
+          "publishers": [
+            "BT Studios"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793833374,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Release Date Of Red Glare The Reckoning",
+          "timestamp": 1793193420
+        },
+        {
+          "title": "Play Demo Of Red Glare The Reckoning",
+          "timestamp": 1788191160
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:04:24.468Z",
+    "reviewAt": "2026-11-05T07:04:24.943Z"
+  },
   "4935290": {
     "savedAt": "2026-11-04T16:39:49.377Z",
     "result": {
@@ -235903,6 +237219,61 @@
     },
     "evidenceAt": "2026-10-20T23:56:08.088Z"
   },
+  "4951310": {
+    "savedAt": "2026-11-05T06:59:23.530Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "FLIP OVER",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4951310/2e4041dbb7c4ccd059870f44c3c52092c6ba4970/header.jpg?t=1793447863",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Nitromite"
+          ],
+          "publishers": [
+            "Nitromite"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:59:29.010Z",
+    "reviewAt": "2026-11-05T06:59:29.501Z"
+  },
   "4951360": {
     "savedAt": "2026-10-21T10:32:02.853Z",
     "result": {
@@ -236626,6 +237997,82 @@
     },
     "evidenceAt": "2026-11-04T09:22:14.157Z",
     "reviewAt": "2026-11-04T09:22:14.565Z"
+  },
+  "4952800": {
+    "savedAt": "2026-11-05T07:04:45.740Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Ablahshikar",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 3800,
+            "final": 3800,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 38.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4952800/890061ae4fcacf3403e74ef369d57612c51b6ab4/header.jpg?t=1793847183",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "Samekh Meryuiet"
+          ],
+          "publishers": [
+            "Amurdat Phantasmagoria"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793847184,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": [
+        {
+          "title": "Start Your Slow Life on the Candle Sea! Ablahshikar Early Access Is Here 🦑",
+          "timestamp": 1793848980
+        },
+        {
+          "title": "Old Cartridges, Spineless Gods, and the Ears",
+          "timestamp": 1793279100
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:04:51.067Z",
+    "reviewAt": "2026-11-05T07:04:51.482Z"
   },
   "4952810": {
     "savedAt": "2026-10-30T01:43:30.102Z",
@@ -239907,6 +241354,78 @@
     },
     "evidenceAt": "2026-10-26T14:35:40.254Z",
     "reviewAt": "2026-10-26T14:35:40.577Z"
+  },
+  "4960380": {
+    "savedAt": "2026-11-05T07:05:06.831Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Isle Of Thundir",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 3900,
+            "final": 3198,
+            "discount_percent": 18,
+            "initial_formatted": "¥ 39.00",
+            "final_formatted": "¥ 31.98"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4960380/6473ec7f221b35857320aa400fadbbdc9fcaf8b1/header.jpg?t=1793837923",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "EIDSVIK GAMES"
+          ],
+          "publishers": [
+            "EIDSVIK GAMES"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793837924,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Just a quick update, dosent effect save games.",
+          "timestamp": 1793839212
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:05:12.236Z",
+    "reviewAt": "2026-11-05T07:05:12.754Z"
   },
   "4961110": {
     "savedAt": "2026-11-02T16:34:58.493Z",
@@ -270839,7 +272358,7 @@
     "reviewAt": "2026-11-04T22:58:51.898Z"
   },
   "5030400": {
-    "savedAt": "2026-10-29T04:54:37.666Z",
+    "savedAt": "2026-11-05T06:56:55.115Z",
     "result": {
       "detail": {
         "success": true,
@@ -270890,8 +272409,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T04:54:43.083Z",
-    "reviewAt": "2026-10-29T04:54:43.284Z"
+    "evidenceAt": "2026-11-05T06:57:00.888Z",
+    "reviewAt": "2026-11-05T06:57:01.350Z"
   },
   "5030500": {
     "savedAt": "2026-11-04T16:54:25.921Z",
@@ -277615,7 +279134,7 @@
     "reviewAt": "2026-11-03T00:35:53.772Z"
   },
   "5041860": {
-    "savedAt": "2026-10-29T05:00:14.457Z",
+    "savedAt": "2026-11-05T07:02:01.684Z",
     "result": {
       "detail": {
         "success": true,
@@ -277623,7 +279142,7 @@
           "type": "demo",
           "name": "Logo Idle Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5041860/f965c84bda52ef9504d6550fd50d197edc7cb720/header.jpg?t=1792336575",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5041860/f965c84bda52ef9504d6550fd50d197edc7cb720/header.jpg?t=1793795113",
           "genres": [
             {
               "id": "23",
@@ -277667,8 +279186,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T05:00:19.703Z",
-    "reviewAt": "2026-10-29T05:00:23.001Z"
+    "evidenceAt": "2026-11-05T07:02:06.952Z",
+    "reviewAt": "2026-11-05T07:02:07.404Z"
   },
   "5041970": {
     "savedAt": "2026-10-29T18:01:03.356Z",
@@ -277792,6 +279311,61 @@
     },
     "evidenceAt": "2026-11-05T03:09:09.133Z",
     "reviewAt": "2026-11-05T03:09:09.515Z"
+  },
+  "5042190": {
+    "savedAt": "2026-11-05T07:00:16.379Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Retail Nation: My Supermarket",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5042190/d48ed9412b0a76f0a62475ba241b69714ebaf59c/header.jpg?t=1792311674",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "PerforMetric"
+          ],
+          "publishers": [
+            "PerforMetric"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:00:21.617Z",
+    "reviewAt": "2026-11-05T07:00:22.313Z"
   },
   "5042230": {
     "savedAt": "2026-10-29T18:01:13.698Z",
@@ -280022,7 +281596,7 @@
     "reviewAt": "2026-11-01T02:07:15.347Z"
   },
   "5046150": {
-    "savedAt": "2026-10-29T05:05:46.161Z",
+    "savedAt": "2026-11-05T07:07:18.345Z",
     "result": {
       "detail": {
         "success": true,
@@ -280074,8 +281648,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T05:05:51.601Z",
-    "reviewAt": "2026-10-29T05:05:51.882Z"
+    "evidenceAt": "2026-11-05T07:07:24.261Z",
+    "reviewAt": "2026-11-05T07:07:24.673Z"
   },
   "5046250": {
     "savedAt": "2026-11-02T23:52:22.077Z",
@@ -284414,7 +285988,7 @@
     "reviewAt": "2026-10-30T09:02:52.711Z"
   },
   "5052990": {
-    "savedAt": "2026-10-29T04:51:51.885Z",
+    "savedAt": "2026-11-05T07:10:57.188Z",
     "result": {
       "detail": {
         "success": true,
@@ -284422,7 +285996,7 @@
           "type": "game",
           "name": "Don't Get Six",
           "is_free": false,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052990/ea4791f5f53bf5b23329ce80f5399613cfcfbc0c/header.jpg?t=1792486581",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5052990/ea4791f5f53bf5b23329ce80f5399613cfcfbc0c/header.jpg?t=1793721881",
           "genres": [
             {
               "id": "23",
@@ -284465,17 +286039,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Playtest Now Open!",
-          "timestamp": 1792116180
+          "title": "Don't Get Six Demo Is Now Available!",
+          "timestamp": 1793721480
         },
         {
-          "title": "Our Game Was Released Before It Was Ready",
-          "timestamp": 1791949860
+          "title": "Playtest Now Open!",
+          "timestamp": 1792116180
         }
       ]
     },
-    "evidenceAt": "2026-10-29T04:51:57.188Z",
-    "reviewAt": "2026-10-29T04:51:57.476Z"
+    "evidenceAt": "2026-11-05T07:11:02.407Z",
+    "reviewAt": "2026-11-05T07:11:02.964Z"
   },
   "5053050": {
     "savedAt": "2026-10-30T08:02:47.988Z",
@@ -284774,7 +286348,7 @@
     "reviewAt": "2026-10-25T11:53:38.407Z"
   },
   "5053510": {
-    "savedAt": "2026-10-29T04:57:23.345Z",
+    "savedAt": "2026-11-05T07:13:47.695Z",
     "result": {
       "detail": {
         "success": true,
@@ -284837,8 +286411,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T04:57:28.591Z",
-    "reviewAt": "2026-10-29T04:57:28.835Z"
+    "evidenceAt": "2026-11-05T07:13:52.889Z",
+    "reviewAt": "2026-11-05T07:13:53.366Z"
   },
   "5053520": {
     "savedAt": "2026-11-04T22:59:07.004Z",
@@ -291037,7 +292611,7 @@
     "reviewAt": "2026-11-02T18:16:54.990Z"
   },
   "5063350": {
-    "savedAt": "2026-10-29T05:02:59.512Z",
+    "savedAt": "2026-11-05T07:16:38.570Z",
     "result": {
       "detail": {
         "success": true,
@@ -291088,12 +292662,12 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "中期星印怎么升",
-          "timestamp": 1793188800
+          "title": "一对牌型一图流推荐｜烬压8",
+          "timestamp": 1793793600
         },
         {
-          "title": "三条牌型一图流推荐｜烬压6",
-          "timestamp": 1793102400
+          "title": "皇家同花顺牌型一图流推荐｜烬压7",
+          "timestamp": 1793707200
         },
         {
           "title": "1.0.11 更新：问题修复与体验优化",
@@ -291101,11 +292675,11 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T05:03:04.866Z",
-    "reviewAt": "2026-10-29T05:03:05.077Z"
+    "evidenceAt": "2026-11-05T07:16:43.905Z",
+    "reviewAt": "2026-11-05T07:16:44.377Z"
   },
   "5063400": {
-    "savedAt": "2026-10-29T05:08:31.748Z",
+    "savedAt": "2026-11-05T07:19:34.642Z",
     "result": {
       "detail": {
         "success": true,
@@ -291169,8 +292743,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T05:08:36.952Z",
-    "reviewAt": "2026-10-29T05:08:37.173Z"
+    "evidenceAt": "2026-11-05T07:19:39.866Z",
+    "reviewAt": "2026-11-05T07:19:40.411Z"
   },
   "5063480": {
     "savedAt": "2026-10-20T21:04:32.230Z",
@@ -319327,6 +320901,82 @@
     "evidenceAt": "2026-11-02T23:38:45.101Z",
     "reviewAt": "2026-11-02T23:38:45.434Z"
   },
+  "5102640": {
+    "savedAt": "2026-11-05T07:05:17.437Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Pawn'd Chess",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 2490,
+            "final": 1992,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 24.90",
+            "final_formatted": "¥ 19.92"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5102640/b4143b3218ac74bab6f27447f9648161fb2f084f/header.jpg?t=1793846823",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "18",
+              "description": "体育"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Normal Man Labs"
+          ],
+          "publishers": [
+            "Normal Man Labs"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793846825,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Pawn'd Chess is available now",
+          "timestamp": 1793847000
+        },
+        {
+          "title": "Thank you for playing the Pawn'd Chess demo",
+          "timestamp": 1793846520
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:05:22.726Z",
+    "reviewAt": "2026-11-05T07:05:23.184Z"
+  },
   "5102950": {
     "savedAt": "2026-10-30T08:07:25.045Z",
     "result": {
@@ -324285,6 +325935,73 @@
     },
     "evidenceAt": "2026-10-29T16:24:52.874Z",
     "reviewAt": "2026-10-29T16:24:53.282Z"
+  },
+  "5111880": {
+    "savedAt": "2026-11-05T07:05:27.927Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "美食大冒险",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5111880/80b8458fe7382c8bba0823c0f1a2605749308b22/header.jpg?t=1793861550",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "29",
+              "description": "大型多人在线"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "美食研究所"
+          ],
+          "publishers": [
+            "美食研究所"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793844077,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:05:33.196Z",
+    "reviewAt": "2026-11-05T07:05:33.745Z"
   },
   "5111890": {
     "savedAt": "2026-11-04T00:22:07.575Z",
@@ -338059,6 +339776,65 @@
     "evidenceAt": "2026-10-25T01:29:36.363Z",
     "reviewAt": "2026-10-25T01:29:36.729Z"
   },
+  "5128220": {
+    "savedAt": "2026-11-05T07:18:01.394Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "A coin toss roguelike Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5128220/7618614eb601c3aa4f1ce5ae6626e75226f20a99/header.jpg?t=1793862812",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "bigsum"
+          ],
+          "publishers": [
+            "bigsum"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 19 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793153560,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:18:06.851Z",
+    "reviewAt": "2026-11-05T07:18:07.515Z"
+  },
   "5128280": {
     "savedAt": "2026-10-30T19:49:31.240Z",
     "result": {
@@ -344457,6 +346233,69 @@
     },
     "evidenceAt": "2026-11-03T00:20:17.976Z",
     "reviewAt": "2026-11-03T00:20:18.408Z"
+  },
+  "5134960": {
+    "savedAt": "2026-11-05T07:05:38.428Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Superpower Hold'em",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1500,
+            "final": 1350,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 15.00",
+            "final_formatted": "¥ 13.50"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5134960/cf3d2ad3c09ad18e823fccb63d53afc7de84655e/header.jpg?t=1793841182",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "JIANG XIAO"
+          ],
+          "publishers": [
+            "JIANG XIAO"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793841183,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:05:43.716Z",
+    "reviewAt": "2026-11-05T07:05:44.200Z"
   },
   "5134970": {
     "savedAt": "2026-10-22T15:29:26.415Z",
@@ -377263,6 +379102,78 @@
     "evidenceAt": "2026-10-30T23:41:09.147Z",
     "reviewAt": "2026-10-30T23:41:09.633Z"
   },
+  "5176400": {
+    "savedAt": "2026-11-05T07:05:48.910Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Cyan Moon - The Simulation Program",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1269,
+            "final": 1269,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 12.69"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5176400/22148e87005d97b942a6174b88963aa5a8255c9b/header.jpg?t=1793858146",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "Daishi11"
+          ],
+          "publishers": [
+            "Daishi11"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793858146,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": [
+        {
+          "title": "Update 0.1.2 — Directional Growth, Age Color & More!",
+          "timestamp": 1792528920
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:05:54.183Z",
+    "reviewAt": "2026-11-05T07:05:54.625Z"
+  },
   "5176580": {
     "savedAt": "2026-10-23T23:15:27.594Z",
     "result": {
@@ -387242,6 +389153,69 @@
     "evidenceAt": "2026-10-25T06:19:48.345Z",
     "reviewAt": "2026-10-25T06:19:48.519Z"
   },
+  "5186640": {
+    "savedAt": "2026-11-05T07:06:04.507Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "SEEDS - Echoes Beneath the Sands",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5900,
+            "final": 5900,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 59.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5186640/7c1fa63901a0410c92935765402bc23e8fe54976/header.jpg?t=1793857370",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
+            }
+          ],
+          "developers": [
+            "Against All Odds Limited"
+          ],
+          "publishers": [
+            "Against All Odds Limited"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793857371,
+      "earlyAccessDate": "2026-11-04",
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:06:09.795Z",
+    "reviewAt": "2026-11-05T07:06:10.422Z"
+  },
   "5186650": {
     "savedAt": "2026-10-29T02:18:42.814Z",
     "result": {
@@ -395775,6 +397749,57 @@
     },
     "evidenceAt": "2026-10-27T00:56:09.182Z",
     "reviewAt": "2026-10-27T00:56:09.502Z"
+  },
+  "5194150": {
+    "savedAt": "2026-11-05T07:06:15.002Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Zukontide",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5194150/217ef9cfe6cbb14923ca6e9d57a4e6c076fe139d/header.jpg?t=1789492579",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Sindre"
+          ],
+          "publishers": [
+            "Sindre"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793859236,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:06:20.308Z",
+    "reviewAt": "2026-11-05T07:06:20.776Z"
   },
   "5194240": {
     "savedAt": "2026-10-30T09:02:57.579Z",
@@ -423346,6 +425371,61 @@
     "evidenceAt": "2026-10-29T17:35:13.097Z",
     "reviewAt": "2026-10-29T17:35:13.345Z"
   },
+  "5218140": {
+    "savedAt": "2026-11-05T07:06:25.445Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Fertile Crescent",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5700,
+            "final": 4275,
+            "discount_percent": 25,
+            "initial_formatted": "¥ 57.00",
+            "final_formatted": "¥ 42.75"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5218140/c08ab1e49082775628e7d4b4fe4449125953c493/header.jpg?t=1793838309",
+          "genres": [
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "gold_iron_and_salt "
+          ],
+          "publishers": [
+            "gold_iron_and_salt "
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793838310,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:06:30.861Z",
+    "reviewAt": "2026-11-05T07:06:31.377Z"
+  },
   "5218170": {
     "savedAt": "2026-10-22T15:40:05.697Z",
     "result": {
@@ -429604,6 +431684,65 @@
     },
     "evidenceAt": "2026-10-28T10:07:26.391Z",
     "reviewAt": "2026-10-28T10:07:26.604Z"
+  },
+  "5222450": {
+    "savedAt": "2026-11-05T07:06:36.133Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Arcade City",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1800,
+            "final": 1620,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 18.00",
+            "final_formatted": "¥ 16.20"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5222450/2db44181753443cc8e9ce8477482797aee9fb52d/header.jpg?t=1793841172",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Shirona Games"
+          ],
+          "publishers": [
+            "Shirona Games"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793841173,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:06:41.527Z",
+    "reviewAt": "2026-11-05T07:06:42.044Z"
   },
   "5222500": {
     "savedAt": "2026-10-29T17:41:04.037Z",
@@ -520151,6 +522290,65 @@
     "evidenceAt": "2026-10-30T01:53:04.444Z",
     "reviewAt": "2026-10-30T01:53:04.877Z"
   },
+  "5281910": {
+    "savedAt": "2026-11-05T07:06:46.661Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "War Of The Twelve",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 3500,
+            "final": 2800,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 35.00",
+            "final_formatted": "¥ 28.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281910/a8340ec59ec667e6565d0535eaf538731f2fecac/header.jpg?t=1793859510",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Lumivane Studio"
+          ],
+          "publishers": [
+            "Lumivane Studio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793859510,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:06:51.957Z",
+    "reviewAt": "2026-11-05T07:06:52.454Z"
+  },
   "5281940": {
     "savedAt": "2026-10-26T23:51:55.185Z",
     "result": {
@@ -535899,7 +538097,7 @@
     "reviewAt": "2026-10-29T08:36:05.116Z"
   },
   "5292650": {
-    "savedAt": "2026-10-29T04:50:44.910Z",
+    "savedAt": "2026-11-05T07:22:25.352Z",
     "result": {
       "detail": {
         "success": true,
@@ -535907,7 +538105,7 @@
           "type": "game",
           "name": "First Steps in the NICU 2: Discharge Support Edition",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5292650/4f5bb828d459e5907c883e42bdfdd72b9c9401c4/header.jpg?t=1793143104",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5292650/4f5bb828d459e5907c883e42bdfdd72b9c9401c4/header.jpg?t=1793844624",
           "genres": [
             {
               "id": "25",
@@ -535919,10 +538117,11 @@
             }
           ],
           "developers": [
+            "エムテラス",
             "M-Terrace"
           ],
           "publishers": [
-            "M-Terrace"
+            "エムテラス"
           ],
           "release_date": {
             "coming_soon": false,
@@ -535946,8 +538145,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T04:50:50.084Z",
-    "reviewAt": "2026-10-29T04:50:50.323Z"
+    "evidenceAt": "2026-11-05T07:22:30.568Z",
+    "reviewAt": "2026-11-05T07:22:31.055Z"
   },
   "5292700": {
     "savedAt": "2026-11-01T08:19:36.155Z",
@@ -575779,6 +577978,70 @@
     "evidenceAt": "2026-11-03T21:52:19.483Z",
     "reviewAt": "2026-11-03T21:52:19.872Z"
   },
+  "5317740": {
+    "savedAt": "2026-11-05T07:06:57.220Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Something in the Rows",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 4200,
+            "final": 3780,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 42.00",
+            "final_formatted": "¥ 37.80"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5317740/d9b86f6626ab6144c99c8e57016b96f2b0131e35/header.jpg?t=1793848970",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Distorted Games Studio"
+          ],
+          "publishers": [
+            "Distorted Games Studio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793848971,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Something in the Rows is out now!",
+          "timestamp": 1793850960
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:07:02.545Z",
+    "reviewAt": "2026-11-05T07:07:03.020Z"
+  },
   "5317760": {
     "savedAt": "2026-10-31T22:38:47.831Z",
     "result": {
@@ -600418,6 +602681,57 @@
     "evidenceAt": "2026-11-04T23:04:14.626Z",
     "reviewAt": "2026-11-04T23:04:15.072Z"
   },
+  "5333400": {
+    "savedAt": "2026-11-05T06:58:51.840Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Volcaldera Ashfall Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5333400/2e82eec27ab6b52ed51729bef5e61680385caf58/header.jpg?t=1793751361",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Cavemanon"
+          ],
+          "publishers": [
+            "Cavemanon"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 3 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": null,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:58:57.222Z",
+    "reviewAt": "2026-11-05T06:58:57.634Z"
+  },
   "5333430": {
     "savedAt": "2026-10-31T23:08:09.560Z",
     "result": {
@@ -607371,6 +609685,61 @@
     },
     "evidenceAt": "2026-11-04T23:04:45.719Z",
     "reviewAt": "2026-11-04T23:04:46.069Z"
+  },
+  "5337120": {
+    "savedAt": "2026-11-05T07:01:19.309Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Monster Club League Manager",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5337120/7e4945b1b275c907506993b8b27b35f8b96c3a6b/header.jpg?t=1793103185",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Sugiworks"
+          ],
+          "publishers": [
+            "Sugiworks"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:01:24.544Z",
+    "reviewAt": "2026-11-05T07:01:24.937Z"
   },
   "5337150": {
     "savedAt": "2026-10-29T16:13:29.739Z",
@@ -619216,6 +621585,69 @@
     },
     "evidenceAt": "2026-11-03T15:39:03.657Z",
     "reviewAt": "2026-11-03T15:39:04.298Z"
+  },
+  "5344290": {
+    "savedAt": "2026-11-05T07:07:07.712Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Make it! Karaage",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 2900,
+            "final": 2059,
+            "discount_percent": 29,
+            "initial_formatted": "¥ 29.00",
+            "final_formatted": "¥ 20.59"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5344290/5adf6ff38d6ded012f65cd6a7f947e71a76ae944/header.jpg?t=1793834275",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "SAT-BOX"
+          ],
+          "publishers": [
+            "SAT-BOX"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793834276,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:07:13.095Z",
+    "reviewAt": "2026-11-05T07:07:13.617Z"
   },
   "5344310": {
     "savedAt": "2026-10-30T15:12:23.708Z",
@@ -656904,6 +659336,70 @@
     "evidenceAt": "2026-10-24T12:46:21.876Z",
     "reviewAt": "2026-10-24T12:46:22.405Z"
   },
+  "5369780": {
+    "savedAt": "2026-11-05T06:57:53.924Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "VCO: Victor Charlie One Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5369780/029cf2365002a21c1425ef21d0939e37dc05e2e2/header.jpg?t=1793845316",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Systems Heavy"
+          ],
+          "publishers": [
+            "Systems Heavy"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793845315,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "VCO combat demo out now!",
+          "timestamp": 1793859960
+        },
+        {
+          "title": "THE FIGHT BEGINS NOVEMBER 5",
+          "timestamp": 1792192200
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T06:57:59.302Z",
+    "reviewAt": "2026-11-05T06:57:59.825Z"
+  },
   "5369810": {
     "savedAt": "2026-10-30T01:31:07.648Z",
     "result": {
@@ -672793,6 +675289,57 @@
     "evidenceAt": "2026-11-04T08:46:03.661Z",
     "reviewAt": "2026-11-04T08:46:04.051Z"
   },
+  "5380560": {
+    "savedAt": "2026-11-05T07:01:29.803Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "False Feed",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5380560/f9afd6660104d16717cc8386394175ea35276ec5/header.jpg?t=1793596592",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Katarienumono, Inc."
+          ],
+          "publishers": [
+            "Katarienumono, Inc."
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865600,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:01:35.092Z",
+    "reviewAt": "2026-11-05T07:01:35.517Z"
+  },
   "5380600": {
     "savedAt": "2026-11-04T00:48:32.678Z",
     "result": {
@@ -674461,6 +677008,61 @@
     },
     "evidenceAt": "2026-10-31T22:20:00.709Z",
     "reviewAt": "2026-10-31T22:20:01.085Z"
+  },
+  "5381650": {
+    "savedAt": "2026-11-05T07:07:29.459Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "浮空秘境：LoFi",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1600,
+            "final": 1280,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 16.00",
+            "final_formatted": "¥ 12.80"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5381650/5b52c98158e045c92e08fb2815f0ef54e3352de0/header.jpg?t=1793848221",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            }
+          ],
+          "developers": [
+            "Project YonJoy"
+          ],
+          "publishers": [
+            "Project YonJoy"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793848222,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:07:34.815Z",
+    "reviewAt": "2026-11-05T07:07:35.247Z"
   },
   "5381700": {
     "savedAt": "2026-11-03T21:59:51.611Z",
@@ -676190,6 +678792,61 @@
     },
     "evidenceAt": "2026-10-31T01:46:36.667Z",
     "reviewAt": "2026-10-31T01:46:37.049Z"
+  },
+  "5382620": {
+    "savedAt": "2026-11-05T06:56:34.029Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "FLICK PONG",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5382620/284fcbe5ef58e5bdb941f749e2679311d5a39c63/header.jpg?t=1793769130",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "18",
+              "description": "体育"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "habibidev"
+          ],
+          "publishers": [
+            "habibidev"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 3 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793769129,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:56:39.328Z",
+    "reviewAt": "2026-11-05T06:56:39.749Z"
   },
   "5382630": {
     "savedAt": "2026-11-01T01:44:42.148Z",
@@ -701418,6 +704075,61 @@
     "evidenceAt": "2026-10-31T06:33:51.536Z",
     "reviewAt": "2026-10-31T06:33:51.918Z"
   },
+  "5402190": {
+    "savedAt": "2026-11-05T07:02:33.498Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Digging Up Together",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5402190/ccd17d107bc00d488ae8a6a37d72a9d729382eb1/header.jpg?t=1793631030",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "cnsgames"
+          ],
+          "publishers": [
+            "cnsgames"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "即将推出"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793862000,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:02:38.739Z",
+    "reviewAt": "2026-11-05T07:02:39.229Z"
+  },
   "5402200": {
     "savedAt": "2026-11-05T03:43:18.585Z",
     "result": {
@@ -717223,6 +719935,73 @@
     "evidenceAt": "2026-11-04T08:13:44.418Z",
     "reviewAt": "2026-11-04T08:13:44.879Z"
   },
+  "5416450": {
+    "savedAt": "2026-11-05T07:07:40.035Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "蘑法失控（ShroomFrenzy）",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 3200,
+            "final": 2560,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 32.00",
+            "final_formatted": "¥ 25.60"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5416450/c0c70efa154ef1f7ce33b30e4231498c26401f7a/header.jpg?t=1793860626",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Evdio"
+          ],
+          "publishers": [
+            "Evdio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793860627,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:07:45.317Z",
+    "reviewAt": "2026-11-05T07:07:45.757Z"
+  },
   "5416470": {
     "savedAt": "2026-10-31T05:56:48.612Z",
     "result": {
@@ -718818,6 +721597,61 @@
     },
     "evidenceAt": "2026-11-04T08:14:05.632Z",
     "reviewAt": "2026-11-04T08:14:06.006Z"
+  },
+  "5418640": {
+    "savedAt": "2026-11-05T07:07:50.489Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Chopstick Together",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1900,
+            "final": 1900,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 19.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5418640/1451673e652aa8bb30fc7962d53ae0fa3eb27824/header.jpg?t=1793853128",
+          "genres": [
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Kei Furukawa"
+          ],
+          "publishers": [
+            "KAYAC Inc."
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793853129,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:07:55.697Z",
+    "reviewAt": "2026-11-05T07:07:56.163Z"
   },
   "5418960": {
     "savedAt": "2026-11-04T18:57:14.871Z",
@@ -732195,6 +735029,61 @@
     "evidenceAt": "2026-11-02T16:46:18.154Z",
     "reviewAt": "2026-11-02T16:46:18.650Z"
   },
+  "5432290": {
+    "savedAt": "2026-11-05T07:08:00.894Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "奶蛙坤坤大战外星人（不要对游戏过度解读，我自己都不知道自己想要表达什么）",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 500,
+            "final": 350,
+            "discount_percent": 30,
+            "initial_formatted": "¥ 5.00",
+            "final_formatted": "¥ 3.50"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5432290/e07f3b5535c24be53b059d2679420e520d878daa/header.jpg?t=1793848487",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            }
+          ],
+          "developers": [
+            "86岁按时吃饭"
+          ],
+          "publishers": [
+            "86岁按时吃饭"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 1,
+          "review_score": 0,
+          "review_score_desc": "1 user reviews",
+          "total_positive": 0,
+          "total_negative": 1,
+          "total_reviews": 1
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793848489,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:08:06.171Z",
+    "reviewAt": "2026-11-05T07:08:06.769Z"
+  },
   "5432350": {
     "savedAt": "2026-11-02T18:23:29.664Z",
     "result": {
@@ -738302,6 +741191,65 @@
     "evidenceAt": "2026-11-02T17:35:40.078Z",
     "reviewAt": "2026-11-02T17:35:40.430Z"
   },
+  "5441360": {
+    "savedAt": "2026-11-05T07:08:11.371Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Localhost Hero",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5600,
+            "final": 4480,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 56.00",
+            "final_formatted": "¥ 44.80"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5441360/84a8f58778c1b03e11b4d9ce15cc26461a7c4903/header.jpg?t=1793850022",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Studio Yeolmae"
+          ],
+          "publishers": [
+            "Studio Yeolmae"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793850023,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:08:16.626Z",
+    "reviewAt": "2026-11-05T07:08:17.112Z"
+  },
   "5441410": {
     "savedAt": "2026-11-03T07:49:53.634Z",
     "result": {
@@ -743889,6 +746837,61 @@
     "evidenceAt": "2026-11-02T17:52:28.531Z",
     "reviewAt": "2026-11-02T17:52:29.001Z"
   },
+  "5450570": {
+    "savedAt": "2026-11-05T06:58:41.252Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Cubic Mage Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5450570/7f36a8c03a02dc7a37727a7cb6e1ee1075730111/header.jpg?t=1793833153",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "KEVI"
+          ],
+          "publishers": [
+            "KEVI"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": null,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T06:58:46.661Z",
+    "reviewAt": "2026-11-05T06:58:47.258Z"
+  },
   "5450620": {
     "savedAt": "2026-11-04T17:00:29.148Z",
     "result": {
@@ -747641,6 +750644,65 @@
     "evidenceAt": "2026-10-31T05:58:54.555Z",
     "reviewAt": "2026-10-31T05:58:55.037Z"
   },
+  "5456160": {
+    "savedAt": "2026-11-05T07:08:21.816Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Domino Together",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1900,
+            "final": 1900,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 19.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5456160/a4af02027d74adcda7a289169654e7d6ffe20530/header.jpg?t=1793853152",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Kei Furukawa"
+          ],
+          "publishers": [
+            "KAYAC Inc."
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793853153,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:08:27.007Z",
+    "reviewAt": "2026-11-05T07:08:27.457Z"
+  },
   "5456260": {
     "savedAt": "2026-11-04T22:50:25.875Z",
     "result": {
@@ -749744,6 +752806,61 @@
     "evidenceAt": "2026-11-05T03:45:10.659Z",
     "reviewAt": "2026-11-05T03:45:11.092Z"
   },
+  "5460510": {
+    "savedAt": "2026-11-05T07:08:32.178Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Cozy Witch Store",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 1837,
+            "final": 1837,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 18.37"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5460510/61f0d271449ffbed9002fa4d1bbfb19b618c8ed7/header.jpg?t=1793859418",
+          "genres": [
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Saturn Interactive"
+          ],
+          "publishers": [
+            "Saturn Interactive"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793859419,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:08:37.394Z",
+    "reviewAt": "2026-11-05T07:08:37.947Z"
+  },
   "5460520": {
     "savedAt": "2026-11-03T22:02:29.844Z",
     "result": {
@@ -751831,6 +754948,69 @@
     },
     "evidenceAt": "2026-11-04T02:34:30.607Z",
     "reviewAt": "2026-11-04T02:34:31.083Z"
+  },
+  "5464240": {
+    "savedAt": "2026-11-05T07:08:47.763Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "UBOOTSIM",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5464240/fa7360e8c9e1cca57ff16cd2b4e0d8722600d2bd/header.jpg?t=1793783193",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "18",
+              "description": "体育"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "Pablo Kessler"
+          ],
+          "publishers": [
+            "Pablo Kessler"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793783187,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:08:53.099Z",
+    "reviewAt": "2026-11-05T07:08:53.491Z"
   },
   "5464300": {
     "savedAt": "2026-11-01T07:45:07.006Z",
@@ -755225,6 +758405,57 @@
     "evidenceAt": "2026-11-05T03:25:06.096Z",
     "reviewAt": "2026-11-05T03:25:06.579Z"
   },
+  "5470120": {
+    "savedAt": "2026-11-05T06:59:55.006Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "星烬航线 试玩版",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5470120/ce1a8471751361dec99257292afc5414366bf0aa/header_schinese.jpg?t=1793752098",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "WU HUI CHEN"
+          ],
+          "publishers": [
+            "WU HUI CHEN"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 3 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1794448800,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:00:00.393Z",
+    "reviewAt": "2026-11-05T07:00:00.838Z"
+  },
   "5470250": {
     "savedAt": "2026-11-04T08:57:00.619Z",
     "result": {
@@ -756270,6 +759501,69 @@
     },
     "evidenceAt": "2026-11-04T18:27:41.870Z",
     "reviewAt": "2026-11-04T18:27:42.358Z"
+  },
+  "5473010": {
+    "savedAt": "2026-11-05T07:08:58.277Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "长白之火",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5473010/6ce8fab9950dca44030cefad7db30f5823529591/header.jpg?t=1793798148",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "劳动艺术"
+          ],
+          "publishers": [
+            "劳动艺术"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793798148,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:09:03.723Z",
+    "reviewAt": "2026-11-05T07:09:04.101Z"
   },
   "5473050": {
     "savedAt": "2026-11-04T23:09:12.892Z",
@@ -762216,6 +765510,61 @@
     "evidenceAt": "2026-10-31T06:03:58.907Z",
     "reviewAt": "2026-10-31T06:03:59.388Z"
   },
+  "5488870": {
+    "savedAt": "2026-11-05T07:00:05.598Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Red Sol Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5488870/12b546296de8fa4bddb368cda278c5ea6d3dc7bc/header.jpg?t=1793858188",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Forged Flow"
+          ],
+          "publishers": [
+            "Forged Flow"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1798704000,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:00:11.097Z",
+    "reviewAt": "2026-11-05T07:00:11.535Z"
+  },
   "5489270": {
     "savedAt": "2026-11-05T00:03:00.262Z",
     "result": {
@@ -764354,6 +767703,65 @@
     "evidenceAt": "2026-10-31T12:51:26.143Z",
     "reviewAt": "2026-10-31T12:51:26.485Z"
   },
+  "5495010": {
+    "savedAt": "2026-11-05T07:00:47.561Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "增量狂魔试玩版 Lucremachine Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5495010/6757f51050c07d58fd4a7226d19e7e713f87a75c/header.jpg?t=1793833319",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Hyperhedonic"
+          ],
+          "publishers": [
+            "Hyperhedonic"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1795111200,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:00:53.143Z",
+    "reviewAt": "2026-11-05T07:00:53.697Z"
+  },
   "5495640": {
     "savedAt": "2026-10-31T21:51:09.234Z",
     "result": {
@@ -764463,6 +767871,61 @@
     },
     "evidenceAt": "2026-10-31T21:51:35.093Z",
     "reviewAt": "2026-10-31T21:51:35.563Z"
+  },
+  "5495730": {
+    "savedAt": "2026-11-05T07:00:58.334Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "DomeLand Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5495730/377bea6ca5e3bf6da046c05f7d15f20b8ab2cb18/header.jpg?t=1793758964",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Domo Game"
+          ],
+          "publishers": [
+            "Domo Game"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 3 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1806476400,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:01:03.720Z",
+    "reviewAt": "2026-11-05T07:01:04.187Z"
   },
   "5495960": {
     "savedAt": "2026-10-31T06:05:27.591Z",
@@ -767277,6 +770740,58 @@
     "evidenceAt": "2026-11-04T22:18:51.701Z",
     "reviewAt": "2026-11-04T22:18:52.119Z"
   },
+  "5504460": {
+    "savedAt": "2026-11-05T07:01:40.307Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Animal Bookshop: Tidy & Sell Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5504460/14a6152259aa93b1a03cba4d5985b397ea1fecae/header.jpg?t=1793857130",
+          "genres": [
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Perpetual Learner"
+          ],
+          "publishers": [
+            "Perpetual Learner"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793857129,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Texture Rework! + join the community",
+          "timestamp": 1789046220
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:01:45.704Z",
+    "reviewAt": "2026-11-05T07:01:46.183Z"
+  },
   "5504480": {
     "savedAt": "2026-11-04T08:10:30.688Z",
     "result": {
@@ -768097,6 +771612,108 @@
     "evidenceAt": "2026-11-04T08:11:17.792Z",
     "reviewAt": "2026-11-04T08:11:18.180Z"
   },
+  "5508070": {
+    "savedAt": "2026-11-05T07:02:22.787Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "再来亿竿 Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5508070/09de95829dcf0fcdd5934c50d46f2a9c85d6dc05/header_schinese.jpg?t=1793849249",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            }
+          ],
+          "developers": [
+            "Shorepause Studio"
+          ],
+          "publishers": [
+            "Shorepause Studio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": null,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:02:28.309Z",
+    "reviewAt": "2026-11-05T07:02:29.060Z"
+  },
+  "5508160": {
+    "savedAt": "2026-11-05T07:02:59.841Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Raccoocket Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5508160/61cc8dd6f85df22e56eaaa035cb38ad21db164a4/header_schinese.jpg?t=1793844537",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Jololica Studio"
+          ],
+          "publishers": [
+            "Jololica Studio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1806476400,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:03:05.230Z",
+    "reviewAt": "2026-11-05T07:03:05.660Z"
+  },
   "5508510": {
     "savedAt": "2026-11-01T15:26:14.726Z",
     "result": {
@@ -768313,6 +771930,69 @@
     },
     "evidenceAt": "2026-10-31T12:49:26.052Z",
     "reviewAt": "2026-10-31T12:49:26.399Z"
+  },
+  "5510710": {
+    "savedAt": "2026-11-05T07:03:26.289Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Blood of Rome Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5510710/ab3c6f89565b4e7fc00cf3b4eda35bbc9d8dace3/header.jpg?t=1793840467",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "18",
+              "description": "体育"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Pixelatus"
+          ],
+          "publishers": [
+            "Pixelatus"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793840466,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:03:31.556Z",
+    "reviewAt": "2026-11-05T07:03:31.970Z"
   },
   "5510870": {
     "savedAt": "2026-11-04T16:50:29.056Z",
@@ -768863,6 +772543,57 @@
     "evidenceAt": "2026-11-04T08:11:38.645Z",
     "reviewAt": "2026-11-04T08:11:39.050Z"
   },
+  "5513540": {
+    "savedAt": "2026-11-05T07:02:12.154Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "BrosLand Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5513540/e8d6bd470f50e904fa5e1851298e7bfebf18ce34/header.jpg?t=1793752240",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Astro_815"
+          ],
+          "publishers": [
+            "StayForGame"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 3 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": null,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:02:17.684Z",
+    "reviewAt": "2026-11-05T07:02:18.266Z"
+  },
   "5513910": {
     "savedAt": "2026-11-04T16:50:50.117Z",
     "result": {
@@ -768922,6 +772653,66 @@
     },
     "evidenceAt": "2026-11-04T16:50:55.620Z",
     "reviewAt": "2026-11-04T16:50:56.043Z"
+  },
+  "5513920": {
+    "savedAt": "2026-11-05T07:03:47.062Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Randventure Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5513920/113377468b6e8bb6e650ca0f95024829be1392f2/header.jpg?t=1793833043",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Epreyn"
+          ],
+          "publishers": [
+            "Epreyn"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1830240000,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "The Randventure demo is out",
+          "timestamp": 1793839740
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T07:03:52.457Z",
+    "reviewAt": "2026-11-05T07:03:52.926Z"
   },
   "5515530": {
     "savedAt": "2026-11-04T22:23:48.903Z",
@@ -769438,6 +773229,65 @@
     "evidenceAt": "2026-11-04T08:12:25.794Z",
     "reviewAt": "2026-11-04T08:12:26.201Z"
   },
+  "5519850": {
+    "savedAt": "2026-11-05T07:04:08.258Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "MARS3077 Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5519850/a7b5ccee28f7571d7f1e5dda0b538105914fac21/header.jpg?t=1793853987",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "NAMEK GAME STUDIO"
+          ],
+          "publishers": [
+            "NAMEK GAME STUDIO"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": null,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:04:13.743Z",
+    "reviewAt": "2026-11-05T07:04:14.194Z"
+  },
   "5520130": {
     "savedAt": "2026-11-04T08:04:44.244Z",
     "result": {
@@ -769667,6 +773517,112 @@
     },
     "evidenceAt": "2026-11-04T08:13:12.968Z",
     "reviewAt": "2026-11-04T08:13:13.375Z"
+  },
+  "5521820": {
+    "savedAt": "2026-11-05T07:04:29.716Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Void Revenant Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5521820/f81388d18b140f62d39bfb7e2f7efb305160dea4/header.jpg?t=1793854517",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Sole Rebel Soul"
+          ],
+          "publishers": [
+            "Sole Rebel Soul"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1794592800,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:04:35.271Z",
+    "reviewAt": "2026-11-05T07:04:35.718Z"
+  },
+  "5522960": {
+    "savedAt": "2026-11-05T07:04:56.227Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "理货时光 Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5522960/14df6888e057b4d8b6f45322f760daa95194de45/header_schinese.jpg?t=1793850633",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Cimulc Studio"
+          ],
+          "publishers": [
+            "Cimulc Studio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1798704000,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T07:05:01.634Z",
+    "reviewAt": "2026-11-05T07:05:02.038Z"
   },
   "5525160": {
     "savedAt": "2026-11-04T08:13:28.481Z",
