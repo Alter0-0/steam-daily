@@ -15089,6 +15089,24 @@
           "scanComplete": true
         }
       ]
+    },
+    {
+      "id": "41943146903",
+      "event": "schedule",
+      "automaticResume": false,
+      "startedAt": "2026-11-05T00:44:53.740Z",
+      "target": "2026-11-04",
+      "commit": "6ee6580383e569c45302fae0d9ac7c05d1b605cb",
+      "synchronization": {
+        "apps": 1,
+        "removedPlaceholders": 0
+      },
+      "collection": {
+        "attempted": false,
+        "reason": "cooldown",
+        "at": "2026-11-05T00:44:53.789Z",
+        "lastAttemptAt": "2026-11-05T00:14:03.799Z"
+      }
     }
   ],
   "acceptance": {
