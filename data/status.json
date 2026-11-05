@@ -1,23 +1,23 @@
 {
   "state": "partial",
   "reportDate": "2026-11-04",
-  "startedAt": "2026-11-04T22:44:03.230Z",
-  "updatedAt": "2026-11-04T23:14:10.244Z",
+  "startedAt": "2026-11-04T23:43:23.071Z",
+  "updatedAt": "2026-11-05T00:13:24.389Z",
   "stage": "finished",
   "scanDays": 7,
   "scansComplete": true,
-  "processed": 182,
+  "processed": 255,
   "completedDetails": 5,
   "basicCompleted": 5,
-  "verified": 159,
-  "failed": 18,
+  "verified": 84,
+  "failed": 166,
   "excluded": 0,
   "missingDetails": 152,
   "initialVerification": 30,
-  "refreshDue": 1545,
-  "waitingRetry": 182,
+  "refreshDue": 1461,
+  "waitingRetry": 184,
   "stopReason": "time-budget",
-  "candidates": 12732,
+  "candidates": 12737,
   "pending": 182,
   "discovery": {
     "state": "healthy",
@@ -29,9 +29,9 @@
   "reviewService": {
     "state": "healthy",
     "failures": 0,
-    "successes": 164,
+    "successes": 89,
     "lastError": null,
     "pausedUntil": null
   },
-  "finishedAt": "2026-11-04T23:14:11.244Z"
+  "finishedAt": "2026-11-05T00:13:25.399Z"
 }
