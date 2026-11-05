@@ -1302,6 +1302,82 @@
     "evidenceAt": "2026-10-31T00:06:10.016Z",
     "reviewAt": "2026-10-31T00:06:10.323Z"
   },
+  "910550": {
+    "savedAt": "2026-11-05T09:52:35.347Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "MONO CHAMELEON",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 2600,
+            "final": 2080,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 26.00",
+            "final_formatted": "¥ 20.80"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/910550/9f32bf143bce980a835f50f9e4aa9f2a1dfca83c/header.jpg?t=1793869218",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "PocketStudio"
+          ],
+          "publishers": [
+            "PocketStudio"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793869220,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "11月5日发售，轮到你躲了｜首发14天八折",
+          "timestamp": 1793869200
+        },
+        {
+          "title": "影子里藏着一个人｜《MONO CHAMELEON》还有7天发售",
+          "timestamp": 1793264400
+        },
+        {
+          "title": "观众席上线了，另附玩法视频",
+          "timestamp": 1792479240
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:52:40.691Z",
+    "reviewAt": "2026-11-05T09:52:41.204Z"
+  },
   "912960": {
     "savedAt": "2026-11-03T15:19:21.739Z",
     "result": {
@@ -8728,7 +8804,7 @@
     "evidenceAt": "2026-10-22T15:45:39.148Z"
   },
   "1838980": {
-    "savedAt": "2026-10-31T21:42:21.592Z",
+    "savedAt": "2026-11-05T10:16:19.693Z",
     "result": {
       "detail": {
         "success": true,
@@ -8796,8 +8872,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:42:26.726Z",
-    "reviewAt": "2026-10-31T21:42:27.058Z"
+    "evidenceAt": "2026-11-05T10:16:25.064Z",
+    "reviewAt": "2026-11-05T10:16:25.532Z"
   },
   "1854500": {
     "savedAt": "2026-11-01T02:03:31.347Z",
@@ -14712,7 +14788,7 @@
     "reviewAt": "2026-10-31T06:37:39.451Z"
   },
   "2294890": {
-    "savedAt": "2026-10-31T21:42:42.132Z",
+    "savedAt": "2026-11-05T10:16:30.284Z",
     "result": {
       "detail": {
         "success": true,
@@ -14728,7 +14804,7 @@
             "initial_formatted": "",
             "final_formatted": "¥ 13.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2294890/d8b48de1daf81dd2634578091b2371dbaa475dfa/header.jpg?t=1793473985",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2294890/d8b48de1daf81dd2634578091b2371dbaa475dfa/header.jpg?t=1793827538",
           "genres": [
             {
               "id": "1",
@@ -14737,6 +14813,10 @@
             {
               "id": "4",
               "description": "休闲"
+            },
+            {
+              "id": "70",
+              "description": "抢先体验"
             }
           ],
           "developers": [
@@ -14753,12 +14833,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
+          "review_score_desc": "2 user reviews",
+          "total_positive": 2,
           "total_negative": 0,
-          "total_reviews": 0
+          "total_reviews": 2
         }
       }
     },
@@ -14772,8 +14852,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:42:47.386Z",
-    "reviewAt": "2026-10-31T21:42:47.732Z"
+    "evidenceAt": "2026-11-05T10:16:35.697Z",
+    "reviewAt": "2026-11-05T10:16:36.160Z"
   },
   "2295060": {
     "savedAt": "2026-10-31T00:07:18.059Z",
@@ -19709,7 +19789,7 @@
     "reviewAt": "2026-10-29T01:51:04.898Z"
   },
   "2521800": {
-    "savedAt": "2026-10-31T21:43:18.228Z",
+    "savedAt": "2026-11-05T10:16:40.920Z",
     "result": {
       "detail": {
         "success": true,
@@ -19725,7 +19805,7 @@
             "initial_formatted": "¥ 77.00",
             "final_formatted": "¥ 65.45"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521800/873161bea0e45f7177d952668a479c3f5953cd1b/header.jpg?t=1793469910",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2521800/873161bea0e45f7177d952668a479c3f5953cd1b/header.jpg?t=1793615866",
           "genres": [
             {
               "id": "1",
@@ -19763,11 +19843,11 @@
       "review": {
         "query_summary": {
           "num_reviews": 1,
-          "review_score": 0,
-          "review_score_desc": "2 user reviews",
-          "total_positive": 1,
-          "total_negative": 1,
-          "total_reviews": 2
+          "review_score": 5,
+          "review_score_desc": "Mixed",
+          "total_positive": 11,
+          "total_negative": 6,
+          "total_reviews": 17
         }
       }
     },
@@ -19781,8 +19861,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:43:23.422Z",
-    "reviewAt": "2026-10-31T21:43:23.864Z"
+    "evidenceAt": "2026-11-05T10:16:46.350Z",
+    "reviewAt": "2026-11-05T10:16:46.789Z"
   },
   "2524740": {
     "savedAt": "2026-10-20T23:15:44.103Z",
@@ -33693,7 +33773,7 @@
     "evidenceAt": "2026-10-20T11:57:25.156Z"
   },
   "3058550": {
-    "savedAt": "2026-10-31T21:43:38.932Z",
+    "savedAt": "2026-11-05T10:16:51.608Z",
     "result": {
       "detail": {
         "success": true,
@@ -33709,7 +33789,7 @@
             "initial_formatted": "¥ 15.00",
             "final_formatted": "¥ 9.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3058550/1d94977c9fd28693c4f4fd804940c1c6ee896dfc/header.jpg?t=1793460345",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3058550/1d94977c9fd28693c4f4fd804940c1c6ee896dfc/header.jpg?t=1793724929",
           "genres": [
             {
               "id": "1",
@@ -33745,13 +33825,17 @@
       "earlyAccessDate": "2024-10-15",
       "announcements": [
         {
+          "title": "REWOLBOROUGH: Official Artwork",
+          "timestamp": 1793735760
+        },
+        {
           "title": "Chapter VII is out!",
           "timestamp": 1793460660
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:43:44.133Z",
-    "reviewAt": "2026-10-31T21:43:44.502Z"
+    "evidenceAt": "2026-11-05T10:16:56.927Z",
+    "reviewAt": "2026-11-05T10:16:57.387Z"
   },
   "3058680": {
     "savedAt": "2026-10-31T23:38:30.190Z",
@@ -38963,7 +39047,7 @@
     "evidenceAt": "2026-10-22T20:16:36.953Z"
   },
   "3183540": {
-    "savedAt": "2026-10-31T21:44:09.841Z",
+    "savedAt": "2026-11-05T10:17:02.184Z",
     "result": {
       "detail": {
         "success": true,
@@ -39023,8 +39107,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:44:15.018Z",
-    "reviewAt": "2026-10-31T21:44:15.367Z"
+    "evidenceAt": "2026-11-05T10:17:07.547Z",
+    "reviewAt": "2026-11-05T10:17:08.091Z"
   },
   "3184290": {
     "savedAt": "2026-11-04T02:01:41.109Z",
@@ -51214,7 +51298,7 @@
     "reviewAt": "2026-10-29T08:44:06.954Z"
   },
   "3459340": {
-    "savedAt": "2026-10-31T21:44:35.665Z",
+    "savedAt": "2026-11-05T10:17:12.813Z",
     "result": {
       "detail": {
         "success": true,
@@ -51222,7 +51306,15 @@
           "type": "game",
           "name": "Lacey's Flash Games",
           "is_free": false,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3459340/c9f4ab56d50788d9ee18a73e09d8ad8f60bba958/header.jpg?t=1793291260",
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 9300,
+            "final": 7905,
+            "discount_percent": 15,
+            "initial_formatted": "¥ 93.00",
+            "final_formatted": "¥ 79.05"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3459340/c9f4ab56d50788d9ee18a73e09d8ad8f60bba958/header.jpg?t=1793652498",
           "genres": [
             {
               "id": "1",
@@ -51247,29 +51339,34 @@
             "Euroclipse"
           ],
           "release_date": {
-            "coming_soon": true,
-            "date": "即将推出"
+            "coming_soon": false,
+            "date": "2026 年 10 月 31 日"
           }
         }
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
-          "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
-          "total_negative": 0,
-          "total_reviews": 0
+          "num_reviews": 1,
+          "review_score": 5,
+          "review_score_desc": "Mixed",
+          "total_positive": 317,
+          "total_negative": 149,
+          "total_reviews": 466
         }
       }
     },
     "evidence": {
       "timestamp": 1793481905,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Upcoming update: new features, fixes & improvements!",
+          "timestamp": 1793755500
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:44:40.869Z",
-    "reviewAt": "2026-10-31T21:44:41.175Z"
+    "evidenceAt": "2026-11-05T10:17:18.038Z",
+    "reviewAt": "2026-11-05T10:17:18.508Z"
   },
   "3459720": {
     "savedAt": "2026-11-05T00:42:36.969Z",
@@ -54874,6 +54971,61 @@
     "evidenceAt": "2026-10-29T16:15:54.097Z",
     "reviewAt": "2026-10-29T16:15:54.475Z"
   },
+  "3543960": {
+    "savedAt": "2026-11-05T09:52:45.916Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "问题偶像的养成计划",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3543960/header.jpg?t=1793869278",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "海肠工作室"
+          ],
+          "publishers": [
+            "海肠工作室"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793869234,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T09:52:51.266Z",
+    "reviewAt": "2026-11-05T09:52:51.793Z"
+  },
   "3545190": {
     "savedAt": "2026-11-01T08:30:29.764Z",
     "result": {
@@ -55942,7 +56094,7 @@
     "reviewAt": "2026-10-30T20:14:38.519Z"
   },
   "3571980": {
-    "savedAt": "2026-10-31T21:44:56.325Z",
+    "savedAt": "2026-11-05T10:17:23.220Z",
     "result": {
       "detail": {
         "success": true,
@@ -55989,8 +56141,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:45:01.526Z",
-    "reviewAt": "2026-10-31T21:45:01.829Z"
+    "evidenceAt": "2026-11-05T10:17:28.415Z",
+    "reviewAt": "2026-11-05T10:17:28.969Z"
   },
   "3573120": {
     "savedAt": "2026-11-05T06:58:04.548Z",
@@ -62057,7 +62209,7 @@
     "reviewAt": "2026-10-31T07:59:33.156Z"
   },
   "3680760": {
-    "savedAt": "2026-10-31T21:45:27.306Z",
+    "savedAt": "2026-11-05T10:17:33.615Z",
     "result": {
       "detail": {
         "success": true,
@@ -62098,22 +62250,27 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
-          "total_negative": 0,
-          "total_reviews": 0
+          "review_score_desc": "2 user reviews",
+          "total_positive": 1,
+          "total_negative": 1,
+          "total_reviews": 2
         }
       }
     },
     "evidence": {
       "timestamp": 1793476669,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Version 1.0.4 – Quality of Life Update",
+          "timestamp": 1793787038
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:45:32.526Z",
-    "reviewAt": "2026-10-31T21:45:32.961Z"
+    "evidenceAt": "2026-11-05T10:17:39.179Z",
+    "reviewAt": "2026-11-05T10:17:39.635Z"
   },
   "3681780": {
     "savedAt": "2026-10-22T05:02:20.855Z",
@@ -63324,7 +63481,7 @@
     "reviewAt": "2026-11-04T18:11:04.138Z"
   },
   "3698670": {
-    "savedAt": "2026-10-31T21:45:53.073Z",
+    "savedAt": "2026-11-05T10:17:44.413Z",
     "result": {
       "detail": {
         "success": true,
@@ -63384,8 +63541,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:45:58.252Z",
-    "reviewAt": "2026-10-31T21:45:58.610Z"
+    "evidenceAt": "2026-11-05T10:17:49.817Z",
+    "reviewAt": "2026-11-05T10:17:50.351Z"
   },
   "3699590": {
     "savedAt": "2026-10-21T16:06:16.425Z",
@@ -71351,7 +71508,7 @@
     "reviewAt": "2026-11-04T02:04:22.663Z"
   },
   "3819330": {
-    "savedAt": "2026-10-31T21:46:24.242Z",
+    "savedAt": "2026-11-05T10:17:55.032Z",
     "result": {
       "detail": {
         "success": true,
@@ -71398,8 +71555,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:46:29.418Z",
-    "reviewAt": "2026-10-31T21:46:29.746Z"
+    "evidenceAt": "2026-11-05T10:18:00.371Z",
+    "reviewAt": "2026-11-05T10:18:00.812Z"
   },
   "3820460": {
     "savedAt": "2026-10-31T05:59:10.127Z",
@@ -82773,7 +82930,7 @@
     "reviewAt": "2026-11-01T23:51:59.845Z"
   },
   "3962980": {
-    "savedAt": "2026-10-31T21:46:45.153Z",
+    "savedAt": "2026-11-05T10:18:05.560Z",
     "result": {
       "detail": {
         "success": true,
@@ -82832,8 +82989,8 @@
       "earlyAccessDate": "2026-10-31",
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:46:50.347Z",
-    "reviewAt": "2026-10-31T21:46:50.690Z"
+    "evidenceAt": "2026-11-05T10:18:11.007Z",
+    "reviewAt": "2026-11-05T10:18:11.460Z"
   },
   "3964030": {
     "savedAt": "2026-10-29T08:46:06.140Z",
@@ -86158,7 +86315,7 @@
     "reviewAt": "2026-11-01T23:46:16.739Z"
   },
   "4006810": {
-    "savedAt": "2026-10-31T21:42:06.084Z",
+    "savedAt": "2026-11-05T10:18:16.179Z",
     "result": {
       "detail": {
         "success": true,
@@ -86214,8 +86371,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:42:11.355Z",
-    "reviewAt": "2026-10-31T21:42:11.694Z"
+    "evidenceAt": "2026-11-05T10:18:21.637Z",
+    "reviewAt": "2026-11-05T10:18:22.129Z"
   },
   "4007050": {
     "savedAt": "2026-10-27T00:45:17.850Z",
@@ -91104,7 +91261,7 @@
     "reviewAt": "2026-10-31T23:39:28.339Z"
   },
   "4068850": {
-    "savedAt": "2026-10-31T21:47:16.047Z",
+    "savedAt": "2026-11-05T10:18:26.802Z",
     "result": {
       "detail": {
         "success": true,
@@ -91165,10 +91322,15 @@
     "evidence": {
       "timestamp": 1793462952,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Hotfix for Map view",
+          "timestamp": 1793678636
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:47:21.408Z",
-    "reviewAt": "2026-10-31T21:47:21.810Z"
+    "evidenceAt": "2026-11-05T10:18:32.298Z",
+    "reviewAt": "2026-11-05T10:18:32.738Z"
   },
   "4070710": {
     "savedAt": "2026-10-29T01:56:40.520Z",
@@ -106628,7 +106790,7 @@
     "reviewAt": "2026-11-02T00:09:50.472Z"
   },
   "4247280": {
-    "savedAt": "2026-10-31T21:42:31.829Z",
+    "savedAt": "2026-11-05T10:18:37.448Z",
     "result": {
       "detail": {
         "success": true,
@@ -106636,7 +106798,7 @@
           "type": "demo",
           "name": "纸上物理 Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4247280/96bbeef8a197a1271c2d960c351a7ed586c08f6c/header_schinese.jpg?t=1793463462",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4247280/96bbeef8a197a1271c2d960c351a7ed586c08f6c/header_schinese.jpg?t=1793521720",
           "genres": [
             {
               "id": "4",
@@ -106675,8 +106837,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:42:37.076Z",
-    "reviewAt": "2026-10-31T21:42:37.441Z"
+    "evidenceAt": "2026-11-05T10:18:42.896Z",
+    "reviewAt": "2026-11-05T10:18:43.461Z"
   },
   "4247350": {
     "savedAt": "2026-11-04T09:38:34.393Z",
@@ -114826,7 +114988,7 @@
     "evidenceAt": "2026-10-22T05:21:19.585Z"
   },
   "4313600": {
-    "savedAt": "2026-10-31T21:43:02.836Z",
+    "savedAt": "2026-11-05T10:18:48.070Z",
     "result": {
       "detail": {
         "success": true,
@@ -114834,7 +114996,7 @@
           "type": "demo",
           "name": "Scars of the Soul Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4313600/573e40aeb3a0671454577e4b8b183dae06d5fee0/header.jpg?t=1793457602",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4313600/573e40aeb3a0671454577e4b8b183dae06d5fee0/header.jpg?t=1793849391",
           "genres": [
             {
               "id": "1",
@@ -114886,8 +115048,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:43:07.964Z",
-    "reviewAt": "2026-10-31T21:43:08.308Z"
+    "evidenceAt": "2026-11-05T10:18:53.422Z",
+    "reviewAt": "2026-11-05T10:18:53.882Z"
   },
   "4313650": {
     "savedAt": "2026-10-31T22:21:08.210Z",
@@ -118225,7 +118387,7 @@
     "reviewAt": "2026-11-04T02:07:49.626Z"
   },
   "4344860": {
-    "savedAt": "2026-10-31T21:47:47.216Z",
+    "savedAt": "2026-11-05T10:18:58.807Z",
     "result": {
       "detail": {
         "success": true,
@@ -118272,10 +118434,10 @@
         "query_summary": {
           "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "1 user reviews",
-          "total_positive": 1,
+          "review_score_desc": "4 user reviews",
+          "total_positive": 4,
           "total_negative": 0,
-          "total_reviews": 1
+          "total_reviews": 4
         }
       }
     },
@@ -118284,8 +118446,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:47:52.340Z",
-    "reviewAt": "2026-10-31T21:47:52.734Z"
+    "evidenceAt": "2026-11-05T10:19:04.076Z",
+    "reviewAt": "2026-11-05T10:19:04.529Z"
   },
   "4344930": {
     "savedAt": "2026-11-04T18:14:19.201Z",
@@ -127202,6 +127364,69 @@
     "evidenceAt": "2026-10-29T08:49:40.899Z",
     "reviewAt": "2026-10-29T08:49:41.497Z"
   },
+  "4407640": {
+    "savedAt": "2026-11-05T09:53:01.900Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "K-Pop Rising - Dream to Shine",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 10700,
+            "final": 9630,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 107.00",
+            "final_formatted": "¥ 96.30"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4407640/933b30fc7ea101a8a4e102412cc769ded39c414c/header.jpg?t=1793869348",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            }
+          ],
+          "developers": [
+            "Old Skull Games"
+          ],
+          "publishers": [
+            "Microids"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793869349,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T09:53:07.313Z",
+    "reviewAt": "2026-11-05T09:53:07.838Z"
+  },
   "4407750": {
     "savedAt": "2026-10-26T06:46:19.102Z",
     "result": {
@@ -129206,6 +129431,74 @@
     "evidenceAt": "2026-11-01T16:04:17.623Z",
     "reviewAt": "2026-11-01T16:04:18.013Z"
   },
+  "4420660": {
+    "savedAt": "2026-11-05T09:53:12.512Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "ZONE L.O.S.T.",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4420660/85cfecfcfa358904c5febdb25fc762ae264b3ba1/header.jpg?t=1791748375",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "DAKA Production"
+          ],
+          "publishers": [
+            "DAKA Production"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793876160,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "ZONE L.O.S.T. Demo - Hotfix #3 (v0.1.6)",
+          "timestamp": 1791155160
+        },
+        {
+          "title": "ZONE L.O.S.T. Demo - Hotfix #2 (v0.1.2)",
+          "timestamp": 1791066000
+        },
+        {
+          "title": "ZONE L.O.S.T. Demo - Hotfix #4 (v0.1.7)",
+          "timestamp": 1791411060
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:53:17.816Z",
+    "reviewAt": "2026-11-05T09:53:18.230Z"
+  },
   "4421150": {
     "savedAt": "2026-11-03T07:25:10.974Z",
     "result": {
@@ -130696,7 +130989,7 @@
     "reviewAt": "2026-11-02T23:38:55.886Z"
   },
   "4431370": {
-    "savedAt": "2026-10-31T21:48:08.001Z",
+    "savedAt": "2026-11-05T10:19:09.243Z",
     "result": {
       "detail": {
         "success": true,
@@ -130749,10 +131042,15 @@
     "evidence": {
       "timestamp": 1793473352,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "v1.0.2 Balance Changes & Quality of Life Updates",
+          "timestamp": 1793667821
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:48:13.227Z",
-    "reviewAt": "2026-10-31T21:48:13.619Z"
+    "evidenceAt": "2026-11-05T10:19:14.559Z",
+    "reviewAt": "2026-11-05T10:19:15.048Z"
   },
   "4431410": {
     "savedAt": "2026-10-26T06:46:50.475Z",
@@ -144797,7 +145095,7 @@
     "evidenceAt": "2026-10-22T10:17:30.713Z"
   },
   "4545030": {
-    "savedAt": "2026-10-31T21:48:44.295Z",
+    "savedAt": "2026-11-05T10:19:19.760Z",
     "result": {
       "detail": {
         "success": true,
@@ -144813,7 +145111,7 @@
             "initial_formatted": "¥ 22.00",
             "final_formatted": "¥ 13.20"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4545030/e07846142f13f45879ccceb294e0fcf91abf3993/header.jpg?t=1793459064",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4545030/e07846142f13f45879ccceb294e0fcf91abf3993/header.jpg?t=1793578839",
           "genres": [
             {
               "id": "25",
@@ -144850,10 +145148,15 @@
     "evidence": {
       "timestamp": 1793459065,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Added French language support!",
+          "timestamp": 1793577829
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:48:49.472Z",
-    "reviewAt": "2026-10-31T21:48:49.863Z"
+    "evidenceAt": "2026-11-05T10:19:25.179Z",
+    "reviewAt": "2026-11-05T10:19:25.620Z"
   },
   "4546060": {
     "savedAt": "2026-10-31T00:15:40.102Z",
@@ -145865,6 +146168,70 @@
     },
     "evidenceAt": "2026-11-01T08:37:57.805Z",
     "reviewAt": "2026-11-01T08:37:58.192Z"
+  },
+  "4553100": {
+    "savedAt": "2026-11-05T09:53:28.294Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "FEED ME MORE BRAINS",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 2800,
+            "final": 2100,
+            "discount_percent": 25,
+            "initial_formatted": "¥ 28.00",
+            "final_formatted": "¥ 21.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4553100/bdd01ef91c69a264aa8b4e1d6dd8c161e9672c30/header.jpg?t=1793871298",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Sheraf Studio Inc"
+          ],
+          "publishers": [
+            "Sheraf Studio Inc"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793866641,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "FEED ME MORE BRAINS's demo is now available!",
+          "timestamp": 1784570880
+        },
+        {
+          "title": "Demo Patch 1.5 - Bugfix, QOL, Gamepad support improvements",
+          "timestamp": 1788198060
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:53:33.603Z",
+    "reviewAt": "2026-11-05T09:53:34.049Z"
   },
   "4553130": {
     "savedAt": "2026-10-22T10:18:28.238Z",
@@ -147748,7 +148115,7 @@
     "reviewAt": "2026-11-05T07:01:56.821Z"
   },
   "4564590": {
-    "savedAt": "2026-10-31T21:49:04.877Z",
+    "savedAt": "2026-11-05T10:19:30.345Z",
     "result": {
       "detail": {
         "success": true,
@@ -147756,6 +148123,14 @@
           "type": "game",
           "name": "The Adventures Of Captain J",
           "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 5900,
+            "final": 5900,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 59.00"
+          },
           "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4564590/6f5c39464ffe8753d21e7d2f6b20b22bbc8f1e84/header.jpg?t=1793480440",
           "genres": [
             {
@@ -147796,8 +148171,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:49:09.995Z",
-    "reviewAt": "2026-10-31T21:49:10.396Z"
+    "evidenceAt": "2026-11-05T10:19:35.657Z",
+    "reviewAt": "2026-11-05T10:19:36.147Z"
   },
   "4564870": {
     "savedAt": "2026-11-03T15:26:14.231Z",
@@ -149036,6 +149411,86 @@
     },
     "evidenceAt": "2026-11-04T18:59:17.661Z",
     "reviewAt": "2026-11-04T18:59:18.132Z"
+  },
+  "4572120": {
+    "savedAt": "2026-11-05T09:53:38.927Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Dirt Clicker",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 2549,
+            "final": 2039,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 25.49",
+            "final_formatted": "¥ 20.39"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4572120/beb6dc2fdcf52973a888a526d0ce18a1a10c059e/header.jpg?t=1793866246",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Sailing Bears"
+          ],
+          "publishers": [
+            "Sailing Bears"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 1,
+          "review_score": 0,
+          "review_score_desc": "3 user reviews",
+          "total_positive": 3,
+          "total_negative": 0,
+          "total_reviews": 3
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865781,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "《Dirt Clicker》现已推出！🥄",
+          "timestamp": 1793866380
+        },
+        {
+          "title": "65,000 个愿望单添加",
+          "timestamp": 1793814600
+        },
+        {
+          "title": "Loading Bar v0.6.2",
+          "timestamp": 1782814200
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:53:44.208Z",
+    "reviewAt": "2026-11-05T09:53:44.645Z"
   },
   "4572630": {
     "savedAt": "2026-10-31T22:26:25.992Z",
@@ -154916,7 +155371,7 @@
     "reviewAt": "2026-10-27T00:47:11.206Z"
   },
   "4610720": {
-    "savedAt": "2026-10-31T21:49:25.405Z",
+    "savedAt": "2026-11-05T10:19:40.825Z",
     "result": {
       "detail": {
         "success": true,
@@ -154967,8 +155422,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:49:30.645Z",
-    "reviewAt": "2026-10-31T21:49:31.092Z"
+    "evidenceAt": "2026-11-05T10:19:46.123Z",
+    "reviewAt": "2026-11-05T10:19:46.631Z"
   },
   "4611110": {
     "savedAt": "2026-11-03T02:27:46.806Z",
@@ -159719,6 +160174,70 @@
     },
     "evidenceAt": "2026-11-01T16:09:50.051Z",
     "reviewAt": "2026-11-01T16:09:50.387Z"
+  },
+  "4633120": {
+    "savedAt": "2026-11-05T09:53:49.421Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "体素狂飙",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4633120/ddac3656d68a257db94b27cf282aa8f48ff0f347/header.jpg?t=1793806377",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "9",
+              "description": "竞速"
+            }
+          ],
+          "developers": [
+            "Squeezed Hamster Games"
+          ],
+          "publishers": [
+            "Squeezed Hamster Games"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793876400,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "VOXOTRON Releases 5th November",
+          "timestamp": 1793711340
+        },
+        {
+          "title": "VOXOTRON Closed BETA",
+          "timestamp": 1780667160
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:53:54.874Z",
+    "reviewAt": "2026-11-05T09:53:55.367Z"
   },
   "4633320": {
     "savedAt": "2026-10-27T00:29:39.374Z",
@@ -171996,7 +172515,7 @@
     "reviewAt": "2026-11-02T07:05:55.333Z"
   },
   "4699020": {
-    "savedAt": "2026-10-31T21:49:51.537Z",
+    "savedAt": "2026-11-05T10:19:51.330Z",
     "result": {
       "detail": {
         "success": true,
@@ -172012,7 +172531,7 @@
             "initial_formatted": "¥ 19.00",
             "final_formatted": "¥ 15.20"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4699020/97a1158f5e08d69a4ba3e5ceb973dfd46d81bc62/header.jpg?t=1793482319",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4699020/97a1158f5e08d69a4ba3e5ceb973dfd46d81bc62/header.jpg?t=1793661654",
           "genres": [
             {
               "id": "23",
@@ -172034,11 +172553,11 @@
       "review": {
         "query_summary": {
           "num_reviews": 1,
-          "review_score": 0,
-          "review_score_desc": "4 user reviews",
-          "total_positive": 3,
-          "total_negative": 1,
-          "total_reviews": 4
+          "review_score": 5,
+          "review_score_desc": "Mixed",
+          "total_positive": 10,
+          "total_negative": 5,
+          "total_reviews": 15
         }
       }
     },
@@ -172049,11 +172568,15 @@
         {
           "title": "INTUS 今日正式发售 — 10月31日",
           "timestamp": 1793451240
+        },
+        {
+          "title": "Audio Fix — Update 1.0.1",
+          "timestamp": 1793532613
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:49:56.887Z",
-    "reviewAt": "2026-10-31T21:49:57.333Z"
+    "evidenceAt": "2026-11-05T10:19:56.745Z",
+    "reviewAt": "2026-11-05T10:19:57.279Z"
   },
   "4699340": {
     "savedAt": "2026-10-30T20:23:16.836Z",
@@ -189753,7 +190276,7 @@
     "reviewAt": "2026-10-30T07:53:30.831Z"
   },
   "4788350": {
-    "savedAt": "2026-10-31T21:50:12.460Z",
+    "savedAt": "2026-11-05T10:20:01.996Z",
     "result": {
       "detail": {
         "success": true,
@@ -189808,8 +190331,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:50:17.611Z",
-    "reviewAt": "2026-10-31T21:50:17.984Z"
+    "evidenceAt": "2026-11-05T10:20:07.349Z",
+    "reviewAt": "2026-11-05T10:20:07.838Z"
   },
   "4788400": {
     "savedAt": "2026-10-22T10:24:46.592Z",
@@ -190122,7 +190645,7 @@
     "reviewAt": "2026-10-25T06:34:21.841Z"
   },
   "4790400": {
-    "savedAt": "2026-10-31T21:50:33.022Z",
+    "savedAt": "2026-11-05T10:20:12.568Z",
     "result": {
       "detail": {
         "success": true,
@@ -190179,10 +190702,15 @@
     "evidence": {
       "timestamp": 1793461693,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Minor fixes",
+          "timestamp": 1793821554
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:50:38.160Z",
-    "reviewAt": "2026-10-31T21:50:38.544Z"
+    "evidenceAt": "2026-11-05T10:20:17.935Z",
+    "reviewAt": "2026-11-05T10:20:18.432Z"
   },
   "4790640": {
     "savedAt": "2026-11-03T21:07:44.237Z",
@@ -193390,7 +193918,7 @@
     "reviewAt": "2026-10-31T07:46:53.470Z"
   },
   "4804010": {
-    "savedAt": "2026-10-31T21:50:53.820Z",
+    "savedAt": "2026-11-05T10:20:23.179Z",
     "result": {
       "detail": {
         "success": true,
@@ -193406,7 +193934,7 @@
             "initial_formatted": "",
             "final_formatted": "¥ 19.00"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4804010/3139ed531352dab327b77cc26cfe372a0b19f5fa/header.jpg?t=1793482692",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4804010/3139ed531352dab327b77cc26cfe372a0b19f5fa/header.jpg?t=1793793258",
           "genres": [
             {
               "id": "4",
@@ -193445,8 +193973,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:50:58.964Z",
-    "reviewAt": "2026-10-31T21:50:59.347Z"
+    "evidenceAt": "2026-11-05T10:20:28.540Z",
+    "reviewAt": "2026-11-05T10:20:29.018Z"
   },
   "4804240": {
     "savedAt": "2026-11-04T01:17:12.317Z",
@@ -198776,7 +199304,7 @@
     "reviewAt": "2026-10-29T16:20:00.356Z"
   },
   "4819580": {
-    "savedAt": "2026-10-31T21:51:19.606Z",
+    "savedAt": "2026-11-05T10:20:33.859Z",
     "result": {
       "detail": {
         "success": true,
@@ -198827,8 +199355,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:51:24.737Z",
-    "reviewAt": "2026-10-31T21:51:25.125Z"
+    "evidenceAt": "2026-11-05T10:20:39.230Z",
+    "reviewAt": "2026-11-05T10:20:39.784Z"
   },
   "4820630": {
     "savedAt": "2026-11-01T20:39:13.377Z",
@@ -205494,7 +206022,7 @@
     "reviewAt": "2026-10-29T16:37:21.535Z"
   },
   "4848220": {
-    "savedAt": "2026-10-31T21:51:40.140Z",
+    "savedAt": "2026-11-05T10:20:44.507Z",
     "result": {
       "detail": {
         "success": true,
@@ -205535,12 +206063,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
+          "review_score_desc": "2 user reviews",
+          "total_positive": 2,
           "total_negative": 0,
-          "total_reviews": 0
+          "total_reviews": 2
         }
       }
     },
@@ -205549,8 +206077,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:51:45.304Z",
-    "reviewAt": "2026-10-31T21:51:45.736Z"
+    "evidenceAt": "2026-11-05T10:20:49.882Z",
+    "reviewAt": "2026-11-05T10:20:50.367Z"
   },
   "4848250": {
     "savedAt": "2026-10-31T00:19:24.921Z",
@@ -209575,6 +210103,70 @@
     },
     "evidenceAt": "2026-11-02T00:06:16.309Z",
     "reviewAt": "2026-11-02T00:06:16.650Z"
+  },
+  "4865360": {
+    "savedAt": "2026-11-05T09:54:00.052Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Novalex Project Zero",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4865360/2c739790177af2249273b3cd425b9b84c9eac8e6/header.jpg?t=1793397513",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Novalex Studios"
+          ],
+          "publishers": [
+            "Novalex Studios"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793876400,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "1.4.2 版更新：新增捷克语，修复 Linux 启动问题",
+          "timestamp": 1793394000
+        },
+        {
+          "title": "1.4 版更新：新增收支瀑布图与存档位，游戏将于 11 月 5 日发售",
+          "timestamp": 1792440360
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:54:05.307Z",
+    "reviewAt": "2026-11-05T09:54:05.819Z"
   },
   "4865680": {
     "savedAt": "2026-11-04T01:10:29.525Z",
@@ -217462,7 +218054,7 @@
     "reviewAt": "2026-10-31T08:01:26.272Z"
   },
   "4894000": {
-    "savedAt": "2026-10-31T21:52:00.797Z",
+    "savedAt": "2026-11-05T10:20:55.296Z",
     "result": {
       "detail": {
         "success": true,
@@ -217513,8 +218105,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:52:05.945Z",
-    "reviewAt": "2026-10-31T21:52:06.298Z"
+    "evidenceAt": "2026-11-05T10:21:00.613Z",
+    "reviewAt": "2026-11-05T10:21:01.062Z"
   },
   "4894260": {
     "savedAt": "2026-11-02T00:00:47.353Z",
@@ -226425,7 +227017,7 @@
     "reviewAt": "2026-10-30T19:45:21.980Z"
   },
   "4922230": {
-    "savedAt": "2026-10-31T21:52:31.850Z",
+    "savedAt": "2026-11-05T10:21:05.848Z",
     "result": {
       "detail": {
         "success": true,
@@ -226474,12 +227066,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
-          "total_negative": 0,
-          "total_reviews": 0
+          "review_score_desc": "5 user reviews",
+          "total_positive": 3,
+          "total_negative": 2,
+          "total_reviews": 5
         }
       }
     },
@@ -226488,13 +227080,13 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "优化了ui和文本的展示",
-          "timestamp": 1793481022
+          "title": "优化了文本显示问题，修正节日日期异常",
+          "timestamp": 1793694428
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:52:36.988Z",
-    "reviewAt": "2026-10-31T21:52:37.354Z"
+    "evidenceAt": "2026-11-05T10:21:11.177Z",
+    "reviewAt": "2026-11-05T10:21:11.632Z"
   },
   "4922270": {
     "savedAt": "2026-11-03T21:56:24.962Z",
@@ -232225,7 +232817,7 @@
     "reviewAt": "2026-10-26T14:34:15.645Z"
   },
   "4937410": {
-    "savedAt": "2026-10-31T21:52:52.506Z",
+    "savedAt": "2026-11-05T10:21:16.337Z",
     "result": {
       "detail": {
         "success": true,
@@ -232280,8 +232872,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:52:57.729Z",
-    "reviewAt": "2026-10-31T21:52:58.101Z"
+    "evidenceAt": "2026-11-05T10:21:21.606Z",
+    "reviewAt": "2026-11-05T10:21:22.027Z"
   },
   "4937580": {
     "savedAt": "2026-10-31T08:14:27.840Z",
@@ -245293,7 +245885,7 @@
     "reviewAt": "2026-10-29T12:14:33.766Z"
   },
   "4969270": {
-    "savedAt": "2026-10-31T21:53:13.072Z",
+    "savedAt": "2026-11-05T10:21:26.797Z",
     "result": {
       "detail": {
         "success": true,
@@ -245338,12 +245930,12 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
+          "review_score_desc": "7 user reviews",
+          "total_positive": 7,
           "total_negative": 0,
-          "total_reviews": 0
+          "total_reviews": 7
         }
       }
     },
@@ -245352,8 +245944,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:53:18.228Z",
-    "reviewAt": "2026-10-31T21:53:18.551Z"
+    "evidenceAt": "2026-11-05T10:21:32.093Z",
+    "reviewAt": "2026-11-05T10:21:32.594Z"
   },
   "4969660": {
     "savedAt": "2026-10-27T00:49:35.394Z",
@@ -256220,7 +256812,7 @@
     "reviewAt": "2026-10-27T00:50:34.364Z"
   },
   "4995720": {
-    "savedAt": "2026-10-31T21:53:33.915Z",
+    "savedAt": "2026-11-05T10:21:37.303Z",
     "result": {
       "detail": {
         "success": true,
@@ -256275,8 +256867,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:53:39.265Z",
-    "reviewAt": "2026-10-31T21:53:39.693Z"
+    "evidenceAt": "2026-11-05T10:21:42.897Z",
+    "reviewAt": "2026-11-05T10:21:43.422Z"
   },
   "4995990": {
     "savedAt": "2026-10-29T16:21:40.611Z",
@@ -258941,7 +259533,7 @@
     "reviewAt": "2026-10-31T22:24:00.875Z"
   },
   "5002040": {
-    "savedAt": "2026-10-31T21:53:59.842Z",
+    "savedAt": "2026-11-05T10:21:48.096Z",
     "result": {
       "detail": {
         "success": true,
@@ -258957,7 +259549,7 @@
             "initial_formatted": "¥ 26.00",
             "final_formatted": "¥ 20.80"
           },
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5002040/6f197551aef3866ccc6dcb333d8d1afc84d5c7a4/header.jpg?t=1793461828",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5002040/6f197551aef3866ccc6dcb333d8d1afc84d5c7a4/header.jpg?t=1793802607",
           "genres": [
             {
               "id": "4",
@@ -258982,22 +259574,27 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
+          "review_score_desc": "1 user reviews",
           "total_positive": 0,
-          "total_negative": 0,
-          "total_reviews": 0
+          "total_negative": 1,
+          "total_reviews": 1
         }
       }
     },
     "evidence": {
       "timestamp": 1793461829,
       "earlyAccessDate": null,
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Patch 1.0.6 - Enemy Attacks Reworked",
+          "timestamp": 1793689920
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:54:05.149Z",
-    "reviewAt": "2026-10-31T21:54:05.532Z"
+    "evidenceAt": "2026-11-05T10:21:53.611Z",
+    "reviewAt": "2026-11-05T10:21:54.012Z"
   },
   "5002190": {
     "savedAt": "2026-11-04T01:18:04.864Z",
@@ -281067,6 +281664,70 @@
     "evidenceAt": "2026-11-03T16:11:42.958Z",
     "reviewAt": "2026-11-03T16:11:43.609Z"
   },
+  "5045430": {
+    "savedAt": "2026-11-05T09:54:21.399Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "宿の掟 / Rules of the Inn",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5045430/5478ef73c4eecfe7ab75e572b433df59a8e63067/header_schinese.jpg?t=1793408847",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "Pekomaro"
+          ],
+          "publishers": [
+            "Pekomaro"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793872800,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "《客栈守则》发售时间推迟",
+          "timestamp": 1793859240
+        },
+        {
+          "title": "《客栈守则》明天发售（北京时间18:00）",
+          "timestamp": 1793790000
+        },
+        {
+          "title": "新品节最后一天——体验版发售后也能继续玩",
+          "timestamp": 1793012940
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:54:26.901Z",
+    "reviewAt": "2026-11-05T09:54:27.526Z"
+  },
   "5045450": {
     "savedAt": "2026-10-26T14:40:13.638Z",
     "result": {
@@ -284798,6 +285459,62 @@
     "evidenceAt": "2026-10-30T16:47:31.512Z",
     "reviewAt": "2026-10-30T16:47:31.904Z"
   },
+  "5051540": {
+    "savedAt": "2026-11-05T09:54:32.519Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Continuum",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5051540/e6e4a29bc48a30c497f9886d2644cf340ca5fe72/header.jpg?t=1792452291",
+          "genres": [
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Interstitial Games"
+          ],
+          "publishers": [
+            "Interstitial Games"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793876340,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "The Continuum demo is live for Steam Next Fest",
+          "timestamp": 1792472220
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:54:38.241Z",
+    "reviewAt": "2026-11-05T09:54:38.726Z"
+  },
   "5051720": {
     "savedAt": "2026-10-29T02:11:25.150Z",
     "result": {
@@ -284862,7 +285579,7 @@
     "reviewAt": "2026-10-29T02:11:30.963Z"
   },
   "5052010": {
-    "savedAt": "2026-10-29T08:33:52.196Z",
+    "savedAt": "2026-11-05T09:56:21.702Z",
     "result": {
       "detail": {
         "success": true,
@@ -284917,8 +285634,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T08:33:57.494Z",
-    "reviewAt": "2026-10-29T08:33:57.862Z"
+    "evidenceAt": "2026-11-05T09:56:26.941Z",
+    "reviewAt": "2026-11-05T09:56:27.415Z"
   },
   "5052020": {
     "savedAt": "2026-10-25T22:39:00.130Z",
@@ -289582,7 +290299,7 @@
     "reviewAt": "2026-11-04T17:28:26.280Z"
   },
   "5059330": {
-    "savedAt": "2026-10-29T08:39:13.776Z",
+    "savedAt": "2026-11-05T09:59:38.334Z",
     "result": {
       "detail": {
         "success": true,
@@ -289633,8 +290350,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T08:39:18.988Z",
-    "reviewAt": "2026-10-29T08:39:19.311Z"
+    "evidenceAt": "2026-11-05T09:59:43.690Z",
+    "reviewAt": "2026-11-05T09:59:44.145Z"
   },
   "5059340": {
     "savedAt": "2026-11-02T17:33:40.382Z",
@@ -289950,7 +290667,7 @@
     "reviewAt": "2026-11-02T06:23:09.419Z"
   },
   "5059760": {
-    "savedAt": "2026-10-29T08:44:42.817Z",
+    "savedAt": "2026-11-05T10:02:28.863Z",
     "result": {
       "detail": {
         "success": true,
@@ -289958,7 +290675,7 @@
           "type": "demo",
           "name": "Die Meeple Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5059760/9777f321ea6c6aba9d5f299cfc970360dfcb572b/header.jpg?t=1793048105",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5059760/38be37061d97ee703f3fa2aa80dd9398da4b8f3c/header.jpg?t=1793282216",
           "genres": [
             {
               "id": "2",
@@ -289999,8 +290716,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T08:44:48.137Z",
-    "reviewAt": "2026-10-29T08:44:48.495Z"
+    "evidenceAt": "2026-11-05T10:02:34.160Z",
+    "reviewAt": "2026-11-05T10:02:34.634Z"
   },
   "5059810": {
     "savedAt": "2026-11-03T02:28:39.183Z",
@@ -293657,7 +294374,7 @@
     "reviewAt": "2026-10-25T11:53:48.902Z"
   },
   "5064860": {
-    "savedAt": "2026-10-29T08:50:17.462Z",
+    "savedAt": "2026-11-05T10:05:19.142Z",
     "result": {
       "detail": {
         "success": true,
@@ -293665,7 +294382,7 @@
           "type": "demo",
           "name": "Rescue Ops Demo",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5064860/e67a27a920d1832b2a563add4c916c39724b27f5/header.jpg?t=1792417297",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5064860/e67a27a920d1832b2a563add4c916c39724b27f5/header.jpg?t=1793274595",
           "genres": [
             {
               "id": "1",
@@ -293708,21 +294425,21 @@
       "earlyAccessDate": null,
       "announcements": [
         {
+          "title": "Rescue Ops: Wildfire - Dev Diary #15",
+          "timestamp": 1793715300
+        },
+        {
           "title": "Steam Next Fest Community Event - Extended",
           "timestamp": 1793118660
         },
         {
-          "title": "Steam Next Fest Community Event - WIN 3 BETA + FULL GAME KEYS",
-          "timestamp": 1792486740
-        },
-        {
-          "title": "⚙️ Patch Note 0.8.10",
-          "timestamp": 1793201760
+          "title": "⚙️ Mini patch Note 0.8.11",
+          "timestamp": 1793356080
         }
       ]
     },
-    "evidenceAt": "2026-10-29T08:50:22.816Z",
-    "reviewAt": "2026-10-29T08:50:23.163Z"
+    "evidenceAt": "2026-11-05T10:05:24.345Z",
+    "reviewAt": "2026-11-05T10:05:24.828Z"
   },
   "5064870": {
     "savedAt": "2026-11-03T16:12:19.583Z",
@@ -294012,7 +294729,7 @@
     "evidenceAt": "2026-10-22T15:51:42.386Z"
   },
   "5065400": {
-    "savedAt": "2026-10-31T21:54:10.320Z",
+    "savedAt": "2026-11-05T10:21:58.853Z",
     "result": {
       "detail": {
         "success": true,
@@ -294067,13 +294784,13 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "游戏稳定性与功能改进",
-          "timestamp": 1793465794
+          "title": "1.0.3版本更新——全新地图「东皮郎壁画村」登场！",
+          "timestamp": 1793861339
         }
       ]
     },
-    "evidenceAt": "2026-10-31T21:54:15.479Z",
-    "reviewAt": "2026-10-31T21:54:15.856Z"
+    "evidenceAt": "2026-11-05T10:22:04.393Z",
+    "reviewAt": "2026-11-05T10:22:04.795Z"
   },
   "5065480": {
     "savedAt": "2026-10-29T23:59:30.696Z",
@@ -294461,7 +295178,7 @@
     "reviewAt": "2026-11-03T00:16:13.568Z"
   },
   "5066210": {
-    "savedAt": "2026-10-29T08:55:46.384Z",
+    "savedAt": "2026-11-05T10:08:14.858Z",
     "result": {
       "detail": {
         "success": true,
@@ -294517,8 +295234,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T08:55:51.725Z",
-    "reviewAt": "2026-10-29T08:55:52.003Z"
+    "evidenceAt": "2026-11-05T10:08:20.188Z",
+    "reviewAt": "2026-11-05T10:08:20.727Z"
   },
   "5066320": {
     "savedAt": "2026-11-04T02:19:03.078Z",
@@ -294966,7 +295683,7 @@
     "reviewAt": "2026-10-25T01:39:29.630Z"
   },
   "5066740": {
-    "savedAt": "2026-10-29T09:01:10.491Z",
+    "savedAt": "2026-11-05T10:11:05.238Z",
     "result": {
       "detail": {
         "success": true,
@@ -295017,12 +295734,12 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Next_Fest.exe",
-          "timestamp": 1792420200
+          "title": "dev_log.txt v3.0",
+          "timestamp": 1793289600
         },
         {
-          "title": "BROADCAST",
-          "timestamp": 1791486000
+          "title": "Next_Fest.exe",
+          "timestamp": 1792420200
         },
         {
           "title": "Languages Added [DEMO]",
@@ -295030,8 +295747,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:01:15.696Z",
-    "reviewAt": "2026-10-29T09:01:15.977Z"
+    "evidenceAt": "2026-11-05T10:11:10.510Z",
+    "reviewAt": "2026-11-05T10:11:11.056Z"
   },
   "5066900": {
     "savedAt": "2026-11-01T01:33:39.545Z",
@@ -297558,15 +298275,15 @@
     "reviewAt": "2026-10-31T08:15:26.337Z"
   },
   "5072320": {
-    "savedAt": "2026-10-29T09:07:27.199Z",
+    "savedAt": "2026-11-05T10:14:22.288Z",
     "result": {
       "detail": {
         "success": true,
         "data": {
           "type": "demo",
-          "name": "False Echo Demo",
+          "name": "虚妄回响 试玩版",
           "is_free": true,
-          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072320/e01a41a062307e203d03039d9e7e06deb33f4ce1/header.jpg?t=1792664154",
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5072320/e01a41a062307e203d03039d9e7e06deb33f4ce1/header.jpg?t=1793860494",
           "genres": [
             {
               "id": "25",
@@ -297609,17 +298326,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Experimental ENDLESS MODE Deployed",
-          "timestamp": 1792616880
+          "title": "《虚妄回响》Demo 现已支持简体中文！",
+          "timestamp": 1793799720
         },
         {
-          "title": "Demo Update: you reported it, we corrected it",
-          "timestamp": 1792424760
+          "title": "False Echo Translation Efforts!",
+          "timestamp": 1793287980
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:07:32.415Z",
-    "reviewAt": "2026-10-29T09:07:32.721Z"
+    "evidenceAt": "2026-11-05T10:14:27.656Z",
+    "reviewAt": "2026-11-05T10:14:28.133Z"
   },
   "5072370": {
     "savedAt": "2026-10-30T08:04:00.772Z",
@@ -299834,7 +300551,7 @@
     "reviewAt": "2026-10-25T01:15:12.286Z"
   },
   "5075280": {
-    "savedAt": "2026-10-29T09:12:55.143Z",
+    "savedAt": "2026-11-05T10:14:32.814Z",
     "result": {
       "detail": {
         "success": true,
@@ -299877,8 +300594,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T09:13:00.578Z",
-    "reviewAt": "2026-10-29T09:13:00.875Z"
+    "evidenceAt": "2026-11-05T10:14:38.358Z",
+    "reviewAt": "2026-11-05T10:14:38.760Z"
   },
   "5075340": {
     "savedAt": "2026-10-27T00:52:04.503Z",
@@ -301156,7 +301873,7 @@
     "reviewAt": "2026-10-31T08:29:20.542Z"
   },
   "5077100": {
-    "savedAt": "2026-10-29T09:18:28.776Z",
+    "savedAt": "2026-11-05T10:14:43.498Z",
     "result": {
       "detail": {
         "success": true,
@@ -301208,11 +301925,11 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:18:34.005Z",
-    "reviewAt": "2026-10-29T09:18:34.352Z"
+    "evidenceAt": "2026-11-05T10:14:48.906Z",
+    "reviewAt": "2026-11-05T10:14:49.375Z"
   },
   "5077160": {
-    "savedAt": "2026-10-29T08:36:31.023Z",
+    "savedAt": "2026-11-05T10:13:40.252Z",
     "result": {
       "detail": {
         "success": true,
@@ -301255,10 +301972,10 @@
         "query_summary": {
           "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "5 user reviews",
-          "total_positive": 5,
+          "review_score_desc": "6 user reviews",
+          "total_positive": 6,
           "total_negative": 0,
-          "total_reviews": 5
+          "total_reviews": 6
         }
       }
     },
@@ -301272,8 +301989,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T08:36:36.466Z",
-    "reviewAt": "2026-10-29T08:36:36.807Z"
+    "evidenceAt": "2026-11-05T10:13:45.608Z",
+    "reviewAt": "2026-11-05T10:13:46.175Z"
   },
   "5077210": {
     "savedAt": "2026-10-23T22:53:06.552Z",
@@ -309540,7 +310257,7 @@
     "reviewAt": "2026-11-01T20:07:29.503Z"
   },
   "5088640": {
-    "savedAt": "2026-10-29T08:41:56.203Z",
+    "savedAt": "2026-11-05T10:13:50.779Z",
     "result": {
       "detail": {
         "success": true,
@@ -309587,17 +310304,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Over 1,500 Wishlists — Thank You!",
-          "timestamp": 1792636740
+          "title": "Beyond the Demo — Building Toward Early Access",
+          "timestamp": 1793327100
         },
         {
-          "title": "Our First 24 Hours — Thank You!",
-          "timestamp": 1792002780
+          "title": "Over 1,500 Wishlists — Thank You!",
+          "timestamp": 1792636740
         }
       ]
     },
-    "evidenceAt": "2026-10-29T08:42:01.481Z",
-    "reviewAt": "2026-10-29T08:42:01.774Z"
+    "evidenceAt": "2026-11-05T10:13:56.142Z",
+    "reviewAt": "2026-11-05T10:13:56.595Z"
   },
   "5088650": {
     "savedAt": "2026-10-31T07:30:32.565Z",
@@ -309727,7 +310444,7 @@
     "reviewAt": "2026-10-29T18:02:31.680Z"
   },
   "5088890": {
-    "savedAt": "2026-10-29T09:24:03.448Z",
+    "savedAt": "2026-11-05T10:14:54.081Z",
     "result": {
       "detail": {
         "success": true,
@@ -309783,8 +310500,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:24:08.670Z",
-    "reviewAt": "2026-10-29T09:24:08.943Z"
+    "evidenceAt": "2026-11-05T10:14:59.527Z",
+    "reviewAt": "2026-11-05T10:15:00.057Z"
   },
   "5088920": {
     "savedAt": "2026-10-23T05:23:19.809Z",
@@ -311611,7 +312328,7 @@
     "reviewAt": "2026-10-25T22:39:59.101Z"
   },
   "5090460": {
-    "savedAt": "2026-10-29T09:29:39.431Z",
+    "savedAt": "2026-11-05T10:15:04.668Z",
     "result": {
       "detail": {
         "success": true,
@@ -311662,8 +312379,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T09:29:44.736Z",
-    "reviewAt": "2026-10-29T09:29:45.034Z"
+    "evidenceAt": "2026-11-05T10:15:10.624Z",
+    "reviewAt": "2026-11-05T10:15:11.073Z"
   },
   "5090480": {
     "savedAt": "2026-10-25T01:39:45.156Z",
@@ -315427,6 +316144,82 @@
     "evidenceAt": "2026-11-01T16:13:30.843Z",
     "reviewAt": "2026-11-01T16:13:31.245Z"
   },
+  "5096020": {
+    "savedAt": "2026-11-05T09:54:43.584Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "LYSSA: Goddess of Rage",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5096020/fd6c8fb8e3d1b4028d43ca4d71db1a907109ddaa/header.jpg?t=1792676222",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "29",
+              "description": "大型多人在线"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "PANORAMIK GAMES LTD"
+          ],
+          "publishers": [
+            "PANORAMIK GAMES LTD"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793872800,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "距离发售仅剩7天！⚔️",
+          "timestamp": 1793289600
+        },
+        {
+          "title": "Next Fest锦标赛",
+          "timestamp": 1793026980
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:54:49.012Z",
+    "reviewAt": "2026-11-05T09:54:49.501Z"
+  },
   "5096190": {
     "savedAt": "2026-10-29T09:00:39.381Z",
     "result": {
@@ -316271,7 +317064,7 @@
     "reviewAt": "2026-10-30T08:06:33.625Z"
   },
   "5096820": {
-    "savedAt": "2026-10-29T08:47:29.847Z",
+    "savedAt": "2026-11-05T10:14:01.319Z",
     "result": {
       "detail": {
         "success": true,
@@ -316318,8 +317111,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T08:47:35.157Z",
-    "reviewAt": "2026-10-29T08:47:35.462Z"
+    "evidenceAt": "2026-11-05T10:14:06.712Z",
+    "reviewAt": "2026-11-05T10:14:07.195Z"
   },
   "5097070": {
     "savedAt": "2026-10-22T10:44:33.345Z",
@@ -317992,7 +318785,7 @@
     "reviewAt": "2026-11-02T17:07:57.244Z"
   },
   "5099290": {
-    "savedAt": "2026-10-29T08:52:59.530Z",
+    "savedAt": "2026-11-05T10:14:11.892Z",
     "result": {
       "detail": {
         "success": true,
@@ -318034,11 +318827,11 @@
       "review": {
         "query_summary": {
           "num_reviews": 1,
-          "review_score": 0,
-          "review_score_desc": "9 user reviews",
+          "review_score": 7,
+          "review_score_desc": "Positive",
           "total_positive": 9,
-          "total_negative": 0,
-          "total_reviews": 9
+          "total_negative": 1,
+          "total_reviews": 10
         }
       }
     },
@@ -318047,8 +318840,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T08:53:04.765Z",
-    "reviewAt": "2026-10-29T08:53:05.122Z"
+    "evidenceAt": "2026-11-05T10:14:17.154Z",
+    "reviewAt": "2026-11-05T10:14:17.758Z"
   },
   "5099430": {
     "savedAt": "2026-10-20T22:54:37.596Z",
@@ -319060,7 +319853,7 @@
     "evidenceAt": "2026-10-20T22:56:32.027Z"
   },
   "5100550": {
-    "savedAt": "2026-10-31T21:54:20.619Z",
+    "savedAt": "2026-11-05T10:22:09.817Z",
     "result": {
       "detail": {
         "success": true,
@@ -319111,8 +319904,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-31T21:54:25.795Z",
-    "reviewAt": "2026-10-31T21:54:26.154Z"
+    "evidenceAt": "2026-11-05T10:22:15.177Z",
+    "reviewAt": "2026-11-05T10:22:15.567Z"
   },
   "5100590": {
     "savedAt": "2026-10-30T00:03:38.481Z",
@@ -321227,7 +322020,7 @@
     "evidenceAt": "2026-10-22T15:25:53.366Z"
   },
   "5103160": {
-    "savedAt": "2026-10-29T09:04:40.135Z",
+    "savedAt": "2026-11-05T10:15:15.941Z",
     "result": {
       "detail": {
         "success": true,
@@ -321282,8 +322075,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T09:04:45.469Z",
-    "reviewAt": "2026-10-29T09:04:45.735Z"
+    "evidenceAt": "2026-11-05T10:15:21.470Z",
+    "reviewAt": "2026-11-05T10:15:21.923Z"
   },
   "5103340": {
     "savedAt": "2026-10-30T08:07:35.551Z",
@@ -324267,7 +325060,7 @@
     "reviewAt": "2026-10-29T12:20:57.162Z"
   },
   "5108650": {
-    "savedAt": "2026-10-29T09:10:08.334Z",
+    "savedAt": "2026-11-05T10:15:26.650Z",
     "result": {
       "detail": {
         "success": true,
@@ -324308,8 +325101,8 @@
           "review_score": 5,
           "review_score_desc": "Mixed",
           "total_positive": 10,
-          "total_negative": 9,
-          "total_reviews": 19
+          "total_negative": 11,
+          "total_reviews": 21
         }
       }
     },
@@ -324318,8 +325111,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T09:10:13.516Z",
-    "reviewAt": "2026-10-29T09:10:13.888Z"
+    "evidenceAt": "2026-11-05T10:15:32.085Z",
+    "reviewAt": "2026-11-05T10:15:32.675Z"
   },
   "5108700": {
     "savedAt": "2026-11-05T00:26:02.601Z",
@@ -327875,7 +328668,7 @@
     "reviewAt": "2026-10-29T09:02:39.690Z"
   },
   "5113860": {
-    "savedAt": "2026-10-29T09:15:41.957Z",
+    "savedAt": "2026-11-05T10:15:37.296Z",
     "result": {
       "detail": {
         "success": true,
@@ -327935,8 +328728,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:15:47.186Z",
-    "reviewAt": "2026-10-29T09:15:47.476Z"
+    "evidenceAt": "2026-11-05T10:15:42.716Z",
+    "reviewAt": "2026-11-05T10:15:43.176Z"
   },
   "5113970": {
     "savedAt": "2026-11-05T07:29:34.849Z",
@@ -328249,7 +329042,7 @@
     "reviewAt": "2026-10-31T01:54:35.187Z"
   },
   "5114140": {
-    "savedAt": "2026-10-29T09:21:16.250Z",
+    "savedAt": "2026-11-05T10:15:47.888Z",
     "result": {
       "detail": {
         "success": true,
@@ -328296,17 +329089,17 @@
       "earlyAccessDate": null,
       "announcements": [
         {
-          "title": "Ball Buster's DEMO'S OUT!",
-          "timestamp": 1791913680
+          "title": "We Need Your Feedback From The Ball Busters Demo",
+          "timestamp": 1793304840
         },
         {
-          "title": "Open Playtest Feedback, Emo, And STEAM NEXT FEST DEMO",
-          "timestamp": 1789045380
+          "title": "Ball Buster's DEMO'S OUT!",
+          "timestamp": 1791913680
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:21:21.537Z",
-    "reviewAt": "2026-10-29T09:21:21.845Z"
+    "evidenceAt": "2026-11-05T10:15:53.220Z",
+    "reviewAt": "2026-11-05T10:15:53.681Z"
   },
   "5114150": {
     "savedAt": "2026-11-02T17:08:26.460Z",
@@ -332983,6 +333776,70 @@
     "evidenceAt": "2026-10-30T09:34:39.334Z",
     "reviewAt": "2026-10-30T09:34:39.621Z"
   },
+  "5120190": {
+    "savedAt": "2026-11-05T10:06:31.478Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "demo",
+          "name": "Blackout Route Demo",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5120190/0e38aea1044627383bb65ed58d1e3879ef4d9e39/header.jpg?t=1793865482",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "29",
+              "description": "大型多人在线"
+            }
+          ],
+          "developers": [
+            "Blackout Inc."
+          ],
+          "publishers": [
+            "Blackout Inc."
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 10 月 19 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1795446000,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Blackout Route Demo — We Could Really Use Your Support!",
+          "timestamp": 1793867100
+        },
+        {
+          "title": "Help Us Make BLACKOUT ROUTE a Game You'll Want to Keep Coming Back To!",
+          "timestamp": 1793007840
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T10:06:36.955Z",
+    "reviewAt": "2026-11-05T10:06:37.405Z"
+  },
   "5120210": {
     "savedAt": "2026-10-30T00:05:03.303Z",
     "result": {
@@ -336671,7 +337528,7 @@
     "reviewAt": "2026-11-02T17:05:52.823Z"
   },
   "5124350": {
-    "savedAt": "2026-10-29T09:26:51.653Z",
+    "savedAt": "2026-11-05T10:15:58.410Z",
     "result": {
       "detail": {
         "success": true,
@@ -336731,8 +337588,8 @@
         }
       ]
     },
-    "evidenceAt": "2026-10-29T09:26:56.875Z",
-    "reviewAt": "2026-10-29T09:26:57.153Z"
+    "evidenceAt": "2026-11-05T10:16:03.713Z",
+    "reviewAt": "2026-11-05T10:16:04.202Z"
   },
   "5124370": {
     "savedAt": "2026-10-30T15:07:53.058Z",
@@ -338741,7 +339598,7 @@
     "reviewAt": "2026-10-30T09:51:22.995Z"
   },
   "5126290": {
-    "savedAt": "2026-10-29T09:32:21.821Z",
+    "savedAt": "2026-11-05T10:16:08.930Z",
     "result": {
       "detail": {
         "success": true,
@@ -338788,8 +339645,8 @@
       "earlyAccessDate": null,
       "announcements": []
     },
-    "evidenceAt": "2026-10-29T09:32:27.219Z",
-    "reviewAt": "2026-10-29T09:32:27.521Z"
+    "evidenceAt": "2026-11-05T10:16:14.478Z",
+    "reviewAt": "2026-11-05T10:16:14.904Z"
   },
   "5126500": {
     "savedAt": "2026-10-30T19:49:20.874Z",
@@ -338868,7 +339725,7 @@
     "reviewAt": "2026-10-30T19:49:26.379Z"
   },
   "5126550": {
-    "savedAt": "2026-10-31T21:54:31.003Z",
+    "savedAt": "2026-11-05T10:22:20.373Z",
     "result": {
       "detail": {
         "success": true,
@@ -338909,22 +339766,27 @@
       },
       "review": {
         "query_summary": {
-          "num_reviews": 0,
+          "num_reviews": 1,
           "review_score": 0,
-          "review_score_desc": "No user reviews",
-          "total_positive": 0,
+          "review_score_desc": "1 user reviews",
+          "total_positive": 1,
           "total_negative": 0,
-          "total_reviews": 0
+          "total_reviews": 1
         }
       }
     },
     "evidence": {
       "timestamp": 1793462425,
       "earlyAccessDate": "2026-10-31",
-      "announcements": []
+      "announcements": [
+        {
+          "title": "Less Monsters, More Experience",
+          "timestamp": 1793587740
+        }
+      ]
     },
-    "evidenceAt": "2026-10-31T21:54:36.186Z",
-    "reviewAt": "2026-10-31T21:54:36.545Z"
+    "evidenceAt": "2026-11-05T10:22:25.707Z",
+    "reviewAt": "2026-11-05T10:22:26.105Z"
   },
   "5126560": {
     "savedAt": "2026-11-05T03:33:58.008Z",
@@ -339078,6 +339940,65 @@
     },
     "evidenceAt": "2026-10-31T23:25:22.794Z",
     "reviewAt": "2026-10-31T23:25:23.263Z"
+  },
+  "5126810": {
+    "savedAt": "2026-11-05T09:54:54.156Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "日本四季百景",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 4200,
+            "final": 4200,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 42.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5126810/cb17dffe210f6ea63f225044d85c1235515c063a/header.jpg?t=1793869876",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            }
+          ],
+          "developers": [
+            "BLOOMPICTURE STUDIO"
+          ],
+          "publishers": [
+            "BLOOMPICTURE STUDIO"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793867217,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T09:54:59.510Z",
+    "reviewAt": "2026-11-05T09:54:59.921Z"
   },
   "5126830": {
     "savedAt": "2026-10-29T16:25:19.332Z",
@@ -371018,6 +371939,74 @@
       ]
     },
     "evidenceAt": "2026-10-21T23:11:09.085Z"
+  },
+  "5167220": {
+    "savedAt": "2026-11-05T09:55:04.635Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Another Cat`s Tale",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 4200,
+            "final": 3066,
+            "discount_percent": 27,
+            "initial_formatted": "¥ 42.00",
+            "final_formatted": "¥ 30.66"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5167220/1d148df5cde2ce921a26dcb0d2c0f2706c8d175a/header.jpg?t=1793870307",
+          "genres": [
+            {
+              "id": "25",
+              "description": "冒险"
+            },
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            }
+          ],
+          "developers": [
+            "amver vis"
+          ],
+          "publishers": [
+            "amver vis"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793870308,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "First press feature on Another Cat's Tale!!",
+          "timestamp": 1793184660
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:55:09.896Z",
+    "reviewAt": "2026-11-05T09:55:10.373Z"
   },
   "5167370": {
     "savedAt": "2026-10-31T08:30:18.136Z",
@@ -438415,6 +439404,57 @@
     },
     "evidenceAt": "2026-10-29T09:15:36.743Z",
     "reviewAt": "2026-10-29T09:15:37.089Z"
+  },
+  "5227800": {
+    "savedAt": "2026-11-05T09:55:15.479Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "RealMandelRender - Fractal Visualizer",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5227800/4412e67d5a1cc3390d77fd9e353ae79ec805d23f/header.jpg?t=1791549697",
+          "genres": [
+            {
+              "id": "53",
+              "description": "设计和插画"
+            },
+            {
+              "id": "54",
+              "description": "教育"
+            }
+          ],
+          "developers": [
+            "ukaapple"
+          ],
+          "publishers": [
+            "ukaapple"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793876400,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T09:55:22.944Z",
+    "reviewAt": "2026-11-05T09:55:23.432Z"
   },
   "5227820": {
     "savedAt": "2026-10-24T01:57:56.027Z",
@@ -522099,6 +523139,74 @@
     "evidenceAt": "2026-10-31T18:26:58.306Z",
     "reviewAt": "2026-10-31T18:26:58.740Z"
   },
+  "5281580": {
+    "savedAt": "2026-11-05T09:56:11.276Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Studs Up! Win Ugly",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 3500,
+            "final": 2800,
+            "discount_percent": 20,
+            "initial_formatted": "¥ 35.00",
+            "final_formatted": "¥ 28.00"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5281580/db4dc3c37398cc4de1a4bc098b920fec905da030/header.jpg?t=1793864596",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "18",
+              "description": "体育"
+            }
+          ],
+          "developers": [
+            "Gand"
+          ],
+          "publishers": [
+            "Gand"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793864597,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Studs Up! Win Ugly is out now, 20% off for launch!",
+          "timestamp": 1793865000
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:56:16.511Z",
+    "reviewAt": "2026-11-05T09:56:16.924Z"
+  },
   "5281590": {
     "savedAt": "2026-10-29T21:43:39.862Z",
     "result": {
@@ -540580,6 +541688,66 @@
     },
     "evidenceAt": "2026-10-31T01:46:25.870Z",
     "reviewAt": "2026-10-31T01:46:26.226Z"
+  },
+  "5294200": {
+    "savedAt": "2026-11-05T09:56:32.115Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "The Usual Table: Texas Hold’em",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5294200/1ff4fbe28b87bb058225a7bf15dc61c833ece519/header_schinese.jpg?t=1793860850",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "HTT"
+          ],
+          "publishers": [
+            "HTT"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "即将推出"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793872440,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "《常客德州扑克》11月5日正式发售",
+          "timestamp": 1793049000
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:56:37.344Z",
+    "reviewAt": "2026-11-05T09:56:37.835Z"
   },
   "5294320": {
     "savedAt": "2026-10-29T21:47:23.313Z",
@@ -653271,6 +654439,70 @@
     "evidenceAt": "2026-10-31T22:00:48.302Z",
     "reviewAt": "2026-10-31T22:00:48.798Z"
   },
+  "5365410": {
+    "savedAt": "2026-11-05T09:56:47.681Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "ASTERIS",
+          "is_free": false,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5365410/23359377bdf937e6fc8c33989531f5cd4e932707/header.jpg?t=1793801516",
+          "genres": [
+            {
+              "id": "1",
+              "description": "动作"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "ARCENCIEL"
+          ],
+          "publishers": [
+            "ARCENCIEL"
+          ],
+          "release_date": {
+            "coming_soon": true,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793876400,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "ASTERIS 将于11月5日北京时间18:00正式发售",
+          "timestamp": 1793324340
+        },
+        {
+          "title": "试玩版最终更新 — 平衡调整与错误修复",
+          "timestamp": 1793193840
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:56:52.957Z",
+    "reviewAt": "2026-11-05T09:56:53.440Z"
+  },
   "5365420": {
     "savedAt": "2026-10-30T01:28:51.114Z",
     "result": {
@@ -656522,6 +657754,69 @@
     },
     "evidenceAt": "2026-10-30T09:48:50.632Z",
     "reviewAt": "2026-10-30T09:48:50.937Z"
+  },
+  "5367590": {
+    "savedAt": "2026-11-05T09:56:58.097Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Townworks",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 6600,
+            "final": 5940,
+            "discount_percent": 10,
+            "initial_formatted": "¥ 66.00",
+            "final_formatted": "¥ 59.40"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5367590/ed748a084c1ee26c8182b98f8e8db04358264d8e/header.jpg?t=1793865547",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "2",
+              "description": "策略"
+            }
+          ],
+          "developers": [
+            "Ocelli"
+          ],
+          "publishers": [
+            "Ocelli"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 4 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865548,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T09:57:03.331Z",
+    "reviewAt": "2026-11-05T09:57:03.944Z"
   },
   "5367610": {
     "savedAt": "2026-11-04T23:13:43.298Z",
@@ -731125,6 +732420,61 @@
     "evidenceAt": "2026-11-04T09:46:46.325Z",
     "reviewAt": "2026-11-04T09:46:46.663Z"
   },
+  "5428820": {
+    "savedAt": "2026-11-05T09:57:08.478Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "精神侦查β",
+          "is_free": false,
+          "price_overview": {
+            "currency": "CNY",
+            "initial": 990,
+            "final": 990,
+            "discount_percent": 0,
+            "initial_formatted": "",
+            "final_formatted": "¥ 9.90"
+          },
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5428820/5b7f839ea7681eece1378109b170bb6474995164/header.jpg?t=1793870212",
+          "genres": [
+            {
+              "id": "3",
+              "description": "角色扮演"
+            }
+          ],
+          "developers": [
+            "七月柒月七"
+          ],
+          "publishers": [
+            "七月柒月七"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865648,
+      "earlyAccessDate": null,
+      "announcements": []
+    },
+    "evidenceAt": "2026-11-05T09:57:13.717Z",
+    "reviewAt": "2026-11-05T09:57:14.184Z"
+  },
   "5429060": {
     "savedAt": "2026-11-04T02:32:05.064Z",
     "result": {
@@ -755561,6 +756911,70 @@
     },
     "evidenceAt": "2026-11-04T08:50:05.542Z",
     "reviewAt": "2026-11-04T08:50:06.030Z"
+  },
+  "5465230": {
+    "savedAt": "2026-11-05T09:57:18.868Z",
+    "result": {
+      "detail": {
+        "success": true,
+        "data": {
+          "type": "game",
+          "name": "Townlet",
+          "is_free": true,
+          "header_image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5465230/bf8dec063b3f2cab77c637839fbb10bedd84d437/header.jpg?t=1793866853",
+          "genres": [
+            {
+              "id": "4",
+              "description": "休闲"
+            },
+            {
+              "id": "23",
+              "description": "独立"
+            },
+            {
+              "id": "28",
+              "description": "模拟"
+            },
+            {
+              "id": "37",
+              "description": "免费开玩"
+            }
+          ],
+          "developers": [
+            "Nadir Kaan Sezi"
+          ],
+          "publishers": [
+            "Nadir Kaan Sezi"
+          ],
+          "release_date": {
+            "coming_soon": false,
+            "date": "2026 年 11 月 5 日"
+          }
+        }
+      },
+      "review": {
+        "query_summary": {
+          "num_reviews": 0,
+          "review_score": 0,
+          "review_score_desc": "No user reviews",
+          "total_positive": 0,
+          "total_negative": 0,
+          "total_reviews": 0
+        }
+      }
+    },
+    "evidence": {
+      "timestamp": 1793865676,
+      "earlyAccessDate": null,
+      "announcements": [
+        {
+          "title": "Townlet 正式发售：让垃圾建起一座村庄",
+          "timestamp": 1793865660
+        }
+      ]
+    },
+    "evidenceAt": "2026-11-05T09:57:24.118Z",
+    "reviewAt": "2026-11-05T09:57:24.540Z"
   },
   "5465340": {
     "savedAt": "2026-11-04T22:49:54.435Z",
