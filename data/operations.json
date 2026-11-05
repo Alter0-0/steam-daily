@@ -16214,6 +16214,29 @@
         "stopReason": "time-budget",
         "exitCode": 0
       }
+    },
+    {
+      "id": "42060897732",
+      "event": "workflow_dispatch",
+      "automaticResume": true,
+      "startedAt": "2026-11-05T16:02:52.037Z",
+      "target": "2026-11-04",
+      "commit": "6ee6580383e569c45302fae0d9ac7c05d1b605cb",
+      "synchronization": {
+        "apps": 1,
+        "removedPlaceholders": 7
+      },
+      "collection": {
+        "attempted": true,
+        "startedAt": "2026-11-05T16:02:52.093Z",
+        "finishedAt": "2026-11-05T16:33:04.793Z",
+        "health": "partial",
+        "processed": 251,
+        "basicCompleted": 10,
+        "failed": 158,
+        "stopReason": "time-budget",
+        "exitCode": 0
+      }
     }
   ],
   "acceptance": {
