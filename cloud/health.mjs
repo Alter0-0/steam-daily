@@ -23,6 +23,15 @@ export async function updateRun(root,patch={}) {
 }
 async function main() {
   const mode=process.argv[2];
+  if(mode==='receipt') {
+    const publication=process.env.PUBLISH_OUTCOME==='success';
+    const saved=process.env.RECEIPT_OUTCOME==='success';
+    const message=`网页发布：${publication?'成功':'未成功'}；运行回执保存：${saved?'成功':'失败'}`;
+    console.log(message);
+    if(!saved)console.warn(`::warning::${message}。回执保存失败不会撤销已经成功发布的网页，请查看存档步骤的错误。`);
+    if(process.env.GITHUB_STEP_SUMMARY)await fs.appendFile(process.env.GITHUB_STEP_SUMMARY,`\n### 发布与存档的最终结果\n\n${message}。${!saved&&publication?'网页已经上线，本轮运行回执未能写回存档；请勿将其理解为网站发布失败。':''}\n`);
+    return;
+  }
   if(mode==='begin'){
     const state=await readData(root,'state.json',{reports:[]});
     const synchronization=reconcileReports(state,new Date().toISOString(),reportTarget());

@@ -140,6 +140,16 @@ function ensureReport(state,date,now) {
   for(const template of emptySections())if(!report.sections.some(s=>s.key===template.key))report.sections.push(template);
   return report;
 }
+function discoveryDate(record,game,now,latest) {
+  const observed=Date.parse(record.firstObservedAt);
+  if(record.imported||record.excluded||game.demo||!Number.isFinite(observed)||observed>Date.parse(now))return null;
+  const date=cnDate(record.firstObservedAt);
+  // Old released games encountered during a historical sweep belong in their
+  // release issue, not in a newly invented product-page discovery list.
+  if(!game.comingSoon&&game.releaseDate&&game.releaseDate<date)return null;
+  if(game.provisional&&game.releaseDate&&game.releaseDate<=latest)return null;
+  return date;
+}
 export function applyRecord(state, record, fresh, now, latest) {
   if(fresh===null) {
     record.excluded=true;
@@ -154,7 +164,7 @@ export function applyRecord(state, record, fresh, now, latest) {
   if(!merged.comingSoon && date && date<=latest) {
     const priorRelease=state.reports.flatMap(r=>(r.sections||[]).filter(s=>s.key==='release'||s.key==='demo').flatMap(s=>s.games)).find(g=>g.id===merged.id);
     for(const report of state.reports)for(const section of report.sections||[]) {
-      if(section.key==='release'||section.key==='demo')section.games=section.games.filter(g=>g.id!==merged.id||report.date===date);
+      if(section.key==='release'||section.key==='demo')section.games=section.games.filter(g=>g.id!==merged.id||report.date===date&&section.key===(merged.demo?'demo':'release'));
     }
     const report=ensureReport(state,date,now);
     const section=report.sections.find(s=>s.key===(merged.demo?'demo':'release'));
@@ -170,11 +180,12 @@ export function applyRecord(state, record, fresh, now, latest) {
     section.games=section.games.map(g=>g.id===merged.id?{...preserveSnapshot(g,merged),isNew:g.isNew,firstSeen:g.firstSeen}:g);
   }
   // A historical backfill must not invent a page creation/first-discovery date.
-  if(!record.imported && !record.newPageAdded && !merged.demo && cnDate(record.firstObservedAt)===shiftDate(latest,1) && (!merged.provisional || !date || date>latest)) {
-    const report=ensureReport(state,cnDate(record.firstObservedAt),now);
-    report.label='今日发现（持续收集）';
+  const discovered=discoveryDate(record,merged,now,latest);
+  if(discovered) {
+    const report=ensureReport(state,discovered,now);
+    if(discovered>latest)report.label='今日发现（持续收集）';
     const section=report.sections.find(s=>s.key==='new-page');
-    if(!section.games.some(g=>g.id===merged.id))section.games.push({...merged,isNew:true,firstSeen:cnDate(record.firstObservedAt),discoveryNote:'采集器首次发现，不代表页面创建时间'});
+    if(!section.games.some(g=>g.id===merged.id))section.games.push({...merged,isNew:true,firstObservedAt:record.firstObservedAt,firstSeen:discovered,discoveryNote:'采集器首次发现，不代表页面创建时间'});
     record.newPageAdded=true;
   }
   // Published reports never expire. The 30-day window controls work, not storage.
@@ -187,7 +198,7 @@ export function needsBasics(record){return !record.snapshot||!!record.snapshot.p
 export function reconcileReports(state,now,latest) {
   const catalog=state.phase1?.catalog;
   if(!catalog)return {apps:0,removedPlaceholders:0};
-  const releases=new Map(),updates=new Set();let removedPlaceholders=0;
+  const releases=new Map(),discoveries=new Set(),updates=new Set();let removedPlaceholders=0;
   for(const report of state.reports)for(const section of report.sections||[]) {
     if(section.key==='release'||section.key==='demo') {
       section.games=section.games.filter(game=>{
@@ -201,12 +212,15 @@ export function reconcileReports(state,now,latest) {
         releases.get(game.id).push({date:report.date,key:section.key,game});return true;
       });
     }else if(section.key==='new-page') {
+      for(const game of section.games)discoveries.add(`${report.date}:${game.id}`);
       for(const game of section.games)if(game.provisional&&catalog[game.id]&&!catalog[game.id].excluded&&!needsBasics(catalog[game.id]))updates.add(game.id);
     }
   }
   for(const record of Object.values(catalog)) {
     if(record.excluded||needsBasics(record))continue;
     const game=record.snapshot,date=game.releaseDate,key=game.demo?'demo':'release';
+    const discovered=discoveryDate(record,game,now,latest);
+    if(discovered&&!discoveries.has(`${discovered}:${game.id}`))updates.add(game.id);
     if(!date||date>latest||game.comingSoon)continue;
     const existing=releases.get(game.id)||[];
     if(!existing.some(entry=>entry.date===date&&entry.key===key)||existing.some(entry=>entry.date!==date||entry.key!==key||entry.game.provisional))updates.add(game.id);

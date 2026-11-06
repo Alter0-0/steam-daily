@@ -4,14 +4,59 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 import {reportTarget,collectionHealth,sectionReadiness,newAcceptance,recordAcceptance,acceptanceView,shouldContinue} from '../stability.mjs';
-import {initialize,runSweep,reconcileReports} from '../phase1.mjs';
+import {initialize,runSweep,reconcileReports,applyRecord} from '../phase1.mjs';
 import {buildSite} from '../cloud/build.mjs';
 
 test('overnight resumes keep the previous issue until exactly Beijing 04:00',()=>{
   assert.equal(reportTarget(new Date('2026-10-29T19:59:59Z')),'2026-10-28');
   assert.equal(reportTarget(new Date('2026-10-29T20:00:00Z')),'2026-10-29');
   assert.equal(reportTarget(new Date('2026-10-29T16:40:00Z')),'2026-10-28');
+});
+
+test('discoveries before and after Beijing 04:00 use the actual observed calendar date',()=>{
+  for(const now of ['2026-11-05T16:00:00Z','2026-11-05T19:59:59Z','2026-11-05T20:00:00Z']) {
+    const state={reports:[]};initialize(state,now);
+    const record={item:{appid:1},firstObservedAt:now};state.phase1.catalog[1]=record;
+    applyRecord(state,record,{id:1,name:'Future Game',demo:false,comingSoon:true,releaseDate:'2026-12-01',metadataPending:[]},now,reportTarget(new Date(now)));
+    const cards=state.reports.find(r=>r.date==='2026-11-06').sections.find(s=>s.key==='new-page').games;
+    assert.equal(cards.length,1);assert.equal(cards[0].firstSeen,'2026-11-06');assert.equal(cards[0].firstObservedAt,now);
+  }
+});
+
+test('cached discovery repair handles stale flags, preserves snapshots, and invents no imported or Demo history',()=>{
+  const now='2026-11-06T02:00:00Z',state={reports:[]};initialize(state,now);
+  const observed='2026-11-04T16:36:01Z';
+  const game={id:1,name:'Missi',demo:false,comingSoon:true,releaseDate:'2026-12-01',price:'¥20',reviews:'5',rating:80,snapshotAt:observed,firstObservedAt:observed,metadataPending:[]};
+  const base={item:{appid:1},firstObservedAt:observed,snapshot:game,newPageAdded:true};
+  state.phase1.catalog={1:base,2:{...structuredClone(base),item:{appid:2},snapshot:{...game,id:2},imported:true},3:{...structuredClone(base),item:{appid:3},snapshot:{...game,id:3,demo:true}},4:{...structuredClone(base),item:{appid:4},snapshot:{...game,id:4},firstObservedAt:null},5:{...structuredClone(base),item:{appid:5},snapshot:{...game,id:5},excluded:true},6:{...structuredClone(base),item:{appid:6},snapshot:{...game,id:6},firstObservedAt:'2026-11-07T00:00:00Z'}};
+  assert.equal(reconcileReports(state,now,'2026-11-05').apps,1);
+  const cards=state.reports.find(r=>r.date==='2026-11-05').sections.find(s=>s.key==='new-page').games;
+  assert.equal(cards.length,1);assert.equal(cards[0].id,1);assert.equal(cards[0].snapshotAt,observed);assert.equal(cards[0].price,'¥20');
+  assert.deepEqual(reconcileReports(state,now,'2026-11-05'),{apps:0,removedPlaceholders:0});
+  applyRecord(state,base,{...game,price:'¥99',reviews:'100',rating:100},now,'2026-11-05');
+  const saved=state.reports[0].sections.find(s=>s.key==='new-page').games[0];
+  assert.equal(saved.price,'¥20');assert.equal(saved.reviews,'5');
+});
+
+test('a cached type correction removes the wrong section on the same date and converges',()=>{
+  const now='2026-11-06T02:00:00Z';
+  const game={id:1,name:'Game',demo:false,releaseDate:'2026-10-04',metadataPending:[],price:'¥10',reviews:'5'};
+  const state={reports:[{date:'2026-10-04',sections:[{key:'release',games:[game]},{key:'demo',games:[{...game,demo:true}]}]}]};
+  initialize(state,now);state.phase1.catalog[1].snapshot=game;
+  assert.equal(reconcileReports(state,now,'2026-11-05').apps,1);
+  assert.equal(state.reports[0].sections.find(s=>s.key==='demo').games.length,0);
+  assert.equal(state.reports[0].sections.find(s=>s.key==='release').games[0].price,'¥10');
+  assert.deepEqual(reconcileReports(state,now,'2026-11-05'),{apps:0,removedPlaceholders:0});
+});
+
+test('historical sweeps do not turn previously released games into new product-page discoveries',()=>{
+  const now='2026-11-06T02:00:00Z',state={reports:[]};initialize(state,now);
+  const record={item:{appid:1},firstObservedAt:'2026-11-04T17:00:00Z',snapshot:{id:1,name:'Old release',demo:false,releaseDate:'2026-10-01',metadataPending:[]}};
+  state.phase1.catalog[1]=record;reconcileReports(state,now,'2026-11-05');
+  assert.equal(state.reports.find(r=>r.date==='2026-10-01').sections.find(s=>s.key==='release').games.length,1);
+  assert.equal(state.reports.flatMap(r=>r.sections.filter(s=>s.key==='new-page').flatMap(s=>s.games)).length,0);
 });
 
 test('early morning wrapper actually invokes collection; cooldown is recorded separately',async t=>{
@@ -112,11 +157,20 @@ test('a build shows the actual last publication outcome independently of healthy
   const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-health-build-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
   await fs.writeFile(path.join(dir,'state.json'),JSON.stringify({reports:[report()],generatedAt:'2026-10-30T18:00:00Z'}));
   await fs.writeFile(path.join(dir,'status.json'),JSON.stringify({state:'success',reportDate:'2026-10-29'}));
-  await fs.writeFile(path.join(dir,'operations.json'),JSON.stringify({runs:[{id:'123',publication:{state:'failed',at:'2026-10-30T18:00:00Z'}}]}));
+  await fs.writeFile(path.join(dir,'operations.json'),JSON.stringify({runs:[{id:'123',publication:{state:'failed',at:'2026-10-30T18:00:00Z'},receipt:{state:'saved',at:'2026-10-30T18:01:00Z'}}]}));
   await buildSite(path.join(dir,'site'),dir);
   const status=JSON.parse(await fs.readFile(path.join(dir,'site/data/status.json')));
   assert.equal(status.health.collection,'complete');assert.equal(status.health.lastPublication.state,'failed');
+  assert.equal(status.health.lastPublication.receipt.state,'saved');
   assert.equal(status.health.readiness[0].sections.release.percent,90);
+});
+
+test('publication succeeds independently of a failed receipt and the final summary explains both',async t=>{
+  const dir=await fs.mkdtemp(path.join(os.tmpdir(),'steam-receipt-summary-'));t.after(()=>fs.rm(dir,{recursive:true,force:true}));
+  const summary=path.join(dir,'summary.md');
+  const r=spawnSync(process.execPath,[fileURLToPath(new URL('../cloud/health.mjs',import.meta.url)),'receipt'],{encoding:'utf8',env:{...process.env,PUBLISH_OUTCOME:'success',RECEIPT_OUTCOME:'failure',GITHUB_STEP_SUMMARY:summary}});
+  assert.equal(r.status,0,r.stderr);assert.match(r.stdout,/网页发布：成功；运行回执保存：失败/);
+  assert.match(await fs.readFile(summary,'utf8'),/网页已经上线/);
 });
 
 test('cloud continuation sends one bounded dispatch and persists failed network attempts',async t=>{
